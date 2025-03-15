@@ -3033,7 +3033,7 @@ local sigma_table = {
 
 
 local calculate = LPH_NO_VIRTUALIZE(function(Ping)
-    return (Ping / 1000) + 0.064967
+    return (Ping / 1000) + 0.074903255
 end)
 
 local updatePredictionValue = LPH_NO_VIRTUALIZE(function() 
