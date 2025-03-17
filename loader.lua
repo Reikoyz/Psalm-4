@@ -83,8 +83,8 @@ local Psalms = {
         VerticalPrediction2 = 0.13448922,
         
         jumpoffset = 0,
-        jumpoffset2 = -0.0006,
-        jumpoffset3 = -0.0006,
+        jumpoffset2 = 0.1245,
+        jumpoffset3 = 0.1245,
         
         ShootDelay = 0.22,
         NoGroundShot = true,
@@ -3033,7 +3033,7 @@ local sigma_table = {
 
 
 local calculate = LPH_NO_VIRTUALIZE(function(Ping)
-    return (Ping / 1000) + 0.074903255
+    return (Ping / 1000) + 0.0645
 end)
 
 local updatePredictionValue = LPH_NO_VIRTUALIZE(function() 
