@@ -83,8 +83,8 @@ local Psalms = {
         VerticalPrediction2 = 0.13448922,
         
         jumpoffset = 0,
-        jumpoffset2 = 0.1245,
-        jumpoffset3 = 0.1245,
+        jumpoffset2 = -0.12,
+        jumpoffset3 = 0.12,
         
         ShootDelay = 0.22,
         NoGroundShot = true,
