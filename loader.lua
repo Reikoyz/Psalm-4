@@ -1,6988 +1,7245 @@
-setfpscap(1000)
+print("executed")
 
+if not (hookmetamethod or makefolder) then 
+    warn("NEBULA.TECH ISNT SUPPORTED ON YOUR EXECUTOR")
+end 
 
-local function cooked(Sex3)
+-- variables
+    local uis = game:GetService("UserInputService") 
+    local players = game:GetService("Players") 
+    local ws = game:GetService("Workspace")
+    local rs = game:GetService("ReplicatedStorage")
+    local http_service = game:GetService("HttpService")
+    local gui_service = game:GetService("GuiService")
+    local lighting = game:GetService("Lighting")
+    local run = game:GetService("RunService")
+    local stats = game:GetService("Stats")
+    local coregui = game:GetService("CoreGui")
+    local debris = game:GetService("Debris")
+    local tween_service = game:GetService("TweenService")
+    local sound_service = game:GetService("SoundService")
 
-if Sex3 then  
-   
- 
-if getgenv().executed then
-        return  
-    end
-   getgenv().executed = true
-print("hi")
+    local vec2 = Vector2.new
+    local vec3 = Vector3.new
+    local dim2 = UDim2.new
+    local dim = UDim.new 
+    local rect = Rect.new
+    local cfr = CFrame.new
+    local angle = CFrame.Angles
 
-local startTime = os.clock()
+    local color = Color3.new
+    local rgb = Color3.fromRGB
+    local hex = Color3.fromHex
+    local rgbseq = ColorSequence.new
+    local rgbkey = ColorSequenceKeypoint.new
+    local numseq = NumberSequence.new
+    local numkey = NumberSequenceKeypoint.new
 
+    local camera = ws.CurrentCamera
+    local lp = players.LocalPlayer 
+    local mouse = lp:GetMouse() 
+    local gui_offset = gui_service:GetGuiInset().Y
 
-repeat wait() until game:IsLoaded()
+    local max = math.max 
+    local floor = math.floor 
+    local min = math.min 
+    local abs = math.abs 
+    local noise = math.noise
+    local rad = math.rad 
+    local random = math.random 
+    local pow = math.pow 
 
+    local main_event = rs:FindFirstChild("MainEvent")
+-- 
 
-loadstring(game:HttpGet("https://gist.githubusercontent.com/CongoOhioDog/a176e78a0053eb3c1a48e58dece4ebb0/raw/b37a50cf92c1c427512ca44e6341315124521522/gistfile1.txt"))()
-
-
-if not LPH_OBFUSCATED then
-    LPH_JIT = function(...) return ... end
-LPH_NO_VIRTUALIZE  = function(...) return ... end
-end
-
-
-local getcustom = string.find(identifyexecutor(), "Delta")
-
-local  Library
-
-local assetsupport = string.find(identifyexecutor(), "Wave") or string.find(identifyexecutor(), "Seliware") or string.find(identifyexecutor(), "AWP") or string.find(identifyexecutor(), "Argon") or string.find(identifyexecutor(), "Swift")
-
-
-
-if assetsupport then
-    Library = loadstring(game:HttpGet("https://gist.githubusercontent.com/public-account-7/4b907aec6a087aad58de0eca2d5d7052/raw/2b88e28400d96d33bc45c828a8e1e7748685cd75/gistfile1.txt", true))()
-else
-    Library  = loadstring(game:HttpGet("https://gist.githubusercontent.com/public-account-7/4098a248a7fcd0ad67e45c75671b409e/raw/50e0d671122a0541276a92f4bf31221dff2f11f9/gistfile1.txt",true))()
-end
-
-
-
-
-local function getAsset(path)
-    if getcustom then
-        return getcustomasset(string.format("images_stuff/%s", path))
-    else
-        return "rbxassetid://0"
-    end
-end
-
-
-
-
-
-downloadSound = LPH_NO_VIRTUALIZE(function(SoundName, SoundUrl)
-    local SoundPath = string.format("images_stuff/%s", SoundName)
-    if not isfile(SoundPath) then
-        writefile(SoundPath, game:HttpGet(SoundUrl))
-    end
-    return SoundPath
-end)
-
-
-
-local Psalms = {
-    Tech = {
-        Enabled = false,
-        AutoPrediction = true,
-        AutoPredMode = "PingBased",
-        APMODE = "Calculate",
-        
-        RealPart = "HumanoidRootPart",
-        SelectedPart = "HumanoidRootPart",
-        AirPart = "RightFoot",
-        
-        HorizontalPrediction = 0.13448922,
-        VerticalPrediction = 0.13448922,
-        HorizontalPrediction2 = 0.13448922,
-        VerticalPrediction2 = 0.13448922,
-        
-        jumpoffset = 0,
-        jumpoffset2 = -0.12,
-        jumpoffset3 = 0.12,
-        
-        ShootDelay = 0.22,
-        NoGroundShot = true,
-        AutoAir = false,
-        
-        TracerEnabled = true,
-        LookAt = true,
-        
-        Camera = true,
-        CamPrediction1 = 0.13448922,
-        CamPrediction2 = 0.13448922,
-        SilentMode = false, 
-        smoothness = 0.9,
-        speedvalue = 1,
-        MacroSpeed = 0.1,
-        AntiCurve = true,
-        ResolverEnabled = true,
-        
-        easingStyle = "Sine",
-        easingDirection = "Out",
-isTargetPlrMode = true,
-        shootDelay = 0.114,
-        lastShootTime = 0,
-TriggerPot = true, 
-        
-        JumpBreak = false,
-        network = false,
-        UseVertical = false,
-        DotC = Color3.fromRGB(0, 0, 0),
-WallCheck = false,
-FriendCheck = false, 
- KOCheck = true, 
-SeatedCheck = false, 
-TeamCheck = false,
-UnlockOnKO = false,
-CamWallCheck = false, 
-CAMKo = false,
-bool_at_tp = false, 
-MacroDance = "YungBlud",
-MacroDanceDelay = 0.300,
-    }
-}
-
-Psalms.Tech.SelectedPart = Psalms.Tech.RealPart
-
-
-
-
-local Sleeping = false
-
-local TargetAimbot = {
-    Enabled = true,
-    Keybind = Enum.KeyCode.Q,
-    Autoselect = false,
-    Prediction = 0.145, 
-    RealPrediction = 0.145, 
-    Resolver = true, 
-    ResolverType = "Recalculate", 
-    JumpOffset = 0.06, 
-    RealJumpOffset = 0.09, 
-    HitParts = {"HumanoidRootPart"}, 
-    RealHitPart = "HumanoidRootPart", 
-    KoCheck = false, 
-    LookAt = false,
-    CSync = {
-        Enabled = false,
-        Type = "Orbit",
-        Distance = 10,
-        Height = 2,
-        Speed = 10,
-        RandomAmount = 10,
-        Color = Color3.fromRGB(255, 255, 255),
-        Saved = nil,
-        Visualize = true,
+local nebula = {
+    target_selection = {
+        player = nil, 
+        time = os.clock(),
+        pass = true, 
     },
-    ViewAt = false,
-    Tracer = false,
-    Highlight = true,
-    HighlightColor1 =Color3.fromRGB(255, 255, 255),
-    HighlightColor2 =Color3.fromRGB(255, 255, 255),
-    Stats = false, 
-    UseFov = false,
-    HitEffect = true,
-    HitEffectType = "AuraBurst", --  {{ Nova, Crescent Slash, Coom, Cosmic Explosion, Slash, Atomic Slash, Aura Burst }}
-    HitEffectColor = Color3.fromRGB(255, 255, 255),
-    HitSounds = false,
-    HitSound = "Bameware",
-    HitChams = true,
-    HitChamsMaterial = Enum.Material.Neon,
-    HitChamsDuration = 2,
-    HitChamsColor = Color3.fromRGB(255, 0, 0),
-    HitChamColorEnabled = false,
-    HitChamsTransparency = 0,
-    HitChamsAcc = false, 
-   SkeleColor = Color3.fromRGB(155, 0, 155)
+    legit = {
+        aim_assist = {
+            toggled = false, 
 
-}
+            cframe = nil, 
+            screenpoint_position = nil, 
+            on_screen = nil,
 
-local  Highlight = false
+            velocity = 123,
 
+            hitpart = "HumanoidRootPart", 
+            airpart = "RightFoot", 
+            prediction = 0.1413, 
+            checks = true, 
+            destination = nil, 
+            previous_position = nil, 
+        },
+        silent_aim = {
+            toggled = false, 
 
+            cframe = nil, 
+            screenpoint_position = nil, 
+            on_screen = nil,
 
+            velocity = 123,
 
-
-local function toggleAimViewer()
-local players = game:GetService("Players")
-    local player = players.LocalPlayer
-    player.CharacterAdded:Connect(function()
-        local gui = player.PlayerGui:WaitForChild("gui")
-        local aimViewerFrame = gui.Settings.ScrollingFrame.aimviewer
-        aimViewerFrame.Visible = true
-    end)
-
-    local gui = player.PlayerGui:WaitForChild("gui")
-    local aimViewerFrame = gui.Settings.ScrollingFrame.aimviewer
-    aimViewerFrame.Visible = true
-end
-
-
-
-local UserInputService, Players, ReplicatedStorage, RunService, Workspace, Stats = 
-    cloneref(game:GetService("UserInputService")), cloneref(game:GetService("Players")), cloneref(game:GetService("ReplicatedStorage")), 
-    cloneref(game:GetService("RunService")), cloneref(game:GetService("Workspace")), cloneref(game:GetService("Stats"))
-
-local CoreGui, StarterGui, SoundService, HttpService = 
-    cloneref(game:GetService("CoreGui")), cloneref(game:GetService("StarterGui")), cloneref(game:GetService("SoundService")), cloneref(game:GetService("HttpService"))
-
-local LocalPlayer = cloneref(Players.LocalPlayer)
-local Camera = cloneref(Workspace.CurrentCamera)
-
-local TargBindEnabled, TargetPlr, TargResolvePos = true, nil, nil
-local TargHighlight = Instance.new("Highlight")
-
-
-local AvatarEditorService = game:GetService("AvatarEditorService")
-TargHighlight.Parent = CoreGui
-TargHighlight.FillColor = TargetAimbot.HighlightColor1
-TargHighlight.OutlineColor = TargetAimbot.HighlightColor2
-TargHighlight.FillTransparency = 0.5
-TargHighlight.OutlineTransparency = 0
-TargHighlight.Enabled = false
-
-local AChams = false
-local  updateBreatheEffect = LPH_NO_VIRTUALIZE(function() 
-    if AChams then
-        local breathe_effect = math.atan(math.sin(tick() * 2)) * 2 / math.pi
-        TargHighlight.FillTransparency = 100 * breathe_effect * 0.01
-        TargHighlight.OutlineTransparency = 100 * breathe_effect * 0.01
-    end
-end) 
-
-
-
-
-local HitEffectModule = {
-    Locals = {
-        Type = {
-            ["Nova"] = nil,
-            ["Crescent Slash"] = nil,
-            ["Coom"] = nil,
-            ["Cosmic Explosion"] = nil,
-            ["Slash"] = nil,
-            ["Atomic Slash"] = nil,
-            ["AuraBurst"] = nil,
-            ["Thunder"] = nil, 
+            hitpart = "HumanoidRootPart", 
+            airpart = "RightFoot", 
+            prediction = 0.1413, 
+            checks = true, 
+            destination = nil, 
+            previous_position = nil, 
+        }
+    },
+    rage = {
+        spoofer = {
+            spoofing = false, 
+            main_enabled = false, 
+            current_position = nil, 
+            old_position = nil, 
+            rotation_methods = nil, 
+            position_methods = nil, 
+            frame_counter = 0, 
+        },
+        network = {
+            last_slept = os.clock(), 
+            sleeping = false, 
         },
     },
-    Functions = {},
-    Settings = {HitEffect = {Color = TargetAimbot.HitEffectColor}}
-}
-
-local sounds = {
-    BlackPencil = "https://github.com/Shatapmatehabibi/Hitsounds/raw/main/bananapencil.mp3.mp3",
-    UWU = "https://github.com/CongoOhioDog/SoundS/blob/main/Uwu.mp3?raw=true",
-    Plooh = "https://github.com/CongoOhioDog/SoundS/blob/main/plooh.mp3?raw=true",
-    Hrntai = "https://github.com/CongoOhioDog/SoundS/blob/main/Hrntai.wav?raw=true",
-    Henta01 = "https://github.com/CongoOhioDog/SoundS/blob/main/henta01.wav?raw=true",
-    Bruh = "https://github.com/CongoOhioDog/SoundS/blob/main/psalms%20bruh%20sample.mp3?raw=true",
-    BoneBreakage = "https://github.com/CongoOhioDog/SoundS/blob/main/psalms%20bone%20breakage.mp3?raw=true",
-    Fein = "https://github.com/CongoOhioDog/SoundS/blob/main/psalms%20highly%20defined%20fein.mp3?raw=true",
-    Unicorn = "https://github.com/CongoOhioDog/SoundS/blob/main/shiny%20unicorn%20for%20dh%20_%20psalms.mp3?raw=true",
-    Kitty = "https://github.com/CongoOhioDog/SoundS/blob/main/Kitty.mp3?raw=true",
-    Bird = "https://github.com/CongoOhioDog/SoundS/blob/main/bird%20chirping%20for%20DH%20_%20psalms%20audio.mp3?raw=true",
-    BirthdayCake = "https://github.com/CongoOhioDog/SoundS/blob/main/Birthday%20cake%20for%20dh%20_%20psalms.mp3?raw=true", 
-    KenCarson =  "https://github.com/CongoOhioDog/SoundS/blob/main/ken_carson_-_jennifer_s_body_offici(2).mp3?raw=true"
-}
-
-for name, url in pairs(sounds) do
-    _G[name .. "Path"] = downloadSound(name .. ".mp3", url)
-end
-
-local hitsounds = {
-    ["RIFK7"]          = "rbxassetid://9102080552",
-    ["Bubble"]         = "rbxassetid://9102092728",
-    ["Minecraft"]      = "rbxassetid://5869422451",
-    ["Cod"]            = "rbxassetid://160432334",
-    ["Bameware"]       = "rbxassetid://6565367558",
-    ["Neverlose"]      = "rbxassetid://6565370984",
-    ["Gamesense"]      = "rbxassetid://4817809188",
-    ["Rust"]           = "rbxassetid://6565371338",
-    ["BlackPencil"]    = getAsset("BlackPencil.mp3"),
-    ["UWU"]            = getAsset("Uwu.mp3"),
-    ["Plooh"]          = getAsset("plooh.mp3"),
-    ["Moan"]           = getAsset("Hrntai.mp3"),
-    ["Hentai"]         = getAsset("Henta01.mp3"),
-    ["Bruh"]           = getAsset("Bruh.mp3"),
-    ["BoneBreakage"]   = getAsset("BoneBreakage.mp3"),
-    ["Fein"]           = getAsset("Fein.mp3"),
-    ["Unicorn"]        = getAsset("Unicorn.mp3"),
-    ["Kitty"]          = getAsset("Kitty.mp3"),
-    ["Bird"]           = getAsset("Bird.mp3"),
-    ["BirthdayCake"]   = getAsset("BirthdayCake.mp3"),
-    ["KenCarson"]      = getAsset("KenCarson.mp3")
-}
-
-
-local HitChamsFolder = Instance.new("Folder")
-HitChamsFolder.Name = "HitChamsFolder"
-HitChamsFolder.Parent = Workspace
-
---// Crescent Slash
-
-do
-local Attachment = Instance.new("Attachment")
-Attachment.Name = "Attachment"
-
-HitEffectModule.Locals.Type["Crescent Slash"] = Attachment
-
-local Glow = Instance.new("ParticleEmitter")
-Glow.Name = "Glow"
-Glow.Lifetime = NumberRange.new(0.16, 0.16)
-Glow.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1421725, 0.6182796), NumberSequenceKeypoint.new(1, 1)})
-Glow.Color = ColorSequence.new(Color3.fromRGB(91, 177, 252))
-Glow.Speed = NumberRange.new(0, 0)
-Glow.Brightness = 5
-Glow.Size = NumberSequence.new(9.1873131, 16.5032349)
-Glow.Enabled = false
-Glow.ZOffset = -0.0565939
-Glow.Rate = 50
-Glow.Texture = "rbxassetid://8708637750"
-
-local Gradient1 = Instance.new("ParticleEmitter")
-Gradient1.Name = "Gradient1"
-Gradient1.Lifetime = NumberRange.new(0.3, 0.3)
-Gradient1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.15, 0.3), NumberSequenceKeypoint.new(1, 1)})
-Gradient1.Color = ColorSequence.new(Color3.fromRGB(115, 201, 255))
-Gradient1.Speed = NumberRange.new(0, 0)
-Gradient1.Brightness = 6
-Gradient1.Size = NumberSequence.new(0, 11.6261358)
-Gradient1.Enabled = false
-Gradient1.ZOffset = 0.9187313
-Gradient1.Rate = 50
-Gradient1.Texture = "rbxassetid://8196169974"
-Gradient1.Parent = Attachment
-
-local Shards = Instance.new("ParticleEmitter")
-Shards.Name = "Shards"
-Shards.Lifetime = NumberRange.new(0.19, 0.7)
-Shards.SpreadAngle = Vector2.new(-90, 90)
-Shards.Color = ColorSequence.new(Color3.fromRGB(108, 184, 255))
-Shards.Drag = 10
-Shards.VelocitySpread = -90
-Shards.Squash = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.5705521, 0.4125001), NumberSequenceKeypoint.new(1, -0.9375)})
-Shards.Speed = NumberRange.new(97.7530136, 146.9970093)
-Shards.Brightness = 4
-Shards.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.284774, 1.2389833, 0.1534118), NumberSequenceKeypoint.new(1, 0)})
-Shards.Enabled = false
-Shards.Acceleration = Vector3.new(0, -56.961341857910156, 0)
-Shards.ZOffset = 0.5705321
-Shards.Rate = 50
-Shards.Texture = "rbxassetid://8030734851"
-Shards.Rotation = NumberRange.new(90, 90)
-Shards.Orientation = Enum.ParticleOrientation.VelocityParallel
-Shards.Parent = Attachment
-
-local ShardsDark = Instance.new("ParticleEmitter")
-ShardsDark.Name = "ShardsDark"
-ShardsDark.Lifetime = NumberRange.new(0.19, 0.35)
-ShardsDark.SpreadAngle = Vector2.new(-90, 90)
-ShardsDark.Color = ColorSequence.new(Color3.fromRGB(108, 184, 255))
-ShardsDark.Drag = 10
-ShardsDark.VelocitySpread = -90
-ShardsDark.Squash = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.5705521, 0.4125001), NumberSequenceKeypoint.new(1, -0.9375)})
-ShardsDark.Speed = NumberRange.new(97.7530136, 146.9970093)
-ShardsDark.Brightness = 4
-ShardsDark.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.290774, 0.6734411, 0.1534118), NumberSequenceKeypoint.new(1, 0)})
-ShardsDark.Enabled = false
-ShardsDark.ZOffset = 0.5705321
-ShardsDark.Rate = 50
-ShardsDark.Texture = "rbxassetid://8030734851"
-ShardsDark.Rotation = NumberRange.new(90, 90)
-ShardsDark.Orientation = Enum.ParticleOrientation.VelocityParallel
-ShardsDark.Parent = Attachment
-
-local Specs = Instance.new("ParticleEmitter")
-Specs.Name = "Specs"
-Specs.Lifetime = NumberRange.new(0.33, 1.4)
-Specs.SpreadAngle = Vector2.new(360, -1000)
-Specs.Color = ColorSequence.new(Color3.fromRGB(98, 174, 255))
-Specs.Drag = 10
-Specs.VelocitySpread = 360
-Specs.Speed = NumberRange.new(36.7492523, 146.9970093)
-Specs.Brightness = 7
-Specs.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.200774, 2.0311937, 0.4363973), NumberSequenceKeypoint.new(1, 0)})
-Specs.Enabled = false
-Specs.Acceleration = Vector3.new(0, 36.74925231933594, 0)
-Specs.Rate = 50
-Specs.Texture = "rbxassetid://8030760338"
-Specs.EmissionDirection = Enum.NormalId.Right
-Specs.Parent = Attachment
-
-local Specs1 = Instance.new("ParticleEmitter")
-Specs1.Name = "Specs"
-Specs1.Lifetime = NumberRange.new(0.33, 1.75)
-Specs1.SpreadAngle = Vector2.new(90, -90)
-Specs1.Color = ColorSequence.new(Color3.fromRGB(106, 171, 255))
-Specs1.Drag = 9
-Specs1.VelocitySpread = 90
-Specs1.Speed = NumberRange.new(42.2616425, 73.4985046)
-Specs1.Brightness = 6
-Specs1.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.210774, 0.3978962, 0.1855686), NumberSequenceKeypoint.new(1, 0)})
-Specs1.Enabled = false
-Specs1.Acceleration = Vector3.new(0, -20.21208953857422, 0)
-Specs1.ZOffset = 0.5144895
-Specs1.Rate = 50
-Specs1.Texture = "rbxassetid://8030760338"
-Specs1.Parent = Attachment
-
-local Specs2 = Instance.new("ParticleEmitter")
-Specs2.Name = "Specs"
-Specs2.Lifetime = NumberRange.new(0.19, 1.2)
-Specs2.SpreadAngle = Vector2.new(360, -1000)
-Specs2.Color = ColorSequence.new(Color3.fromRGB(98, 174, 255))
-Specs2.Drag = 10
-Specs2.VelocitySpread = 360
-Specs2.Speed = NumberRange.new(36.7492523, 146.9970093)
-Specs2.Brightness = 7
-Specs2.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.200774, 2.0311937, 0.4363973), NumberSequenceKeypoint.new(1, 0)})
-Specs2.Enabled = false
-Specs2.Acceleration = Vector3.new(0, 36.74925231933594, 0)
-Specs2.Rate = 50
-Specs2.Texture = "rbxassetid://8030760338"
-Specs2.EmissionDirection = Enum.NormalId.Right
-Specs2.Parent = Attachment
-
-local Specs21 = Instance.new("ParticleEmitter")
-Specs21.Name = "Specs2"
-Specs21.Lifetime = NumberRange.new(0.19, 1.35)
-Specs21.SpreadAngle = Vector2.new(90, -90)
-Specs21.Color = ColorSequence.new(Color3.fromRGB(106, 171, 255))
-Specs21.Drag = 12
-Specs21.VelocitySpread = 90
-Specs21.Speed = NumberRange.new(42.2616425, 73.4985046)
-Specs21.Brightness = 6
-Specs21.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.216774, 0.5721694, 0.1855686), NumberSequenceKeypoint.new(1, 0)})
-Specs21.Enabled = false
-Specs21.Acceleration = Vector3.new(0, -20.21208953857422, 0)
-Specs21.ZOffset = 0.5144895
-Specs21.Rate = 50
-Specs21.Texture = "rbxassetid://8030760338"
-Specs21.Parent = Attachment
-
-local ddddddddddddddddddd = Instance.new("ParticleEmitter")
-ddddddddddddddddddd.Name = "ddddddddddddddddddd"
-ddddddddddddddddddd.Lifetime = NumberRange.new(0.19, 0.37)
-ddddddddddddddddddd.SpreadAngle = Vector2.new(90, -90)
-ddddddddddddddddddd.LockedToPart = true
-ddddddddddddddddddd.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.6429392, 0), NumberSequenceKeypoint.new(1, 0)})
-ddddddddddddddddddd.LightEmission = 1
-ddddddddddddddddddd.Color = ColorSequence.new(Color3.fromRGB(90, 184, 255), Color3.fromRGB(165, 251, 255))
-ddddddddddddddddddd.Drag = 6
-ddddddddddddddddddd.TimeScale = 0.7
-ddddddddddddddddddd.VelocitySpread = 90
-ddddddddddddddddddd.Speed = NumberRange.new(81.5833435, 110.2477646)
-ddddddddddddddddddd.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.410774, 0.6711507, 0.3356177), NumberSequenceKeypoint.new(1, 0)})
-ddddddddddddddddddd.Enabled = false
-ddddddddddddddddddd.Acceleration = Vector3.new(0, -81.58334350585938, 0)
-ddddddddddddddddddd.ZOffset = 0.8345273
-ddddddddddddddddddd.Rate = 50
-ddddddddddddddddddd.Texture = "rbxassetid://1053546634"
-ddddddddddddddddddd.RotSpeed = NumberRange.new(-444, 166)
-ddddddddddddddddddd.Rotation = NumberRange.new(-360, 360)
-ddddddddddddddddddd.Parent = Attachment
-
-local large_shard = Instance.new("ParticleEmitter")
-large_shard.Name = "large_shard"
-large_shard.Lifetime = NumberRange.new(0.19, 0.28)
-large_shard.SpreadAngle = Vector2.new(-90, 90)
-large_shard.Color = ColorSequence.new(Color3.fromRGB(108, 184, 255))
-large_shard.Drag = 10
-large_shard.VelocitySpread = -90
-large_shard.Squash = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.5705521, 0.4125001), NumberSequenceKeypoint.new(1, -0.9375)})
-large_shard.Speed = NumberRange.new(97.7530136, 146.9970093)
-large_shard.Brightness = 4
-large_shard.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.260774, 3.515605, 0.1534118), NumberSequenceKeypoint.new(1, 0)})
-large_shard.Enabled = false
-large_shard.ZOffset = 0.5705321
-large_shard.Rate = 50
-large_shard.Texture = "rbxassetid://8030734851"
-large_shard.Rotation = NumberRange.new(90, 90)
-large_shard.Orientation = Enum.ParticleOrientation.VelocityParallel
-large_shard.Parent = Attachment
-
-local out_Specs = Instance.new("ParticleEmitter")
-out_Specs.Name = "out_Specs"
-out_Specs.Lifetime = NumberRange.new(0.19, 1)
-out_Specs.SpreadAngle = Vector2.new(44, -1000)
-out_Specs.Color = ColorSequence.new(Color3.fromRGB(98, 174, 255))
-out_Specs.Drag = 10
-out_Specs.VelocitySpread = 44
-out_Specs.Speed = NumberRange.new(36.7492523, 146.9970093)
-out_Specs.Brightness = 7
-out_Specs.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.244774, 0.5469525, 0.1433053), NumberSequenceKeypoint.new(1, 0)})
-out_Specs.Enabled = false
-out_Specs.Acceleration = Vector3.new(0, -3.215559720993042, 0)
-out_Specs.Rate = 50
-out_Specs.Texture = "rbxassetid://8030760338"
-out_Specs.EmissionDirection = Enum.NormalId.Right
-out_Specs.Parent = Attachment
-
-local Effect = Instance.new("ParticleEmitter")
-Effect.Name = "Effect"
-Effect.Lifetime = NumberRange.new(0.4, 0.7)
-Effect.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
-Effect.SpreadAngle = Vector2.new(360, -360)
-Effect.LockedToPart = true
-Effect.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1070999, 0.19375), NumberSequenceKeypoint.new(0.7761194, 0.88125), NumberSequenceKeypoint.new(1, 1)})
-Effect.LightEmission = 1
-Effect.Color = ColorSequence.new(Color3.fromRGB(92, 161, 252))
-Effect.Drag = 1
-Effect.VelocitySpread = 360
-Effect.Speed = NumberRange.new(0.0036749, 0.0036749)
-Effect.Brightness = 2.0999999
-Effect.Size = NumberSequence.new(6.9680691, 9.9213123)
-Effect.Enabled = false
-Effect.ZOffset = 0.4777403
-Effect.Rate = 50
-Effect.Texture = "rbxassetid://9484012464"
-Effect.RotSpeed = NumberRange.new(-150, -150)
-Effect.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
-Effect.Rotation = NumberRange.new(50, 50)
-Effect.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-Effect.Parent = Attachment
-
-local Crescents = Instance.new("ParticleEmitter")
-Crescents.Name = "Crescents"
-Crescents.Lifetime = NumberRange.new(0.19, 0.38)
-Crescents.SpreadAngle = Vector2.new(-360, 360)
-Crescents.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1932907, 0), NumberSequenceKeypoint.new(0.778754, 0), NumberSequenceKeypoint.new(1, 1)})
-Crescents.LightEmission = 1
-Crescents.Color = ColorSequence.new(Color3.fromRGB(92, 161, 252))
-Crescents.VelocitySpread = -360
-Crescents.Speed = NumberRange.new(0.0826858, 0.0826858)
-Crescents.Brightness = 20
-Crescents.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.398774, 8.8026266, 2.2834616), NumberSequenceKeypoint.new(1, 11.477972, 1.860431)})
-Crescents.Enabled = false
-Crescents.ZOffset = 0.4542207
-Crescents.Rate = 50
-Crescents.Texture = "rbxassetid://12509373457"
-Crescents.RotSpeed = NumberRange.new(800, 1000)
-Crescents.Rotation = NumberRange.new(-360, 360)
-Crescents.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-Crescents.Parent = Attachment
-end
-
-do --// Cosmic Explosion
-
-
-local Attachment = Instance.new("Attachment")
-Attachment.Name = "Attachment"
-
-HitEffectModule.Locals.Type["Cosmic Explosion"] = Attachment
-
-local Glow = Instance.new("ParticleEmitter")
-Glow.Name = "Glow"
-Glow.Lifetime = NumberRange.new(0.16, 0.16)
-Glow.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1421725, 0.6182796), NumberSequenceKeypoint.new(1, 1)})
-Glow.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-Glow.Speed = NumberRange.new(0, 0)
-Glow.Brightness = 5
-Glow.Size = NumberSequence.new(9.1873131, 16.5032349)
-Glow.Enabled = false
-Glow.ZOffset = -0.0565939
-Glow.Rate = 50
-Glow.Texture = "rbxassetid://8708637750"
-Glow.Parent = Attachment
-
-local Effect = Instance.new("ParticleEmitter")
-Effect.Name = "Effect"
-Effect.Lifetime = NumberRange.new(0.4, 0.7)
-Effect.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
-Effect.SpreadAngle = Vector2.new(360, -360)
-Effect.LockedToPart = true
-Effect.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1070999, 0.19375), NumberSequenceKeypoint.new(0.7761194, 0.88125), NumberSequenceKeypoint.new(1, 1)})
-Effect.LightEmission = 1
-Effect.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-Effect.Drag = 1
-Effect.VelocitySpread = 360
-Effect.Speed = NumberRange.new(0.0036749, 0.0036749)
-Effect.Brightness = 2.0999999
-Effect.Size = NumberSequence.new(6.9680691, 9.9213123)
-Effect.Enabled = false
-Effect.ZOffset = 0.4777403
-Effect.Rate = 50
-Effect.Texture = "rbxassetid://9484012464"
-Effect.RotSpeed = NumberRange.new(-150, -150)
-Effect.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
-Effect.Rotation = NumberRange.new(50, 50)
-Effect.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-Effect.Parent = Attachment
-
-local Gradient1 = Instance.new("ParticleEmitter")
-Gradient1.Name = "Gradient1"
-Gradient1.Lifetime = NumberRange.new(0.3, 0.3)
-Gradient1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.15, 0.3), NumberSequenceKeypoint.new(1, 1)})
-Gradient1.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-Gradient1.Speed = NumberRange.new(0, 0)
-Gradient1.Brightness = 6
-Gradient1.Size = NumberSequence.new(0, 11.6261358)
-Gradient1.Enabled = false
-Gradient1.ZOffset = 0.9187313
-Gradient1.Rate = 50
-Gradient1.Texture = "rbxassetid://8196169974"
-Gradient1.Parent = Attachment
-
-local Shards = Instance.new("ParticleEmitter")
-Shards.Name = "Shards"
-Shards.Lifetime = NumberRange.new(0.19, 0.7)
-Shards.SpreadAngle = Vector2.new(-90, 90)
-Shards.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-Shards.Drag = 10
-Shards.VelocitySpread = -90
-Shards.Squash = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.5705521, 0.4125001), NumberSequenceKeypoint.new(1, -0.9375)})
-Shards.Speed = NumberRange.new(97.7530136, 146.9970093)
-Shards.Brightness = 4
-Shards.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.284774, 1.2389833, 0.1534118), NumberSequenceKeypoint.new(1, 0)})
-Shards.Enabled = false
-Shards.Acceleration = Vector3.new(0, -56.961341857910156, 0)
-Shards.ZOffset = 0.5705321
-Shards.Rate = 50
-Shards.Texture = "rbxassetid://8030734851"
-Shards.Rotation = NumberRange.new(90, 90)
-Shards.Orientation = Enum.ParticleOrientation.VelocityParallel
-Shards.Parent = Attachment
-
-local Crescents = Instance.new("ParticleEmitter")
-Crescents.Name = "Crescents"
-Crescents.Lifetime = NumberRange.new(0.19, 0.38)
-Crescents.SpreadAngle = Vector2.new(-360, 360)
-Crescents.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1932907, 0), NumberSequenceKeypoint.new(0.778754, 0), NumberSequenceKeypoint.new(1, 1)})
-Crescents.LightEmission = 10
-Crescents.Color = ColorSequence.new(Color3.fromRGB(160, 96, 255))
-Crescents.VelocitySpread = -360
-Crescents.Speed = NumberRange.new(0.0826858, 0.0826858)
-Crescents.Brightness = 4
-Crescents.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.398774, 8.8026266, 2.2834616), NumberSequenceKeypoint.new(1, 11.477972, 1.860431)})
-Crescents.Enabled = false
-Crescents.ZOffset = 0.4542207
-Crescents.Rate = 50
-Crescents.Texture = "rbxassetid://12509373457"
-Crescents.RotSpeed = NumberRange.new(800, 1000)
-Crescents.Rotation = NumberRange.new(-360, 360)
-Crescents.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-Crescents.Parent = Attachment
-
-local ParticleEmitter2 = Instance.new("ParticleEmitter")
-ParticleEmitter2.Name = "ParticleEmitter2"
-ParticleEmitter2.FlipbookFramerate = NumberRange.new(20, 20)
-ParticleEmitter2.Lifetime = NumberRange.new(0.19, 0.38)
-ParticleEmitter2.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
-ParticleEmitter2.SpreadAngle = Vector2.new(360, 360)
-ParticleEmitter2.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.209842, 0.5), NumberSequenceKeypoint.new(0.503842, 0.263333), NumberSequenceKeypoint.new(0.799842, 0.5), NumberSequenceKeypoint.new(1, 1)})
-ParticleEmitter2.LightEmission = 1
-ParticleEmitter2.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-ParticleEmitter2.VelocitySpread = 360
-ParticleEmitter2.Speed = NumberRange.new(0.0161231, 0.0161231)
-ParticleEmitter2.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 4.3125), NumberSequenceKeypoint.new(0.3985056, 7.9375), NumberSequenceKeypoint.new(1, 10)})
-ParticleEmitter2.Enabled = false
-ParticleEmitter2.ZOffset = 0.15
-ParticleEmitter2.Rate = 100
-ParticleEmitter2.Texture = "http://www.roblox.com/asset/?id=12394566430"
-ParticleEmitter2.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
-ParticleEmitter2.Rotation = NumberRange.new(39, 999)
-ParticleEmitter2.Orientation = Enum.ParticleOrientation.VelocityParallel
-ParticleEmitter2.Parent = Attachment
-end
-
-do --// Coom
-
-local Attachment = Instance.new("Attachment")
-
-HitEffectModule.Locals.Type["Coom"] = Attachment
-
-local Foam = Instance.new("ParticleEmitter")
-Foam.Name = "Foam"
-Foam.LightInfluence = 0.5
-Foam.Lifetime = NumberRange.new(1, 1)
-Foam.SpreadAngle = Vector2.new(360, -360)
-Foam.VelocitySpread = 360
-Foam.Squash = NumberSequence.new(1)
-Foam.Speed = NumberRange.new(20, 20)
-Foam.Brightness = 2.5
-Foam.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.1016692, 0.6508875, 0.6508875), NumberSequenceKeypoint.new(0.6494689, 1.4201183, 0.4127519), NumberSequenceKeypoint.new(1, 0)})
-Foam.Enabled = false
-Foam.Acceleration = Vector3.new(0, -66.04029846191406, 0)
-Foam.Rate = 100
-Foam.Texture = "rbxassetid://8297030850"
-Foam.Rotation = NumberRange.new(-90, -90)
-Foam.Orientation = Enum.ParticleOrientation.VelocityParallel
-Foam.Parent = Attachment
-end
-
-do --// Slash
-local Attachment = Instance.new("Attachment")
-HitEffectModule.Locals.Type["Slash"] = Attachment
-
-local Crescents = Instance.new("ParticleEmitter")
-Crescents.Name = "Crescents"
-Crescents.Lifetime = NumberRange.new(0.19, 0.38)
-Crescents.SpreadAngle = Vector2.new(-360, 360)
-Crescents.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1932907, 0), NumberSequenceKeypoint.new(0.778754, 0), NumberSequenceKeypoint.new(1, 1)})
-Crescents.LightEmission = 10
-Crescents.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(160, 96, 255)), ColorSequenceKeypoint.new(0.3160622, Color3.fromRGB(160, 96, 255)), ColorSequenceKeypoint.new(0.5146805, Color3.fromRGB(154, 82, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(160, 96, 255))})
-Crescents.VelocitySpread = -360
-Crescents.Speed = NumberRange.new(0.0826858, 0.0826858)
-Crescents.Brightness = 4
-Crescents.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.398774, 8.8026266, 2.2834616), NumberSequenceKeypoint.new(1, 11.477972, 1.860431)})
-Crescents.Enabled = false
-Crescents.ZOffset = 0.4542207
-Crescents.Rate = 50
-Crescents.Texture = "rbxassetid://12509373457"
-Crescents.RotSpeed = NumberRange.new(800, 1000)
-Crescents.Rotation = NumberRange.new(-360, 360)
-Crescents.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-Crescents.Parent = Attachment
-end
-
-do --// Atomic Slash
-
-
-local Attachment = Instance.new("Attachment")
-
-HitEffectModule.Locals.Type["Atomic Slash"] = Attachment
-
-local Crescents = Instance.new("ParticleEmitter")
-Crescents.Name = "Crescents"
-Crescents.Lifetime = NumberRange.new(0.19, 0.38)
-Crescents.SpreadAngle = Vector2.new(-360, 360)
-Crescents.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1932907, 0), NumberSequenceKeypoint.new(0.778754, 0), NumberSequenceKeypoint.new(1, 1)})
-Crescents.LightEmission = 10
-Crescents.Color = ColorSequence.new(Color3.fromRGB(160, 96, 255))
-Crescents.VelocitySpread = -360
-Crescents.Speed = NumberRange.new(0.0826858, 0.0826858)
-Crescents.Brightness = 4
-Crescents.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.398774, 8.8026266, 2.2834616), NumberSequenceKeypoint.new(1, 11.477972, 1.860431)})
-Crescents.Enabled = false
-Crescents.ZOffset = 0.4542207
-Crescents.Rate = 50
-Crescents.Texture = "rbxassetid://12509373457"
-Crescents.RotSpeed = NumberRange.new(800, 1000)
-Crescents.Rotation = NumberRange.new(-360, 360)
-Crescents.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-Crescents.Parent = Attachment
-
-local Glow = Instance.new("ParticleEmitter")
-Glow.Name = "Glow"
-Glow.Lifetime = NumberRange.new(0.16, 0.16)
-Glow.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1421725, 0.6182796), NumberSequenceKeypoint.new(1, 1)})
-Glow.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-Glow.Speed = NumberRange.new(0, 0)
-Glow.Brightness = 5
-Glow.Size = NumberSequence.new(9.1873131, 16.5032349)
-Glow.Enabled = false
-Glow.ZOffset = -0.0565939
-Glow.Rate = 50
-Glow.Texture = "rbxassetid://8708637750"
-Glow.Parent = Attachment
-
-local Effect = Instance.new("ParticleEmitter")
-Effect.Name = "Effect"
-Effect.Lifetime = NumberRange.new(0.4, 0.7)
-Effect.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid4x4
-Effect.SpreadAngle = Vector2.new(360, -360)
-Effect.LockedToPart = true
-Effect.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1070999, 0.19375), NumberSequenceKeypoint.new(0.7761194, 0.88125), NumberSequenceKeypoint.new(1, 1)})
-Effect.LightEmission = 1
-Effect.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-Effect.Drag = 1
-Effect.VelocitySpread = 360
-Effect.Speed = NumberRange.new(0.0036749, 0.0036749)
-Effect.Brightness = 2.0999999
-Effect.Size = NumberSequence.new(6.9680691, 9.9213123)
-Effect.Enabled = false
-Effect.ZOffset = 0.4777403
-Effect.Rate = 50
-Effect.Texture = "rbxassetid://9484012464"
-Effect.RotSpeed = NumberRange.new(-150, -150)
-Effect.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
-Effect.Rotation = NumberRange.new(50, 50)
-Effect.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-Effect.Parent = Attachment
-
-local Gradient1 = Instance.new("ParticleEmitter")
-Gradient1.Name = "Gradient1"
-Gradient1.Lifetime = NumberRange.new(0.3, 0.3)
-Gradient1.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.15, 0.3), NumberSequenceKeypoint.new(1, 1)})
-Gradient1.Color = ColorSequence.new(Color3.fromRGB(173, 82, 252))
-Gradient1.Speed = NumberRange.new(0, 0)
-Gradient1.Brightness = 6
-Gradient1.Size = NumberSequence.new(0, 11.6261358)
-Gradient1.Enabled = false
-Gradient1.ZOffset = 0.9187313
-Gradient1.Rate = 50
-Gradient1.Texture = "rbxassetid://8196169974"
-Gradient1.Parent = Attachment
-
-local Shards = Instance.new("ParticleEmitter")
-Shards.Name = "Shards"
-Shards.Lifetime = NumberRange.new(0.19, 0.7)
-Shards.SpreadAngle = Vector2.new(-90, 90)
-Shards.Color = ColorSequence.new(Color3.fromRGB(179, 145, 253))
-Shards.Drag = 10
-Shards.VelocitySpread = -90
-Shards.Squash = NumberSequence.new({NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.5705521, 0.4125001), NumberSequenceKeypoint.new(1, -0.9375)})
-Shards.Speed = NumberRange.new(97.7530136, 146.9970093)
-Shards.Brightness = 4
-Shards.Size = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.284774, 1.2389833, 0.1534118), NumberSequenceKeypoint.new(1, 0)})
-Shards.Enabled = false
-Shards.Acceleration = Vector3.new(0, -56.961341857910156, 0)
-Shards.ZOffset = 0.5705321
-Shards.Rate = 50
-Shards.Texture = "rbxassetid://8030734851"
-Shards.Rotation = NumberRange.new(90, 90)
-Shards.Orientation = Enum.ParticleOrientation.VelocityParallel
-Shards.Parent = Attachment
-end
-
-
-
-
-do --// Aura Burst
-    local attachment = Instance.new("Attachment")
-    attachment.Name = "Attachment"
-    HitEffectModule.Locals.Type["AuraBurst"] = attachment
-    
-
-local useparticle2 = Instance.new('ParticleEmitter')
-useparticle2.Name = "useparticle2"
-useparticle2.Acceleration = Vector3.new(0, 10, 0)
-useparticle2.Brightness = 10
-useparticle2.Color = ColorSequence.new(Color3.new(0, 1, 0.333333), Color3.new(0, 0, 1))
-useparticle2.Drag = 3
-useparticle2.Enabled = false
-useparticle2.Lifetime = NumberRange.new(0.3, 10)
-useparticle2.LightEmission = 1
-useparticle2.Rate = 50
-useparticle2.RotSpeed = NumberRange.new(-150, 150)
-useparticle2.Rotation = NumberRange.new(-360, 360)
-useparticle2.Size = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.19467, 0.819203),
-    NumberSequenceKeypoint.new(1, 0)
-})
-useparticle2.Speed = NumberRange.new(4.49742, 34.4802)
-useparticle2.SpreadAngle = Vector2.new(360, 360)
-useparticle2.Texture = "rbxassetid://16171528032"
-useparticle2.Parent = attachment
-
-local useparticle = Instance.new('ParticleEmitter')
-useparticle.Name = "useparticle"
-useparticle.Acceleration = Vector3.new(0, 10, 0)
-useparticle.Brightness = 10
-useparticle.Color = ColorSequence.new(Color3.new(0, 1, 0.403922), Color3.new(0.12549, 0, 1))
-useparticle.Drag = 3
-useparticle.Enabled = false
-useparticle.Lifetime = NumberRange.new(0.3, 10)
-useparticle.LightEmission = 1
-useparticle.Rate = 50
-useparticle.RotSpeed = NumberRange.new(-150, 150)
-useparticle.Rotation = NumberRange.new(-360, 360)
-useparticle.Size = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.19467, 0.819203),
-    NumberSequenceKeypoint.new(1, 0)
-})
-useparticle.Speed = NumberRange.new(4.49742, 34.4802)
-useparticle.SpreadAngle = Vector2.new(360, 360)
-useparticle.Texture = "rbxassetid://16171528032"
-useparticle.Parent = attachment
-
-local circles2 = Instance.new('ParticleEmitter')
-circles2.Name = "circles2"
-circles2.Acceleration = Vector3.new(0, 0, 0.001)
-circles2.Brightness = 10
-circles2.Color = ColorSequence.new(Color3.new(0, 1, 0.541176), Color3.new(0.0784314, 0, 1))
-circles2.Enabled = false
-circles2.Lifetime = NumberRange.new(0.9, 0.9)
-circles2.LightInfluence = 0.35
-circles2.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-circles2.Rate = 4
-circles2.RotSpeed = NumberRange.new(150, 150)
-circles2.Size = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.20394, 8.79781),
-    NumberSequenceKeypoint.new(1, 10)
-})
-circles2.Speed = NumberRange.new(0.01, 0.01)
-circles2.SpreadAngle = Vector2.new(360, 360)
-circles2.Texture = "http://www.roblox.com/asset/?id=6835970470"
-circles2.Transparency = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.840125, 0.83125),
-    NumberSequenceKeypoint.new(1, 1)
-})
-circles2.Parent = attachment
-
-local circles = Instance.new('ParticleEmitter')
-circles.Name = "circles"
-circles.Acceleration = Vector3.new(0, 0, 0.001)
-circles.Brightness = 10
-circles.Color = ColorSequence.new(Color3.new(0, 1, 0.45098), Color3.new(0.133333, 0, 1))
-circles.Enabled = false
-circles.Lifetime = NumberRange.new(0.9, 0.9)
-circles.LightInfluence = 0.35
-circles.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-circles.Rate = 4
-circles.RotSpeed = NumberRange.new(150, 150)
-circles.Size = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.20394, 8.79781),
-    NumberSequenceKeypoint.new(1, 10)
-})
-circles.Speed = NumberRange.new(0.01, 0.01)
-circles.SpreadAngle = Vector2.new(360, 360)
-circles.Texture = "http://www.roblox.com/asset/?id=6835970470"
-circles.Transparency = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.840125, 0.83125),
-    NumberSequenceKeypoint.new(1, 1)
-})
-circles.Parent = attachment
-end
-
-do --// Thunder
-    local attachment = Instance.new("Attachment")
-    attachment.Name = "Attachment"
-HitEffectModule.Locals.Type["Thunder"] = attachment
-
-local ELECTRIC2 = Instance.new('ParticleEmitter')
-ELECTRIC2.Parent = attachment
-ELECTRIC2.Name = "ELECTRIC"
-ELECTRIC2.Brightness = 3
-ELECTRIC2.Color = ColorSequence.new(Color3.new(0, 0.52549, 0.780392), Color3.new(1, 0, 1))
-ELECTRIC2.FlipbookLayout = Enum.ParticleFlipbookLayout.Grid8x8
-ELECTRIC2.FlipbookMode = Enum.ParticleFlipbookMode.OneShot
-ELECTRIC2.Lifetime = NumberRange.new(1, 3)
-ELECTRIC2.LightEmission = 1
-ELECTRIC2.Orientation = Enum.ParticleOrientation.FacingCameraWorldUp
-ELECTRIC2.Rate = 5
-ELECTRIC2.Size = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 19),
-    NumberSequenceKeypoint.new(1, 0)
-})
-ELECTRIC2.Speed = NumberRange.new(0, 0)
-ELECTRIC2.SpreadAngle = Vector2.new(-360, 360)
-ELECTRIC2.Texture = "rbxassetid://10547286472"
-ELECTRIC2.Transparency = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 0),
-    NumberSequenceKeypoint.new(0.25, 1),
-    NumberSequenceKeypoint.new(1, 1)
-})
-
-local ParticleEmitter = Instance.new('ParticleEmitter') 
-ParticleEmitter.Color = ColorSequence.new(
-    Color3.fromRGB(0, 0, 255),
-    Color3.fromRGB(0, 0, 255),
-    Color3.fromRGB(0, 0, 255),
-    Color3.fromRGB(0, 0, 139)
-)
-ParticleEmitter.Drag = 5
-ParticleEmitter.Lifetime = NumberRange.new(0.4, 0.4)
-ParticleEmitter.LightEmission = 0.5
-ParticleEmitter.Rate = 5
-ParticleEmitter.Parent = attachment
-ParticleEmitter.RotSpeed = NumberRange.new(200, 250)
-ParticleEmitter.Rotation = NumberRange.new(-360, 360)
-ParticleEmitter.Size = NumberSequence.new({
-    NumberSequenceKeypoint.new(0, 7),
-    NumberSequenceKeypoint.new(1, 0)
-})
-ParticleEmitter.Speed = NumberRange.new(0, 0)
-ParticleEmitter.Texture = "http://www.roblox.com/asset/?id=467188845"
-ParticleEmitter.Transparency = NumberSequence.new(0, 0.43125, 0, 0.299656, 0.04375, 0, 0.874618, 0, 0, 1, 0, 0)
-ParticleEmitter.ZOffset = 1
-end
-
-
-do
-    local part = Instance.new("Part")
-    part.Parent = ReplicatedStorage
-    local attachment = Instance.new("Attachment")
-    attachment.Name = "Attachment"
-    attachment.Parent = part
-    HitEffectModule.Locals.Type["Nova"] = attachment
-
-    local function createParticleEmitter(acceleration)
-        local emitter = Instance.new("ParticleEmitter")
-        emitter.Name = "ParticleEmitter"
-        emitter.Acceleration = acceleration
-        emitter.Color = ColorSequence.new({
-            ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 0, 0)),
-            ColorSequenceKeypoint.new(0.495, HitEffectModule.Settings.HitEffect.Color),
-            ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
-        })
-        emitter.Lifetime = NumberRange.new(0.5, 0.5)
-        emitter.LightEmission = 1
-        emitter.LockedToPart = true
-        emitter.Rate = 1
-        emitter.Rotation = NumberRange.new(0, 360)
-        emitter.Size = NumberSequence.new({
-            NumberSequenceKeypoint.new(0, 1),
-            NumberSequenceKeypoint.new(1, 10),
-            NumberSequenceKeypoint.new(1, 1)
-        })
-        emitter.Speed = NumberRange.new(0, 0)
-        emitter.Texture = "rbxassetid://1084991215"
-        emitter.Transparency = NumberSequence.new({
-            NumberSequenceKeypoint.new(0, 0),
-            NumberSequenceKeypoint.new(0, 0.1),
-            NumberSequenceKeypoint.new(0.534, 0.25),
-            NumberSequenceKeypoint.new(1, 0.5),
-            NumberSequenceKeypoint.new(1, 0)
-        })
-        emitter.ZOffset = 1
-        emitter.Parent = attachment
-        return emitter
-    end
-
-    createParticleEmitter(Vector3.new(0, 0, 1))
-    local perpendicularEmitter = createParticleEmitter(Vector3.new(0, 1, -0.001))
-    perpendicularEmitter.Orientation = Enum.ParticleOrientation.VelocityPerpendicular
-end
-
-HitEffectModule.Functions.Effect = function(character, color)
-    if not TargetAimbot.HitEffect and character then return end
-    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
-    if not humanoidRootPart then return end
-
-    local effectAttachment = HitEffectModule.Locals.Type[TargetAimbot.HitEffectType]:Clone()
-    effectAttachment.Parent = humanoidRootPart
-
-    for _, emitter in pairs(effectAttachment:GetChildren()) do
-        if emitter:IsA("ParticleEmitter") then
-            emitter.Color = ColorSequence.new({
-                ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 0, 0)),
-                ColorSequenceKeypoint.new(0.495, color),
-                ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
-            })
-            emitter:Emit()
-        end
-    end
-
-    task.delay(2, function()
-        effectAttachment:Destroy()
-    end)
-end
-
-local PlayHitSound = LPH_NO_VIRTUALIZE(function() 
-    if TargetAimbot.HitSounds and hitsounds[TargetAimbot.HitSound] then
-        local sound = Instance.new("Sound")
-        sound.SoundId = hitsounds[TargetAimbot.HitSound]
-        sound.Parent = SoundService
-        sound:Play()
-        sound.Ended:Connect(function()
-            sound:Destroy()
-        end)
-    end
-end) 
-
-
-
-local TweenService = game:GetService("TweenService")
-
-local  HitChams = LPH_NO_VIRTUALIZE(function(Player)
-    if not TargetAimbot.HitChams then return end
-
-    if Player and Player.Character and Player.Character:FindFirstChild("HumanoidRootPart") then
-        Player.Character.Archivable = true
-        local Cloned = Player.Character:Clone()
-        Cloned.Name = "Player Clone"
-
-        local BodyParts = {
-            "Head", "UpperTorso", "LowerTorso",
-            "LeftUpperArm", "LeftLowerArm", "LeftHand",
-            "RightUpperArm", "RightLowerArm", "RightHand",
-            "LeftUpperLeg", "LeftLowerLeg", "LeftFoot",
-            "RightUpperLeg", "RightLowerLeg", "RightFoot"
+    esp = {
+        drawings = {}, 
+    },
+    visuals = {
+        local_player = nil, 
+        hit_detection = {
+            health_factor = nil, 
+            current_player = nil, 
+            data = {}, 
+        },
+        lighting_save = {
+            ["ColorShift_Bottom"] = lighting.ColorShift_Bottom, 
+            ["Ambient"] = lighting.Ambient, 
+            ["OutdoorAmbient"] = lighting.OutdoorAmbient, 
+            ["ColorShift_Top"] = lighting.ColorShift_Top, 
+            ["FogColor"] = lighting.FogColor, 
+            ["FogEnd"] = lighting.FogEnd, 
+            ["FogStart"] = lighting.FogStart,
+            ["ClockTime"] = lighting.ClockTime, 
+            ["Brightness"] = lighting.Brightness
+        }, 
+        trails = {
+            attachments = {},
+            trail;
         }
-
-        for _, Part in ipairs(Cloned:GetChildren()) do
-            if Part:IsA("BasePart") then
-                local PartValid = false
-                for _, validPart in ipairs(BodyParts) do
-                    if Part.Name == validPart then
-                        PartValid = true
-                        break
-                    end
-                end
-                
-                if not PartValid then
-                    Part:Destroy()
-                end
-            elseif Part:IsA("Accessory") or Part:IsA("Tool") or Part.Name == "face" or Part:IsA("Shirt") or Part:IsA("Pants") or Part:IsA("Hat") then
-                Part:Destroy()
-            end
-        end
-
-        if Cloned:FindFirstChild("Humanoid") then
-            Cloned.Humanoid:Destroy()
-        end
-
-        for _, BodyPart in ipairs(Cloned:GetChildren()) do
-            if BodyPart:IsA("BasePart") then
-                BodyPart.CanCollide = false
-                BodyPart.Anchored = true
-                BodyPart.Transparency = TargetAimbot.HitChamsTransparency
-                BodyPart.Color = TargetAimbot.HitChamsColor
-                BodyPart.Material = TargetAimbot.HitChamsMaterial
-            end
-        end
-
-        if Cloned:FindFirstChild("Head") then
-            local Head = Cloned.Head
-            Head.Transparency = TargetAimbot.HitChamsTransparency
-            Head.Color = TargetAimbot.HitChamsColor
-            Head.Material = TargetAimbot.HitChamsMaterial
-
-            if Head:FindFirstChild("face") then
-                Head.face:Destroy()
-            end
-        end
-
-        Cloned.Parent = game.Workspace
-
-        local tweenInfo = TweenInfo.new(
-            TargetAimbot.HitChamsDuration,
-            Enum.EasingStyle.Sine,
-            Enum.EasingDirection.InOut,
-            0,
-            true
-        )
-
-        for _, BodyPart in ipairs(Cloned:GetChildren()) do
-            if BodyPart:IsA("BasePart") then
-                local tween = TweenService:Create(BodyPart, tweenInfo, { Transparency = 1 })
-                tween:Play()
-            end
-        end
-
-        task.delay(TargetAimbot.HitChamsDuration, function()
-            if Cloned and Cloned.Parent then
-                Cloned:Destroy()
-            end
-        end)
-    end
-end) 
-
-local Client = Players.LocalPlayer
-        local Mouse = Client:GetMouse()
-
-local HitChamsSkeleton = LPH_NO_VIRTUALIZE(function(Player)
-    if not TargetAimbot.HitSkele then return end
-
-    if Player and Player.Character and Player.Character:FindFirstChild("HumanoidRootPart") then
-        local bones = {
-            {"Head", "UpperTorso"},
-            {"UpperTorso", "LowerTorso"},
-            {"UpperTorso", "RightUpperArm"},
-            {"RightUpperArm", "RightLowerArm"},
-            {"RightLowerArm", "RightHand"},
-            {"UpperTorso", "LeftUpperArm"},
-            {"LeftUpperArm", "LeftLowerArm"},
-            {"LeftLowerArm", "LeftHand"},
-            {"LowerTorso", "RightUpperLeg"},
-            {"RightUpperLeg", "RightLowerLeg"},
-            {"RightLowerLeg", "RightFoot"},
-            {"LowerTorso", "LeftUpperLeg"},
-            {"LeftUpperLeg", "LeftLowerLeg"},
-            {"LeftLowerLeg", "LeftFoot"}
-        }
-
-        local lines = {}
-
-        for _, bonePair in ipairs(bones) do
-            local parentBone = Player.Character:FindFirstChild(bonePair[1])
-            local childBone = Player.Character:FindFirstChild(bonePair[2])
-
-            if parentBone and childBone then
-                local line = Instance.new("Part")
-                line.Size = Vector3.new(0.02, 0.02, (parentBone.Position - childBone.Position).Magnitude)
-                line.CFrame = CFrame.new(parentBone.Position, childBone.Position) * CFrame.new(0, 0, -line.Size.Z / 2)
-                line.Anchored = true
-                line.CanCollide = false
-                line.Transparency = TargetAimbot.HitChamsTransparency
-                line.Color = TargetAimbot.SkeleColor
-                line.Material = Enum.Material.Neon
-                line.Parent = workspace
-
-                local tweenInfo = TweenInfo.new(TargetAimbot.HitChamsDuration / 0.2,  Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-                local tween = TweenService:Create(line, tweenInfo, {Transparency = 1})
-                tween:Play()
-
-                table.insert(lines, line)
-            end
-        end
-
-        task.delay(TargetAimbot.HitChamsDuration, function()
-            for _, line in ipairs(lines) do
-                if line and line.Parent then
-                    line:Destroy()
-                end
-            end
-        end)
-    end
-end)
-
-local targetHealth = nil
-
-local updateTargetHealth = LPH_NO_VIRTUALIZE(function()
-    if TargBindEnabled and TargetPlr and TargetPlr.Character then
-        local humanoid = TargetPlr.Character:FindFirstChild("Humanoid")
-        if humanoid then
-            local currentHealth = humanoid.Health
-            if currentHealth < targetHealth then
-                local damageDealt = targetHealth - currentHealth
-                local damageText = string.format("%d", math.round(damageDealt))
-                local remainingValue = string.format("%d", math.max(currentHealth, 0))
-                local selectedPart = tostring(Psalms.Tech.SelectedPart)
-
-                if Hitnotify then
-                    local realColor = "#" .. Library.Accent:ToHex()
-                    Library:Notification(
-                        '> Hit <font color="'..realColor..'">'..TargetPlr.DisplayName..'</font> on <font color="'..realColor..'">'..selectedPart..'</font> for <font color="'..realColor..'">'..damageText..'</font> ('..remainingValue..' remaining)',
-                        1.5
-                    )
-                end
-                HitEffectModule.Functions.Effect(TargetPlr.Character, TargetAimbot.HitEffectColor)
-                PlayHitSound()
-                HitChams(TargetPlr)
-                HitChamsSkeleton(TargetPlr)
-            end
-            targetHealth = currentHealth
-        end
-    end
-end)
-
-
-
-RunService.RenderStepped:Connect(LPH_JIT(function()
-    if TargetAimbot.Enabled and TargBindEnabled and TargetAimbot.Highlight and TargetPlr and TargetPlr.Character and Highlight then
-        TargHighlight.FillColor = TargetAimbot.HighlightColor1
-TargHighlight.OutlineColor = TargetAimbot.HighlightColor2
-TargHighlight.Adornee = TargetPlr.Character
-        TargHighlight.Enabled = true
-    else
-        TargHighlight.Adornee = nil
-        TargHighlight.Enabled = false
-    end
-end)) 
-
-
-local crosshair_position = "Middle"
-
-local Cursor = loadstring(game:HttpGet("https://gist.githubusercontent.com/CongoOhioDog/53ec2f8bdde91bda1d9a17fe5d11e23f/raw/1e5dde366ce1f20ea6621ed230837eb69f441dbc/gistfile1.txt",true))()
-getgenv().crosshair.color = Library.Accent
-    getgenv().crosshair.mode = "Middle"
-    getgenv().crosshair.sticky = false
-getgenv().crosshair.enabled = false
-getgenv().crosshair.spin = false
-
-
-
-RunService.PostSimulation:Connect(LPH_JIT(function()
-    if getgenv().crosshair.sticky and TargetPlr and TargetPlr.Character then
-        local TargetPart = TargetPlr.Character:FindFirstChild(Psalms.Tech.SelectedPart)
-        if TargetPart then
-            local Position = Camera:WorldToViewportPoint(TargetPart.Position)
-            getgenv().crosshair.mode = 'custom'
-            getgenv().crosshair.position = Vector2.new(Position.X, Position.Y)
-        end
-    else
-        getgenv().crosshair.mode = crosshair_position
-        Position = nil
-        TargetPart = nil
-    end
-end))
-
-local TargetFuturePosition = LPH_NO_VIRTUALIZE(function()
-    local selectedPart = Psalms.Tech.SelectedPart
-    local targetPart = TargetPlr.Character[selectedPart]
-
-    if targetPart then
-        local currentTick = tick()
-        local currentPos = targetPart.CFrame
-
-        local velocity = Vector3.new(0, 0, 0)
-        
-        if Psalms.Tech.ResolverEnabled then
-            if Psalms.Tech.RESOLVER == "Recalculate" then
-                if lastPos then
-                    local delta = currentTick - lastTick
-                    if delta > 0 then
-                        local positionDifference = currentPos - lastPos
-                        velocity = positionDifference / delta
-                    end
-                end
-                lastPos = currentPos
-                lastTick = currentTick
-            elseif Psalms.Tech.RESOLVER == "MoveDirection" then
-                velocity = TargetPlr.Character.Humanoid.MoveDirection * TargetPlr.Character.Humanoid.WalkSpeed
-            elseif Psalms.Tech.RESOLVER == "LookVector" then
-                velocity = targetPart.CFrame.LookVector * Psalms.Tech.HorizontalPrediction * 1.5
-            end
-        else
-            velocity = targetPart.AssemblyLinearVelocity
-        end
-
-        local horizontalPrediction = Psalms.Tech.HorizontalPrediction
-        local verticalPrediction = Psalms.Tech.VerticalPrediction
-        local jumpOffset = Psalms.Tech.jumpoffset or 0
-
-        if Psalms.Tech.UseVertical then
-            return Vector3.new(
-                currentPos.X + (velocity.X / horizontalPrediction),
-                currentPos.Y + (velocity.Y / verticalPrediction),
-                currentPos.Z + (velocity.Z / horizontalPrediction)
-            ) + Vector3.new(0, Psalms.Tech.jumpoffset, 0)
-        else
-                       return Vector3.new(
-                currentPos.X + (velocity.X * horizontalPrediction),
-                currentPos.Y + (velocity.Y * verticalPrediction),
-                currentPos.Z + (velocity.Z * horizontalPrediction)
-            ) + Vector3.new(0, Psalms.Tech.jumpoffset, 0)
-        end
-    end
-
-    return nil
-end)
-
-
-local NEWFrame = LPH_NO_VIRTUALIZE(function()
-    local targetPosition = TargetPlr.Character.HumanoidRootPart.Position
-
-    if TargetAimbot.CSync.Type == "Random" then
-        return CFrame.new(
-            targetPosition + Vector3.new(
-                math.random(-TargetAimbot.CSync.RandomAmount, TargetAimbot.CSync.RandomAmount),
-                math.random(0, TargetAimbot.CSync.RandomAmount),
-                math.random(-TargetAimbot.CSync.RandomAmount, TargetAimbot.CSync.RandomAmount)
-            )
-        ) * CFrame.Angles(
-            math.rad(math.random(0, 360)),
-            math.rad(math.random(0, 360)),
-            math.rad(math.random(0, 360))
-        )
-    elseif TargetAimbot.CSync.Type == "Orbit" then
-        local CurrentTime = tick()
-        return CFrame.new(targetPosition) *
-            CFrame.Angles(0, 2 * math.pi * CurrentTime * TargetAimbot.CSync.Speed % (2 * math.pi), 0) *
-            CFrame.new(0, TargetAimbot.CSync.Height, TargetAimbot.CSync.Distance)
-    elseif TargetAimbot.CSync.Type == "Spiral" then
-        local CurrentTime = tick()
-        local angle = 2 * math.pi * CurrentTime * TargetAimbot.CSync.Speed % (2 * math.pi)
-        local spiralRadius = TargetAimbot.CSync.Distance + math.sin(CurrentTime) * TargetAimbot.CSync.RandomAmount
-        return CFrame.new(targetPosition) *
-            CFrame.Angles(0, angle, 0) *
-            CFrame.new(spiralRadius, TargetAimbot.CSync.Height, 0)
-    elseif TargetAimbot.CSync.Type == "Spherical" then
-        local CurrentTime = tick()
-        local radius = TargetAimbot.CSync.Distance
-        local sphericalX = radius * math.sin(CurrentTime) * math.cos(CurrentTime * TargetAimbot.CSync.Speed)
-        local sphericalY = radius * math.sin(CurrentTime) * math.sin(CurrentTime * TargetAimbot.CSync.Speed)
-        local sphericalZ = radius * math.cos(CurrentTime)
-        return CFrame.new(targetPosition + Vector3.new(sphericalX, sphericalY, sphericalZ))
-    elseif TargetAimbot.CSync.Type == "Attach" then
-        local attach = TargetFuturePosition()
-        return CFrame.new(attach)
-    end
-end) 
-
-
-
-local utility = {};
-
-local function GetBullet()
-    if workspace:FindFirstChild("Ignored") and workspace.Ignored:FindFirstChild("Siren") and workspace.Ignored.Siren:FindFirstChild("Radius") then
-        return {
-            BulletPath = workspace.Ignored.Siren.Radius,
-            BulletName = "BULLET_RAYS",
-            BulletBeamName = "GunBeam"
-        }
-    elseif workspace:FindFirstChild("Ignored")  then
-        return {
-            BulletPath = workspace.Ignored,
-            BulletName = "BULLET_RAYS",
-            BulletBeamName = "GunBeam"
-        }
-    elseif workspace then
-        return {
-            BulletPath = workspace,
-            BulletName = "Part",
-            BulletBeamName = "gb"
-        }
-    end
-    return nil
-end
-
-local support = GetBullet()
-local bullet_beam_name = support.BulletBeamName
-local bullet_name = support.BulletName
-local bullet_path = support.BulletPath
-
-Configurations = {
-    Visuals = {
-        Bullet_Trails = {
-            Enabled = false,
-            Width = 1.0,
-            Duration = 3,
-            Fade = false,
-            FadeDuration = 3,
-            Color  = Library.Accent,
-            Texture = "Electro" -- 12781803086
-        }
-    }
-}
-
-
-
-local BulletTexture = {
-    Electro = "rbxassetid://139193109954329",
-    Cool = "rbxassetid://116848240236550",
-    Cum = "rbxassetid://88263664141635"
-}
-
-local utility = {}; do
-utility.instance_new = function(type, properties)
-        local instance = Instance.new(type);
-
-        for property, value in properties do
-            instance[property] = value;
-        end;
-
-        return instance;
-    end;
-
-    utility.new_connection = function(type, callback) --// by all means do NOT virtualize this
-        local connection = type:Connect(callback)
-        table.insert(connections, connection)
-        return connection
-    end
-
-    utility.create_beam = LPH_NO_VIRTUALIZE(function(BulletTex, wid, from, to, color_1, color_2, duration, fade_enabled, fade_duration)
-        local tween
-        local total_time = 0
-
-        local main_part = utility.instance_new("Part", {
-            Parent = workspace,
-            Size = Vector3.new(0, 0, 0),
-            Massless = true,
-            Transparency = 1,
-            CanCollide = false,
-            Position = from,
-            Anchored = true
-        })
-
-        local part0 = utility.instance_new("Part", {
-            Parent = main_part,
-            Size = Vector3.new(0, 0, 0),
-            Massless = true,
-            Transparency = 1,
-            CanCollide = false,
-            Position = from,
-            Anchored = true
-        })
-
-        local part1 = utility.instance_new("Part", {
-            Parent = main_part,
-            Size = Vector3.new(0, 0, 0),
-            Massless = true,
-            Transparency = 1,
-            CanCollide = false,
-            Position = to,
-            Anchored = true
-        })
-
-        local attachment0 = utility.instance_new("Attachment", {Parent = part0})
-        local attachment1 = utility.instance_new("Attachment", {Parent = part1})
-
-        local beam = utility.instance_new("Beam", {
-    Texture = BulletTex,
-    TextureMode = Enum.TextureMode.Wrap,
-    TextureLength = 10,
-    LightEmission = 10, 
-    LightInfluence = 1,
-    FaceCamera = true,
-    ZOffset = -1,
-    Transparency = NumberSequence.new({
-        NumberSequenceKeypoint.new(0, 0),
-        NumberSequenceKeypoint.new(1, 1),
-    }),
-    Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, color_1),
-        ColorSequenceKeypoint.new(1, color_2),
-    }),
-    Width0 = wid, 
-    Width1 = wid, 
-    Attachment0 = attachment0,
-    Attachment1 = attachment1,
-    Enabled = true,
-    Parent = main_part
-})
-
-        if fade_enabled then
-            tween = utility.new_connection(RunService.RenderStepped, function(delta_time) --// credits to Xander
-                total_time += delta_time
-                beam.Transparency = NumberSequence.new(
-                    TweenService:GetValue((total_time / fade_duration), Enum.EasingStyle.Quad, Enum.EasingDirection.In)
-                )
-            end)
-        end
-
-        task.delay(duration, function()
-            main_part:Destroy()
-            if tween then
-                tween:Disconnect()
-            end
-        end)
-    end)
-end
-
-local Utility = {}
-
-local function SirenAdded(Obj)
-        local Character = LocalPlayer.Character
-        local RootPart = Character and Character:FindFirstChild("HumanoidRootPart")
-
-        local function VerifyBullet(obj)
-            return (obj.Name == bullet_name or obj:FindFirstChild("Attachment") or obj:FindFirstChild(bullet_beam_name)) and obj
-        end
-
-        local PlayerChecks = {PlayerGun = false}
-        local BulletRay = VerifyBullet(Obj)
-    
-        if BulletRay and RootPart then
-            local Mag = (RootPart.Position - BulletRay.Position).Magnitude
-            if Mag <= 13 then PlayerChecks.PlayerGun = true end
-
-            if PlayerChecks.PlayerGun then
-                local GunBeam = BulletRay:WaitForChild(bullet_beam_name)
-                
-                local Attachment0 = GunBeam.Attachment0 -- closest to player
-                local Attachment1 = GunBeam.Attachment1 -- mouse position
-
-
-            if Configurations.Visuals.Bullet_Trails.Enabled then
-                GunBeam:Destroy()
-                utility.create_beam(
-BulletTexture[Configurations.Visuals.Bullet_Trails.Texture],
-Configurations.Visuals.Bullet_Trails.Width, 
-                    BulletRay.Position,
-                    Attachment1.WorldCFrame.Position,
-                    Configurations.Visuals.Bullet_Trails.Color,
-                    Configurations.Visuals.Bullet_Trails.Color,
-                    Configurations.Visuals.Bullet_Trails.Duration,
-                    Configurations.Visuals.Bullet_Trails.Fade,
-                    Configurations.Visuals.Bullet_Trails.Duration
-                )
-            end
-        end
-    end
-end
-
-if bullet_path then
-    bullet_path.ChildAdded:Connect(SirenAdded)
-end
-
-getgenv().esp = {
-TargetOnly = false,
-    AutoStep = true, -- automatically updates the esp, you can disable this and use Player:Step() if you want to manually update them
-    CharacterSize = Vector3.new(4, 5.75, 1.5),
-    CharacterOffset = CFrame.new(0, -0.25, 0),
-    UseBoundingBox = false, -- will use bounding box instead of size preset for dynamic box
-
-    PriorityColor = Color3.new(1,0.25,0.25),
-
-    BoxEnabled = false,
-    BoxCorners = false,
-    BoxDynamic = false,
-    BoxStaticXFactor = 1.3,
-    BoxStaticYFactor = 1.6,
-    BoxColor = Color3.fromRGB(255, 255, 255),
-    
-    SkeletonEnabled = false,
-    SkeletonColor = Color3.fromRGB(255, 255, 255),
-    SkeletonMaxDistance = 300,
-
-    ChamsEnabled = false,
-    ChamsInnerColor = Color3.fromRGB(102, 60, 153),
-    ChamsOuterColor = Color3.fromRGB(0, 0, 0),
-    ChamsInnerTransparency = 0.5,
-    ChamsOuterTransparency = 0.5,
-
-
-    TextEnabled = false,
-    TextColor = Color3.fromRGB(255, 255, 255),
-    TextLayout = {
-        ['nametag']  = { enabled = true, position = 'top', order = 1 },
-        ['name']     = { enabled = true, position = 'top', order = 2 },
-        ['health']   = { enabled = true, position = 'left', order = 1, bar = 'health' },
-        ['tool']     = { enabled = true, position = 'bottom', suffix = '', prefix = '', order = 1 },
-        ['distance'] = { enabled = true, position = 'bottom', suffix = 'm', order = 2 },
+    },
+    misc = {
+        auto_shoot_clock = os.clock(), 
+        buying_armor = false 
+    }, 
+    config = {
+        saving = {current = {}}, 
+        luas = {}, 
     },
 
-    BarLayout = {
-        ['health'] = { enabled = false, position = 'left', order = 1, color_empty = Color3.fromRGB(176, 84, 84), color_full = Color3.fromRGB(140, 250, 140) }
-    }
-    
+    drawings = {}, 
+    instances = {}, 
+
+    connections = {},
+    typing_check = false, 
+
+    delta = nil, 
+    radians = 0, 
+
+    directory = "nebula_tech",
+    path = game:GetObjects("rbxassetid://18603602811")[1], 
 }
 
-
-
-
-
-
-
-local world_to_viewport = Camera.WorldToViewportPoint
-local inf = math.huge
-
-local skeleton_connections = {
-    {'UpperTorso', 'Head', Vector3.new(0,0.4,0), Vector3.new(0,-0.2,0)},
-    {'UpperTorso', 'LowerTorso', Vector3.new(0,0.4,0)},
-
-    {'UpperTorso', 'RightUpperArm', Vector3.new(0,0.4,0)},
-    {'UpperTorso', 'LeftUpperArm', Vector3.new(0,0.4,0)},
-    {'RightUpperArm', 'RightHand'},
-    {'LeftUpperArm', 'LeftHand'},
-
-    {'LowerTorso', 'LeftUpperLeg'},
-    {'LeftUpperLeg', 'LeftFoot'},
-    {'LowerTorso', 'RightUpperLeg'},
-    {'RightUpperLeg', 'RightFoot'}
-}
-
-function vector2_floor(vector2)
-    return Vector2.new(math.floor(vector2.X), math.floor(vector2.Y))
+if not LPH_OBFUSCATED then
+    getfenv().LPH_NO_VIRTUALIZE = function(...) return (...) end
 end
 
-function cframe_to_viewport(cframe, floor)
-    local position, visible = world_to_viewport(Camera, cframe * (cframe - cframe.p):ToObjectSpace(Camera.CFrame - Camera.CFrame.p).p)
-    if floor then
-        position = vector2_floor(position)
-    end
-    return position, visible
-end
+-- library init
+    local library = {
+        directory = "nebula.tech",
+        folders = {
+            "/sounds",
+            "/fonts",
+            "/configs",
+            "/images"
+        },
+        flags = {},
+        config_flags = {},
+        guis = {}, 
+        connections = {},   
 
-local old; old = hookfunction(Drawing.new, function(class, properties)
-    local drawing = old(class)
-    for i,v in next, properties or {} do
-        drawing[i] = v
-    end
-    return drawing
-end)
-
-
-getgenv().players = {}
-local player = {}
-player.__index = player
-
-function player:Check()
-    if getgenv().esp.TargetOnly and self.instance ~= TargetPlr then
-        return false
-    end
-    
-    local character = self.instance.Character
-    local rootpart = character and character:FindFirstChild('HumanoidRootPart')
-    local torso = character and character:FindFirstChild('UpperTorso')
-    local humanoid = rootpart and character:FindFirstChild('Humanoid')
-    if not humanoid or 0 >= humanoid.Health then
-        return false
-    end
-
-    local screen_position, screen_visible = cframe_to_viewport(torso.CFrame * esp.CharacterOffset, true)
-
-    if not screen_visible then
-        return false
-    end
-
-    return true, {
-        character = character,
-        rootpart = rootpart,
-        humanoid = humanoid,
-        position = screen_position,
-        cframe = rootpart.CFrame * esp.CharacterOffset,
-        health = humanoid.Health,
-        maxhealth = humanoid.MaxHealth,
-        healthfactor = humanoid.Health / humanoid.MaxHealth,
-        distance = (rootpart.CFrame.p - Camera.CFrame.p).magnitude
+        current_tab, 
+        current_element_open, 
+        dock_button_holder,  
+        font, 
+        keybind_list
     }
-end
 
-function player:Step(delta)
+    local flags = library.flags
+    local config_flags = library.config_flags
 
-    local check_pass, check_data = self:Check()
+    local themes = {
+        preset = {
+            ["outline"] = rgb(32, 32, 38), -- 
+            ["inline"] = rgb(60, 55, 75), --
+            ["accent"] = hex("#7D98AF"), --
+            ["high_contrast"] = rgb(41, 41, 55),
+            ["low_contrast"] = rgb(35, 35, 47),
+            ["text"] = rgb(180, 180, 180),
+            ["text_outline"] = rgb(0, 0, 0),
+            ["glow"] = hex("#7D98AF"), 
+        }, 	
 
-    self:SetVisible(false)
+        utility = {
+            ["outline"] = {
+                ["BackgroundColor3"] = {}, 	
+                ["Color"] = {}, 
+            },
+            ["inline"] = {
+                ["BackgroundColor3"] = {}, 	
+            },
+            ["accent"] = {
+                ["BackgroundColor3"] = {}, 	
+                ["TextColor3"] = {}, 
+                ["ImageColor3"] = {}, 
+                ["ScrollBarImageColor3"] = {} 
+            },
+            ["contrast"] = {
+                ["Color"] = {}, 	
+            },
+            ["text"] = {
+                ["TextColor3"] = {}, 	
+            },
+            ["text_outline"] = {
+                ["Color"] = {}, 	
+            },
+            ["glow"] = {
+                ["ImageColor3"] = {}, 	
+            }, 
+        }, 
 
-    if not check_pass then
-        return
-    else
-        self.visible = true
-    end
-    
-    local size = self:GetBoxSize(check_data.position, check_data.cframe)
-local position = vector2_floor(check_data.position - size / 2)
-local color = self.priority and esp.PriorityColor
-local stroke_color = Color3.new(0, 0, 0)
-local box_drawings = self.drawings.box
+        find = {
+            ["Frame"] = "BackgroundColor3", 
+            ["TextLabel"] = "TextColor3", 
+            ["UIGradient"] = "Color",
+            ["UIStroke"] = "Color",
+            ["ImageLabel"] = "ImageColor3",
+            ["TextButton"] = "BackgroundColor3", 
+            ["ScrollingFrame"] = "ScrollBarImageColor3"
+        }
+    }
 
-if esp.BoxEnabled and esp.BoxCorners then
-    local corner_size = size.X / 3
+    local keys = {
+        [Enum.KeyCode.LeftShift] = "LS",
+        [Enum.KeyCode.RightShift] = "RS",
+        [Enum.KeyCode.LeftControl] = "LC",
+        [Enum.KeyCode.RightControl] = "RC",
+        [Enum.KeyCode.Insert] = "INS",
+        [Enum.KeyCode.Backspace] = "BS",
+        [Enum.KeyCode.Return] = "Ent",
+        [Enum.KeyCode.LeftAlt] = "LA",
+        [Enum.KeyCode.RightAlt] = "RA",
+        [Enum.KeyCode.CapsLock] = "CAPS",
+        [Enum.KeyCode.One] = "1",
+        [Enum.KeyCode.Two] = "2",
+        [Enum.KeyCode.Three] = "3",
+        [Enum.KeyCode.Four] = "4",
+        [Enum.KeyCode.Five] = "5",
+        [Enum.KeyCode.Six] = "6",
+        [Enum.KeyCode.Seven] = "7",
+        [Enum.KeyCode.Eight] = "8",
+        [Enum.KeyCode.Nine] = "9",
+        [Enum.KeyCode.Zero] = "0",
+        [Enum.KeyCode.KeypadOne] = "Num1",
+        [Enum.KeyCode.KeypadTwo] = "Num2",
+        [Enum.KeyCode.KeypadThree] = "Num3",
+        [Enum.KeyCode.KeypadFour] = "Num4",
+        [Enum.KeyCode.KeypadFive] = "Num5",
+        [Enum.KeyCode.KeypadSix] = "Num6",
+        [Enum.KeyCode.KeypadSeven] = "Num7",
+        [Enum.KeyCode.KeypadEight] = "Num8",
+        [Enum.KeyCode.KeypadNine] = "Num9",
+        [Enum.KeyCode.KeypadZero] = "Num0",
+        [Enum.KeyCode.Minus] = "-",
+        [Enum.KeyCode.Equals] = "=",
+        [Enum.KeyCode.Tilde] = "~",
+        [Enum.KeyCode.LeftBracket] = "[",
+        [Enum.KeyCode.RightBracket] = "]",
+        [Enum.KeyCode.RightParenthesis] = ")",
+        [Enum.KeyCode.LeftParenthesis] = "(",
+        [Enum.KeyCode.Semicolon] = ",",
+        [Enum.KeyCode.Quote] = "'",
+        [Enum.KeyCode.BackSlash] = "\\",
+        [Enum.KeyCode.Comma] = ",",
+        [Enum.KeyCode.Period] = ".",
+        [Enum.KeyCode.Slash] = "/",
+        [Enum.KeyCode.Asterisk] = "*",
+        [Enum.KeyCode.Plus] = "+",
+        [Enum.KeyCode.Period] = ".",
+        [Enum.KeyCode.Backquote] = "`",
+        [Enum.UserInputType.MouseButton1] = "MB1",
+        [Enum.UserInputType.MouseButton2] = "MB2",
+        [Enum.UserInputType.MouseButton3] = "MB3",
+        [Enum.KeyCode.Escape] = "ESC",
+        [Enum.KeyCode.Space] = "SPC",
+    }
+        
+    library.__index = library
 
-    box_drawings[9].Position = position
-    box_drawings[10].Position = position + Vector2.new(size.X - 1, 0)
-    box_drawings[11].Position = position + Vector2.new(0, size.Y - corner_size)
-    box_drawings[12].Position = position + Vector2.new(size.X - 1, size.Y - corner_size)
+    for _, path in next, library.folders do 
+        makefolder(library.directory .. path)
+    end 
 
-    box_drawings[13].Position = position
-    box_drawings[14].Position = position + Vector2.new(size.X - corner_size, 0)
-    box_drawings[15].Position = position + Vector2.new(0, size.Y - 1)
-    box_drawings[16].Position = position + Vector2.new(size.X - corner_size, size.Y - 1)
-
-    for i = 1, 8 do
-        local outline = box_drawings[i]
-        local inline = box_drawings[i + 8]
-
-        inline.Visible = true
-        outline.Visible = true
-        inline.Filled = true
-        outline.Filled = false
-
-        inline.Color = color or (self.useboxcolor and self.boxcolor) or esp.BoxColor
-        outline.Color = stroke_color
-
-        outline.Position = inline.Position - Vector2.new(2, 2)
-
-        if i > 4 then
-            inline.Size = Vector2.new(corner_size, 1)
-            outline.Size = Vector2.new(corner_size + 4, 6)
-        else
-            inline.Size = Vector2.new(1, corner_size)
-            outline.Size = Vector2.new(6, corner_size + 4)
-        end
-    end
-
-
-    elseif esp.BoxEnabled then
-    local outline = box_drawings[1]
-    local inline = box_drawings[9]
-
-    outline.Visible = true
-    outline.Size = size
-    outline.Position = position
-    outline.Transparency = 0.7
-
-    inline.Visible = true
-    inline.Size = size
-    inline.Position = position
-    inline.Color = color or (self.useboxcolor and self.boxcolor) or esp.BoxColor
-    inline.Transparency = 0.7
-end
-   
-
-
-
-    self.highlight.Enabled = esp.ChamsEnabled
-    self.highlight.FillColor = (self.usehighlightcolor and self.highlightcolor) or esp.ChamsInnerColor
-    self.highlight.FillTransparency = esp.ChamsInnerTransparency
-    self.highlight.OutlineColor = (self.usehighlightcolor and self.outlinehighlightcolor) or esp.ChamsOuterColor
-    self.highlight.OutlineTransparency = esp.ChamsOuterTransparency
-    self.highlight.Parent = check_data.character
-    self.highlight.Adornee = check_data.character
-
-    local bar_data = self:GetBarData(check_data)
-    local bar_positions = { top = 0, bottom = 0, left = 0, right = 0 }
-
-    for idx, data in next, self.drawings.bar do
-        local flag = data[1]
-        local layout = data[2]
-        local outline = data[3]
-        local inline = data[4]
-        local data = bar_data[flag]
-
-        if not layout.enabled or data.enabled == false then
-            continue
-        end
-
-        local progress = data.progress or 0
-        local vertical = layout.position == 'left' or layout.position == 'right'
-
-        outline.Visible = true
-        inline.Visible = true
-
-        outline.Size = vertical and Vector2.new(3, size.Y + 2) or Vector2.new(size.X + 2, 3)
-        outline.Position = position + (
-            layout.position == 'top' and Vector2.new(-1, -(5 + bar_positions.top)) or
-            layout.position == 'bottom' and Vector2.new(-1, size.Y + 2 + bar_positions.bottom) or
-            layout.position == 'left' and Vector2.new(-5-bar_positions.left, -1) or
-            layout.position == 'right' and Vector2.new(size.X + 2 + bar_positions.right, -1)
-        )
-
-        inline.Color = layout.color_empty:lerp(layout.color_full, progress)
-        inline.Size = vertical and Vector2.new(1, progress * size.Y) or Vector2.new(progress * size.X, 1)
-
-        if vertical then
-            inline.Position = outline.Position + Vector2.new(1,1 + size.Y - progress * size.Y)
-        else
-            inline.Position = outline.Position + Vector2.new(size.X - progress * size.X ,1)
-        end
-
-        bar_positions[layout.position] += 4
-
-    end
-
-    if esp.TextEnabled then
-        local text_data = self:GetTextData(check_data)
-        local text_positions = { top = bar_positions.top, bottom = bar_positions.bottom, left = 0, right = 0 }
-
-        for idx, data in next, self.drawings.text do
-            local flag = data[1]
-            local layout = data[2]
-            local drawing = data[3]
-            local data = text_data[flag]
-
-            if not layout.enabled or data.enabled == false then
-                continue
-            end
-
-            drawing.Visible = true
-            drawing.Text = (layout.prefix or '') .. (data.text or '') .. (layout.suffix or '')
-            drawing.Color = data.color or color or layout.color or esp.TextColor
-
-            if layout.bar then
-                drawing.Position = position + (
-                    layout.position == 'left' and Vector2.new(-(bar_positions.left + drawing.TextBounds.X + 2), size.Y - bar_data[layout.bar].progress * size.Y - 3) or
-                    layout.position == 'right' and Vector2.new(size.X + bar_positions.right + 2, size.Y - bar_data[layout.bar].progress * size.Y -3)               
-                )
-            else
-                drawing.Position = position + (
-                    layout.position == 'top' and Vector2.new(size.X / 2, -3 - (text_positions.top + 14)) or
-                    layout.position == 'bottom' and Vector2.new(size.X / 2, size.Y + text_positions.bottom + 2) or
-                    layout.position == 'left' and Vector2.new(-(bar_positions.left + drawing.TextBounds.X + 2), text_positions.left - 3) or
-                    layout.position == 'right' and Vector2.new(size.X + bar_positions.right + 2, size.Y + text_positions.right - 3)               
-                )
-    
-                text_positions[layout.position] += 14
-            end
-
+    if setreadonly then 
+        if not isfile(library.directory .. "/fonts/main.ttf") then 
+            writefile(library.directory .. "/fonts/main.ttf", game:HttpGet("https://github.com/f1nobe7650/other/raw/main/uis/font.ttf"))
         end 
-    end
-
-    if esp.SkeletonEnabled and esp.SkeletonMaxDistance > check_data.distance then
-
-        local cache = {}
-
-        for idx, connection_data in next, skeleton_connections do
-            local drawing = self.drawings.skeleton[idx]
-            local part_a = check_data.character:FindFirstChild(connection_data[1])
-            local part_b = check_data.character:FindFirstChild(connection_data[2])
-
-            if part_a and part_b then
-                local screen_position_a = cache[part_a] or cframe_to_viewport(part_a.CFrame + (connection_data[3] or Vector3.new()), true)
-                local screen_position_b = cache[part_b] or cframe_to_viewport(part_b.CFrame + (connection_data[4] or Vector3.new()), true)
-
-                cache[part_a] = screen_position_a
-                cache[part_b] = screen_position_b
-
-                drawing.Visible = true
-                drawing.Color = color or esp.SkeletonColor
-                drawing.From = screen_position_a
-                drawing.To = screen_position_b
-            end
-        end
-    end
-
-
-end
-
-function player:GetTextData(data)
-    local tool = data.character:FindFirstChildOfClass('Tool')
-    return {
-        ['nametag']  = { text = self.nametag_text, enabled = self.nametag_enabled, color = self.nametag_color },
-        ['name']     = { text = self.instance.DisplayName },
-        ['health']   = { text = tostring(math.floor(data.health)), color = esp.BarLayout.health.color_empty:lerp(esp.BarLayout.health.color_full, data.healthfactor) },
-        ['distance'] = { text = tostring(math.floor(data.distance)) },
-        ['tool']     = { text = tool and tool.Name, enabled = tool ~= nil }
-    }
-end
-
-function player:GetBarData(data) -- progress should be a number 0-1, you can get this by doing value /  / maxarmo
-    return {
-        ['health'] = { progress = data.healthfactor }
-    }
-end
-
-function player:GetBoxSize(position, cframe)
-    if esp.BoxDynamic then
-        local size = esp.CharacterSize
         
-        if esp.UseBoundingBox then
-            _, size = self.instance.Character:GetBoundingBox()
-        end
-
-        local x = cframe_to_viewport(cframe * CFrame.new(size.X, 0, 0))
-        local y = cframe_to_viewport(cframe * CFrame.new(0, size.Y, 0))
-        local z = cframe_to_viewport(cframe * CFrame.new(0, 0, size.Z))
-
-        local SizeX = math.max(math.abs(position.X - x.X), math.abs(position.X - z.X))
-        local SizeY = math.max(math.abs(position.Y - y.Y), math.abs(position.Y - x.Y))
-
-        return Vector2.new(math.clamp(math.floor(SizeX), 3, inf), math.clamp(math.floor(SizeY), 6, inf))
-    else
-        local distance = (Camera.CFrame.p - cframe.p).magnitude
-        local factor = 1 / ((distance / 3) * math.tan(math.rad(Camera.FieldOfView / 2)) * 2) * 1000
-        return Vector2.new(math.clamp(math.floor(factor * esp.BoxStaticXFactor), 3, inf), math.clamp(math.floor(factor * esp.BoxStaticYFactor), 6, inf))
-    end
-end
-
-function player:SetPriority(bool)
-    self.priority = bool
-end
-
-function player:GetPriority()
-    return self.priority
-end
-
-function player:SetBoxColorEnabled(bool)
-    self.useboxcolor = bool
-end
-
-function player:SetBoxColor(color)
-    self.boxcolor = color
-end
-
-function player:SetHighlightColorEnabled(bool)
-    self.usehighlightcolor = bool
-end
-
-function player:SetHighlightColor(color, color2)
-    self.highlightcolor = color
-    self.outlinehighlightcolor = color2
-end
-
-function player:SetNametagText(str)
-    self.nametag_text = str
-end
-
-function player:SetNametagEnabled(bool)
-    self.nametag_enabled = bool
-end
-
-function player:SetNametagColor(color)
-    self.nametag_color = color
-end
-
-function player:SetNametag(str, bool, color)
-    self:SetNametagText(str)
-    self:SetNametagEnabled(bool)
-    self:SetNametagColor(color)
-end
-
-function player:SetVisible(bool)
-    if self.visible ~= bool then
-        self.visible = bool
-        for i,v in next, self.drawings.box do v.Visible = bool end
-        for i,v in next, self.drawings.skeleton do v.Visible = bool end
-        for i,v in next, self.drawings.text do v[3].Visible = bool end
-        for i,v in next, self.drawings.bar do v[3].Visible = bool; v[4].Visible = bool end
-    end
-end
-
--- // new player
-function esp.NewPlayer(player_instance)
-    if TargetModeEnabled and TargetPlr then
-        player_instance = TargetPlr
-    end
-
-    local player = setmetatable({}, player)
-
-    player.instance = player_instance
-    player.priority = false
-    player.useboxcolor = false
-    player.nametag_enabled = false
-    player.nametag_text = 'nametag'
-    player.nametag_color = Color3.new(1,1,1)
-    player.boxcolor = Color3.new(1,1,1)
-
-    player.highlight = Instance.new('Highlight')
-    player.drawings = {
-        text = {},
-        bar = {},
-        skeleton = {},
-        box = {}
-    }
-
-    player.remove_esp = function() 
-        for i,v in next, player.drawings.box do v:Remove() end
-        for i,v in next, player.drawings.skeleton do v:Remove() end
-        for i,v in next, player.drawings.text do v[3]:Remove() end
-        for i,v in next, player.drawings.bar do v[3]:Remove(); v[4]:Remove() end
-
-        player.highlight:Destroy()
-    end
-
-    for i = 1, 8 do
-        player.drawings.box[i] = Drawing.new('Square')
-    end
-
-    for i = 9, 16 do
-        player.drawings.box[i] = Drawing.new('Square')
-    end
-
-    for i = 1, 10 do
-        player.drawings.skeleton[i] = Drawing.new('Line', { Thickness = 1 })
-    end
-
-    for flag, layout in next, esp.TextLayout do
-        table.insert(player.drawings.text, { 
-            flag,
-            layout,
-            Drawing.new('Text', { Size = 13, Font = 2, Outline = true, Center = layout.position == 'top' or layout.position == 'bottom' }) 
-        })
-    end
-
-    for flag, layout in next, esp.BarLayout do
-        table.insert(player.drawings.bar, { 
-            flag,
-            layout,
-            Drawing.new('Square', { Thickness = 1, Filled = true }),
-            Drawing.new('Square', { Thickness = 1, Filled = true }),
-        })
-    end
-
-    table.sort(player.drawings.text, function(a,b)
-        return a[2].order < a[2].order
-    end)
-
-    table.sort(player.drawings.bar, function(a,b)
-        return a[2].order < a[2].order
-    end)
-
-    
-    table.insert(players, player)
-    return player
-end
-
--- // update
-game:GetService('RunService').PreRender:Connect(function(delta)
-    if esp.AutoStep then
-        for i, player in next, players do
-            player:Step(delta)
-        end
-    end
-end)
-
-for i, v in next, game.Players:GetPlayers() do
-    esp.NewPlayer(v)
-end
-
-game.Players.PlayerAdded:Connect(function(new_player)
-    esp.NewPlayer(new_player)
-end)
-
-
-local Saved, Client, Camera, nigga = nil, game.Players.LocalPlayer, workspace.CurrentCamera, {}
-local IgnoreFolder = Instance.new("Folder", game:GetService("Workspace"))
-local desync_setback = Instance.new("Part")
-desync_setback.Name = "im a skibidi rizzler"
-desync_setback.Parent = workspace
-desync_setback.Size = Client.Character:WaitForChild("HumanoidRootPart").Size
-desync_setback.CanCollide = false
-desync_setback.Anchored = true
-desync_setback.Transparency = 1
-nigga["CFrameVisualize"] = game:GetObjects("rbxassetid://9474737816")[1]
-nigga["CFrameVisualize"].Head.Face:Destroy()
-
-for _, v in pairs(nigga["CFrameVisualize"]:GetChildren()) do
-    v.Transparency = v.Name == "HumanoidRootPart" and 1 or 0.70
-    v.Material = "ForceField"
-    v.Color = Library.Accent
-    v.CanCollide = false
-    v.Anchored = false
-end
-
-game:GetService('RunService').RenderStepped:Connect(LPH_JIT(function()
-    if TargetAimbot.CSync.Enabled then
-        nigga["CFrameVisualize"].Parent = IgnoreFolder
-    else
-        nigga["CFrameVisualize"].Parent = nil
-    end
-    
-    if TargetAimbot.CSync.Enabled and TargetPlr and TargetAimbot.CSync.Visualize then
-        local humanoidRootPart = Client.Character:FindFirstChild("HumanoidRootPart")
-        if humanoidRootPart then
-            local FakeCFrame = humanoidRootPart.CFrame
-            Saved = humanoidRootPart.CFrame
-            
-            
-            FakeCFrame = NEWFrame() 
-
-            nigga["CFrameVisualize"]:SetPrimaryPartCFrame(FakeCFrame)
-
-            for _, Part in pairs(nigga["CFrameVisualize"]:GetChildren()) do
-                Part.Color = TargetAimbot.CSync.Color
-            end
-
-            humanoidRootPart.CFrame = FakeCFrame
-
-            game:GetService("RunService").RenderStepped:Wait()
-
-            desync_setback.Position = Saved.Position + Vector3.new(0, 1.5, 0)
-            
-            if TargBindEnabled then
-                Camera.CameraSubject = desync_setback
-            else
-                Camera.CameraSubject = Client.Character:FindFirstChild("Humanoid")
-            end
-            humanoidRootPart.CFrame = Saved
-        end
-    end
-end)) 
-
-
-
-if game.PlaceId == 9825515356 or game.PlaceId == 2788229376 then
-    Psalms.Tech.LockType = "Index"
-else
-    Psalms.Tech.LockType = "Namecall"
-end
-
-local lastPosition = nil
-
-RunService.RenderStepped:Connect(LPH_JIT(function()
-
-   if TargetPlr and TargetPlr.Character and 
-       game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and 
-       TargetPlr.Character:FindFirstChild("HumanoidRootPart") then
-
-        if TargetAimbot.CSync.Enabled and not TargetAimbot.CSync.Visualize then
-            local SigmaCFrame = NEWFrame()
-
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SigmaCFrame
-            lastPosition = TargetPlr.Character.HumanoidRootPart.Position
-        end
-    elseif not TargetPlr and lastPosition then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPosition)
-        lastPosition = nil
-    end
-end)) 
-   
-
-
-Psalms.Tech.RESOLVER = "MoveDirection"
-
-local lastTick = tick()
-local lastPos = nil
-
-if game.PlaceId == 9825515356 then
-    local LocalFramework = LocalPlayer.PlayerGui:WaitForChild("Framework")
-    local FrameworkEnvironment
-
-    if LocalFramework then
-        FrameworkEnvironment = getsenv(LocalFramework)
-    end
-
-    RunService.PostSimulation:Connect(function(DeltaTime)
-        if Psalms.Tech.Enabled and Psalms.Tech.LockType == "Index" and FrameworkEnvironment and TargetPlr then
-            FrameworkEnvironment._G.MOUSE_POSITION = TargetFuturePosition()
-        end
-    end)
-else
-    local Hooks = {}
-    local mouse = game.Players.LocalPlayer:GetMouse()
-        Hooks[1] = hookmetamethod(mouse, "__index", newcclosure(function(self, index)
-            if index == "Hit" and Psalms.Tech.LockType == "Index" and Psalms.Tech.Enabled and TargetPlr and TargetPlr.Character and Psalms.Tech.SelectedPart then
-                local TargetFuturePosition = TargetFuturePosition()
-                if TargetFuturePosition then
-                    return CFrame.new(TargetFuturePosition)
-                end
-            end
-            return Hooks[1](self, index)
-        end))
-    end
-
-
-
-
-local  Argumen = {"UpdateMousePos", "GetMousePos", "MousePos", "MOUSE", "MousePosUpdate", "UpdateMousePosI2", "UpdateMousePosI",  "UpdateAim"}
-
-
-local Argument
-local mt = getrawmetatable(game)
-local old = mt.__namecall
-setreadonly(mt, false)
-
-mt.__namecall = newcclosure(function(...)
-    local args = {...}
-    local method = getnamecallmethod()
-
-    if Psalms.Tech.Enabled and Psalms.Tech.LockType == "Namecall" then
-        if TargetPlr and TargetPlr.Character and method == "FireServer" then
-            for _, methodName in ipairs(Argumen) do
-                if args[2] == methodName then
-                    Argument = methodName
-                    if not Psalms.Tech.AntiAimViewer then
-                        args[3] = TargetFuturePosition()
-                        return old(unpack(args))
-                    end
-                end
-            end
-        end
-    end
-
-    return old(...)
-end)
-
-setreadonly(mt, true)
-
-
--- Legit
-
-for _, Value in pairs(game.ReplicatedStorage:GetChildren()) do
-    if Value.Name == "MainEvent" or Value.Name == "Bullets" or 
-       Value.Name == ".gg/untitledhood" or Value.Name == "Remote" or 
-       Value.Name == "MAINEVENT" then
-        MainEvent = Value
-        break 
-    end
-end
-
-
-
-local function CharAdded()
-    if Character then
-        Character.ChildAdded:Connect(function(tool)
-            if tool:IsA("Tool") then
-                tool.Activated:Connect(function()
-                    if MainEvent and Argument then
-                        if Psalms.Tech.Enabled and TargetPlr and TargetPlr.Character and Psalms.Tech.AntiAimViewer then
-                            local AimPosition = TargetFuturePosition()
-                            MainEvent:FireServer(Argument, AimPosition)
-                        end
-                    end
-                end)
-            end
-        end)
-    end
-end
-
-LocalPlayer.CharacterAdded:Connect(function(newchar)
-    Character = newchar
-    CharAdded()
-end)
-
-if LocalPlayer.Character then
-    Character = LocalPlayer.Character
-    CharAdded()
-end
-
-local players = game:GetService("Players")
-local client = players.LocalPlayer
-
-local AutoShoot = LPH_NO_VIRTUALIZE(function()
-    if TargetPlr then
-        local character = client.Character
-        if character then
-            if TargetPlr.Character:FindFirstChildOfClass("ForceField") then
-                return
-            end
-            
-            local tool = character:FindFirstChildOfClass("Tool")
-            if tool and tool:IsA("Tool") then
-                tool:Activate()
-            end
-        end
-    end
-end)
-
-local e = Instance.new("BillboardGui")
-e.Name = "PP"
-e.Size = UDim2.new(2, 0, 2, 0)
-e.AlwaysOnTop = true
-
-local img3 = Instance.new("ImageLabel", e)
-img3.Name = "img3"
-img3.Size = UDim2.new(0.6, 0, 0.6, 0)
-img3.BackgroundTransparency = 1
-img3.Image = "rbxassetid://108770683919433"
-img3.ImageTransparency = 0
-
-local adorneePart = Instance.new("Part")
-adorneePart.Size = Vector3.new(0, 0, 0)
-adorneePart.Anchored = true
-adorneePart.Parent = workspace
-
-e.Adornee = adorneePart
-e.Parent = workspace
-
-RunService.RenderStepped:Connect(LPH_JIT(function()
-    if TargetPlr and TargetPlr.Character and Psalms.Tech.VelocityDot and TargetPlr.Character:FindFirstChild(Psalms.Tech.SelectedPart) then
-        local pos = TargetFuturePosition()
-        adorneePart.Transparency = 0
-        adorneePart.Position = pos
-        e.Enabled = true
-    else
-        adorneePart.Position = Vector3.new(0, 0, 0)
-        adorneePart.Transparency = 1
-        e.Enabled = false
-    end
-end)) 
-
-local targetSigm99928 = Psalms.Tech.ShootDelay 
-local targetSigmaPOBALLs = nil
-local Shot2ing = false
-
-local checkTarget = LPH_NO_VIRTUALIZE(function() 
-    if TargetPlr and TargetPlr.Character then
-        local humanoid = TargetPlr.Character:FindFirstChildOfClass("Humanoid")
-        local humanoidRootPart = TargetPlr.Character:FindFirstChild("HumanoidRootPart")
-
-        if humanoid and humanoidRootPart then
-            local SigmaAir = humanoid:GetState() == Enum.HumanoidStateType.Freefall
-
-            if SigmaAir and Psalms.Tech.AutoAir then
-                if not targetSigmaPOBALLs then
-                    targetSigmaPOBALLs = tick()
-                else
-                    local airDuration = tick() - targetSigmaPOBALLs
-                    if airDuration >= targetSigm99928 then
-                        if not Shot2ing then
-                            Shot2ing = true
-                            while TargetPlr and TargetPlr.Character and SigmaAir do
-                                AutoShoot()
-                                task.wait(0.00001)
-
-                                SigmaAir = humanoid:GetState() == Enum.HumanoidStateType.Freefall
-
-                                if not SigmaAir then
-                                    Shot2ing = false
-                                    targetSigmaPOBALLs = nil
-                                    break
-                                end
-                            end
-                            Shot2ing = false
-                        end
-                    end
-                end
-            else
-                targetSigmaPOBALLs = nil
-                Shot2ing = false
-            end
-        end
-    end
-end)
-
-
-
-
-local function isPlayerOnSameTeam(player)
-    if not player.Team or not LocalPlayer.Team then
-        return false
-    end
-
-    return player.Team == LocalPlayer.Team
-end
-
-local function BehindWall(player)
-    if not player or player == game.Players.LocalPlayer or not player.Character then
-        return true
-    end
-
-    local targetPart = player.Character:FindFirstChild("HumanoidRootPart")
-    if not targetPart then
-        return true
-    end
-
-    local origin = workspace.CurrentCamera.CFrame.Position
-    local direction = (targetPart.Position - origin).unit * (targetPart.Position - origin).magnitude
-    local raycastParams = RaycastParams.new()
-    raycastParams.FilterDescendantsInstances = {game.Players.LocalPlayer.Character, player.Character}
-    raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
-
-    local raycastResult = workspace:Raycast(origin, direction, raycastParams)
-    return raycastResult and raycastResult.Instance ~= nil
-end
-
-local function isPlayerKO(player)
-    if not player.Character then
-        return false
-    end
-
-    local bodyEffects = player.Character:FindFirstChild("BodyEffects")
-    if bodyEffects then
-        local KO = bodyEffects:FindFirstChild("K.O")
-        if KO and KO:IsA("BoolValue") and KO.Value then
-            return true
-        end
-    end
-
-    local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
-    if humanoidRootPart and  humanoidRootPart.Anchored then
-        return true
-    end
-
-    return false
-end
-
-local function isPlayerSeated(player)
-    if not player.Character then
-        return false
-    end
-
-    local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
-    if humanoid and humanoid.SeatPart then
-        return true
-    end
-
-    return false
-end
-
-local predictionTable =  {
-{1, 0.0016666666666666668},
-{2, 0.0033333333333333335},
-{3, 0.005},
-{4, 0.006666666666666667},
-{5, 0.008333333333333333},
-{6, 0.01},
-{7, 0.011666666666666665},
-{8, 0.013333333333333334},
-{9, 0.015},
-{10, 0.016666666666666666},
-{11, 0.018333333333333333},
-{12, 0.02},
-{13, 0.021666666666666667},
-{14, 0.023333333333333334},
-{15, 0.025},
-{16, 0.02666666666666667},
-{17, 0.028333333333333332},
-{18, 0.03},
-{19, 0.03166666666666667},
-{20, 0.03333333333333333},
-{21, 0.035},
-{22, 0.03666666666666667},
-{23, 0.03833333333333333},
-{24, 0.04},
-{25, 0.041666666666666664},
-{26, 0.043333333333333335},
-{27, 0.045},
-{28, 0.04666666666666667},
-{29, 0.04833333333333333},
-{30, 0.05},
-{31, 0.051666666666666666},
-{32, 0.05333333333333334},
-{33, 0.055},
-{34, 0.056666666666666664},
-{35, 0.058333333333333334},
-{36, 0.06},
-{37, 0.06166666666666667},
-{38, 0.06333333333333334},
-{39, 0.065},
-{40, 0.06666666666666667},
-{41, 0.06833333333333333},
-{42, 0.07},
-{43, 0.07166666666666667},
-{44, 0.07333333333333333},
-{45, 0.075},
-{46, 0.07666666666666666},
-{47, 0.07833333333333334},
-{48, 0.08},
-{49, 0.08166666666666667},
-{50, 0.08333333333333333},
-{51, 0.085},
-{52, 0.08666666666666667},
-{53, 0.08833333333333333},
-{54, 0.09},
-{55, 0.09166666666666666},
-{56, 0.09333333333333334},
-{57, 0.095},
-{58, 0.09666666666666666},
-{59, 0.09833333333333333},
-{60, 0.1},
-{61, 0.10166666666666666},
-{62, 0.10333333333333333},
-{63, 0.105},
-{64, 0.10666666666666667},
-{65, 0.10833333333333334},
-{66, 0.11},
-{67, 0.11166666666666666},
-{68, 0.11333333333333333},
-{69, 0.115},
-{70, 0.11666666666666667},
-{71, 0.11833333333333333},
-{72, 0.12},
-{73, 0.12166666666666667},
-{74, 0.12333333333333334},
-{75, 0.125},
-{76, 0.12666666666666668},
-{77, 0.12833333333333333},
-{78, 0.13},
-{79, 0.13166666666666665},
-{80, 0.13333333333333333},
-{81, 0.135},
-{82, 0.13666666666666666},
-{83, 0.13833333333333334},
-{84, 0.14},
-{85, 0.14166666666666666},
-{86, 0.14333333333333334},
-{87, 0.145},
-{88, 0.14666666666666667},
-{89, 0.14833333333333334},
-{90, 0.15},
-{91, 0.15166666666666667},
-{92, 0.15333333333333332},
-{93, 0.155},
-{94, 0.15666666666666668},
-{95, 0.15833333333333333},
-{96, 0.16},
-{97, 0.16166666666666665},
-{98, 0.16333333333333333},
-{99, 0.165},
-{100, 0.16666666666666666},
-{101, 0.16833333333333333},
-{102, 0.17},
-{103, 0.17166666666666666},
-{104, 0.17333333333333334},
-{105, 0.175},
-{106, 0.17666666666666667},
-{107, 0.17833333333333334},
-{108, 0.18},
-{109, 0.18166666666666667},
-{110, 0.18333333333333332},
-{111, 0.185},
-{112, 0.18666666666666668},
-{113, 0.18833333333333332},
-{114, 0.19},
-{115, 0.19166666666666668},
-{116, 0.19333333333333333},
-{117, 0.195},
-{118, 0.19666666666666666},
-{119, 0.19833333333333333},
-{120, 0.2},
-{121, 0.20166666666666666},
-{122, 0.20333333333333334},
-{123, 0.205},
-{124, 0.20666666666666667},
-{125, 0.20833333333333334},
-{126, 0.21},
-{127, 0.21166666666666667},
-{128, 0.21333333333333335},
-{129, 0.215},
-{130, 0.21666666666666667},
-{131, 0.21833333333333332},
-{132, 0.22},
-{133, 0.22166666666666668},
-{134, 0.22333333333333333},
-{135, 0.225},
-{136, 0.22666666666666666},
-{137, 0.22833333333333333},
-{138, 0.23},
-{139, 0.23166666666666666},
-{140, 0.23333333333333334},
-{141, 0.235},
-{142, 0.23666666666666666},
-{143, 0.23833333333333334},
-{144, 0.24},
-{145, 0.24166666666666667},
-{146, 0.24333333333333335},
-{147, 0.245},
-{148, 0.24666666666666667},
-{149, 0.24833333333333332},
-{150, 0.25},
-{151, 0.25166666666666665},
-{152, 0.25333333333333335},
-{153, 0.255},
-{154, 0.25666666666666665},
-{155, 0.25833333333333336},
-{156, 0.26},
-{157, 0.26166666666666666},
-{158, 0.2633333333333333},
-{159, 0.265},
-{160, 0.26666666666666666},
-{161, 0.2683333333333333},
-{162, 0.27},
-{163, 0.27166666666666667},
-{164, 0.2733333333333333},
-{165, 0.275},
-{166, 0.27666666666666667},
-{167, 0.27833333333333333},
-{168, 0.28},
-{169, 0.2816666666666667},
-{170, 0.2833333333333333},
-{171, 0.285},
-{172, 0.2866666666666667},
-{173, 0.28833333333333333},
-{174, 0.29},
-{175, 0.2916666666666667},
-{176, 0.29333333333333333},
-{177, 0.295},
-{178, 0.2966666666666667},
-{179, 0.29833333333333334},
-{180, 0.3},
-{181, 0.3016666666666667},
-{182, 0.30333333333333334},
-{183, 0.305},
-{184, 0.30666666666666664},
-{185, 0.30833333333333335},
-{186, 0.31},
-{187, 0.31166666666666665},
-{188, 0.31333333333333335},
-{189, 0.315},
-{190, 0.31666666666666665},
-{191, 0.31833333333333336},
-{192, 0.32},
-{193, 0.32166666666666666},
-{194, 0.3233333333333333},
-{195, 0.325},
-{196, 0.32666666666666666},
-{197, 0.3283333333333333},
-{198, 0.33},
-{199, 0.33166666666666667},
-{200, 0.3333333333333333},
-{201, 0.335},
-{202, 0.33666666666666667},
-{203, 0.3383333333333333},
-{204, 0.34},
-{205, 0.3416666666666667},
-{206, 0.3433333333333333},
-{207, 0.345},
-{208, 0.3466666666666667},
-{209, 0.34833333333333333},
-{210, 0.35},
-{211, 0.3516666666666667},
-{212, 0.35333333333333333},
-{213, 0.355},
-{214, 0.3566666666666667},
-{215, 0.35833333333333334},
-{216, 0.36},
-{217, 0.3616666666666667},
-{218, 0.36333333333333334},
-{219, 0.365},
-{220, 0.36666666666666664},
-{221, 0.36833333333333335},
-{222, 0.37},
-{223, 0.37166666666666665},
-{224, 0.37333333333333335},
-{225, 0.375},
-{226, 0.37666666666666665},
-{227, 0.37833333333333335},
-{228, 0.38},
-{229, 0.38166666666666665},
-{230, 0.38333333333333336},
-{231, 0.385},
-{232, 0.38666666666666666},
-{233, 0.3883333333333333},
-{234, 0.39},
-{235, 0.39166666666666666},
-{236, 0.3933333333333333},
-{237, 0.395},
-{238, 0.39666666666666667},
-{239, 0.3983333333333333},
-{240, 0.4},
-{241, 0.40166666666666667},
-{242, 0.4033333333333333},
-{243, 0.405},
-{244, 0.4066666666666667},
-{245, 0.4083333333333333},
-{246, 0.41},
-{247, 0.4116666666666667},
-{248, 0.41333333333333333},
-{249, 0.415},
-{250, 0.4166666666666667},
-{251, 0.41833333333333333},
-{252, 0.42},
-{253, 0.4216666666666667},
-{254, 0.42333333333333334},
-{255, 0.425},
-{256, 0.4266666666666667},
-{257, 0.42833333333333334},
-{258, 0.43},
-{259, 0.4316666666666667},
-{260, 0.43333333333333335},
-{261, 0.435},
-{262, 0.43666666666666665},
-{263, 0.43833333333333334},
-{264, 0.44},
-{265, 0.44166666666666665},
-{266, 0.44333333333333336},
-{267, 0.445},
-{268, 0.44666666666666666},
-{269, 0.4483333333333333},
-{270, 0.45},
-{271, 0.45166666666666666},
-{272, 0.4533333333333333},
-{273, 0.455},
-{274, 0.45666666666666667},
-{275, 0.4583333333333333},
-{276, 0.46},
-{277, 0.46166666666666667},
-{278, 0.4633333333333333},
-{279, 0.465},
-{280, 0.4666666666666667},
-{281, 0.4683333333333333},
-{282, 0.47},
-{283, 0.4716666666666667},
-{284, 0.47333333333333333},
-{285, 0.475},
-{286, 0.4766666666666667},
-{287, 0.47833333333333333},
-{288, 0.48},
-{289, 0.4816666666666667},
-{290, 0.48333333333333334},
-{291, 0.485},
-{292, 0.4866666666666667},
-{293, 0.48833333333333334},
-{294, 0.49},
-{295, 0.49166666666666664},
-{296, 0.49333333333333335},
-{297, 0.495},
-{298, 0.49666666666666665},
-{299, 0.49833333333333335},
-{300, 0.5},
-{301, 0.5016666666666667},
-{302, 0.5033333333333333},
-{303, 0.505},
-{304, 0.5066666666666667},
-{305, 0.5083333333333333},
-{306, 0.51},
-{307, 0.5116666666666667},
-{308, 0.5133333333333333},
-{309, 0.515},
-{310, 0.5166666666666667},
-{311, 0.5183333333333333},
-{312, 0.52},
-{313, 0.5216666666666666},
-{314, 0.5233333333333333},
-{315, 0.525},
-{316, 0.5266666666666666},
-{317, 0.5283333333333333},
-{318, 0.53},
-{319, 0.5316666666666666},
-{320, 0.5333333333333333},
-{321, 0.535},
-{322, 0.5366666666666666},
-{323, 0.5383333333333333},
-{324, 0.54},
-{325, 0.5416666666666666},
-{326, 0.5433333333333333},
-{327, 0.545},
-{328, 0.5466666666666666},
-{329, 0.5483333333333333},
-{330, 0.55},
-{331, 0.5516666666666666},
-{332, 0.5533333333333333},
-{333, 0.555},
-{334, 0.5566666666666666},
-{335, 0.5583333333333333},
-{336, 0.56},
-{337, 0.5616666666666666},
-{338, 0.5633333333333334},
-{339, 0.565},
-{340, 0.5666666666666667},
-{341, 0.5683333333333334},
-{342, 0.57},
-{343, 0.5716666666666667},
-{344, 0.5733333333333334},
-{345, 0.575},
-{346, 0.5766666666666667},
-{347, 0.5783333333333334},
-{348, 0.58},
-{349, 0.5816666666666667},
-{350, 0.5833333333333334},
-{351, 0.585},
-{352, 0.5866666666666667},
-{353, 0.5883333333333334},
-{354, 0.59},
-{355, 0.5916666666666667},
-{356, 0.5933333333333334},
-{357, 0.595},
-{358, 0.5966666666666667},
-{359, 0.5983333333333334},
-{360, 0.6},
-{361, 0.6016666666666667},
-{362, 0.6033333333333334},
-{363, 0.605},
-{364, 0.6066666666666667},
-{365, 0.6083333333333333},
-{366, 0.61},
-{367, 0.6116666666666667},
-{368, 0.6133333333333333},
-{369, 0.615},
-{370, 0.6166666666666667},
-{371, 0.6183333333333333},
-{372, 0.62},
-{373, 0.6216666666666667},
-{374, 0.6233333333333333},
-{375, 0.625},
-{376, 0.6266666666666667},
-{377, 0.6283333333333333},
-{378, 0.63},
-{379, 0.6316666666666667},
-{380, 0.6333333333333333},
-{381, 0.635},
-{382, 0.6366666666666667},
-{383, 0.6383333333333333},
-{384, 0.64},
-{385, 0.6416666666666667},
-{386, 0.6433333333333333},
-{387, 0.645},
-{388, 0.6466666666666666},
-{389, 0.6483333333333333},
-{390, 0.65},
-{391, 0.6516666666666666},
-{392, 0.6533333333333333},
-{393, 0.655},
-{394, 0.6566666666666666},
-{395, 0.6583333333333333},
-{396, 0.66},
-{397, 0.6616666666666666},
-{398, 0.6633333333333333},
-{399, 0.665},
-{400, 0.6666666666666666},
-{401, 0.6683333333333333},
-{402, 0.67},
-{403, 0.6716666666666666},
-{404, 0.6733333333333333},
-{405, 0.675},
-{406, 0.6766666666666666},
-{407, 0.6783333333333333},
-{408, 0.68},
-{409, 0.6816666666666666},
-{410, 0.6833333333333333},
-{411, 0.685},
-{412, 0.6866666666666666},
-{413, 0.6883333333333334},
-{414, 0.69},
-{415, 0.6916666666666667},
-{416, 0.6933333333333334},
-{417, 0.695},
-{418, 0.6966666666666667},
-{419, 0.6983333333333334},
-{420, 0.7},
-{421, 0.7016666666666667},
-{422, 0.7033333333333334},
-{423, 0.705},
-{424, 0.7066666666666667},
-{425, 0.7083333333333334},
-{426, 0.71},
-{427, 0.7116666666666667},
-{428, 0.7133333333333334},
-{429, 0.715},
-{430, 0.7166666666666667},
-{431, 0.7183333333333334},
-{432, 0.72},
-{433, 0.7216666666666667},
-{434, 0.7233333333333334},
-{435, 0.725},
-{436, 0.7266666666666667},
-{437, 0.7283333333333334},
-{438, 0.73},
-{439, 0.7316666666666667},
-{440, 0.7333333333333333},
-{441, 0.735},
-{442, 0.7366666666666667},
-{443, 0.7383333333333333},
-{444, 0.74},
-{445, 0.7416666666666667},
-{446, 0.7433333333333333},
-{447, 0.745},
-{448, 0.7466666666666667},
-{449, 0.7483333333333333},
-{450, 0.75},
-{451, 0.7516666666666667},
-{452, 0.7533333333333333},
-{453, 0.755},
-{454, 0.7566666666666667},
-{455, 0.7583333333333333},
-{456, 0.76},
-{457, 0.7616666666666667},
-{458, 0.7633333333333333},
-{459, 0.765},
-{460, 0.7666666666666667},
-{461, 0.7683333333333333},
-{462, 0.77},
-{463, 0.7716666666666666},
-{464, 0.7733333333333333},
-{465, 0.775},
-{466, 0.7766666666666666},
-{467, 0.7783333333333333},
-{468, 0.78},
-{469, 0.7816666666666666},
-{470, 0.7833333333333333},
-{471, 0.785},
-{472, 0.7866666666666666},
-{473, 0.7883333333333333},
-{474, 0.79},
-{475, 0.7916666666666666},
-{476, 0.7933333333333333},
-{477, 0.795},
-{478, 0.7966666666666666},
-{479, 0.7983333333333333},
-{480, 0.8},
-{481, 0.8016666666666666},
-{482, 0.8033333333333333},
-{483, 0.805},
-{484, 0.8066666666666666},
-{485, 0.8083333333333333},
-{486, 0.81},
-{487, 0.8116666666666666},
-{488, 0.8133333333333334},
-{489, 0.815},
-{490, 0.8166666666666667},
-{491, 0.8183333333333334},
-{492, 0.82},
-{493, 0.8216666666666667},
-{494, 0.8233333333333334},
-{495, 0.825},
-{496, 0.8266666666666667},
-{497, 0.8283333333333334},
-{498, 0.83},
-{499, 0.8316666666666667},
-{500, 0.8333333333333334}
-}
-
-local sigma_table = {
-{1, 0.0016666666666666668},
-{2, 0.0033333333333333335},
-{3, 0.005},
-{4, 0.006666666666666667},
-{5, 0.008333333333333333},
-{6, 0.01},
-{7, 0.011666666666666665},
-{8, 0.013333333333333334},
-{9, 0.015},
-{10, 0.016666666666666666},
-{11, 0.018333333333333333},
-{12, 0.02},
-{13, 0.021666666666666667},
-{14, 0.023333333333333334},
-{15, 0.025},
-{16, 0.02666666666666667},
-{17, 0.028333333333333332},
-{18, 0.03},
-{19, 0.03166666666666667},
-{20, 0.03333333333333333},
-{21, 0.035},
-{22, 0.03666666666666667},
-{23, 0.03833333333333333},
-{24, 0.04},
-{25, 0.041666666666666664},
-{26, 0.043333333333333335},
-{27, 0.045},
-{28, 0.04666666666666667},
-{29, 0.04833333333333333},
-{30, 0.05},
-{31, 0.051666666666666666},
-{32, 0.05333333333333334},
-{33, 0.055},
-{34, 0.056666666666666664},
-{35, 0.058333333333333334},
-{36, 0.06},
-{37, 0.06166666666666667},
-{38, 0.06333333333333334},
-{39, 0.065},
-{40, 0.06666666666666667},
-{41, 0.06833333333333333},
-{42, 0.07},
-{43, 0.07166666666666667},
-{44, 0.07333333333333333},
-{45, 0.075},
-{46, 0.07666666666666666},
-{47, 0.07833333333333334},
-{48, 0.08},
-{49, 0.08166666666666667},
-{50, 0.08333333333333333},
-{51, 0.085},
-{52, 0.08666666666666667},
-{53, 0.08833333333333333},
-{54, 0.09},
-{55, 0.09166666666666666},
-{56, 0.09333333333333334},
-{57, 0.095},
-{58, 0.09666666666666666},
-{59, 0.09833333333333333},
-{60, 0.1},
-{61, 0.10166666666666666},
-{62, 0.10333333333333333},
-{63, 0.105},
-{64, 0.10666666666666667},
-{65, 0.10833333333333334},
-{66, 0.11},
-{67, 0.11166666666666666},
-{68, 0.11333333333333333},
-{69, 0.115},
-{70, 0.11666666666666667},
-{71, 0.11833333333333333},
-{72, 0.12},
-{73, 0.12166666666666667},
-{74, 0.12333333333333334},
-{75, 0.125},
-{76, 0.12666666666666668},
-{77, 0.12833333333333333},
-{78, 0.13},
-{79, 0.13166666666666665},
-{80, 0.13333333333333333},
-{81, 0.135},
-{82, 0.13666666666666666},
-{83, 0.13833333333333334},
-{84, 0.14},
-{85, 0.14166666666666666},
-{86, 0.14333333333333334},
-{87, 0.145},
-{88, 0.14666666666666667},
-{89, 0.14833333333333334},
-{90, 0.15},
-{91, 0.15166666666666667},
-{92, 0.15333333333333332},
-{93, 0.155},
-{94, 0.15666666666666668},
-{95, 0.15833333333333333},
-{96, 0.16},
-{97, 0.16166666666666665},
-{98, 0.16333333333333333},
-{99, 0.165},
-{100, 0.16666666666666666},
-{101, 0.16833333333333333},
-{102, 0.17},
-{103, 0.17166666666666666},
-{104, 0.17333333333333334},
-{105, 0.175},
-{106, 0.17666666666666667},
-{107, 0.17833333333333334},
-{108, 0.18},
-{109, 0.18166666666666667},
-{110, 0.18333333333333332},
-{111, 0.185},
-{112, 0.18666666666666668},
-{113, 0.18833333333333332},
-{114, 0.19},
-{115, 0.19166666666666668},
-{116, 0.19333333333333333},
-{117, 0.195},
-{118, 0.19666666666666666},
-{119, 0.19833333333333333},
-{120, 0.2},
-{121, 0.20166666666666666},
-{122, 0.20333333333333334},
-{123, 0.205},
-{124, 0.20666666666666667},
-{125, 0.20833333333333334},
-{126, 0.21},
-{127, 0.21166666666666667},
-{128, 0.21333333333333335},
-{129, 0.215},
-{130, 0.21666666666666667},
-{131, 0.21833333333333332},
-{132, 0.22},
-{133, 0.22166666666666668},
-{134, 0.22333333333333333},
-{135, 0.225},
-{136, 0.22666666666666666},
-{137, 0.22833333333333333},
-{138, 0.23},
-{139, 0.23166666666666666},
-{140, 0.23333333333333334},
-{141, 0.235},
-{142, 0.23666666666666666},
-{143, 0.23833333333333334},
-{144, 0.24},
-{145, 0.24166666666666667},
-{146, 0.24333333333333335},
-{147, 0.245},
-{148, 0.24666666666666667},
-{149, 0.24833333333333332},
-{150, 0.25},
-{151, 0.25166666666666665},
-{152, 0.25333333333333335},
-{153, 0.255},
-{154, 0.25666666666666665},
-{155, 0.25833333333333336},
-{156, 0.26},
-{157, 0.26166666666666666},
-{158, 0.2633333333333333},
-{159, 0.265},
-{160, 0.26666666666666666},
-{161, 0.2683333333333333},
-{162, 0.27},
-{163, 0.27166666666666667},
-{164, 0.2733333333333333},
-{165, 0.275},
-{166, 0.27666666666666667},
-{167, 0.27833333333333333},
-{168, 0.28},
-{169, 0.2816666666666667},
-{170, 0.2833333333333333},
-{171, 0.285},
-{172, 0.2866666666666667},
-{173, 0.28833333333333333},
-{174, 0.29},
-{175, 0.2916666666666667},
-{176, 0.29333333333333333},
-{177, 0.295},
-{178, 0.2966666666666667},
-{179, 0.29833333333333334},
-{180, 0.3},
-{181, 0.3016666666666667},
-{182, 0.30333333333333334},
-{183, 0.305},
-{184, 0.30666666666666664},
-{185, 0.30833333333333335},
-{186, 0.31},
-{187, 0.31166666666666665},
-{188, 0.31333333333333335},
-{189, 0.315},
-{190, 0.31666666666666665},
-{191, 0.31833333333333336},
-{192, 0.32},
-{193, 0.32166666666666666},
-{194, 0.3233333333333333},
-{195, 0.325},
-{196, 0.32666666666666666},
-{197, 0.3283333333333333},
-{198, 0.33},
-{199, 0.33166666666666667},
-{200, 0.3333333333333333},
-{201, 0.335},
-{202, 0.33666666666666667},
-{203, 0.3383333333333333},
-{204, 0.34},
-{205, 0.3416666666666667},
-{206, 0.3433333333333333},
-{207, 0.345},
-{208, 0.3466666666666667},
-{209, 0.34833333333333333},
-{210, 0.35},
-{211, 0.3516666666666667},
-{212, 0.35333333333333333},
-{213, 0.355},
-{214, 0.3566666666666667},
-{215, 0.35833333333333334},
-{216, 0.36},
-{217, 0.3616666666666667},
-{218, 0.36333333333333334},
-{219, 0.365},
-{220, 0.36666666666666664},
-{221, 0.36833333333333335},
-{222, 0.37},
-{223, 0.37166666666666665},
-{224, 0.37333333333333335},
-{225, 0.375},
-{226, 0.37666666666666665},
-{227, 0.37833333333333335},
-{228, 0.38},
-{229, 0.38166666666666665},
-{230, 0.38333333333333336},
-{231, 0.385},
-{232, 0.38666666666666666},
-{233, 0.3883333333333333},
-{234, 0.39},
-{235, 0.39166666666666666},
-{236, 0.3933333333333333},
-{237, 0.395},
-{238, 0.39666666666666667},
-{239, 0.3983333333333333},
-{240, 0.4},
-{241, 0.40166666666666667},
-{242, 0.4033333333333333},
-{243, 0.405},
-{244, 0.4066666666666667},
-{245, 0.4083333333333333},
-{246, 0.41},
-{247, 0.4116666666666667},
-{248, 0.41333333333333333},
-{249, 0.415},
-{250, 0.4166666666666667},
-{251, 0.41833333333333333},
-{252, 0.42},
-{253, 0.4216666666666667},
-{254, 0.42333333333333334},
-{255, 0.425},
-{256, 0.4266666666666667},
-{257, 0.42833333333333334},
-{258, 0.43},
-{259, 0.4316666666666667},
-{260, 0.43333333333333335},
-{261, 0.435},
-{262, 0.43666666666666665},
-{263, 0.43833333333333334},
-{264, 0.44},
-{265, 0.44166666666666665},
-{266, 0.44333333333333336},
-{267, 0.445},
-{268, 0.44666666666666666},
-{269, 0.4483333333333333},
-{270, 0.45},
-{271, 0.45166666666666666},
-{272, 0.4533333333333333},
-{273, 0.455},
-{274, 0.45666666666666667},
-{275, 0.4583333333333333},
-{276, 0.46},
-{277, 0.46166666666666667},
-{278, 0.4633333333333333},
-{279, 0.465},
-{280, 0.4666666666666667},
-{281, 0.4683333333333333},
-{282, 0.47},
-{283, 0.4716666666666667},
-{284, 0.47333333333333333},
-{285, 0.475},
-{286, 0.4766666666666667},
-{287, 0.47833333333333333},
-{288, 0.48},
-{289, 0.4816666666666667},
-{290, 0.48333333333333334},
-{291, 0.485},
-{292, 0.4866666666666667},
-{293, 0.48833333333333334},
-{294, 0.49},
-{295, 0.49166666666666664},
-{296, 0.49333333333333335},
-{297, 0.495},
-{298, 0.49666666666666665},
-{299, 0.49833333333333335},
-{300, 0.5},
-{301, 0.5016666666666667},
-{302, 0.5033333333333333},
-{303, 0.505},
-{304, 0.5066666666666667},
-{305, 0.5083333333333333},
-{306, 0.51},
-{307, 0.5116666666666667},
-{308, 0.5133333333333333},
-{309, 0.515},
-{310, 0.5166666666666667},
-{311, 0.5183333333333333},
-{312, 0.52},
-{313, 0.5216666666666666},
-{314, 0.5233333333333333},
-{315, 0.525},
-{316, 0.5266666666666666},
-{317, 0.5283333333333333},
-{318, 0.53},
-{319, 0.5316666666666666},
-{320, 0.5333333333333333},
-{321, 0.535},
-{322, 0.5366666666666666},
-{323, 0.5383333333333333},
-{324, 0.54},
-{325, 0.5416666666666666},
-{326, 0.5433333333333333},
-{327, 0.545},
-{328, 0.5466666666666666},
-{329, 0.5483333333333333},
-{330, 0.55},
-{331, 0.5516666666666666},
-{332, 0.5533333333333333},
-{333, 0.555},
-{334, 0.5566666666666666},
-{335, 0.5583333333333333},
-{336, 0.56},
-{337, 0.5616666666666666},
-{338, 0.5633333333333334},
-{339, 0.565},
-{340, 0.5666666666666667},
-{341, 0.5683333333333334},
-{342, 0.57},
-{343, 0.5716666666666667},
-{344, 0.5733333333333334},
-{345, 0.575},
-{346, 0.5766666666666667},
-{347, 0.5783333333333334},
-{348, 0.58},
-{349, 0.5816666666666667},
-{350, 0.5833333333333334},
-{351, 0.585},
-{352, 0.5866666666666667},
-{353, 0.5883333333333334},
-{354, 0.59},
-{355, 0.5916666666666667},
-{356, 0.5933333333333334},
-{357, 0.595},
-{358, 0.5966666666666667},
-{359, 0.5983333333333334},
-{360, 0.6},
-{361, 0.6016666666666667},
-{362, 0.6033333333333334},
-{363, 0.605},
-{364, 0.6066666666666667},
-{365, 0.6083333333333333},
-{366, 0.61},
-{367, 0.6116666666666667},
-{368, 0.6133333333333333},
-{369, 0.615},
-{370, 0.6166666666666667},
-{371, 0.6183333333333333},
-{372, 0.62},
-{373, 0.6216666666666667},
-{374, 0.6233333333333333},
-{375, 0.625},
-{376, 0.6266666666666667},
-{377, 0.6283333333333333},
-{378, 0.63},
-{379, 0.6316666666666667},
-{380, 0.6333333333333333},
-{381, 0.635},
-{382, 0.6366666666666667},
-{383, 0.6383333333333333},
-{384, 0.64},
-{385, 0.6416666666666667},
-{386, 0.6433333333333333},
-{387, 0.645},
-{388, 0.6466666666666666},
-{389, 0.6483333333333333},
-{390, 0.65},
-{391, 0.6516666666666666},
-{392, 0.6533333333333333},
-{393, 0.655},
-{394, 0.6566666666666666},
-{395, 0.6583333333333333},
-{396, 0.66},
-{397, 0.6616666666666666},
-{398, 0.6633333333333333},
-{399, 0.665},
-{400, 0.6666666666666666},
-{401, 0.6683333333333333},
-{402, 0.67},
-{403, 0.6716666666666666},
-{404, 0.6733333333333333},
-{405, 0.675},
-{406, 0.6766666666666666},
-{407, 0.6783333333333333},
-{408, 0.68},
-{409, 0.6816666666666666},
-{410, 0.6833333333333333},
-{411, 0.685},
-{412, 0.6866666666666666},
-{413, 0.6883333333333334},
-{414, 0.69},
-{415, 0.6916666666666667},
-{416, 0.6933333333333334},
-{417, 0.695},
-{418, 0.6966666666666667},
-{419, 0.6983333333333334},
-{420, 0.7},
-{421, 0.7016666666666667},
-{422, 0.7033333333333334},
-{423, 0.705},
-{424, 0.7066666666666667},
-{425, 0.7083333333333334},
-{426, 0.71},
-{427, 0.7116666666666667},
-{428, 0.7133333333333334},
-{429, 0.715},
-{430, 0.7166666666666667},
-{431, 0.7183333333333334},
-{432, 0.72},
-{433, 0.7216666666666667},
-{434, 0.7233333333333334},
-{435, 0.725},
-{436, 0.7266666666666667},
-{437, 0.7283333333333334},
-{438, 0.73},
-{439, 0.7316666666666667},
-{440, 0.7333333333333333},
-{441, 0.735},
-{442, 0.7366666666666667},
-{443, 0.7383333333333333},
-{444, 0.74},
-{445, 0.7416666666666667},
-{446, 0.7433333333333333},
-{447, 0.745},
-{448, 0.7466666666666667},
-{449, 0.7483333333333333},
-{450, 0.75},
-{451, 0.7516666666666667},
-{452, 0.7533333333333333},
-{453, 0.755},
-{454, 0.7566666666666667},
-{455, 0.7583333333333333},
-{456, 0.76},
-{457, 0.7616666666666667},
-{458, 0.7633333333333333},
-{459, 0.765},
-{460, 0.7666666666666667},
-{461, 0.7683333333333333},
-{462, 0.77},
-{463, 0.7716666666666666},
-{464, 0.7733333333333333},
-{465, 0.775},
-{466, 0.7766666666666666},
-{467, 0.7783333333333333},
-{468, 0.78},
-{469, 0.7816666666666666},
-{470, 0.7833333333333333},
-{471, 0.785},
-{472, 0.7866666666666666},
-{473, 0.7883333333333333},
-{474, 0.79},
-{475, 0.7916666666666666},
-{476, 0.7933333333333333},
-{477, 0.795},
-{478, 0.7966666666666666},
-{479, 0.7983333333333333},
-{480, 0.8},
-{481, 0.8016666666666666},
-{482, 0.8033333333333333},
-{483, 0.805},
-{484, 0.8066666666666666},
-{485, 0.8083333333333333},
-{486, 0.81},
-{487, 0.8116666666666666},
-{488, 0.8133333333333334},
-{489, 0.815},
-{490, 0.8166666666666667},
-{491, 0.8183333333333334},
-{492, 0.82},
-{493, 0.8216666666666667},
-{494, 0.8233333333333334},
-{495, 0.825},
-{496, 0.8266666666666667},
-{497, 0.8283333333333334},
-{498, 0.83},
-{499, 0.8316666666666667},
-{500, 0.8333333333333334}
-}
-
-
-
-local calculate = LPH_NO_VIRTUALIZE(function(Ping)
-    return (Ping / 1000) + 0.0684
-end)
-
-local updatePredictionValue = LPH_NO_VIRTUALIZE(function() 
-    local pg = tonumber(string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), '(')[1])
-    
-    local function fiCl(tb)
-        local clVa, clDi = nil, math.huge
-        for _, en in ipairs(tb) do
-            local di = math.abs(pg - en[1])
-            if di < clDi then clDi, clVa = di, en[2] end
-        end
-        return clVa
-    end
-
-    if Psalms.Tech.CamAutoprediction then
-        local clVa = fiCl(sigma_table)
-        if clVa then
-            Psalms.Tech.CamPrediction1, Psalms.Tech.CamPrediction2 = clVa, clVa
-        end
-    end
-
-    if pg and Psalms.Tech.AutoPrediction then
-        local mo, clVa = Psalms.Tech.APMODE
-        if mo == "Default" or mo == "Sets Based" then
-            clVa = fiCl(mo == "Sets Based" and predictionTable or sigma_table)
-            if clVa then
-                Psalms.Tech.HorizontalPrediction, Psalms.Tech.VerticalPrediction = clVa, clVa * (mo == "Sets Based" and 0.910 or 1)
-            end
-        elseif mo == "Math Based" then
-            local function gePr(fa, ad) 
-    return fa * math.log(pg + 1) + ad 
-end
-Psalms.Tech.HorizontalPrediction = gePr(0, 0)
-Psalms.Tech.VerticalPrediction = gePr(0.100, -0.3405)
-        elseif mo == "Calculate" then
-            local calcValue = calculate(pg)
-            Psalms.Tech.HorizontalPrediction, Psalms.Tech.VerticalPrediction = calcValue, calcValue
-        end
-    end
-end)
-
-local  LookAtPlayer = LPH_NO_VIRTUALIZE(function(tg)
-    local lc = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
-    local lrp, lh = lc:FindFirstChild("HumanoidRootPart"), lc:FindFirstChildOfClass("Humanoid")
-
-    if lh and lrp then
-        if Psalms.Tech and Psalms.Tech.LookAt and not Psalms.Tech.Macroing then
-            if tg and tg.Character then
-                local trp, th = tg.Character:FindFirstChild("HumanoidRootPart"), tg.Character:FindFirstChildOfClass("Humanoid")
-
-                if th and trp then
-                    local lp, tp = lrp.Position, trp.Position
-                    local dir = Vector3.new(tp.X - lp.X, 0, tp.Z - lp.Z).unit
-
-                    lrp.CFrame = CFrame.new(lp, lp + dir)
-                    lh.AutoRotate = false
-                end
-            end
-        else
-            lh.AutoRotate = true
-        end
-    elseif lc:FindFirstChild("Humanoid") then
-        lc.Humanoid.AutoRotate = true
-    end
-end) 
-
-local ViewTarget = LPH_NO_VIRTUALIZE(function()
-    if TargetPlr and TargetPlr.Character and Psalms.Tech.ViewAt then
-        Camera.CameraSubject = TargetPlr.Character.Humanoid
-    elseif not TargetAimbot.CSync.Visualize and not TargetPlr and not  Psalms.Tech.ViewAt and LocalPlayer.Character:FindFirstChild("Humanoid") then
-        Camera.CameraSubject = LocalPlayer.Character.Humanoid
-    end
-end) 
-
-
-local inAir = LPH_NO_VIRTUALIZE(function()
-    if TargetPlr and TargetPlr.Character and TargetPlr.Character:FindFirstChild("Humanoid") then
-        local state = TargetPlr.Character.Humanoid:GetState()
-
-        if state == Enum.HumanoidStateType.Freefall then
-            Psalms.Tech.jumpoffset = Psalms.Tech.jumpoffset3
-                Psalms.Tech.SelectedPart = Psalms.Tech.AirPart
-        elseif state == Enum.HumanoidStateType.Jumping then
-            Psalms.Tech.jumpoffset = Psalms.Tech.jumpoffset2
-        else
-            Psalms.Tech.SelectedPart = Psalms.Tech.RealPart
-            Psalms.Tech.jumpoffset = 0
-        end
-    end
-end)
-
-
-
-local function autospam()
-    if Psalms.Tech.AutoShoot and LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
-        if  not TargetPlr.Character:FindFirstChildOfClass("ForceField") then
-            LocalPlayer.Character:FindFirstChildOfClass("Tool"):Activate()
-        end
-    end
-end
-
-function shoott() 
-    if LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
-        LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):Activate()
-    end
-end
-
-
-
-
-RunService.Stepped:Connect(LPH_JIT(function()
-    checkTarget()
-    updateTargetHealth()
-updatePredictionValue()
-autospam()
-LookAtPlayer(TargetPlr)
-  inAir()
- ViewTarget()
-end))
-
-
-
-
-
-local Lighting = game:GetService("Lighting")
-
-local originalSettings = {
-    FogColor = Lighting.FogColor,
-    FogStart = Lighting.FogStart,
-    FogEnd = Lighting.FogEnd,
-    Ambient = Lighting.Ambient,
-    Brightness = Lighting.Brightness,
-    ClockTime = Lighting.ClockTime,
-    ExposureCompensation = Lighting.ExposureCompensation,
-    ColorShift_Bottom = Lighting.ColorShift_Bottom,
-    ColorShift_Top = Lighting.ColorShift_Top,
-    GlobalShadows = Lighting.GlobalShadows,
-    OutdoorAmbient = Lighting.OutdoorAmbient,
-    ShadowSoftness = Lighting.ShadowSoftness
-}
-
-local Environment = {
-    Settings = {
-        Exposure = 0,
-        ClockTime = 1,
-        FogColor = Color3.fromRGB(0, 0, 255),
-        FogStart = 0,
-        FogEnd = 300,
-        Ambient = Color3.fromRGB(0, 0, 255),
-        Brightness = 0,
-        Enabled = false,
-        ColorShift_Bottom = Color3.fromRGB(0, 0, 50),
-        ColorShift_Top = Color3.fromRGB(50, 50, 150),
-        GlobalShadows = true,
-        OutdoorAmbient = Color3.fromRGB(60, 60, 100),
-        ShadowSoftness = 0.7, 
-FogEnabled = false
-    }
-}
-
-local function UpdateWorld()
-    if Environment.Settings.Enabled then
-        Lighting.Ambient = Environment.Settings.Ambient
-        Lighting.Brightness = Environment.Settings.Brightness
-        Lighting.ClockTime = Environment.Settings.ClockTime
-        Lighting.ExposureCompensation = Environment.Settings.Exposure
-        Lighting.ColorShift_Bottom = Environment.Settings.ColorShift_Bottom
-        Lighting.ColorShift_Top = Environment.Settings.ColorShift_Top
-        Lighting.GlobalShadows = Environment.Settings.GlobalShadows
-        Lighting.OutdoorAmbient = Environment.Settings.OutdoorAmbient
-        Lighting.ShadowSoftness = Environment.Settings.ShadowSoftness
-    else
-        Lighting.Ambient = originalSettings.Ambient
-        Lighting.Brightness = originalSettings.Brightness
-        Lighting.ClockTime = originalSettings.ClockTime
-        Lighting.ExposureCompensation = originalSettings.ExposureCompensation
-        Lighting.ColorShift_Bottom = originalSettings.ColorShift_Bottom
-        Lighting.ColorShift_Top = originalSettings.ColorShift_Top
-        Lighting.GlobalShadows = originalSettings.GlobalShadows
-        Lighting.OutdoorAmbient = originalSettings.OutdoorAmbient
-        Lighting.ShadowSoftness = originalSettings.ShadowSoftness
-    end
-end
-
-local function fogmaker()
-    if Environment.Settings.FogEnabled then
-        Lighting.FogColor = Environment.Settings.FogColor
-        Lighting.FogStart = Environment.Settings.FogStart
-        Lighting.FogEnd = Environment.Settings.FogEnd
-    else
-        Lighting.FogColor = originalSettings.FogColor
-        Lighting.FogStart = originalSettings.FogStart
-        Lighting.FogEnd = originalSettings.FogEnd
-    end
-end
-
- Recalculate = function(Character)
-    local Pos = Character.HumanoidRootPart.Position
-    local Tick = tick()
-
-    task.wait(0.1)
-
-    local NewPos = Character.HumanoidRootPart.Position
-    local NewTick = tick()
-
-    local Delta = (NewTick - Tick)
-    local PositionDifference = (NewPos - Pos)
-    local Velocity = PositionDifference / Delta
-
-    Pos = NewPos
-    Tick = NewTick
-    return Velocity
-end
-
-
-
-RunService.RenderStepped:Connect(LPH_JIT(function()
-    if Psalms.Tech.Camera and TargetPlr and TargetPlr.Character and Psalms.Tech.SelectedPart then
-        if TargetPlr.Character[Psalms.Tech.SelectedPart] then
-
-
-
-            Psalms.Tech.velocity = Psalms.Tech.CamResolverEnabled 
-                and Recalculate(TargetPlr.Character) 
-                or TargetPlr.Character[Psalms.Tech.SelectedPart].AssemblyLinearVelocity
-
-            Psalms.Tech.targetPosition = Psalms.Tech.UseExternal 
-                and Vector3.new(
-                    TargetPlr.Character[Psalms.Tech.SelectedPart].Position.X + (Psalms.Tech.velocity.X / Psalms.Tech.CamPrediction1),
-                    TargetPlr.Character[Psalms.Tech.SelectedPart].Position.Y + (Psalms.Tech.velocity.Y / Psalms.Tech.CamPrediction2),
-                    TargetPlr.Character[Psalms.Tech.SelectedPart].Position.Z + (Psalms.Tech.velocity.Z / Psalms.Tech.CamPrediction1)
-                )
-                or Vector3.new(
-                    TargetPlr.Character[Psalms.Tech.SelectedPart].Position.X + (Psalms.Tech.velocity.X * Psalms.Tech.CamPrediction1),
-                    TargetPlr.Character[Psalms.Tech.SelectedPart].Position.Y + (Psalms.Tech.velocity.Y * Psalms.Tech.CamPrediction2),
-                    TargetPlr.Character[Psalms.Tech.SelectedPart].Position.Z + (Psalms.Tech.velocity.Z * Psalms.Tech.CamPrediction1)
-                )
-
-if Psalms.Tech.CamWallCheck and BehindWall(TargetPlr) then
-                return
-            end
-
-            if Psalms.Tech.CAMKo and isPlayerKO(TargetPlr) then
-                return
-            end
-
-            Camera.CFrame = Camera.CFrame:Lerp(
-                CFrame.new(Camera.CFrame.Position, Psalms.Tech.targetPosition), 
-                Psalms.Tech.smoothness or 0.1, 
-                Enum.EasingStyle[Psalms.Tech.easingStyle], 
-                Enum.EasingDirection[Psalms.Tech.easingDirection]
-            )
-        end
-    end
-end))
-
-LocalPlayer.Character:WaitForChild("Humanoid").StateChanged:Connect(function(old, new)
-    if Psalms.Tech.JumpBreak and new == Enum.HumanoidStateType.Freefall then
-        task.wait(0.17)
-        LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, -15, 0)
-    end
-end) 
-
-
-
-local Desync = false
-local AntiLockType = "Zero"
-local Direction = Vector3.new(0, 0, -1)
-
-local Xmin, XMax = -10000, 10000
-local Ymin, YMax = -10000, 10000
-local Zmin, ZMax = -10000, 10000
-
-game:GetService("RunService").heartbeat:Connect(LPH_JIT(function()
-    local hrp = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-    if game.Players.LocalPlayer.Character and Desync then
-        local originalVelocity = hrp.Velocity
-
-        if AntiLockType == "Behind" then
-            Direction = Vector3.new(0, 0, -1)
-        elseif AntiLockType == "Down" then
-            Direction = Vector3.new(0, -1, 0)
-        elseif AntiLockType == "Forward" then
-            Direction = Vector3.new(0, 0, 1)
-        elseif AntiLockType == "Left" then
-            Direction = Vector3.new(-1, 0, 0)
-        elseif AntiLockType == "One" then
-            Direction = Vector3.new(1, 1, 1)
-        elseif AntiLockType == "Right" then
-            Direction = Vector3.new(1, 0, 0)
-        elseif AntiLockType == "Up" then
-            Direction = Vector3.new(0, 1, 0)
-        elseif AntiLockType == "Zero" then
-            Direction = Vector3.new(0, 0, 0)
-        elseif AntiLockType == "Shake" then
-            hrp.Velocity = Vector3.new(math.random(Xmin, XMax), math.random(Ymin, YMax), math.random(Zmin, ZMax))
-            game:GetService("RunService").RenderStepped:Wait()
-            hrp.Velocity = originalVelocity
-            return
-        elseif AntiLockType == "Multiply" then
-            hrp.Velocity = originalVelocity * 2
-            game:GetService("RunService").RenderStepped:Wait()
-            hrp.Velocity = originalVelocity
-            return
-        end
-
-        hrp.Velocity = Direction * (2^16)
-        game:GetService("RunService").RenderStepped:Wait()
-        hrp.Velocity = originalVelocity
-    end
-end))
-
-RunService.PostSimulation:Connect(function()
-
-    if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
-        if desyncsleep then
-            Sleeping = not Sleeping
-            setfflag("S2PhysicsSenderRate", 2)
-            sethiddenproperty(LocalPlayer.Character.HumanoidRootPart, "NetworkIsSleeping", Sleeping)
-        else
-            Sleeping = false
-            setfflag("S2PhysicsSenderRate", 13)
-            sethiddenproperty(LocalPlayer.Character.HumanoidRootPart, "NetworkIsSleeping", Sleeping)
-        end
-    end
-end)
-
-
-
-
-
-local cframe_to_offset = function(origin, target)
-    local actual_origin = origin * CFrame.new(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -1, 0)
-    return actual_origin:ToObjectSpace(target):inverse()
-end
-
-bool_at_tp_tool = function(tool)
-    local old_grip = tool.Grip
-    if TargetPlr and TargetPlr.Character then
-        tool.Parent = LocalPlayer.Backpack
-        LocalPlayer.Character.RightHand.Anchored = false
-        tool.Grip = cframe_to_offset(LocalPlayer.Character.RightHand.CFrame, TargetPlr.Character.HumanoidRootPart.CFrame)
-        LocalPlayer.Character.RightHand.Anchored = true
-        tool.Parent = LocalPlayer.Character
-        RunService.RenderStepped:Wait()
-        tool.Parent = LocalPlayer.Backpack
-        LocalPlayer.Character.RightHand.Anchored = false
-        tool.Grip = old_grip
-        tool.Parent = LocalPlayer.Character
-    end
-end
-
-local connection
-
-local tool_activated = function(character)
-    character.ChildAdded:Connect(function(child)
-        if Psalms.Tech.bool_at_tp then
-            if child:IsA("Tool") then
-                connection = child.Activated:Connect(function()
-                    bool_at_tp_tool(child)
-                end)
-            end
-        end
-    end)
-
-    character.ChildRemoved:Connect(function(child)
-        if child:IsA("Tool") then
-            if connection then
-                connection:Disconnect()
-            end
-        end
-    end)
-end
-
-LocalPlayer.CharacterAdded:Connect(function(new_character)
-    tool_activated(new_character)
-end)
-
-tool_activated(LocalPlayer.Character)
-
-
-RunService.RenderStepped:Connect(LPH_JIT(function()
-   updateBreatheEffect()
-
- if Psalms.Tech.cframespeedtoggle and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
-        local humanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        local moveDirection = game.Players.LocalPlayer.Character.Humanoid.MoveDirection
-        
-        humanoidRootPart.CFrame = humanoidRootPart.CFrame + moveDirection * (Psalms.Tech.speedvalue / 0.5)
-    end
-end)) 
-
-GetClosestToMouse = function()
-            local TargetPlr, Closest = nil, math.huge
-
-            for _, v in pairs(Players:GetPlayers()) do
-                if (v ~= Client and v.Character and v.Character:FindFirstChild("HumanoidRootPart")) then
-                    local Position, OnScreen = Camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
-                    local Distance = (Vector2.new(Position.X, Position.Y) - Vector2.new(Mouse.X, Mouse.Y)).Magnitude
-
-                    if (Distance < Closest and OnScreen) then
-                        Closest = Distance
-                        TargetPlr = v
-                    end
-                end
-            end
-            return TargetPlr
-        end
-
-local skyboxEnabled = false
-local skyboxType = 1
-
-function changeSkybox()
-    if skyboxEnabled then
-        if skyboxType == 1 then
-            Lighting.ClockTime = "12"
-            Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=1279987105"
-            Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=1279987105"
-            Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=1279987105"
-            Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=1279987105"
-            Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=1279987105"
-            Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=1279987105"
-        elseif skyboxType == 2 then
-            Lighting.ClockTime = "12"
-            Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=2571711090"
-            Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=2571711090"
-            Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=2571711090"
-            Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=2571711090"
-            Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=2571711090"
-            Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=2571711090"
-        elseif skyboxType == 3 then
-            Lighting.ClockTime = "12"
-            Lighting.Sky.SkyboxBk = "rbxassetid://6277563515"
-            Lighting.Sky.SkyboxDn = "rbxassetid://6277565742"
-            Lighting.Sky.SkyboxFt = "rbxassetid://6277567481"
-            Lighting.Sky.SkyboxLf = "rbxassetid://6277569562"
-            Lighting.Sky.SkyboxRt = "rbxassetid://6277583250"
-            Lighting.Sky.SkyboxUp = "rbxassetid://6277586065"
-        elseif skyboxType == 4 then
-            Lighting.ClockTime = "12"
-            Lighting.Sky.SkyboxBk = "rbxassetid://6285719338"
-            Lighting.Sky.SkyboxDn = "rbxassetid://6285721078"
-            Lighting.Sky.SkyboxFt = "rbxassetid://6285722964"
-            Lighting.Sky.SkyboxLf = "rbxassetid://6285724682"
-            Lighting.Sky.SkyboxRt = "rbxassetid://6285726335"
-            Lighting.Sky.SkyboxUp = "rbxassetid://6285730635"
-        elseif skyboxType == 5 then
-            Lighting.ClockTime = "12"
-            Lighting.Sky.SkyboxBk = "rbxassetid://877168885"
-            Lighting.Sky.SkyboxDn = "rbxassetid://877169070"
-            Lighting.Sky.SkyboxFt = "rbxassetid://877169154"
-            Lighting.Sky.SkyboxLf = "rbxassetid://877169233"
-            Lighting.Sky.SkyboxRt = "rbxassetid://877169317"
-            Lighting.Sky.SkyboxUp = "rbxassetid://877169431"
-        elseif skyboxType == 6 then
-            Lighting.ClockTime = "12"
-            Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=9971120429"
-            Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=9971120429"
-            Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=9971120429"
-            Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=9971120429"
-            Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=9971120429"
-            Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=9971120429"
-        elseif skyboxType == 7 then
-            Lighting.ClockTime = "12"
-            Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=8754359769"
-            Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=8754359769"
-            Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=8754359769"
-            Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=8754359769"
-            Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=8754359769"
-            Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=8754359769"
-
-        end
-    end
-end
-
-
-local howmany = 0
-local MakeButton = LPH_NO_VIRTUALIZE(function(ButtonName, Color, callback)
-    howmany = howmany + 1
-
-    local ScreenGui = Instance.new("ScreenGui")
-    ScreenGui.Parent = game:GetService("CoreGui")
-    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-    local Frame = Instance.new("Frame")
-    local TextButton = Instance.new("ImageLabel")
-    local TextLabel = Instance.new("TextButton")
-    local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-
-    Frame.Parent = ScreenGui
-    Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    Frame.BackgroundTransparency = 0.3
-    Frame.Position = UDim2.new(1, -150, 0, (howmany - 1) * 60)
-    Frame.Size = UDim2.new(0, 120, 0, 40)
-
-    local uiStroke = Instance.new("UIStroke")
-    uiStroke.Parent = Frame
-    uiStroke.Color = Color
-    uiStroke.Thickness = 1.2
-    uiStroke.Transparency = 0
-
-    TextButton.Parent = Frame
-    TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    TextButton.BackgroundTransparency = 1
-    TextButton.Size = UDim2.new(0, 28, 0, 28)
-    TextButton.AnchorPoint = Vector2.new(0, 0.5)
-    TextButton.Position = UDim2.new(0.05, 0, 0.5, 0)
-    TextButton.Image = "rbxassetid://10734923214"
-    TextButton.ImageColor3 = Color
-
-    TextLabel.Parent = Frame
-    TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    TextLabel.BackgroundTransparency = 1
-    TextLabel.Size = UDim2.new(0, 80, 0, 28)
-    TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-    TextLabel.Position = UDim2.new(0.65, 0, 0.5, 0)
-    TextLabel.Font = Enum.Font.Arimo
-    TextLabel.Text = ButtonName
-    TextLabel.TextColor3 = Color
-    TextLabel.TextScaled = true
-    TextLabel.TextSize = 25
-    TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-    TextLabel.TextStrokeTransparency = 1
-
-    local uiCorner = Instance.new("UICorner", Frame)
-    uiCorner.CornerRadius = UDim.new(0, 8)
-
-    local buttonState = false
-
-    TextLabel.MouseButton1Down:Connect(function()
-        buttonState = not buttonState
-        callback(buttonState)
-
-        if buttonState then
-            TextButton.Image = "rbxassetid://10735024209"
-        else
-            TextButton.Image = "rbxassetid://10734923214"
-        end
-    end)
-
-    local dragStart, startPos
-    TextLabel.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragStart = input.Position
-            startPos = Frame.Position
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragStart = nil
-                end
-            end)
-        end
-    end)
-
-    TextLabel.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            if dragStart then
-                local delta = input.Position - dragStart
-                Frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-            end
-        end
-    end)
-
-    UITextSizeConstraint.Parent = TextLabel
-    UITextSizeConstraint.MaxTextSize = 25
-end)
-
-
-
-
-
-
--------
-
---------
-local ScreenGui, Frame, gradient, UICorner, UIStroke, ballsarelife = Instance.new("ScreenGui"), Instance.new("Frame"), Instance.new("UIGradient"), Instance.new("UICorner"), Instance.new("UIStroke"), Color3.fromRGB(255, 255, 255)
-
-
-ScreenGui.Parent = game:GetService("CoreGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-----------
-
-
-local sama_sama_sama, whattheskibidi, mode, coluhhh, coluhhh2, HuhDrawing = false, 0.6, "Center", Color3.fromRGB(0, 0, 0), Color3.fromRGB(0, 0, 255), 125
-
-----------
-Frame.Parent = ScreenGui
-Frame.Visible = sama_sama_sama
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BackgroundTransparency = whattheskibidi
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-
-UICorner.CornerRadius = UDim.new(1, 0)
-UICorner.Parent = Frame
-
-UIStroke.Thickness = 1.3
-UIStroke.Color = ballsarelife
-UIStroke.Parent = Frame
-
-gradient.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, coluhhh),
-    ColorSequenceKeypoint.new(1, coluhhh2)
-}
-gradient.Parent = Frame
-
-local function UpdateStrokeColor()
-    local color1 = gradient.Color.Keypoints[1].Value
-    UIStroke.Color = Color3.new(color1.R, color1.G, color1.B)
-end
-
-
-local viewportSize = Camera.ViewportSize
-
-local function UpdateFrameSize(fovRadius)
-    Frame.Size = UDim2.new(0, fovRadius * 2, 0, fovRadius * 2)
-    Frame.Position = UDim2.new(0.5, -fovRadius, 0.5, -fovRadius)
-end
-
-local fovRadius = 125
-UpdateFrameSize(fovRadius)
-
-local player = game.Players.LocalPlayer
-local mouse = player:GetMouse()
-
-mouse.Move:Connect(function()
-    if mouse and mode == "Mouse" then
-        Frame.Position = UDim2.new(0, mouse.X - Frame.Size.X.Offset / 2, 0, mouse.Y - Frame.Size.Y.Offset / 2)
-    else
-        Frame.Position = UDim2.new(0.5, -Frame.Size.X.Offset / 2, 0.5, -Frame.Size.Y.Offset / 2)
-    end
-end)
-
-local RotateThisDick = 4
-
-spawn(function()
-    while true do
-        gradient.Rotation = gradient.Rotation + RotateThisDick
-        UpdateStrokeColor()
-        task.wait(0.01)
-    end
-end)
-
-
-
-
-
-
-
-local function findClosestPlayer()
-    local closestPlayer = nil
-    local closestDistance = math.huge
-
-    for _, Plr in ipairs(Players:GetPlayers()) do
-        if Plr == Players.LocalPlayer or not Plr.Character or not Plr.Character:FindFirstChild("HumanoidRootPart") then
-            continue
-        end
-
-if Psalms.Tech.FriendCheck and player:IsFriendsWith(Plr.UserId) then
-                continue
-            end
-
-if Psalms.Tech.TeamCheck and isPlayerOnSameTeam(Plr) then
-    continue
-end
-
-            if Psalms.Tech.KOCheck and isPlayerKO(Plr) then
-                continue
-            end
-
-            if Psalms.Tech.SeatedCheck and isPlayerSeated(Plr) then
-                continue
-            end
-
-            if Psalms.Tech.WallCheck and BehindWall(Plr) then
-                continue
-            end
-
-        local targetPart = Plr.Character:FindFirstChild("HumanoidRootPart")
-        if targetPart then
-            local screenPos, onScreen = Camera:WorldToViewportPoint(targetPart.Position)
-            if onScreen and (not WallCheck or not BehindWall(Plr)) then
-                local distanceToCenter = (Vector2.new(
-                    Frame.AbsolutePosition.X + Frame.AbsoluteSize.X / 2,
-                    Frame.AbsolutePosition.Y + Frame.AbsoluteSize.Y / 2
-                ) - Vector2.new(screenPos.X, screenPos.Y)).Magnitude
-
-                if distanceToCenter < closestDistance and distanceToCenter <= fovRadius then
-                    closestPlayer = Plr
-                    closestDistance = distanceToCenter
-                end
-            end
-        end
-    end
-
-    return closestPlayer
-end
-
-RunService.RenderStepped:Connect(LPH_JIT(function()
-    if Psalms.Tech.SilentMode then
-        TargetPlr = findClosestPlayer()
-        if TargetPlr and TargetPlr.Character then
-            local playerHumanoid = TargetPlr.Character:FindFirstChild("Humanoid")
-            if playerHumanoid then
-                targetHealth = playerHumanoid.Health
-            end
-        end
-    end
-
-   if Flick and TargetPlr and TargetPlr.Character then
-    local playerHumanoid = TargetPlr.Character:FindFirstChild("Humanoid")
-    if playerHumanoid and playerHumanoid.Health > 0 then
-        local targetPart = TargetPlr.Character:FindFirstChild("UpperTorso")
-        if targetPart and playerHumanoid:GetState() == Enum.HumanoidStateType.Freefall then
-
-            local targetPosition = TargetFuturePosition()
-
-
-            workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, targetPosition)
-        end
-    end
-end 
-end))
-
-
-
-
-
-
-
-local guh = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-local dick = os.date("%Y-%m-%d")
-
-
-
-local role = "Buyer"
-if LocalPlayer.Name == "computerplayer442" then
-  role = "BurritoCat"
-elseif LocalPlayer.Name == "pzoz853" then
-  role = "Taco"
-end
-
-local RealColor = "#" .. Library.Accent:ToHex()
-
-local Window = Library:Window({
-    Name = 'Psalms.<font color="'..RealColor..'">Tech</font> | '..guh..' | '..dick..' | <font color="'..RealColor..'">'..role..'</font>',
-    Amount = 4
-})
-
-
-
-
-
-
-local Watermark = Library:Watermark({Name = string.format("ðŸ¤‘ Psalms.Tech ðŸ¤‘")})
-
-
-
-
-
-
-local stats = {
-    fpsHighest = 0,
-    fpsLowest = math.huge,
-    pingTotal = 0,
-    pingCount = 0,
-    gameStartTime = tick(),
-    Update = false
-}
-
-RunService.RenderStepped:Connect(function(frametime)
-    if not stats.Update then return end
-    
-    local fps = math.floor(1 / frametime)
-    stats.fpsHighest = math.max(stats.fpsHighest, fps)
-    stats.fpsLowest = math.min(stats.fpsLowest, fps)
-
-    local ping = 0
-    local pingData = Stats.Network.ServerStatsItem:FindFirstChild("Data Ping")
-    if pingData then
-        local pingStr = pingData:GetValueString()
-        ping = tonumber(string.split(pingStr, '(')[1]) or 0
-    end
-    stats.pingTotal = stats.pingTotal + ping
-    stats.pingCount = stats.pingCount + 1
-    local pingAverage = math.floor(stats.pingTotal / stats.pingCount)
-
-    local memory = math.floor(Stats:GetTotalMemoryUsageMb()) .. "MB"
-    local currentTime = os.date("%I:%M:%S %p")
-    local uptime = math.floor(tick() - stats.gameStartTime)
-
-    local fpsColor = "<font color='rgb(0, 255, 0)'>" .. fps .. "</font>"
-    if fps < 20 then
-        fpsColor = "<font color='rgb(255, 0, 0)'>" .. fps .. "</font>"
-    elseif fps < 40 then
-        fpsColor = "<font color='rgb(255, 165, 0)'>" .. fps .. "</font>"
-    end
-
-    local pingColor
-    if ping < 105 then
-        pingColor = "<font color='rgb(0, 255, 0)'>" .. ping .. "ms</font>"
-    elseif ping >= 105 and ping < 170 then
-        pingColor = "<font color='rgb(255, 165, 0)'>" .. ping .. "ms</font>"
-    else
-        pingColor = "<font color='rgb(255, 0, 0)'>" .. ping .. "ms</font>"
-    end
-
-    
-    local targetName = (TargetPlr and TargetPlr.DisplayName) or "None"
-
-    if stats.Update then
-        Watermark:UpdateText(
-            "FPS: " .. fpsColor ..
-            " | Highest FPS: " .. stats.fpsHighest ..
-            " | Lowest FPS: " .. stats.fpsLowest ..
-            " | Ping: " .. pingColor ..
-            " | Memory: " .. memory ..
-            " | Uptime: " .. uptime .. "s" ..
-            " | Current Time: " .. currentTime ..
-            " | Target: " .. targetName
-        )
-    end
-end)
-
-local Page = Window:Page({Name = "Main", Weapons = true})
-local Sat = Window:Page({Name = "Rage", Weapons = true})
-local Visual = Window:Page({Name = "Visuals", Weapons = true})
-local Settings = Window:Page({Name = "Settings"})
-
-
---
-local SubPage1 = Page:Weapon({Icon = "rbxassetid://78117064682304"})
-local SubPage2 = Page:Weapon({Icon = "rbxassetid://120304994615919"})
-local SubPage3 = Page:Weapon({Icon = "rbxassetid://77469221937135"})
-local SubPage4 = Page:Weapon({Icon = "rbxassetid://128385756502234"})
-local SubPage7 = Visual:Weapon({Icon = "rbxassetid://73968584177310"})
-local SubPage5 = Visual:Weapon({Icon = "rbxassetid://114736089502081"})
-local SubPage6 = Sat:Weapon({Icon = "rbxassetid://119314170974601"})
-
-local TargetAimSection = SubPage1:Section({Name = "Silent/Target", Side = "Left"})
-TargetAimSection:Toggle({
-    Name = "Enabled",
-Flag = "Lock",
-    Callback = function(a)
-        Psalms.Tech.Enabled = a
-    end
-})
-
-TargetAimSection:Toggle({
-    Name = "Look At",
-Flag = "LookAt",
-    Callback = function(a)
-        Psalms.Tech.LookAt = a 
-    end
-})
-
-TargetAimSection:Toggle({
-    Name = "View",
-    Callback = function(a)
-        Psalms.Tech.ViewAt = a 
-    end
-})
-
-TargetAimSection:Toggle({
-    Name = "Anti Aim Viewer",
-Flag = "Anti Aim Viewer",
-    Callback = function(a)
-        Psalms.Tech.AntiAimViewer  = a
-    end
-})
-TargetAimSection:Toggle({
-    Name = "Auto Air",
-Flag = "Auto Air",
-    Callback = function(a)
-        Psalms.Tech.AutoAir = a
-    end
-})
-TargetAimSection:Textbox({
-    Name = "Auto Air Delay",
-Flag = "Auto Air Delay",
-  Default = tostring(Psalms.Tech.ShootDelay),
-    Callback = function(a)
-        targetSigm99928  = tonumber(a)
-    end
-})
-
-TargetAimSection:List({
-    Name = "Lock Method",
-Flag = "Locking Method",
-    Options = {
-        "Index", 
-        "Namecall"
-    },
-    Default = Psalms.Tech.LockType,
-    Callback = function(a)
-        Psalms.Tech.LockType = a
-    end
-})
-
-local BulletHaha = SubPage1:Section({Name = "Gun Modification", Side = "Left"})
-
-BulletHaha:Toggle({
-    Name = "Bullet TP",
-    Callback = function(a)
-        Psalms.Tech.bool_at_tp = a
-    end
-})
-
-local idiotdelay = 0
-
-
-BulletHaha:Toggle({
-    Name = "Rapid Fire",
-    Flag = "HoodCustom Fire Rate",
-    Callback = function(a)
-        Noobidiot = a
-        while Noobidiot do
-            local player = game:GetService("Players").LocalPlayer
-            local character = player.Character or player.CharacterAdded:Wait()
-
-            for _, tool in pairs(character:GetChildren()) do
-                if tool:FindFirstChild("GunData") then
-                    local gun_find = tool:FindFirstChild("GunData")
-
-                    if gun_find and gun_find:IsA("ModuleScript") then
-                        local Gun_Data = require(gun_find)
-
-                        if Gun_Data.cooldown and Gun_Data.slowdown_time then
-                            Gun_Data.cooldown = idiotdelay
-                            Gun_Data.slowdown_time = 1
-                        end
-                    end
-                end
-            end
-            task.wait(1)
-        end
-    end
-})
-
-
-
-BulletHaha:Textbox({
-    Name = "Rapid Fire Delay",
-Flag = "HoodCustomGunDelay",
-  Default = tostring(idiotdelay),
-    Callback = function(a)
-        idiotdelay  = tonumber(a)
-    end
-})
-
-local HitPartSection = SubPage1:Section({Name = "Hit Part", Side = "Left"})
-HitPartSection:List({
-    Name = "BodyPart",
-Flag = "HitPart",
-    Options = {
-        "Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", 
-        "LeftUpperArm", "LeftLowerArm", "LeftHand", 
-        "RightUpperArm", "RightLowerArm", "RightHand", 
-        "LeftUpperLeg", "LeftLowerLeg", "LeftFoot", 
-        "RightUpperLeg", "RightLowerLeg", "RightFoot"
-    },
-    Default = "HumanoidRootPart",
-    Callback = function(a)
-        Psalms.Tech.RealPart = a
-    end
-})
-HitPartSection:List({
-    Name = "AirPart",
-Flag = "AirPart",
-    Options = {
-        "Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", 
-        "LeftUpperArm", "LeftLowerArm", "LeftHand", 
-        "RightUpperArm", "RightLowerArm", "RightHand", 
-        "LeftUpperLeg", "LeftLowerLeg", "LeftFoot", 
-        "RightUpperLeg", "RightLowerLeg", "RightFoot"
-    },
-    Default = "RightFoot",
-    Callback = function(a)
-        Psalms.Tech.AirPart = a
-    end
-})
-
-local PredictionSection = SubPage1:Section({Name = "Calculation", Side = "Right"})
-PredictionSection:Toggle({
-    Name = "Division",
-Flag = "DivisionTarget",
-    Default = false,
-    Callback = function(a)
-        Psalms.Tech.UseVertical = a
-    end
-})
-
-
-
-PredictionSection:Textbox({
-    Name = "Horizontal Prediction (X)",
-Flag = "Horizontal Prediction X",
-    Default = 0.1,
-    Callback = function(a)
-        Psalms.Tech.HorizontalPrediction2 = tonumber(a) or 0.1
-task.wait(0.01)
-Psalms.Tech.HorizontalPrediction = Psalms.Tech.HorizontalPrediction2
-    Psalms.Tech.VerticalPrediction = Psalms.Tech.VerticalPrediction2
-    end
-})
-PredictionSection:Textbox({
-    Name = "Vertical Prediction (Y)",
-Flag = "Vertical Prediction Y",
-    Default = 0.1,
-    Callback = function(a)
-        Psalms.Tech.VerticalPrediction2 = tonumber(a) or 0.1
-task.wait(0.01)
-Psalms.Tech.HorizontalPrediction = Psalms.Tech.HorizontalPrediction2
-    Psalms.Tech.VerticalPrediction = Psalms.Tech.VerticalPrediction2
-    end
-})
-PredictionSection:Textbox({
-    Name = "Jump offset",
-Flag = "JumpOffset",
-    Default = Psalms.Tech.jumpoffset2,
-    Callback = function(a)
-        Psalms.Tech.jumpoffset2 = tonumber(a)
-    end
-})
-PredictionSection:Textbox({
-    Name = "Fall offset",
-Flag = "FallOffset",
-    Default = Psalms.Tech.jumpoffset3,
-    Callback = function(a)
-        Psalms.Tech.jumpoffset3 = tonumber(a)
-    end
-})
-PredictionSection:Toggle({
-    Name = "Visualize",
-Flag = "Visualize",
-    Callback = function(a)
-        Psalms.Tech.VelocityDot = a
-    end
-}) 
-
-PredictionSection:Toggle({
-    Name = "Resolver",
-Flag = "Target Resolver",
-    Callback = function(a)
-        Psalms.Tech.ResolverEnabled = a
-    end
-})
-
-
-PredictionSection:Toggle({
-    Name = "Auto Prediction",
-Flag = "Target Auto Prediction",
-    Callback = function(a)
-        Psalms.Tech.AutoPrediction = a
-     Psalms.Tech.HorizontalPrediction = Psalms.Tech.HorizontalPrediction2
-    Psalms.Tech.VerticalPrediction = Psalms.Tech.VerticalPrediction2
-    end
-})
-PredictionSection:List({
-    Name = "Auto Prediction Mode",
-Flag = "Auto Prediction Mode",
-    Options = {
-         "Default",
-        "Math Based", 
-        "Sets Based",
-        "Calculate"
-    },
-    Default = Psalms.Tech.APMODE,
-    Callback = function(a)
-        Psalms.Tech.APMODE = a
-    end
-})
-PredictionSection:List({
-    Name = "Resolver Method",
-Flag = "Resolver Method",
-    Options = {
-        "Recalculate", 
-        "MoveDirection",
-        "LookVector"
-    },
-    Default = "MoveDirection",
-    Callback = function(a)
-        Psalms.Tech.RESOLVER  = a
-    end
-})
-
-local Checks = SubPage1:Section({Name = "Checks", Side = "Right"})
-
-Checks:Toggle({
-    Name = "KnockOut",
-Flag = "KO",
-    Callback = function(a)
-        Psalms.Tech.KOCheck = a
-    end
-})
-
-Checks:Toggle({
-    Name = "Wall",
-Flag = "Wall",
-    Callback = function(a)
-        Psalms.Tech.WallCheck = a
-    end
-})
-
-Checks:Toggle({
-    Name = "Friend",
-Flag = "Friend",
-    Callback = function(a)
-        Psalms.Tech.FriendCheck  = a
-    end
-})
-
-Checks:Toggle({
-    Name = "Vehicle",
-Flag = "Vehicle",
-    Callback = function(a)
-        Psalms.Tech.SeatedCheck = a
-    end
-})
-
-Checks:Toggle({
-    Name = "Team", 
-Flag = "Team",
-    Callback = function(a)
-        Psalms.Tech.TeamCheck = a
-    end
-})
-
-MacroEmote = {
-    YungBlud = "15610015346",
-    Borocks = "3994129128",
-    Fishing = "3236848555",
-    VPose = "10214418283",
-    BouncyTwirl = "14353423348",
-    Nimbus = "10147924028"
-}
-
-
-local MTSectionS = SubPage4:Section({Name = "Macro", Side = "Right"})
-MTSectionS:Button({Name = "Load Macro", Callback = function()
-    if Macro22 then
-        Library:Notification("Already Loaded.", 3)
-        return
-    end
-    Macro22 = true
-  local Vars = {
-    Services = {
-        Players = game:GetService("Players"),
-        RunService = game:GetService("RunService"),
-        ReplicatedStorage = game:GetService("ReplicatedStorage"),
-    },
-    Player = {
-        Player = game:GetService("Players").LocalPlayer,
-        Character = nil,
-        Root = nil,
-        Humanoid = nil,
-    },
-    Camera = {
-        Instance = workspace.CurrentCamera,
-    },
-    Settings = {
-        MAX_LENGTH = 900000,
-        ENABLED_OFFSET = CFrame.new(0, 0, 0),
-        DISABLED_OFFSET = CFrame.new(0, 0, 0),
-    },
-    State = {
-        RootPos = Vector3.new(0, 0, 0),
-        Active = false,
-        MCenabled = false,
-    },
-    BackpackData = {
-        Character = nil,
-        Humanoid = nil,
-        Backpack = nil,
-    },
-}
-
-Vars.Player.Character = Vars.Player.Player.Character or Vars.Player.Player.CharacterAdded:Wait()
-Vars.Player.Root = Vars.Player.Character:WaitForChild("HumanoidRootPart")
-Vars.Player.Humanoid = Vars.Player.Character.Humanoid
-
-function UpdatePos()
-    if Vars.Player.Player.Character and Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid") and Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid").RootPart then
-        Vars.State.RootPos = Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid").RootPart.Position
-    end
-end
-
-function UpdateAutoRotate(BOOL)
-    if Vars.Player.Player.Character and Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid") then
-        Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid").AutoRotate = BOOL
-    end
-end
-
-function GetUpdatedCameraCFrame()
-    if workspace.CurrentCamera then
-        return CFrame.new(Vars.State.RootPos, Vector3.new(workspace.CurrentCamera.CFrame.LookVector.X * Vars.Settings.MAX_LENGTH, Vars.State.RootPos.Y, workspace.CurrentCamera.CFrame.LookVector.Z * Vars.Settings.MAX_LENGTH))
-    end
-end
-
-function EnableShiftlock()
-    UpdatePos()
-    UpdateAutoRotate(false)
-    if Vars.Player.Player.Character and Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid") and Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid").RootPart then
-        Vars.Player.Player.Character:FindFirstChildOfClass("Humanoid").RootPart.CFrame = GetUpdatedCameraCFrame()
-    end
-    if workspace.CurrentCamera then
-        workspace.CurrentCamera.CFrame = Vars.Camera.Instance.CFrame * Vars.Settings.ENABLED_OFFSET
-    end
-end
-
-function DisableShiftlock()
-    UpdatePos()
-    UpdateAutoRotate(true)
-    if workspace.CurrentCamera then
-        workspace.CurrentCamera.CFrame = Vars.Camera.Instance.CFrame * Vars.Settings.DISABLED_OFFSET
-    end
-    if Vars.State.Active then
-        Vars.State.Active:Disconnect()
-        Vars.State.Active = nil
-    end
-end
-
-function ShiftLock()
-    if Vars.State.MCenabled then
-        if not Vars.State.Active then
-            Vars.State.Active = Vars.Services.RunService.RenderStepped:Connect(function()
-                EnableShiftlock()
-            end)
-        else
-            DisableShiftlock()
-        end
-    end
-end
-
-MakeButton("Macro", Color3.fromRGB(255, 255, 255), function(a)
-    Vars.State.MCenabled = a
-
-if not a then
-DisableShiftlock()
-end
-
- if a then
-    Vars.BackpackData.Character = Vars.Player.Player.Character or Vars.Player.Player.CharacterAdded:Wait()
-    Vars.BackpackData.Humanoid = Vars.BackpackData.Character:FindFirstChild("Humanoid")
-    Vars.BackpackData.Backpack = Vars.Player.Player.Backpack
-
-    for _, item in pairs(Vars.BackpackData.Character:GetChildren()) do
-        if item:IsA("Tool") then
-            item.Parent = Vars.BackpackData.Backpack
-        end
-    end
-
-    local function humanoidplayemote(humanoid, id)
-        return humanoid:PlayEmoteAndGetAnimTrackById(id)
-    end
-
-   humanoidplayemote(Vars.BackpackData.Humanoid, MacroEmote[Psalms.Tech.MacroDance])
-    task.wait(Psalms.Tech.MacroDanceDelay)
-
-    local items = {}
-    for _, item in pairs(Vars.BackpackData.Backpack:GetChildren()) do
-        if item:IsA("Tool") then
-            table.insert(items, item)
-        end
-    end
-
-    if #items > 0 then
-        local randomitem = items[math.random(1, #items)]
-        randomitem.Parent = Vars.BackpackData.Character
-        task.wait(0.100)
-        if randomitem then
-            randomitem.Parent = Vars.BackpackData.Backpack
-        end
-    end
-end
-end)
-
-local TimeElapsed = 0
-local OKNigger = nil
-
-
-RunService.RenderStepped:Connect(function(DeltaTime)
-    TimeElapsed = TimeElapsed + DeltaTime
-    if TimeElapsed >= Psalms.Tech.MacroSpeed then
-        
-        if Vars.State.MCenabled then
-            if not OKNigger then
-                OKNigger = RunService.RenderStepped:Connect(function()
-                    ShiftLock()
-                end)
-            elseif OKNigger then
-                DisableShiftlock()
-else
-DisableShiftlock()
-            end
-        end
-        
-        TimeElapsed = 0
-    end
-end)
-
-
-    
-end})
-
-MacroEmote = {
-    YungBlud = "15610015346",
-    Borocks = "3994129128",
-    Fishing = "3236848555",
-    VPose = "10214418283",
-    BouncyTwirl = "14353423348",
-    Nimbus = "10147924028"
-}
-
-MTSectionS:List({
-    Name = "Emote To Play",
-Flag = "Emote afro",
-    Options = {"YungBlud", "Nimbus", "Fishing", "VPose", "BouncyTwirl", "Borocks"},
-    Default = "YungBlud",
-    Callback = function(a)
-        Psalms.Tech.MacroDance = a
-    end
-})
-
-MTSectionS:Textbox({
-    Name = "Latency",
-Flag = "Macro Latency",
-    Default = tostring(Psalms.Tech.MacroDanceDelay),
-    Callback = function(a)
-        Psalms.Tech.MacroDanceDelay = tonumber(a)
-    end
-})
-
-
-MTSectionS:Textbox({
-    Name = "Speed",
-Flag = "Macro Speed",
-    Default = tostring(Psalms.Tech.MacroSpeed),
-    Callback = function(a)
-        Psalms.Tech.MacroSpeed = tonumber(a)
-    end
-})
-
-
-
-MTSectionS:Divider({Name = "Blatant"})
-
-
-MTSectionS:Button({Name = "Load WalkSpeed", Callback = function()
-    if Macro23 then
-        Library:Notification("Already Loaded.", 3)
-        return
-    end
-
-
-Macro23 = true
-
-MakeButton("WalkSpeed", Color3.fromRGB(255, 255, 255), function(a)
-dog = a
-if dog then
-
-    local humanoid = LocalPlayer.Character:WaitForChild("Humanoid")
-
-    humanoid.WalkSpeed = Psalms.Tech.MacroSpeed * 1000
-    humanoid.JumpPower = 80
-
-if not dog then
-humanoid.WalkSpeed = 18
-    humanoid.JumpPower = 55
-end
-
-    humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-if dog then
-        humanoid.WalkSpeed = Psalms.Tech.MacroSpeed * 1000
-
-end
-    end)
-    humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
-if dog then
-        humanoid.JumpPower = 90
-
-end
-    end)
-end
-end)
-
-end}) 
-    
-
-
-
-
-local MTP = SubPage4:Section({Name = "Load", Side = "Left"})
-MTP:Button({
-    Name = "Lock Button",
-    Callback = function()
-        if LockBut then
-            Library:Notification("Already Fucking Loaded", 2)
-            return
-        end
-        LockBut = true
-        local FOV43 = Drawing.new("Circle")
-        FOV43.Transparency = 0.5
-        FOV43.Thickness = 2
-        FOV43.Color = Color3.new(1, 0, 0)
-        FOV43.Filled = false
-        FOV43.Radius = 250
-        FOV43.Position = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
-        FOV43.Visible = false
-
-       
-        local Sigmaballs = Instance.new("ScreenGui")
-        Sigmaballs.Name = "Sigmaballs"
-        Sigmaballs.Parent = game.CoreGui
-        Sigmaballs.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-        Sigmaballs.ResetOnSpawn = false
-
-        local ImageButton = Instance.new("ImageButton")
-        ImageButton.Name = "ImageButton"
-        ImageButton.Parent = Sigmaballs
-        ImageButton.Active = true
-        ImageButton.Draggable = true
-        ImageButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-        ImageButton.BackgroundTransparency = 0.5
-        ImageButton.Size = UDim2.new(0, 90, 0, 90)
-        ImageButton.Image = "rbxassetid://96086736054343"
-        ImageButton.Position = UDim2.new(0.5, -25, 0.5, -25)
-
-        local Ui2corner = Instance.new("UICorner")
-        Ui2corner.CornerRadius = UDim.new(0.2, 0)
-        Ui2corner.Parent = ImageButton
-
-        local enabled = false
-
-
-
-
-local function SigmaOhioPlayer()
-    local player, CC = game.Players.LocalPlayer, workspace.CurrentCamera
-    local screenCenter = Vector2.new(CC.ViewportSize.X / 2, CC.ViewportSize.Y / 2)
-    local fovRadius, viewportSize = FOV43.Radius, CC.ViewportSize
-
-    local closestPlayer, shortestDistance = nil, math.huge
-    for _, v in pairs(game.Players:GetPlayers()) do
-        if v ~= player and v.Character and v.Character:FindFirstChild("HumanoidRootPart") 
-           and v.Character.Humanoid.Health > 0 then
-            if Psalms.Tech.FriendCheck and player:IsFriendsWith(v.UserId) then
-                continue
-            end
-
-if Psalms.Tech.TeamCheck and isPlayerOnSameTeam(v) then
-    continue
-end
-
-            if Psalms.Tech.KOCheck and isPlayerKO(v) then
-                continue
-            end
-
-            if Psalms.Tech.SeatedCheck and isPlayerSeated(v) then
-                continue
-            end
-
-            if Psalms.Tech.WallCheck and BehindWall(v) then
-                continue
-            end
-
-            local pos, onScreen = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
-            if onScreen and pos.X > 0 and pos.Y > 0 and pos.X < viewportSize.X and pos.Y < viewportSize.Y then
-                local dist = (Vector2.new(pos.X, pos.Y) - screenCenter).Magnitude
-                if dist < fovRadius and dist < shortestDistance then
-                    closestPlayer, shortestDistance = v, dist
-                end
-            end
-        end
-    end
-
-    return closestPlayer
-end
-
-        local function toggleLock()
-    if TargetAimbot.Enabled then
-        local Closest = SigmaOhioPlayer()
-        
-        if TargBindEnabled and TargetPlr then
-
-            TargBindEnabled = false
-            targetHealth = nil
-            game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
-            TargetPlr = nil
-            Workspace.CurrentCamera.CameraSubject = LocalPlayer.Character.Humanoid
-            if TargetAimbot.LookAt then
-                LocalPlayer.Character.Humanoid.AutoRotate = true
-            end
-            ImageButton.Image = "rbxassetid://140623923630784"
-            Library:Notification("Untargeted", 2)
-        else
-            if Closest then
-                TargBindEnabled = true
-                TargetPlr = Closest
-                
-                if TargetPlr.Character and TargetPlr.Character:FindFirstChild("Humanoid") then
-                    targetHealth = TargetPlr.Character.Humanoid.Health
-
-
-
-
-                else
-                    return
-               end
-                
-                ImageButton.Image = "rbxassetid://96086736054343"
-                Library:Notification("Target Locked: <font color='" .. RealColor .. "'>" .. tostring(TargetPlr.DisplayName) .. "</font>", 2)
-            else
-                Library:Notification("No target found", 2)
-            end
-        end
-    end
-end
-
-local PussyTime = 0
-
-RunService.RenderStepped:Connect(function(DeltaTime)
-    PussyTime = PussyTime + DeltaTime
-    
-    if PussyTime >= 0.1 and TargBindEnabled then
-        if TargetPlr and TargetPlr.Character and TargetPlr.Character:FindFirstChild("Humanoid") then
-            if Psalms.Tech.UnlockOnKO and isPlayerKO(TargetPlr)  then
-                toggleLock()
-                return
-            end
-        end
-        
-        PussyTime = 0
-    end
-end)
-
-        ImageButton.MouseButton1Click:Connect(toggleLock)
-
-
-
-        UserInputService.InputBegan:Connect(function(input, processed)
-            if not processed and input.KeyCode == Enum.KeyCode.DPadDown then
-                toggleLock()
-            end
-        end)
-    end
-})
-
-
-
-
-
-MTP:Button({
-    Name = "Load Tool",
-    Callback = function()
-        if game.Players.LocalPlayer.Backpack:FindFirstChild("Lock Tool") then
-            Library:Notification("Already Loaded.", 5)
-            return
-        end
-
-        ToolAlreadyLoaded = true
-        local  Client, Mouse = game.Players.LocalPlayer, game.Players.LocalPlayer:GetMouse()
-
-
-
-        local Tool = Instance.new("Tool")
-        Tool.Name = "Lock Tool"
-        Tool.RequiresHandle = false
-        Tool.Parent = Client.Backpack
-        Tool.TextureId = "rbxassetid://96086736054343"
-
-        Tool.Activated:Connect(function()
-            local Closest = GetClosestToMouse()
-            if TargetAimbot.Enabled then
-                if TargBindEnabled and TargetPlr then
-                    TargBindEnabled, TargetPlr, targetHealth = false, nil, nil
-                    game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
-                    workspace.CurrentCamera.CameraSubject = Client.Character.Humanoid
-                    Tool.TextureId = "rbxassetid://140623923630784"
-                    Library:Notification("Untargeted", 2)
-                else
-                    TargBindEnabled, TargetPlr = true, Closest
-                    if TargetPlr and TargetPlr.Character and TargetPlr.Character:FindFirstChild("Humanoid") then
-                        targetHealth = TargetPlr.Character.Humanoid.Health
-                        Tool.TextureId = "rbxassetid://96086736054343"
-                        Library:Notification("Target Locked: <font color='" .. RealColor .. "'>" .. tostring(TargetPlr.DisplayName) .. "</font>", 2)
-                    end
-                end
-            end
-        end)
-    end
-})
-
-
-
-MTP:Keybind({
-        Name = "Lock Keybind",
-        Flag = "Lock Keybind",
-        UseKey = true,
-        Default = Enum.KeyCode.Q,
-        Callback = function(S)            
-        TargLockBind = S
-        end
-    })
-
-
-MTP:Toggle({
-    Name = "Unlock On Death",
-Flag = "Unlock On Death",
-    Callback = function(a)
-        Psalms.Tech.UnlockOnKO = a
-    end
-})
-
-
-
-
-
-
-        local GetClose = function()
-            local TargetPlr, Closest = nil, math.huge
-
-            for _, v in pairs(Players:GetPlayers()) do
-                if (v ~= Client and v.Character and v.Character:FindFirstChild("HumanoidRootPart")) then
-                    local Position, OnScreen = Camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
-                    local Distance = (Vector2.new(Position.X, Position.Y) - Vector2.new(Mouse.X, Mouse.Y)).Magnitude
-
-                    if (Distance < Closest and OnScreen) then
-                        Closest = Distance
-                        TargetPlr = v
-                    end
-                end
-            end
-            return TargetPlr
-        end
-
-local function toggleTarget()
-    local Closest = GetClosestToMouse()
-    if TargetAimbot.Enabled then
-        if TargBindEnabled and TargetPlr then
-            TargBindEnabled = false
-            targetHealth = nil
-            TargetPlr = nil
-            game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
-            workspace.CurrentCamera.CameraSubject = Client.Character.Humanoid
-            if TargetAimbot.LookAt then
-                Client.Character.Humanoid.AutoRotate = true
-            end
-            Library:Notification("Untargeted", 2)
-        else
-            TargBindEnabled = true
-            TargetPlr = Closest
-
-            if TargetPlr and TargetPlr.Character and TargetPlr.Character:FindFirstChild("Humanoid") then
-                targetHealth = TargetPlr.Character.Humanoid.Health
-            else
-                return
-            end
-        end
-    end
-end
-
-UserInputService.InputBegan:Connect(function(input, processed)
-    if not processed and input.KeyCode == TargLockBind then
-        toggleTarget()
-    end
-end)
-
-
-local PoAnimate2= SubPage4:Section({Name = "AutoShoot", Side = "Right"})
-
-PoAnimate2:Button({
-    Name = "Auto Shoot Button",
-    Callback = function()
-        if AutoShootButton then
-            Library:Notification("Already Loaded.", 3)
-            return
-        end
-        
-        AutoShootButton = true
-        MakeButton("Shoot", Color3.fromRGB(255, 0, 0), function(state)
-            Psalms.Tech.AutoShoot = state
-        end)
-    end
-})
-
-local Bumt = SubPage2:Section({Name = "Main"})
-
-Bumt:Toggle({
-    Name = "Enabled",
-Flag = "Camera",
-    Callback = function(a)
-        Psalms.Tech.Camera = a
-    end
-})
-Bumt:Toggle({
-    Name = "Flick",
-Flag = "Flick",
-    Callback = function(a)
-        Flick = a
-    end
-})
-Bumt:Toggle({
-    Name = "Division",
-Flag = "Cam Division",
-    Callback = function(a)
-        Psalms.Tech.UseExternal = a
-    end
-})
-Bumt:Toggle({
-    Name = "Resolver",
-Flag = "Cam Resolver",
-    Callback = function(a)
-        Psalms.Tech.CamResolverEnabled = a
-    end
-})
-Bumt:Textbox({
-    Name = "Camera Smoothness",
-Flag = "Cam Smoothness",
-    Default = tostring(Psalms.Tech.smoothness),
-    Callback = function(a)
-        Psalms.Tech.smoothness = tonumber(a)
-    end
-})
-
-Bumt:List({
-    Name = "Easing Style",
-    Options = {
-        "Linear", "Quad", "Cubic", "Quart", "Quint", "Sine", 
-        "Exponential", "Circular", "Back", "Bounce", "Elastic"
-    },
-    Default = Psalms.Tech.easingStyle,
-    Callback = function(a)
-        Psalms.Tech.easingStyle = a
-    end
-})
-
-Bumt:List({
-    Name = "Easing Direction",
-    Options = {"In", "Out", "InOut"},
-    Default = Psalms.Tech.easingDirection,
-    Callback = function(a)
-        Psalms.Tech.easingDirection = a
-    end
-})
-
-Bumt:Divider({Name = "Checks"})
-
-Bumt:Toggle({
-    Name = "Wall",
-Flag = "Cam WallCheck",
-    Callback = function(a)
-        Psalms.Tech.CamWallCheck = a
-    end
-})
-Bumt:Toggle({
-    Name = "Knocked",
-Flag = "Cam Ko",
-    Callback = function(a)
-        Psalms.Tech.CAMKo = a
-    end
-})
-
-local camgay = 0.1
-local camgay2 = 0.1
-
-local CamPred = SubPage2:Section({Name = "Prediction", Side = "Right"})
-
-CamPred:Textbox({
-    Name = "Horizontal Prediction",
-Flag = "Cam HPred",
-    Default = 0.1,
-    Callback = function(a)
-        camgay2 = tonumber(a)
-task.wait(0.01)
-Psalms.Tech.CamPrediction2 = camgay
-      Psalms.Tech.CamPrediction1 = camgay2
-    end
-})
-CamPred:Textbox({
-    Name = "Vertical Prediction",
-Flag = "Cam VPred",
-    Default = 0.1,
-    Callback = function(a)
-        camgay = tonumber(a)
-task.wait(0.01)
-Psalms.Tech.CamPrediction2 = camgay
-      Psalms.Tech.CamPrediction1 = camgay2
-    end
-})
-
-CamPred:Toggle({
-    Name = "AutoPred",
-Flag = "Auto Prediction",
-    Callback = function(a)
-        Psalms.Tech.CamAutoprediction = a
-       Psalms.Tech.CamPrediction2 = camgay
-      Psalms.Tech.CamPrediction1 = camgay2
-    end
-})
-
-
-
-local HitDetectionSection = SubPage3:Section({Name = "Hit Detection", Side = "Right"})
-HitDetectionSection:Toggle({
-    Name = "Hit Effect",
-Flag = "Hit Effects",
-    Callback = function(a) 
-        TargetAimbot.HitEffect = a
-    end
-})
-HitDetectionSection:Toggle({
-    Name = "Hit Sound",
-Flag = "Hit Sounds",
-    Callback = function(a)
-        TargetAimbot.HitSounds = a
-    end
-})
-HitDetectionSection:Toggle({
-    Name = "Notify",
-Flag = "Notification",
-    Callback = function(a) 
-        Hitnotify = a
-    end
-})
-HitDetectionSection:List({
-    Name = "Effect Type",
-Flag = "Effect Type",
-    Options = {"Atomic Slash", "Crescent Slash", "Coom", "Nova", "Cosmic Explosion", "AuraBurst", "Thunder"},
-    Default = TargetAimbot.HitEffectType,
-    Callback = function(a)
-        TargetAimbot.HitEffectType = a
-    end
-})
-HitDetectionSection:List({
-    Name = "Sound Type",
-Flag = "Sound Type",
-    Options = {
-        "RIFK7", "Bubble", "Minecraft", "Cod", "Bameware", "Neverlose", "Gamesense", "Rust", 
-        "BlackPencil", "UWU", "Plooh", "Moan", "Hentai", 
-        "Bruh", "BoneBreakage", "Fein", "Unicorn", "Kitty", "Bird", "BirthdayCake", "KenCarson"
-    },
-    Default = TargetAimbot.HitSound,
-    Callback = function(a)
-        TargetAimbot.HitSound = a
-    end
-})
-HitDetectionSection:Colorpicker({
-    Name = "Hit Effect Color",
-Flag = "Hit Effect Color",
-    Default = TargetAimbot.HitEffectColor,
-    Callback = function(a)
-        TargetAimbot.HitEffectColor = a
-    end
-})
-HitDetectionSection:Colorpicker({
-    Name = "Visualizer",
-Flag = "Visualizer Color",
-    Default = TargetAimbot.CSync.Color,
-    Callback = function(a)
-        TargetAimbot.CSync.Color = a
-    end
-})
-
-local MTSection1 = SubPage3:Section({Name = "Prediction Breaker", Side = "Left"})
-MTSection1:Toggle({
-    Name = "Jump Prediction",
-Flag = "Jump Pred Anti",
-    Callback = function(a)
-        Psalms.Tech.JumpBreak = a
-    end
-})
-MTSection1:Toggle({
-    Name = "Enable Anti Lock",
-Flag = "AntiLock",
-    Callback = function(a)
-        Desync = a
-    end
-})
-MTSection1:Toggle({
-    Name = "Anti Network",
-Flag = "Network Desync",
-    Callback = function(a)
-        desyncsleep = a
-    end
-})
-MTSection1:List({
-    Name = "Anti Lock Type",
-Flag = "AntiLock Type",
-    Options = {"Multiply", "Shake", "Behind", "Down", "Forward", "Left", "One", "Right", "Up", "Zero"},
-    Default = AntiLockType,
-    Callback = function(a)
-        AntiLockType = a
-    end
-})
-
-local HitChamsSection = SubPage3:Section({Name = "Hit Chams", Side = "Left"})
-
-HitChamsSection:Toggle({
-    Name = "Hit Cham",
-Flag = "Hit Chams",
-    Callback = function(a)
-        TargetAimbot.HitChams = a
-    end
-}):Colorpicker({
-    Name = "Color",
-Flag = "HitCham Color",
-    Default = TargetAimbot.HitChamsColor,
-    Callback = function(a)
-        TargetAimbot.HitChamsColor = a
-    end
-})
-
-HitChamsSection:Toggle({
-    Name = "Hit Skeleton",
-Flag = "Hit Skele",
-    Callback = function(a)
-        TargetAimbot.HitSkele = a
-    end
-}):Colorpicker({
-    Name = "Color",
-Flag = "Hit SkeletonColor",
-    Default = TargetAimbot.SkeleColor, 
-    Callback = function(a)
-        TargetAimbot.SkeleColor = a
-    end
-})
-
-
-
-HitChamsSection:Slider({
-    Name = "Duration",
-Flag = "HitChams Duration",
-    Min = 0,
-    Max = 10,
-    Default = TargetAimbot.HitChamsDuration,
-    Suffix = "",
-    Decimals = 1.293,
-    Callback = function(a)
-        TargetAimbot.HitChamsDuration = a
-    end
-})
-HitChamsSection:Slider({
-    Name = "Transparency",
-    Min = 0,
-    Max = 1,
-    Default = 0,
-    Suffix = "",
-    Decimals = 0.001,
-    Callback = function(a)
-        TargetAimbot.HitChamsTransparency = a
-    end
-})
-HitChamsSection:List({
-    Name = "Material",
-    Options = {Enum.Material.Neon.Name, Enum.Material.SmoothPlastic.Name, Enum.Material.ForceField.Name},
-    Default = TargetAimbot.HitChamsMaterial.Name,
-    Callback = function(a)
-        TargetAimbot.HitChamsMaterial = Enum.Material[a]
-    end
-})
-
-
-local NIGA = SubPage7:Section({Name = "SkyBox", Side = "Left"})
-local FogDick = SubPage7:Section({Name = "Fog", Side = "Left"})
-local TargetVisual = SubPage5:Section({Name = "Target", Side = "Right"})
-local Bullet1 = SubPage5:Section({Name = "Bullets", Side = "Right"})
-local ESP1 = SubPage5:Section({Name = "Global", Side = "Left"})
-local Sig2 = SubPage5:Section({Name = "Local Player", Side = "Right"})
-local CrossHair = SubPage5:Section({Name = "Crosshair", Side = "Right"})
-local Sig3 = SubPage7:Section({Name = "Enviroment", Side = "Right"})
-
-
-NIGA:Toggle({
-    Name = "Skybox Enabled",
-    Callback = function(a)
-        skyboxEnabled = a
-        changeSkybox()
-    end
-})
-
-NIGA:List({
-    Name = "Skybox Type",
-    Options = {
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-    },
-    Default = "1",
-    Callback = function(a)
-        skyboxType = tonumber(a)
-        changeSkybox()
-    end
-})
-
-FogDick:Toggle({
-    Name = "Fog Enabled",
-Flag = "Fog",
-    Callback = function(a)
-        Environment.Settings.FogEnabled = a
-        fogmaker()
-    end
-})
-
-FogDick:Colorpicker({
-    Name = "Fog Color",
-Flag = "Fog Color",
-    Default = Environment.Settings.FogColor,
-    Callback = function(a)
-        Environment.Settings.FogColor = a
-fogmaker() 
-    end
-})
-
-FogDick:Textbox({
-    Name = "Fog Start",
-Flag = "Fog Start",
-    Default = Environment.Settings.FogStart,
-    Callback = function(a)
-        Environment.Settings.FogStart = tonumber(a)
-fogmaker()
-    end
-})
-
-FogDick:Textbox({
-    Name = "Fog End",
-Flag = "Fog End",
-    Default = Environment.Settings.FogEnd,
-    Callback = function(a)
-        Environment.Settings.FogEnd = tonumber(a)
-fogmaker() 
-    end
-})
-
-
-
-NIGA:Button({
-    Name = "Change",
-    Callback = function()
-        changeSkybox()
-    end
-})
-CrossHair:Toggle({Name = "Enable", Callback = function(v)
-            getgenv().crosshair.enabled  = v
-                end}):Colorpicker({
-    Name = "Color",
-    Default = getgenv().crosshair.color,
-    Callback = function(a)
-        getgenv().crosshair.color = a
-    end
-})
-
-CrossHair:Toggle({Name = "Spin", Callback = function(v)
-            getgenv().crosshair.spin  = v
-                end})
-CrossHair:Toggle({Name = "Resize", Callback = function(v)
-            getgenv().crosshair.resize  = v
-                end})
-CrossHair:Toggle({Name = "Stick To Target",  Callback = function(v)
-            getgenv().crosshair.sticky   = v
-                end}) 
-CrossHair:List({
-    Name = "Position",
-    Options = {
-        "Middle", "Mouse"
-    },
-    Default = "Middle",
-    Callback = function(a)
-        crosshair_position = a
-    end
-})
-
-Bullet1:Toggle({Name = "Enable", Callback = function(v)
-            Configurations.Visuals.Bullet_Trails.Enabled   = v
-                end}):Colorpicker({
-    Name = "Color",
-    Default = Configurations.Visuals.Bullet_Trails.Color,
-    Callback = function(a)
-        Configurations.Visuals.Bullet_Trails.Color = a
-    end
-})
-Bullet1:Toggle({Name = "Fade", Callback = function(v)
-            Configurations.Visuals.Bullet_Trails.Fade   = v
-                end}) 
-
-Bullet1:Slider({
-    Name = "Size",
-    Min = 0.01,
-    Max = 5,
-    Default = Configurations.Visuals.Bullet_Trails.Width,
-    Suffix = "%",
-    Decimals = 0.01,
-    Callback = function(a)
- Configurations.Visuals.Bullet_Trails.Width = a
-    end
-})
-Bullet1:Slider({
-    Name = "Duration",
-    Min = 0.01,
-    Max = 10,
-    Default = Configurations.Visuals.Bullet_Trails.Duration,
-    Suffix = "%",
-    Decimals = 0.01,
-    Callback = function(a)
-        Configurations.Visuals.Bullet_Trails.Duration = a
-    end
-})
-
-
-Bullet1:List({
-    Name = "Texture",
-    Options = {
-        "Cool", "Cum",  "Electro", "None" 
-    },
-    Default = "Cool",
-    Callback = function(a)
-        Configurations.Visuals.Bullet_Trails.Texture = a
-    end
-})
-
-        
-
-
-
--- 
-ESP1:Toggle({Name = "Use Bounding Box", Callback = function(v)
-    getgenv().esp.UseBoundingBox = v
-end})
-
-
-
--- Box Settings
-ESP1:Toggle({Name = "Box Enabled", Callback = function(v)
-    getgenv().esp.BoxEnabled = v
-end}):Colorpicker({
-    Name = "Box Color",
-    Default = getgenv().esp.BoxColor,
-    Callback = function(a)
-        getgenv().esp.BoxColor = a
-    end
-})
-
-ESP1:Toggle({Name = "Box Corners", Callback = function(v)
-    getgenv().esp.BoxCorners = v
-end})
-
-ESP1:Toggle({Name = "Box Dynamic", Callback = function(v)
-    getgenv().esp.BoxDynamic = v
-end})
-
-ESP1:Slider({
-    Name = "Box Width",
-    Min = 0.1,
-    Max = 3,
-    Default = getgenv().esp.BoxStaticXFactor,
-Decimals = 0.01,
-    Suffix = "X",
-    Callback = function(a)
-        getgenv().esp.BoxStaticXFactor = a
-    end
-})
-
-ESP1:Slider({
-    Name = "Box Height",
-    Min = 0.1,
-    Max = 3,
-    Default = getgenv().esp.BoxStaticYFactor,
-Decimals = 0.01,
-    Suffix = "Y",
-    Callback = function(a)
-        getgenv().esp.BoxStaticYFactor = a
-    end
-})
-
-
-
-ESP1:Toggle({Name = "Skeleton Enabled", Callback = function(v)
-    getgenv().esp.SkeletonEnabled = v
-end}):Colorpicker({
-    Name = "Skeleton Color",
-    Default = getgenv().esp.SkeletonColor,
-    Callback = function(a)
-        getgenv().esp.SkeletonColor = a
-    end
-})
-
-ESP1:Slider({
-    Name = "Skeleton Max Distance",
-    Min = 100,
-    Max = 1000,
-    Default = getgenv().esp.SkeletonMaxDistance,
-    Suffix = "m",
-    Callback = function(a)
-        getgenv().esp.SkeletonMaxDistance = a
-    end
-})
-
-
-ESP1:Toggle({Name = "Chams Enabled", Callback = function(v)
-    getgenv().esp.ChamsEnabled = v
-end})
-
-ESP1:Colorpicker({
-    Name = "Chams Inner Color",
-    Default = getgenv().esp.ChamsInnerColor,
-    Callback = function(a)
-        getgenv().esp.ChamsInnerColor = a
-    end
-}):Colorpicker({
-    Name = "Chams Outer Color",
-    Default = getgenv().esp.ChamsOuterColor,
-    Callback = function(a)
-        getgenv().esp.ChamsOuterColor = a
-    end
-})
-
-ESP1:Slider({
-    Name = "Chams Inner Transparency",
-    Min = 0,
-    Max = 1,
-    Default = getgenv().esp.ChamsInnerTransparency,
-    Decimals = 0.01,
-    Callback = function(a)
-        getgenv().esp.ChamsInnerTransparency = a
-    end
-})
-
-ESP1:Slider({
-    Name = "Chams Outer Transparency",
-    Min = 0,
-    Max = 1,
-    Default = getgenv().esp.ChamsOuterTransparency,
-    Decimals = 0.01,
-    Callback = function(a)
-        getgenv().esp.ChamsOuterTransparency = a
-    end
-})
-
-
-ESP1:Toggle({Name = "Text Enabled", Callback = function(v)
-    getgenv().esp.TextEnabled = v
-end}):Colorpicker({
-    Name = "Text Color",
-    Default = getgenv().esp.TextColor,
-    Callback = function(a)
-        getgenv().esp.TextColor = a
-    end
-})
-
-ESP1:Toggle({Name = "Health Bar Enabled", Callback = function(v)
-    getgenv().esp.BarLayout['health'].enabled = v
-end})
-
-
-ESP1:Toggle({
-    Name = "Target Only Mode",
-    Callback = function(v)
-        getgenv().esp.TargetOnly = v
-    end
-})
-
-
-
-getgenv().TrailColor = Color3.fromRGB(255, 209, 220)
-Sig2:Toggle({
-    Name = "Trail",
-    Callback = function(v)
-        utility = utility or {}
-
-        local Settings = {
-            Visuals = {
-                SelfESP = {
-                    Trail = {
-                        InsideColor = getgenv().TrailColor,
-                        OutsideColor = getgenv().TrailColor,
-                        LifeTime = 5,
-                        Width = 0.08
-                    }
+        local tahoma = {
+            name = "SmallestPixel7",
+            faces = {
+                {
+                    name = "Regular",
+                    weight = 400,
+                    style = "normal",
+                    assetId = getcustomasset(library.directory .. "/fonts/main.ttf")
                 }
             }
         }
+        
+        if not isfile(library.directory .. "/fonts/main_encoded.ttf") then 
+            writefile(library.directory .. "/fonts/main_encoded.ttf", http_service:JSONEncode(tahoma))
+        end 
+        
+        library.font = Font.new(getcustomasset(library.directory .. "/fonts/main_encoded.ttf"), Enum.FontWeight.Regular)
+    else 
+        library.font = Font.new("rbxasset://fonts/families/Zekton.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+    end 
 
-        utility.trail_character = function(Bool)
-            local player = game.Players.LocalPlayer
+    local config_holder 
+-- 
 
-            local function createTrail(character)
-                local existingTrailPart = workspace:FindFirstChild("TrailPart")
-                if existingTrailPart then
-                    existingTrailPart:Destroy()
+-- library functions 
+    -- misc functions
+        function library:make_resizable(frame) 
+            local Frame = Instance.new("TextButton")
+            Frame.Position = dim2(1, -10, 1, -10)
+            Frame.BorderColor3 = rgb(0, 0, 0)
+            Frame.Size = dim2(0, 10, 0, 10)
+            Frame.BorderSizePixel = 0
+            Frame.BackgroundColor3 = rgb(255, 255, 255)
+            Frame.Parent = frame
+            Frame.BackgroundTransparency = 1 
+            Frame.Text = ""
+
+            local resizing = false 
+            local start_size 
+            local start 
+            local og_size = frame.Size  
+
+            Frame.InputBegan:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    resizing = true
+                    start = input.Position
+                    start_size = frame.Size
+                end
+            end)
+
+            Frame.InputEnded:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    resizing = false
+                end
+            end)
+
+            library:connection(uis.InputChanged, function(input, game_event) 
+                if resizing and input.UserInputType == Enum.UserInputType.MouseMovement then
+                    local viewport_x = camera.ViewportSize.X
+                    local viewport_y = camera.ViewportSize.Y
+
+                    local current_size = dim2(
+                        start_size.X.Scale,
+                        math.clamp(
+                            start_size.X.Offset + (input.Position.X - start.X),
+                            og_size.X.Offset,
+                            viewport_x
+                        ),
+                        start_size.Y.Scale,
+                        math.clamp(
+                            start_size.Y.Offset + (input.Position.Y - start.Y),
+                            og_size.Y.Offset,
+                            viewport_y
+                        )
+                    )
+                    frame.Size = current_size
+                end
+            end)
+        end
+
+        function library:new_drawing(class, properties)
+            local ins = Drawing.new(class)
+
+            for _, v in next, properties do 
+                ins[_] = v
+            end 
+
+            table.insert(nebula.drawings, ins)
+
+            return ins 
+        end 
+
+        function library:new_item(class, properties) 
+            local ins = Instance.new(class)
+
+            for _, v in next, properties do 
+                ins[_] = v
+            end 
+
+            table.insert(nebula.instances, ins)
+
+            return ins 
+        end 
+
+        function library:convert_enum(enum)
+            local enum_parts = {}
+        
+            for part in string.gmatch(enum, "[%w_]+") do
+                table.insert(enum_parts, part)
+            end
+        
+            local enum_table = Enum
+            for i = 2, #enum_parts do
+                local enum_item = enum_table[enum_parts[i]]
+        
+                enum_table = enum_item
+            end
+        
+            return enum_table
+        end
+
+        function library:config_list_update() 
+            if not config_holder then return end 
+        
+            local list = {}
+        
+            for idx, file in next, listfiles(library.directory .. "/configs") do
+                local name = file:gsub(library.directory .. "/configs\\", ""):gsub(".cfg", "")
+                list[#list + 1] = name
+            end
+            
+            config_holder.refresh_options(list)
+        end 
+
+        function library:get_config()
+            local Config = {}
+        
+            for _, v in flags do
+                if type(v) == "table" and v.key then
+                    Config[_] = {active = v.active, mode = v.mode, key = tostring(v.key)}
+                elseif type(v) == "table" and v["Transparency"] and v["Color"] then
+                    Config[_] = {Transparency = v["Transparency"], Color = v["Color"]:ToHex()}
+                else
+                    Config[_] = v
+                end
+            end 
+            
+            return http_service:JSONEncode(Config)
+        end
+
+        function library:load_config(config_json) 
+            local config = http_service:JSONDecode(config_json)
+        
+            for _, v in next, config do 
+                local function_set = library.config_flags[_]
+        
+                if function_set then 
+                    if type(v) == "table" and v["Transparency"] and v["Color"] then
+                        function_set(hex(v["Color"]), v["Transparency"])
+                    elseif type(v) == "table" and v["active"] then 
+                        function_set(v)
+                    else 
+                        function_set(v)
+                    end
+                end 
+            end 
+        end 
+        
+        function library:round(number, float) 
+            local multiplier = 1 / (float or 1)
+            return math.floor(number * multiplier + 0.5) / multiplier
+        end 
+
+        function library:apply_theme(instance, theme, property) 
+            table.insert(themes.utility[theme][property], instance)
+        end
+
+        function library:update_theme(theme, color)
+            for _, property in next, themes.utility[theme] do 
+
+                for m, object in next, property do 
+                    if object[_] == themes.preset[theme] or object.ClassName == "UIGradient" then 
+                        object[_] = color 
+                    end 
+                end 
+            end 
+
+            themes.preset[theme] = color 
+        end 
+
+        function library:connection(signal, callback)
+            local connection = signal:Connect(callback)
+            
+            table.insert(library.connections, connection)
+
+            return connection 
+        end
+
+        function library:apply_stroke(parent) 
+            local stroke = library:create("UIStroke", {
+                Parent = parent,
+                Color = themes.preset.text_outline, 
+                LineJoinMode = Enum.LineJoinMode.Miter
+            }) 
+            
+            library:apply_theme(stroke, "text_outline", "Color")
+        end
+
+        function library:create(instance, options)
+            local ins = Instance.new(instance) 
+            
+            for prop, value in next, options do 
+                ins[prop] = value
+            end
+            
+            if instance == "TextLabel" or instance == "TextButton" or instance == "TextBox" then 	
+                library:apply_theme(ins, "text", "TextColor3")
+                library:apply_stroke(ins)
+            elseif instance == "ScreenGui" then 
+                table.insert(library.guis, ins)
+            end 
+            
+            return ins 
+        end
+    -- 
+
+    -- elements 
+        function library:panel(options) 
+            local cfg = {
+                name = options.text or options.name or "Window", 
+                size = options.size or dim2(0, 530, 0, 590),
+                position = options.position or dim2(0, 500, 0, 500),
+                anchor_point = options.anchor_point or vec2(0, 0)
+            }
+
+            local sgui = library:create("ScreenGui", {
+                Enabled = true,
+                Parent = coregui,
+                Name = "" 
+            })
+
+            local main_holder = library:create("Frame", {
+                Parent = sgui,
+                Name = "",
+                AnchorPoint = vec2(cfg.anchor_point.X, cfg.anchor_point.Y),
+                Position = cfg.position,
+                Active = true, 
+                Draggable = true,
+                BorderColor3 = rgb(0, 0, 0),
+                Size = cfg.size,
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38)
+            })
+            
+            library:apply_theme(main_holder, "outline", "BackgroundColor3") 
+            
+            local window_inline = library:create("Frame", {
+                Parent = main_holder,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })
+            
+            library:apply_theme(window_inline, "accent", "BackgroundColor3") 
+            
+            local window_holder = library:create("Frame", {
+                Parent = window_inline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(32, 32, 38),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            library:apply_theme(window_holder, "outline", "BackgroundColor3") 
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = window_holder,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(41, 41, 55)),
+                rgbkey(1, rgb(35, 35, 47))
+            }
+            })
+            
+            library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            local text = library:create("TextLabel", {
+                Parent = window_holder,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = cfg.name,
+                BackgroundTransparency = 1,
+                Position = dim2(0, 2, 0, 4),
+                BorderSizePixel = 0,
+                AutomaticSize = Enum.AutomaticSize.XY,
+                TextSize = 12,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIStroke = library:create("UIStroke", {
+                Parent = text,
+                Name = "",
+                LineJoinMode = Enum.LineJoinMode.Miter
+            })
+            
+            local UIPadding = library:create("UIPadding", {
+                Parent = window_holder,
+                Name = "",
+                PaddingBottom = dim(0, 4),
+                PaddingRight = dim(0, 4),
+                PaddingLeft = dim(0, 4)
+            })
+            
+            local outline = library:create("Frame", {
+                Parent = window_holder,
+                Name = "",
+                Position = dim2(0, 0, 0, 18),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 1, -18),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })
+            
+            library:apply_theme(outline, "inline", "BackgroundColor3") 
+            
+            local inline = library:create("Frame", {
+                Parent = outline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38)
+            })
+            
+            library:apply_theme(inline, "outline", "BackgroundColor3") 
+            
+            local holder = library:create("Frame", {
+                Parent = inline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = holder,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+            })
+            
+            library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            local UIPadding = library:create("UIPadding", {
+                Parent = holder,
+                Name = "",
+                PaddingTop = dim(0, 5),
+                PaddingBottom = dim(0, 5),
+                PaddingRight = dim(0, 5),
+                PaddingLeft = dim(0, 5)
+            })
+            
+            local glow = library:create("ImageLabel", {
+                Parent = main_holder,
+                Name = "",
+                ImageColor3 = themes.preset.accent,
+                ScaleType = Enum.ScaleType.Slice,
+                BorderColor3 = rgb(0, 0, 0),
+                BackgroundColor3 = rgb(255, 255, 255),
+                Visible = true,
+                Image = "http://www.roblox.com/asset/?id=18245826428",
+                BackgroundTransparency = 1,
+                ImageTransparency = 0.8, 
+                Position = dim2(0, -20, 0, -20),
+                Size = dim2(1, 40, 1, 40),
+                ZIndex = 2,
+                BorderSizePixel = 0,
+                SliceCenter = rect(vec2(21, 21), vec2(79, 79))
+            })library:apply_theme(glow, "glow", "ImageColor3") 
+            
+            return holder, sgui      
+        end 
+
+        local sgui = library:create("ScreenGui", {
+            Enabled = true,
+            Parent = game.CoreGui,
+            Name = "",
+            DisplayOrder = 2, 
+        })
+
+        function library:window(properties)
+            local window = {}
+            -- local button_holder  
+            
+            --[[local function create_dock_button(options) 
+                local cfg = {
+                    image = options.image or "rbxassetid://79856374238119",
+                    open = options.open or true 
+                    callback = options.callback or function() end
+                }
+        
+                local button = library:create("TextButton", {
+                    Parent = button_holder,
+                    Name = "",
+                    FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+                    TextColor3 = rgb(0, 0, 0),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "",
+                    Size = dim2(0, 25, 0, 25),
+                    BorderSizePixel = 0,
+                    TextSize = 14,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })
+                
+                local button_inline = library:create("Frame", {
+                    Parent = button,
+                    Name = "",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(button_inline, "outline", "BackgroundColor3") 
+                
+                local button_inline = library:create("Frame", {
+                    Parent = button_inline,
+                    Name = "",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })library:apply_theme(button_inline, "inline", "BackgroundColor3")
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = button_inline,
+                    Name = "",
+                    Rotation = 90,
+                    Color = rgbseq{
+                    rgbkey(0, rgb(35, 35, 47)),
+                    rgbkey(1, rgb(41, 41, 55))
+                }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local ImageLabel = library:create("ImageLabel", {
+                    Parent = button_inline,
+                    Name = "",
+                    ImageColor3 = themes.preset.accent,
+                    Image = "rbxassetid://79856374238119",
+                    BackgroundTransparency = 1,
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, 0),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })library:apply_theme(ImageLabel, "accent", "ImageColor3") 
+                
+                local UIPadding = library:create("UIPadding", {
+                    Parent = button_inline,
+                    Name = "",
+                    PaddingTop = dim(0, 4),
+                    PaddingBottom = dim(0, 4),
+                    PaddingRight = dim(0, 4),
+                    PaddingLeft = dim(0, 4)
+                })
+        
+                button.MouseButton1Click:Connect(function()
+                    cfg.open = not cfg.open 
+        
+                    cfg.callback(cfg.open) 
+                end)
+            end ]]
+
+            -- main window
+                local holder, path = library:panel({
+                    name = properties and properties.name or "nebula.tech", 
+                    size = dim2(0, 500, 0, 500),
+                    position = dim2(0, (camera.ViewportSize.X / 2) - 250, 0, (camera.ViewportSize.Y / 2) - 250),
+                }) 
+
+                library.frame = path
+
+                -- create_dock_button({
+                --     image = "rbxassetid://100959383267514",
+                --     callback = function(open)
+                --         path.Enabled = open 
+                --     end 
+                -- })
+
+                window["tab_holder"] = library:create("Frame", {
+                    Parent = holder,
+                    Name = " ",
+                    BackgroundTransparency = 1,
+                    Size = dim2(1, 0, 0, 22),
+                    BorderColor3 = rgb(0, 0, 0),
+                    ZIndex = 5,
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+
+                library:create("UIListLayout", {
+                    Parent = window["tab_holder"],
+                    FillDirection = Enum.FillDirection.Horizontal,
+                    HorizontalFlex = Enum.UIFlexAlignment.Fill,
+                    Padding = dim(0, 2),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
+
+                local section_holder = library:create("Frame", {
+                    Parent = holder,
+                    Name = " ",
+                    BackgroundTransparency = 1,
+                    Position = dim2(0, -1, 0, 19),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, -22),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                window["section_holder"] = section_holder
+
+                local outline = library:create("Frame", {
+                    Parent = section_holder,
+                    Name = "\0",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, 2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })
+                
+                library:apply_theme(outline, "outline", "BackgroundColor3") 
+
+                local inline = library:create("Frame", {
+                    Parent = outline,
+                    Name = "\0",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })
+                
+                library:apply_theme(inline, "inline", "BackgroundColor3") 
+
+                local background = library:create("Frame", {
+                    Parent = inline,
+                    Name = "\0",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+
+                library.section_holder = background
+
+                library:create("UIPadding", {
+                    Parent = background,
+                    PaddingTop = dim(0, 4),
+                    PaddingBottom = dim(0, 4),
+                    PaddingRight = dim(0, 4),
+                    PaddingLeft = dim(0, 4)
+                })
+
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Rotation = 90,
+                    Color = rgbseq{
+                        rgbkey(0, rgb(41, 41, 55)),
+                        rgbkey(1, rgb(35, 35, 47))
+                    }
+                })
+                
+                library:apply_theme(UIGradient, "contrast", "Color") 
+
+                library:make_resizable(path:FindFirstChildOfClass("Frame")) 
+            -- 
+
+            -- keybind list       
+                local outline = library:create("Frame", {
+                    Parent = sgui,
+                    Name = "",
+                    Visible = false, 
+                    Position = UDim2.new(0.04290718212723732, 0, 0.4762658178806305, 0),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    Size = UDim2.new(0, 182, 0, 25),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = themes.preset.outline
+                })
+                library:apply_theme(outline, "outline", "BackgroundColor3") 
+                library.keybind_list_frame = outline 
+
+                local inline = library:create("Frame", {
+                    Parent = outline,
+                    Name = "",
+                    Position = UDim2.new(0, 1, 0, 1),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    Size = UDim2.new(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = themes.preset.inline
+                })
+                library:apply_theme(inline, "inline", "BackgroundColor3")
+
+                local background = library:create("Frame", {
+                    Parent = inline,
+                    Name = "",
+                    Position = UDim2.new(0, 1, 0, 1),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    Size = UDim2.new(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Name = "",
+                    Rotation = 90,
+                    Color = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0, themes.preset.high_contrast),
+                        ColorSequenceKeypoint.new(1, themes.preset.low_contrast)
+                    }
+                })
+                library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local bg = library:create("Frame", {
+                    Parent = background,
+                    Name = "a",
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    Size = UDim2.new(1, 0, 0, 2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = themes.preset.accent
+                }); library:apply_theme(bg, "accent", "BackgroundColor3")
+                
+                
+                library:create("UIGradient", {
+                    Parent = bg,
+                    Name = "",
+                    Enabled = true, 
+                    Rotation = 90,
+                    Color = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+                        ColorSequenceKeypoint.new(1, Color3.fromRGB(167, 167, 167))
+                    }
+                })
+                
+                local text = library:create("TextLabel", {
+                    Parent = background,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = themes.preset.text,
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    Text = "Keybinds",
+                    BackgroundTransparency = 1,
+                    TextTruncate = Enum.TextTruncate.AtEnd,
+                    Size = UDim2.new(1, 0, 1, 0),
+                    BorderSizePixel = 0,
+                    TextSize = 12,
+                    BackgroundColor3 = themes.preset.text
+                }, "text")
+                
+                local UIStroke = library:create("UIStroke", {
+                    Parent = text,
+                    Name = "",
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+                
+                local text_holder = library:create("Frame", {
+                    Parent = background,
+                    Name = "",
+                    Size = UDim2.new(0, 182, 0, 22),
+                    Position = UDim2.new(0, -2, 1, 1),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    BackgroundColor3 = themes.preset.outline
+                })
+                library:apply_theme(text_holder, "outline", "BackgroundColor3")
+
+                local inline = library:create("Frame", {
+                    Parent = text_holder,
+                    Name = "",
+                    Size = UDim2.new(1, -2, 1, -2),
+                    Position = UDim2.new(0, 1, 0, 1),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    BorderSizePixel = 0,
+                    --AutomaticSize = Enum.AutomaticSize.Y,
+                    BackgroundColor3 = themes.preset.inline
+                })
+                library:apply_theme(inline, "inline", "BackgroundColor3")
+                
+                local background = library:create("Frame", {
+                    Parent = inline,
+                    Name = "",
+                    Size = UDim2.new(1, -2, 1, -2),
+                    Position = UDim2.new(0, 1, 0, 1),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    BorderSizePixel = 0,
+                    --AutomaticSize = Enum.AutomaticSize.Y,
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                })
+                library.keybind_list = background
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Name = "",
+                    Rotation = 90,
+                    Color = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0, themes.preset.high_contrast),
+                        ColorSequenceKeypoint.new(1, themes.preset.low_contrast)
+                    }
+                })
+                library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                library:create("UIListLayout", {
+                    Parent = background,
+                    Name = "",
+                    Padding = UDim.new(0, -1),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
+                
+                library:create("UIPadding", {
+                    Parent = background,
+                    Name = "",
+                    PaddingBottom = UDim.new(0, 4),
+                    PaddingLeft = UDim.new(0, 5)
+                })
+                
+            
+            -- 
+
+            -- -- dock innit
+            --     local dock_outline = library:create("Frame", {
+            --         Parent = sgui,
+            --         Name = "",
+            --         Visible = true,
+            --         BorderColor3 = rgb(0, 0, 0),
+            --         AnchorPoint = vec2(0.5, 0),
+            --         Position = dim2(0.5, 0, 0, 20),
+            --         Size = dim2(0, 127, 0, 39),
+            --         BorderSizePixel = 0,
+            --         BackgroundColor3 = rgb(32, 32, 38)
+            --     })library:apply_theme(dock_outline, "outline", "BackgroundColor3") 
+                
+            --     local dock_inline = library:create("Frame", {
+            --         Parent = dock_outline,
+            --         Name = "",
+            --         Position = dim2(0, 1, 0, 1),
+            --         BorderColor3 = rgb(0, 0, 0),
+            --         Size = dim2(1, -2, 1, -2),
+            --         BorderSizePixel = 0,
+            --         BackgroundColor3 = rgb(60, 55, 75)
+            --     })library:apply_theme(dock_inline, "inline", "BackgroundColor3") 
+                
+            --     local dock_holder = library:create("Frame", {
+            --         Parent = dock_inline,
+            --         Name = "",
+            --         Size = dim2(1, -2, 1, -2),
+            --         Position = dim2(0, 1, 0, 1),
+            --         BorderColor3 = rgb(32, 32, 38),
+            --         BorderSizePixel = 0,
+            --         BackgroundColor3 = rgb(255, 255, 255)
+            --     })library:apply_theme(dock_holder, "outline", "BackgroundColor3") 
+                
+            --     local accent = library:create("Frame", {
+            --         Parent = dock_holder,
+            --         Name = "",
+            --         Size = dim2(1, 0, 0, 2),
+            --         BorderColor3 = rgb(0, 0, 0),
+            --         BorderSizePixel = 0,
+            --         BackgroundColor3 = themes.preset.accent
+            --     })library:apply_theme(accent, "accent", "BackgroundColor3") 
+                
+            --     local UIGradient = library:create("UIGradient", {
+            --         Parent = accent,
+            --         Name = "",
+            --         Rotation = 90,
+            --         Color = rgbseq{
+            --         rgbkey(0, rgb(255, 255, 255)),
+            --         rgbkey(1, rgb(167, 167, 167))
+            --     }
+            --     })
+                
+            --     button_holder = library:create("Frame", {
+            --         Parent = dock_holder,
+            --         Name = "",
+            --         BackgroundTransparency = 1,
+            --         Size = dim2(1, 0, 1, 0),
+            --         BorderColor3 = rgb(0, 0, 0),
+            --         BorderSizePixel = 0,
+            --         BackgroundColor3 = rgb(255, 255, 255)
+            --     })
+                
+            --     local UIListLayout = library:create("UIListLayout", {
+            --         Parent = button_holder,
+            --         Name = "",
+            --         Padding = dim(0, 5),
+            --         FillDirection = Enum.FillDirection.Horizontal,
+            --         SortOrder = Enum.SortOrder.LayoutOrder
+            --     })
+                
+            --     local UIPadding = library:create("UIPadding", {
+            --         Parent = button_holder,
+            --         Name = "",
+            --         PaddingTop = dim(0, 6),
+            --         PaddingBottom = dim(0, 4),
+            --         PaddingRight = dim(0, 4),
+            --         PaddingLeft = dim(0, 4)
+            --     })
+                        
+            --     local UIGradient = library:create("UIGradient", {
+            --         Parent = dock_holder,
+            --         Name = "",
+            --         Rotation = 90,
+            --         Color = rgbseq{
+            --         rgbkey(0, rgb(41, 41, 55)),
+            --         rgbkey(1, rgb(35, 35, 47))
+            --     }
+            --     })library:apply_theme(UIGradient, "contrast", "Color") 
+            -- -- 
+
+            -- -- cfg holder
+                
+            --     window["configs"], config_path = library:panel({
+            --         name = "Configurations", 
+            --         anchor_point = vec2(-1, 0),
+            --         size = dim2(0, 322, 0, 391),
+            --         position = dim2(0, holder.AbsolutePosition.X + holder.AbsoluteSize.X + 10, 0, holder.AbsolutePosition.Y - 22)
+            --     }) 
+
+            --     create_dock_button({
+            --         image = "rbxassetid://79856374238119",
+            --         callback = function(open)
+            --             config_path.Enabled = open 
+            --         end 
+            --     })
+
+            --     local UIGradient = library:create("UIGradient", {
+            --         Parent = holder,
+            --         Name = "",
+            --         Rotation = 90,
+            --         Color = rgbseq{
+            --             rgbkey(0, rgb(41, 41, 55)),
+            --             rgbkey(1, rgb(35, 35, 47))
+            --         }
+            --     })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+            --     local UIPadding = library:create("UIPadding", {
+            --         Parent = holder,
+            --         Name = "",
+            --         PaddingTop = dim(0, 5),
+            --         PaddingBottom = dim(0, 5),
+            --         PaddingRight = dim(0, 5),
+            --         PaddingLeft = dim(0, 5)
+            --     })
+                
+            --     local glow = library:create("ImageLabel", {
+            --         Parent = config_outline,
+            --         Name = "",
+            --         ImageColor3 = themes.preset.accent,
+            --         ScaleType = Enum.ScaleType.Slice,
+            --         BorderColor3 = rgb(0, 0, 0),
+            --         BackgroundColor3 = rgb(255, 255, 255),
+            --         Visible = true,
+            --         Image = "http://www.roblox.com/asset/?id=18245826428",
+            --         BackgroundTransparency = 1,
+            --         ImageTransparency = 0.8, 
+            --         Position = dim2(0, -20, 0, -20),
+            --         Size = dim2(1, 40, 1, 40),
+            --         ZIndex = 2,
+            --         BorderSizePixel = 0,
+            --         SliceCenter = rect(vec2(21, 21), vec2(79, 79))
+            --     })library:apply_theme(glow, "glow", "ImageColor3") 
+                
+            -- -- 
+
+            -- -- playerlist 
+            --     window["playerlist"], playerlist_gui = library:panel({
+            --         name = "Playerlist", 
+            --         anchor_point = vec2(-1, 0),
+            --         size = dim2(0, 385, 0, 399),
+            --         position = dim2(0, holder.AbsolutePosition.X - 395, 0, holder.AbsolutePosition.Y - 22)
+            --     })    
+                
+            --     create_dock_button({
+            --         image = "rbxassetid://115194686863276",
+            --         callback = function(open)
+            --             playerlist_gui.Enabled = open 
+            --         end 
+            --     })
+            -- -- 
+            
+            -- -- theming 
+            --     window["themes"], themes_gui = library:panel({
+            --         name = "Style", 
+            --         anchor_point = vec2(-1, 0),
+            --         size = dim2(0, 322, 0, 391),
+            --         position = dim2(0, window["configs"].AbsolutePosition.X + window["configs"].AbsoluteSize.X + 10, 0, window["configs"].AbsolutePosition.Y - 22)
+            --     })   
+
+            --     create_dock_button({
+            --         image = "rbxassetid://115194686863276",
+            --         callback = function(open)
+            --             themes_gui.Enabled = open 
+            --         end 
+            --     })
+            -- -- 
+             
+
+            return setmetatable(window, library)
+        end
+
+        function library:watermark(options) 
+            local cfg = {
+                default = options.text or options.default or os.date('drain.lol | %b %d %Y | %H:%M')
+            }
+
+            local watermark_outline = library:create("Frame", {
+                Parent = sgui,
+                Name = "",
+                BorderColor3 = rgb(0, 0, 0),
+                AnchorPoint = vec2(0.5, 0.5),
+                Position = dim2(1, -100, 0, 20),
+                Size = dim2(0, 0, 0, 24),
+                BorderSizePixel = 0,
+                AutomaticSize = Enum.AutomaticSize.X,
+                BackgroundColor3 = rgb(32, 32, 38)
+            })library:apply_theme(watermark_outline, "outline", "BackgroundColor3") 
+            
+            local watermark_inline = library:create("Frame", {
+                Parent = watermark_outline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })library:apply_theme(watermark_inline, "inline", "BackgroundColor3") 
+            
+            local watermark_background = library:create("Frame", {
+                Parent = watermark_inline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = watermark_background,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+            })library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            local text = library:create("TextLabel", {
+                Parent = watermark_background,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "  drain.lol | Beta | Aug 29 2024 | 07:29:00  ",
+                Size = dim2(0, 0, 1, 0),
+                BackgroundTransparency = 1,
+                Position = dim2(0, -1, 0, 1),
+                BorderSizePixel = 0,
+                AutomaticSize = Enum.AutomaticSize.X,
+                TextSize = 12,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            library:create("UIStroke", {
+                Parent = text,
+                Name = "",
+                LineJoinMode = Enum.LineJoinMode.Miter
+            })
+            
+            local accent = library:create("Frame", {
+                Parent = watermark_outline,
+                Name = "",
+                Position = dim2(0, 2, 0, 2),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -4, 0, 2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })library:apply_theme(accent, "accent", "BackgroundColor3") 
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = accent,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                    rgbkey(0, rgb(255, 255, 255)),
+                    rgbkey(1, rgb(167, 167, 167))
+                }
+            })
+            
+            function cfg.change_text(input)
+                text.Text = "  ".. input .."  "
+            end 
+
+            cfg.change_text(cfg.default)
+
+            return cfg 
+        end 
+
+        function library:tab(options)	
+            local cfg = {
+                name = options.name or "tab", 
+                enabled = false, 
+            }
+            
+            -- button instances
+                local tab_holder = library:create("TextButton", {
+                    Parent = self.tab_holder,
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "",
+                    Name = "\0",
+                    BorderSizePixel = 0,
+                    Size = dim2(0, 0, 1, -2),
+                    ZIndex = 5,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(32, 32, 38),
+                    AutoButtonColor = false
+                })library:apply_theme(tab_holder, "outline", "BackgroundColor3") 
+
+                local inline = library:create("Frame", {
+                    Parent = tab_holder,
+                    Size = dim2(1, -2, 1, 0),
+                    Name = "\0",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    ZIndex = 5,
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(inline, "inline", "BackgroundColor3") 
+
+                local background = library:create("Frame", {
+                    Parent = inline,
+                    Size = dim2(1, -2, 1, -1),
+                    Name = "\0",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    ZIndex = 5,
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Rotation = 90,
+                    Color = rgbseq{rgbkey(0, rgb(41, 41, 55)), rgbkey(1, rgb(35, 35, 47))}
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+
+                local text = library:create("TextLabel", {
+                    Parent = background,
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = cfg.name,
+                    Name = "\0",
+                    BackgroundTransparency = 1,
+                    Size = dim2(1, 0, 1, 0),
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.X,
+                    TextSize = 12,
+                    ZIndex = 5,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                }, "text")
+                library:apply_theme(text, "accent", "TextColor3")
+            
+            -- section instances 
+                local section_holder = library:create("Frame", {
+                    Parent = library.section_holder,
+                    BackgroundTransparency = 1,
+                    Name = "\0",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, 0),
+                    BorderSizePixel = 0,
+                    Visible = false,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+            
+                cfg["holder"] = section_holder
+
+                library:create("UIListLayout", {
+                    Parent = section_holder,
+                    FillDirection = Enum.FillDirection.Horizontal,
+                    HorizontalFlex = Enum.UIFlexAlignment.Fill,
+                    Padding = dim(0, 4),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
+
+            function cfg.open_tab()
+                if library.current_tab and library.current_tab[1] ~= background then 
+                    local button = library.current_tab[1]
+                    button.Size = dim2(1, -2, 1, -1)
+                    button:FindFirstChildOfClass("UIGradient").Rotation = 90
+                    button:FindFirstChildOfClass("TextLabel").TextColor3 = themes.preset.text
+                        
+                    library.current_tab[2].Visible = false
+                    
+                    library.current_tab = nil
+                end
+                
+                library.current_tab = {
+                    background, section_holder
+                }
+                
+                local button = library.current_tab[1] 
+                button.Size = dim2(1, -2, 1, 0)
+                button:FindFirstChildOfClass("UIGradient").Rotation = -90
+                button:FindFirstChildOfClass("TextLabel").TextColor3 = themes.preset.accent 
+
+                library.current_tab[2].Visible = true 
+
+                if library.current_element_open and library.current_element_open ~= cfg then 
+                    library.current_element_open.set_visible(false)
+                    library.current_element_open.open = false 
+                    library.current_element_open = nil 
+                end
+            end
+            
+            tab_holder.MouseButton1Click:Connect(cfg.open_tab)
+            
+            return setmetatable(cfg, library) 
+        end
+
+        function library:column(path) 
+            local cfg = {}
+            
+            local holder = path and self[path] or self.holder
+            
+            local column = library:create("Frame", {
+                Parent = holder,
+                BackgroundTransparency = 1,
+                Name = "\0",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })library:apply_theme(column, "inline", "BackgroundColor3") 
+            
+            library:create("UIListLayout", {
+                Parent = column,
+                Padding = dim(0, 4),
+                SortOrder = Enum.SortOrder.LayoutOrder,
+                VerticalFlex = Enum.UIFlexAlignment.Fill
+            })
+            
+            cfg["holder"] = column
+
+            return setmetatable(cfg, library) 
+        end
+
+        function library:section(options)
+            local cfg = {
+                name = options.name or "Section", 
+            }
+            
+            local section = library:create("Frame", {
+                Parent = self.holder,
+                Name = "\0",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })library:apply_theme(section, "inline", "BackgroundColor3") 
+
+            local inline = library:create("Frame", {
+                Parent = section,
+                Name = "\0",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38)
+            })library:apply_theme(inline, "outline", "BackgroundColor3") 
+
+            local background = library:create("Frame", {
+                Parent = inline,
+                Name = "\0",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+
+            local text = library:create("TextLabel", {
+                Parent = background,
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = cfg.name,
+                Name = "\0",
+                BackgroundTransparency = 1,
+                Position = dim2(0, 6, 0, 4),
+                BorderSizePixel = 0,
+                AutomaticSize = Enum.AutomaticSize.XY,
+                TextSize = 12,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+
+            library:create("UIStroke", {
+                Parent = text,
+                LineJoinMode = Enum.LineJoinMode.Miter
+            })
+
+            local accent = library:create("Frame", {
+                Parent = background,
+                Name = "\0",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 0, 2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })library:apply_theme(accent, "accent", "BackgroundColor3") 
+
+            local UIGradient = library:create("UIGradient", {
+                Parent = accent,
+                Rotation = 90,
+                Color = rgbseq{
+                    rgbkey(0, rgb(255, 255, 255)),
+                    rgbkey(1, rgb(167, 167, 167))
+                }
+            })
+
+            local UIGradient = library:create("UIGradient", {
+                Parent = background,
+                Rotation = 90,
+                Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+            })library:apply_theme(UIGradient, "contrast", "Color") 
+
+            local ScrollingFrame = library:create("ScrollingFrame", {
+                Parent = background,
+                ScrollBarImageColor3 = themes.preset.accent,
+                Active = true,
+                AutomaticCanvasSize = Enum.AutomaticSize.Y,
+                ScrollBarThickness = 2,
+                Size = dim2(1, 0, 1, -20),
+                BackgroundTransparency = 1,
+                Position = dim2(0, 0, 0, 20),
+                BackgroundColor3 = rgb(255, 255, 255),
+                BorderColor3 = rgb(0, 0, 0),
+                BorderSizePixel = 0,
+                CanvasSize = dim2(0, 0, 0, 0)
+            })library:apply_theme(ScrollingFrame, "accent", "ScrollBarImageColor3") 
+
+            local elements = library:create("Frame", {
+                Parent = ScrollingFrame,
+                Name = "\0",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 0, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            cfg.holder = elements 
+
+            library:create("UIListLayout", {
+                Parent = elements,
+                Padding = dim(0, 4),
+                HorizontalAlignment = Enum.HorizontalAlignment.Center,
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
+
+            library:create("UIPadding", {
+                Parent = ScrollingFrame,
+                PaddingBottom = dim(0, 10)
+            })
+
+            return setmetatable(cfg, library)
+        end
+
+        function library:slider(options)
+            local cfg = {
+                name = options.name or nil,
+                suffix = options.suffix or "",
+                flag = options.flag or tostring(2^789),
+                callback = options.callback or function() end, 
+
+                min = options.min or options.minimum or 0,
+                max = options.max or options.maximum or 100,
+                intervals = options.interval or options.decimal or 1,
+                default = options.default or 10,
+
+                dragging = false,
+                value = options.default or 10, 
+
+                previous_holder = self
+            } 
+
+            local slider = library:create("TextLabel", {
+                Parent = self.holder, 
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "",
+                Name = "slider",
+                ZIndex = 2,
+                Size = dim2(1, -8, 0, 12),
+                BorderSizePixel = 0,
+                BackgroundTransparency = 1,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                AutomaticSize = Enum.AutomaticSize.Y,
+                TextYAlignment = Enum.TextYAlignment.Top,
+                TextSize = 11,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            if cfg.name then 
+                local left_components = library:create("Frame", {
+                    Parent = slider,
+                    Name = "left_components",
+                    BackgroundTransparency = 1,
+                    Position = dim2(0, 2, 0, -1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 0, 0, 14),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local text = library:create("TextLabel", {
+                    Parent = left_components,
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = cfg.name,
+                    Name = "text",
+                    BackgroundTransparency = 1,
+                    Size = dim2(0, 0, 1, -1),
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.X,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                }, "text")
+
+                library:create("UIListLayout", {
+                    Parent = left_components,
+                    Padding = dim(0, 5),
+                    Name = "_",
+                    FillDirection = Enum.FillDirection.Horizontal
+                })
+            end 
+            
+            local bottom_components = library:create("Frame", {
+                Parent = slider,
+                Name = "bottom_components",
+                Position = dim2(0, 0, 0, cfg.name and 15 or 0),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 26, 0, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local slider = library:create("TextButton", {
+                Parent = bottom_components,
+                Name = "slider",
+                Position = dim2(0, 0, 0, 2),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -27, 1, 12),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38),
+                Text = "",
+                AutoButtonColor = false,
+            })library:apply_theme(slider, "outline", "BackgroundColor3") 
+            
+            local inline = library:create("Frame", {
+                Parent = slider,
+                Name = "inline",
+                Position = dim2(0, 0, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -1, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })library:apply_theme(inline, "inline", "BackgroundColor3") 
+            
+            local background = library:create("Frame", {
+                Parent = inline,
+                Name = "background",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })library:apply_theme(background, "accent", "BackgroundColor3") 
+            
+            local contrast = library:create("Frame", {
+                Parent = background,
+                Name = "contrast",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local slidertext = library:create("TextLabel", {
+                Parent = contrast,
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "12.50/100.00",
+                Name = "text",
+                BackgroundTransparency = 1,
+                Position = dim2(0, 0, 0, -1),
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                TextSize = 12,
+                ZIndex = 2,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local fill = library:create("Frame", {
+                Parent = contrast,
+                Name = "fill",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(0.75, 0, 1, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })library:apply_theme(fill, "accent", "BackgroundColor3") 
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = fill,
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(255, 255, 255)),
+                rgbkey(1, rgb(167, 167, 167))
+            }
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = contrast,
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(41, 41, 55)),
+                rgbkey(1, rgb(35, 35, 47))
+            }
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = background,
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(255, 255, 255)),
+                rgbkey(1, rgb(167, 167, 167))
+            }
+            }) 
+            
+            library:create("UIListLayout", {
+                Parent = bottom_components,
+                Padding = dim(0, 10),
+                Name = "_",
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
+            
+            library:create("UIPadding", {
+                Parent = slider,
+                PaddingLeft = dim(0, 1)
+            })
+
+            function cfg.set(value)
+                cfg.value = math.clamp(library:round(value, cfg.intervals), cfg.min, cfg.max)
+
+                fill.Size = dim2((cfg.value - cfg.min) / (cfg.max - cfg.min), 0, 1, 0)
+                slidertext.Text = tostring(cfg.value) .. cfg.suffix .. "/" .. tostring(cfg.max) .. cfg.suffix
+                flags[cfg.flag] = cfg.value
+
+                cfg.callback(flags[cfg.flag])
+            end
+
+            library:connection(uis.InputChanged, function(input)
+                if cfg.dragging and input.UserInputType == Enum.UserInputType.MouseMovement then 
+                    local size_x = (input.Position.X - slider.AbsolutePosition.X) / slider.AbsoluteSize.X
+                    local value = ((cfg.max - cfg.min) * size_x) + cfg.min
+                    cfg.set(value)
+                end
+            end)
+
+            library:connection(uis.InputEnded, function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    cfg.dragging = false 
+                end 
+            end)
+
+            slider.MouseButton1Down:Connect(function()
+                cfg.dragging = true
+            end)
+
+            cfg.set(cfg.default)
+            
+            config_flags[cfg.flag] = cfg.set
+
+            library.config_flags[cfg.flag] = cfg.set
+
+            return self 
+        end 
+
+        function library:toggle(options)
+            local cfg = {
+                enabled = options.enabled or nil,
+                name = options.name or "Toggle",
+                flag = options.flag or tostring(math.random(1,9999999)),
+                callback = options.callback or function() end,
+                default = options.default or false,
+                colorpicker = options.color or nil,
+                previous_holder = self
+            }
+            
+            -- instances
+                local toggle_holder = library:create("TextButton", {
+                    Parent = self.holder,
+                    FontFace = library.font,
+                    TextColor3 = rgb(151, 151, 151),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "",
+                    Name = "toggle",
+                    ZIndex = 1,
+                    Size = dim2(1, -8, 0, 12),
+                    BorderSizePixel = 0,
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextYAlignment = Enum.TextYAlignment.Top,
+                    TextSize = 11,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+            
+                local right_components = library:create("Frame", {
+                    Parent = toggle_holder,
+                    Name = "right_components",
+                    Position = dim2(1, -1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 0, 0, 12),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                cfg["right_holder"] = right_components
+            
+                local list = library:create("UIListLayout", {
+                    Parent = right_components,
+                    VerticalAlignment = Enum.VerticalAlignment.Center,
+                    FillDirection = Enum.FillDirection.Horizontal,
+                    HorizontalAlignment = Enum.HorizontalAlignment.Right,
+                    Padding = dim(0, 4),
+                    Name = "list",
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
+            
+                library:create("UIPadding", {
+                    Parent = toggle_holder
+                })
+            
+                local left_components = library:create("Frame", {
+                    Parent = toggle_holder,
+                    Name = "left_components",
+                    BackgroundTransparency = 1,
+                    Position = dim2(0, 0, 0, 0),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 0, 0, 14),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+            
+                local text = library:create("TextLabel", {
+                    Parent = left_components,
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = cfg.name,
+                    Name = "text",
+                    BackgroundTransparency = 1,
+                    Size = dim2(0, 0, 1, -1),
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.X,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+            
+                library:create("UIStroke", {
+                    Parent = text,
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+            
+                library:create("UIListLayout", {
+                    Parent = left_components,
+                    Padding = dim(0, 5),
+                    Name = "_",
+                    FillDirection = Enum.FillDirection.Horizontal
+                })
+            
+                local toggle = library:create("TextButton", {
+                    Parent = left_components,
+                    Name = "!toggle",
+                    Text = "",
+                    AutoButtonColor = false,
+                    Position = dim2(0, 0, 0, 2),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 15, 0, 15),
+                    BorderSizePixel = 0,
+                    ZIndex = 1, 
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(toggle, "outline", "BackgroundColor3") 
+            
+                local inline = library:create("Frame", {
+                    Parent = toggle,
+                    Name = "inline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(inline, "inline", "BackgroundColor3") 
+            
+                local background = library:create("Frame", {
+                    Parent = inline,
+                    Name = "background",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = themes.preset.accent
+                })library:apply_theme(background, "accent", "BackgroundColor3") 
+            
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Rotation = 90,
+                    Color = rgbseq{
+                        rgbkey(0, rgb(255, 255, 255)),
+                        rgbkey(1, rgb(167, 167, 167))
+                    }
+                })
+            -- 
+        
+            function cfg.set(bool)
+                background.BackgroundColor3 = bool and themes.preset.accent or themes.preset.inline
+        
+                flags[cfg.flag] = bool
+                
+                cfg.callback(bool)
+            end
+        
+            library:connection(toggle_holder.MouseButton1Click, function()
+                cfg.enabled = not cfg.enabled
+        
+                cfg.set(cfg.enabled)
+            end)
+
+            library:connection(toggle.MouseButton1Click, function()
+                cfg.enabled = not cfg.enabled
+        
+                cfg.set(cfg.enabled)
+            end)
+
+            cfg.set(cfg.default)
+        
+            self.previous_holder = left_components
+            self.right_holder = right_components
+            
+            library.config_flags[cfg.flag] = cfg.set
+
+            return self
+        end
+        
+        function library:colorpicker(options)
+            local parent = self.right_holder
+            
+            local cfg = {
+                name = options.name or "Color", 
+                flag = options.flag or tostring(2^789),
+                color = options.color or Color3.new(1, 1, 1), -- Default to white color if not provided
+                alpha = options.alpha or 1,
+                callback = options.callback or function() end,
+                holder = self.previous_holder
+            }
+
+            local dragging_sat = false 
+            local dragging_hue = false 
+            local dragging_alpha = false 
+
+            local h, s, v = cfg.color:ToHSV() 
+            local a = cfg.alpha 
+            
+            -- colorpicker button 
+                local colorpicker_button = library:create("TextButton", {
+                    Parent = parent,
+                    Name = "outline",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 24, 0, 14),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38),
+                    Text = "",
+                    AutoButtonColor = false,
+                })library:apply_theme(colorpicker_button, "outline", "BackgroundColor3") 
+            
+                local inline = library:create("Frame", {
+                    Parent = colorpicker_button,
+                    Name = "inline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(inline, "inline", "BackgroundColor3") 
+            
+                local handler = library:create("Frame", {
+                    Parent = inline,
+                    Name = "handler",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(250, 165, 27)
+                })
+            
+                local UIGradient = library:create("UIGradient", {
+                    Parent = handler,
+                    Rotation = 90,
+                    Color = rgbseq{
+                        rgbkey(0, rgb(255, 255, 255)),
+                        rgbkey(1, rgb(167, 167, 167))
+                    }
+                })
+            -- 
+
+            -- colorpicker instances
+                local colorpicker_holder = library:create("Frame", {
+                    Parent = sgui,
+                    Name = "colorpicker",
+                    Position = dim2(0, colorpicker_button.AbsolutePosition.X + 1, 0, colorpicker_button.AbsolutePosition.Y + 17),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 190, 0, 190),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38),
+                    Visible = false,
+                    ZIndex = 1
+                })library:apply_theme(colorpicker_holder, "outline", "BackgroundColor3") 
+
+                library:make_resizable(colorpicker_holder)
+                
+                local window_inline = library:create("Frame", {
+                    Parent = colorpicker_holder,
+                    Name = "window_inline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = themes.preset.accent
+                })library:apply_theme(window_inline, "accent", "BackgroundColor3") 
+                
+                local window_holder = library:create("Frame", {
+                    Parent = window_inline,
+                    Name = "window_holder",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(32, 32, 38),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })library:apply_theme(window_holder, "outline", "BackgroundColor3") 
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = window_holder,
+                    Rotation = 90,
+                    Name = "_",
+                    Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local text = library:create("TextLabel", {
+                    Parent = window_holder,
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = cfg.name,
+                    Name = "text",
+                    BackgroundTransparency = 1,
+                    Position = dim2(0, 2, 0, 4),
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.XY,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                library:create("UIStroke", {
+                    Parent = text,
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+                
+                library:create("UIPadding", {
+                    Parent = window_holder,
+                    Name = "_",
+                    PaddingBottom = dim(0, 4),
+                    PaddingRight = dim(0, 4),
+                    PaddingLeft = dim(0, 4)
+                })
+                
+                local main_holder = library:create("Frame", {
+                    Parent = window_holder,
+                    Name = "main_holder",
+                    Position = dim2(0, 0, 0, 20),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, -20),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(main_holder, "inline", "BackgroundColor3") 
+                
+                local main_holder_inline = library:create("Frame", {
+                    Parent = main_holder,
+                    Name = "main_holder_inline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(main_holder_inline, "outline", "BackgroundColor3") 
+                
+                local main_holder_background = library:create("Frame", {
+                    Parent = main_holder_inline,
+                    Name = "main_holder_background",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = main_holder_background,
+                    Rotation = 90,
+                    Name = "_",
+                    Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                library:create("UIPadding", {
+                    Parent = main_holder_background,
+                    PaddingTop = dim(0, 4),
+                    Name = "_",
+                    PaddingBottom = dim(0, 4),
+                    PaddingRight = dim(0, 4),
+                    PaddingLeft = dim(0, 4)
+                })
+                
+                local alpha = library:create("TextButton", {
+                    Parent = main_holder_background,
+                    AnchorPoint = vec2(0, 0.5),
+                    Name = "alpha",
+                    Position = dim2(0, 0, 1, -8),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -20, 0, 14),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75),
+                    Text = "",
+                    AutoButtonColor = false,
+                })library:apply_theme(alpha, "inline", "BackgroundColor3") 
+                
+                local outline = library:create("Frame", {
+                    Parent = alpha,
+                    Name = "outline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(outline, "outline", "BackgroundColor3") 
+                
+                local alpha_drag = library:create("Frame", {
+                    Parent = outline,
+                    Name = "alpha_drag",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(0, 221, 255)
+                })
+                
+                local alphaind = library:create("ImageLabel", {
+                    Parent = alpha_drag,
+                    ScaleType = Enum.ScaleType.Tile,
+                    BorderColor3 = rgb(0, 0, 0),
+                    Image = "rbxassetid://18274452449",
+                    BackgroundTransparency = 1,
+                    Name = "alphaind",
+                    Size = dim2(1, 0, 1, 0),
+                    TileSize = dim2(0, 6, 0, 6),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = alphaind,
+                    Transparency = numseq{
+                        numkey(0, 0),
+                        numkey(1, 1)
+                    }
+                })
+                
+                local alpha_picker = library:create("Frame", {
+                    Parent = alpha_drag,
+                    Name = "alpha_picker",
+                    BorderMode = Enum.BorderMode.Inset,
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 4, 1, 0),
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local hue = library:create("TextButton", {
+                    Parent = main_holder_background,
+                    AnchorPoint = vec2(1, 0),
+                    Name = "hue",
+                    Position = dim2(1, -1, 0, 0),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 14, 1, -20),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75),
+                    Text = "",
+                    AutoButtonColor = false
+                })
+                
+                local outline = library:create("Frame", {
+                    Parent = hue,
+                    Name = "outline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })
+                
+                local Frame = library:create("Frame", {
+                    Parent = outline,
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = Frame,
+                    Rotation = 270,
+                    Color = rgbseq{
+                    rgbkey(0, rgb(255, 0, 0)),
+                    rgbkey(0.17000000178813934, rgb(255, 255, 0)),
+                    rgbkey(0.33000001311302185, rgb(0, 255, 0)),
+                    rgbkey(0.5, rgb(0, 255, 255)),
+                    rgbkey(0.6700000166893005, rgb(0, 0, 255)),
+                    rgbkey(0.8299999833106995, rgb(255, 0, 255)),
+                    rgbkey(1, rgb(255, 0, 0))
+                }
+                }) 
+                
+                local hue_picker = library:create("Frame", {
+                    Parent = Frame,
+                    Name = "hue_picker",
+                    BorderMode = Enum.BorderMode.Inset,
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 0, 4),
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local visualize = library:create("Frame", {
+                    Parent = main_holder_background,
+                    AnchorPoint = vec2(1, 1),
+                    Name = "visualize",
+                    Position = dim2(1, -1, 1, -1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 14, 0, 14),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(visualize, "inline", "BackgroundColor3") 
+                
+                local outline = library:create("Frame", {
+                    Parent = visualize,
+                    Size = dim2(1, -2, 1, -2),
+                    Name = "outline",
+                    Active = true,
+                    BorderColor3 = rgb(0, 0, 0),
+                    Position = dim2(0, 1, 0, 1),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(outline, "outline", "BackgroundColor3") 
+                
+                local visualize = library:create("Frame", {
+                    Parent = outline,
+                    Size = dim2(1, -2, 1, -2),
+                    Name = "visualize",
+                    Active = true,
+                    BorderColor3 = rgb(0, 0, 0),
+                    Position = dim2(0, 1, 0, 1),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(0, 221, 255)
+                })
+                
+                local satval_picker = library:create("Frame", {
+                    Parent = main_holder_background,
+                    Name = "satval_picker",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -20, 1, -20),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(satval_picker, "inline", "BackgroundColor3") 
+                
+                local outline = library:create("Frame", {
+                    Parent = satval_picker,
+                    Name = "outline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(outline, "outline", "BackgroundColor3") 
+                
+                local colorpicker = library:create("Frame", {
+                    Parent = outline,
+                    Name = "colorpicker",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(0, 221, 255)
+                })
+                
+                local sat = library:create("TextButton", {
+                    Parent = colorpicker,
+                    Name = "sat",
+                    Size = dim2(1, 0, 1, 0),
+                    BorderColor3 = rgb(0, 0, 0),
+                    ZIndex = 2,
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255),
+                    Text = "",
+                    AutoButtonColor = false,
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = sat,
+                    Rotation = 270,
+                    Transparency = numseq{
+                        numkey(0, 0),
+                        numkey(1, 1)
+                    },
+                    Color = rgbseq{
+                        rgbkey(0, rgb(0, 0, 0)),
+                        rgbkey(1, rgb(0, 0, 0))
+                    }
+                })
+                
+                local val = library:create("TextButton", {
+                    Parent = colorpicker,
+                    Name = "val",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, 0),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255),
+                    Text = "",
+                    AutoButtonColor = false,
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = val,
+                    Transparency = numseq{
+                        numkey(0, 0),
+                        numkey(1, 1)
+                    }
+                })
+                
+                local satval_picker_REAL = library:create("Frame", {
+                    Parent = colorpicker,
+                    Name = "satval_picker_REAL",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 2, 0, 2),
+                    BorderSizePixel = 1,
+                    BackgroundColor3 = rgb(255, 255, 255),
+                    ZIndex = 3, 
+                })
+            -- 
+                
+            function cfg.set_visible(bool)
+                colorpicker_holder.Visible = bool
+
+                if bool then 
+                    if library.current_element_open and library.current_element_open ~= cfg then 
+                        library.current_element_open.set_visible(false)
+                        library.current_element_open.open = false 
+                    end
+
+                    library.current_element_open = cfg 
+                end
+            end 
+
+            colorpicker_button.MouseButton1Click:Connect(function()		
+                cfg.open = not cfg.open
+
+                cfg.set_visible(cfg.open) 
+            end)
+
+            colorpicker_button:GetPropertyChangedSignal("AbsolutePosition"):Connect(function()
+                colorpicker_holder.Position = dim2(0, colorpicker_button.AbsolutePosition.X + 1, 0, colorpicker_button.AbsolutePosition.Y + 17)
+            end)
+
+            function cfg.set(color, alpha)
+                if color then 
+                    h, s, v = color:ToHSV()
+                end 
+            
+                if alpha then 
+                    a = alpha
+                end 
+            
+                local hsv_position = Color3.fromHSV(h, s, v)
+                local Color = Color3.fromHSV(h, s, v)
+                
+                local value = 1 - h
+                local offset = (value < 1) and 0 or -4
+                hue_picker.Position = dim2(0, 0, value, offset)
+
+                local offset = (a < 1) and 0 or -4
+                alpha_picker.Position = dim2(a, offset, 0, 0)
+
+                alpha_drag.BackgroundColor3 = Color3.fromHSV(h, s, v)
+                
+                visualize.BackgroundColor3 = Color
+                handler.BackgroundColor3 = Color 
+
+                colorpicker.BackgroundColor3 = Color3.fromHSV(h, 1, 1)
+                
+                cfg.color = Color
+                cfg.alpha = a
+                
+                local s_offset = (s < 1) and 0 or -3
+                local v_offset = (1 - v < 1) and 0 or -3
+                satval_picker_REAL.Position = dim2(s, s_offset, 1 - v, v_offset)
+
+                flags[cfg.flag] = {} 
+                flags[cfg.flag]["Color"] = Color
+                flags[cfg.flag]["Transparency"] = a
+            
+                cfg.callback(Color, a)
+            end
+
+            function cfg.update_color() 
+                local mouse = uis:GetMouseLocation() 
+
+                if dragging_sat then	
+                    s = math.clamp((vec2(mouse.X, mouse.Y - gui_offset) - val.AbsolutePosition).X / val.AbsoluteSize.X, 0, 1)
+                    v = 1 - math.clamp((vec2(mouse.X, mouse.Y - gui_offset) - sat.AbsolutePosition).Y / sat.AbsoluteSize.Y, 0, 1)
+                elseif dragging_hue then 
+                    h = math.clamp(1 - (vec2(mouse.X, mouse.Y - gui_offset) - hue.AbsolutePosition).Y / hue.AbsoluteSize.Y, 0, 1)
+                elseif dragging_alpha then 
+                    a = math.clamp((vec2(mouse.X, mouse.Y - gui_offset) - alpha.AbsolutePosition).X / alpha.AbsoluteSize.X, 0, 1)
                 end
 
-                local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+                cfg.set(nil, nil)
+            end
+
+            alpha.MouseButton1Down:Connect(function()
+                dragging_alpha = true 
+            end)
+
+            hue.MouseButton1Down:Connect(function()
+                dragging_hue = true 
+            end)
+
+            sat.MouseButton1Down:Connect(function()
+                dragging_sat = true  
+            end)
+
+            uis.InputEnded:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    dragging_sat = false
+                    dragging_hue = false
+                    dragging_alpha = false 
+                end
+            end)
+
+            uis.InputChanged:Connect(function(input)
+                if (dragging_sat or dragging_hue or dragging_alpha) and input.UserInputType == Enum.UserInputType.MouseMovement then
+                    cfg.update_color() 
+                end
+            end)	
+
+            cfg.set(cfg.color, cfg.alpha)
+
+            self.previous_holder = parent
+
+            library.config_flags[cfg.flag] = cfg.set
+            
+            return self 
+        end
+
+        function library:keybind(options)
+            local parent = self.right_holder
+
+            local cfg = {
+                flag = options.flag or "SET ME A FLAG NOWWW!!!!",
+                callback = options.callback or function() end,
+                open = false,
+                binding = nil, 
+                name = options.name or nil, 
+                ignore_key = options.ignore or false, 
+
+                key = options.key or nil, 
+                mode = options.mode or "toggle",
+                active = options.default or false, 
+
+                hold_instances = {},
+            }
+
+            flags[cfg.flag] = {} 
+            
+            local KEYBIND_ELEMENT;
+            if cfg.name then 
+                KEYBIND_ELEMENT = library:create("TextLabel", {
+                    Parent = library.keybind_list,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = Color3.fromRGB(180, 180, 180),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    Text = "[ Hold ]  Fly - X",
+                    Size = UDim2.new(1, -5, 0, 18),
+                    Visible = false, 
+                    Position = UDim2.new(0, 5, 0, -1),
+                    BorderSizePixel = 0,
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    TextTruncate = Enum.TextTruncate.AtEnd,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextSize = 12,
+                    BackgroundColor3 = themes.preset.text
+                }, "text")
+            end 
+
+            local element_outline = library:create("TextButton", {
+                Parent = parent,
+                Name = "",
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "", 
+                Size = dim2(0, 24, 0, 14),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38)
+            })library:apply_theme(element_outline, "outline", "BackgroundColor3") 
+            
+            local inline = library:create("Frame", {
+                Parent = element_outline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })library:apply_theme(inline, "inline", "BackgroundColor3") 
+            
+            local handler = library:create("Frame", {
+                Parent = inline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = handler,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+            })library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            local key_text = library:create("TextLabel", {
+                Parent = handler,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "b",
+                Size = dim2(1, 0, 1, 0),
+                BackgroundTransparency = 1,
+                Position = dim2(0, 0, 0, -2),
+                BorderSizePixel = 0,
+                AutomaticSize = Enum.AutomaticSize.XY,
+                TextSize = 12,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
                 
-                local invisiblePart = Instance.new("Part", workspace)
-                invisiblePart.Name = "TrailPart"
-                invisiblePart.Size = Vector3.new(0.1, 0.1, 0.1)
-                invisiblePart.Transparency = 1
-                invisiblePart.Anchored = true
-                invisiblePart.CanCollide = false
-                invisiblePart.CFrame = humanoidRootPart.CFrame
+            -- mode selector
+                local keybind_selector = library:create("Frame", {
+                    Parent = sgui,
+                    Name = "",
+                    Position = dim2(0, element_outline.AbsolutePosition.X + 1, 0, element_outline.AbsolutePosition.Y + 17),
+                    BorderColor3 = rgb(255, 255, 255),
+                    BorderSizePixel = 2,
+                    Visible = false, 
+                    AutomaticSize = Enum.AutomaticSize.XY,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
                 
-                local BlaBla = Instance.new("Trail", invisiblePart)
-                BlaBla.Name = "BlaBla"
+                library:create("UIListLayout", {
+                    Parent = keybind_selector,
+                    Name = "",
+                    SortOrder = Enum.SortOrder.LayoutOrder,
+                    HorizontalFlex = Enum.UIFlexAlignment.Fill,
+                    Padding = dim(0, 2)
+                })
+                
+                local hold_button = library:create("TextButton", {
+                    Parent = keybind_selector,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "hold",
+                    BackgroundTransparency = 1,
+                    AutomaticSize = Enum.AutomaticSize.XY,
+                    BorderSizePixel = 0,
+                    ZIndex = 2,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                library:create("UIStroke", {
+                    Parent = hold_button,
+                    Name = "",
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+                
+                library:create("UIPadding", {
+                    Parent = keybind_selector,
+                    Name = "",
+                    PaddingTop = dim(0, 3),
+                    PaddingBottom = dim(0, 5),
+                    PaddingRight = dim(0, 5),
+                    PaddingLeft = dim(0, 5)
+                })
+                
+                local toggle_button = library:create("TextButton", {
+                    Parent = keybind_selector,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "toggle",
+                    BackgroundTransparency = 1,
+                    AutomaticSize = Enum.AutomaticSize.XY,
+                    BorderSizePixel = 0,
+                    ZIndex = 2,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                library:create("UIStroke", {
+                    Parent = toggle_button,
+                    Name = "",
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+                
+                local always_button = library:create("TextButton", {
+                    Parent = keybind_selector,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "always",
+                    BackgroundTransparency = 1,
+                    AutomaticSize = Enum.AutomaticSize.XY,
+                    BorderSizePixel = 0,
+                    ZIndex = 2,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                library:create("UIStroke", {
+                    Parent = always_button,
+                    Name = "",
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = keybind_selector,
+                    Name = "",
+                    Rotation = 90,
+                    Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+                })
+                
+                local UIStroke = library:create("UIStroke", {
+                    Parent = keybind_selector,
+                    Name = "",
+                    Color = rgb(60, 55, 75),
+                    LineJoinMode = Enum.LineJoinMode.Miter,
+                    ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+                })
+            -- 
 
-                local attachment0 = Instance.new("Attachment", invisiblePart)
-                attachment0.Position = Vector3.new(0, 1, 0)
-                local attachment1 = Instance.new("Attachment", invisiblePart)
-                attachment1.Position = Vector3.new(0, -1, 0)
+            -- init 
+                element_outline:GetPropertyChangedSignal("AbsolutePosition"):Connect(function()
+                    keybind_selector.Position = dim2(0, element_outline.AbsolutePosition.X + 1, 0, element_outline.AbsolutePosition.Y + 17)
+                end)
 
-                BlaBla.Attachment0 = attachment0
-                BlaBla.Attachment1 = attachment1
+                function cfg.set_visible(bool)
+                    keybind_selector.Visible = bool
 
-                BlaBla.Lifetime = Settings.Visuals.SelfESP.Trail.LifeTime
-                BlaBla.Transparency = NumberSequence.new(0, 0)
-                BlaBla.LightEmission = 150
-                BlaBla.Brightness =  1500
-                BlaBla.LightInfluence = 1
-                BlaBla.WidthScale = NumberSequence.new(Settings.Visuals.SelfESP.Trail.Width)
+                    if bool then 
+                        if library.current_element_open and library.current_element_open ~= cfg then 
+                            library.current_element_open.set_visible(false)
+                            library.current_element_open.open = false 
+                        end
 
-                game:GetService("RunService").RenderStepped:Connect(function()
-                    BlaBla.Color = ColorSequence.new({
-                        ColorSequenceKeypoint.new(0, getgenv().TrailColor),
-                        ColorSequenceKeypoint.new(1, getgenv().TrailColor)
+                        library.current_element_open = cfg 
+                    end
+                end 
+
+                function cfg.set_mode(mode) 
+                    cfg.mode = mode 
+
+                    if mode == "always" then
+                        cfg.set(true)
+                    elseif mode == "hold" then
+                        cfg.set(false)
+                    end
+
+                    flags[cfg.flag]["mode"] = mode
+                end 
+
+                function cfg.set(input)
+                    if type(input) == "boolean" then 
+                        local __cached = input 
+
+                        if cfg.mode == "always" then 
+                            __cached = true 
+                        end 
+
+                        cfg.active = __cached 
+                        flags[cfg.flag]["active"] = __cached 
+                        cfg.callback(__cached)
+                    elseif tostring(input):find("Enum") then 
+                        input = input.Name == "Escape" and "..." or input
+
+                        cfg.key = input or "..."	
+
+                        local _text = keys[cfg.key] or tostring(cfg.key):gsub("Enum.", "")
+                        local _text2 = (tostring(_text):gsub("KeyCode.", ""):gsub("UserInputType.", "")) or "..."
+                        cfg.key_name = _text2
+
+                        flags[cfg.flag]["mode"] = cfg.mode 
+                        flags[cfg.flag]["key"] = cfg.key 
+
+                        key_text.Text = string.lower(_text2)
+
+                        cfg.callback(cfg.active or false)
+                    elseif table.find({"toggle", "hold", "always"}, input) then 
+                        cfg.set_mode(input)
+
+                        if input == "always" then 
+                            cfg.active = true 
+                        end 
+
+                        cfg.callback(cfg.active or false)
+                    elseif type(input) == "table" then 
+                        input.key = type(input.key) == "string" and input.key ~= "..." and library:convert_enum(input.key) or input.key
+
+                        input.key = input.key == Enum.KeyCode.Escape and "..." or input.key
+                        cfg.key = input.key or "..."
+                        
+                        cfg.mode = input.mode or "toggle"
+
+                        if input.active then
+                            cfg.active = input.active
+                        end
+
+                        local text = tostring(cfg.key) ~= "Enums" and (keys[cfg.key] or tostring(cfg.key):gsub("Enum.", "")) or nil
+                        local __text = text and (tostring(text):gsub("KeyCode.", ""):gsub("UserInputType.", ""))
+                        
+                        key_text.Text = string.lower(__text) or "..."
+                        cfg.key_name = __text
+                    end 
+
+                    flags[cfg.flag] = {
+                        mode = cfg.mode,
+                        key = cfg.key, 
+                        active = cfg.active
+                    }
+                    
+                    if cfg.name then 
+                        KEYBIND_ELEMENT.Visible = cfg.active
+                    end 
+
+                    local text = tostring(cfg.key) ~= "Enums" and (keys[cfg.key] or tostring(cfg.key):gsub("Enum.", "")) or nil
+                    local __text = text and (tostring(text):gsub("KeyCode.", ""):gsub("UserInputType.", ""))
+
+                    if cfg.name then 
+                        KEYBIND_ELEMENT.Text = "[ " .. string.upper(string.sub(cfg.mode, 1, 1)) .. string.sub(cfg.mode, 2) .. " ] " .. cfg.name .. " - " .. __text
+                    end 
+                end
+
+                hold_button.MouseButton1Click:Connect(function()
+                    cfg.set_mode("hold") 
+                    cfg.set_visible(false)
+                    cfg.open = false 
+                end) 
+
+                toggle_button.MouseButton1Click:Connect(function()
+                    cfg.set_mode("toggle") 
+                    cfg.set_visible(false)
+                    cfg.open = false 
+                end) 
+
+                always_button.MouseButton1Click:Connect(function()
+                    cfg.set_mode("always") 
+                    cfg.set_visible(false)
+                    cfg.open = false 
+                end) 
+
+                element_outline.MouseButton2Click:Connect(function()
+                    cfg.open = not cfg.open 
+
+                    cfg.set_visible(cfg.open)
+                end)
+
+                element_outline.MouseButton1Down:Connect(function()
+                    task.wait()
+                    key_text.Text = "..."	
+
+                    cfg.binding = library:connection(uis.InputBegan, function(keycode, game_event)  
+                        cfg.set(keycode.KeyCode)
+                        
+                        cfg.binding:Disconnect() 
+                        cfg.binding = nil
+                    end)
+                end)
+
+                library:connection(uis.InputBegan, function(input, game_event) 
+                    if not game_event then 
+                        if input.KeyCode == cfg.key then 
+                            if cfg.mode == "toggle" then 
+                                cfg.active = not cfg.active
+                                cfg.set(cfg.active)
+                            elseif cfg.mode == "hold" then 
+                                cfg.set(true)
+                            end
+                        end
+                    end
+                end)
+
+                library:connection(uis.InputEnded, function(input, game_event) 
+                    if game_event then 
+                        return 
+                    end 
+
+                    local selected_key = input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode or input.UserInputType
+        
+                    if selected_key == cfg.key then
+                        if cfg.mode == "hold" then 
+                            cfg.set(false)
+                        end
+                    end
+                end)
+        
+                cfg.set({mode = cfg.mode, active = cfg.active, key = cfg.key})
+        
+                library.config_flags[cfg.flag] = cfg.set
+            -- 
+            
+            self.previous_holder = parent
+
+            library.config_flags[cfg.flag] = cfg.set
+
+            return self 
+        end 
+
+        function library:dropdown(options) 
+            local parent = self.holder 
+
+            local cfg = {
+                name = options.name or nil,
+                flag = options.flag or tostring(math.random(1,9999999)),
+
+                items = options.items or {"1", "2", "3"},
+                callback = options.callback or function() end,
+                multi = options.multi or false, 
+
+                previous_holder = self, 
+                open = false, 
+                option_instances = {}, 
+                multi_items = {}, 
+                scrolling = options.scrolling or false, 
+
+                previous_holder = self
+            }
+            cfg.default = options.default or (cfg.multi and {cfg.items[1]}) or cfg.items[1] or nil
+
+            -- dropdown elements
+                local dropdown = library:create("TextLabel", {
+                    Parent = parent,
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "",
+                    Name = "dropdown",
+                    ZIndex = 2,
+                    Size = dim2(1, -8, 0, 12),
+                    BorderSizePixel = 0,
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextYAlignment = Enum.TextYAlignment.Top,
+                    TextSize = 11,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+
+                local main_text      
+                if cfg.name then 
+                    local left_components = library:create("Frame", {
+                        Parent = dropdown,
+                        Name = "left_components",
+                        BackgroundTransparency = 1,
+                        Position = dim2(0, 2, 0, -1),
+                        BorderColor3 = rgb(0, 0, 0),
+                        Size = dim2(0, 0, 0, 14),
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = rgb(255, 255, 255)
                     })
 
-                    if humanoidRootPart then
-                        invisiblePart.CFrame = humanoidRootPart.CFrame
-                    end
-                end)
-            end
+                    main_text = library:create("TextLabel", {
+                        Parent = left_components,
+                        FontFace = library.font,
+                        TextColor3 = rgb(180, 180, 180),
+                        BorderColor3 = rgb(0, 0, 0),
+                        Text = cfg.name,
+                        Name = "text",
+                        BackgroundTransparency = 1,
+                        Size = dim2(0, 0, 1, -1),
+                        BorderSizePixel = 0,
+                        AutomaticSize = Enum.AutomaticSize.X,
+                        TextSize = 12,
+                        BackgroundColor3 = rgb(255, 255, 255)
+                    })
+                    
+                    library:create("UIStroke", {
+                        Parent = main_text,
+                        LineJoinMode = Enum.LineJoinMode.Miter
+                    })
+                    
+                    library:create("UIListLayout", {
+                        Parent = left_components,
+                        Padding = dim(0, 5),
+                        Name = "_",
+                        FillDirection = Enum.FillDirection.Horizontal
+                    })
 
-            if Bool then
-                local character = player.Character or player.CharacterAdded:Wait()
-                createTrail(character)
-
-                player.CharacterAdded:Connect(function(newCharacter)
-                    if Bool then
-                        createTrail(newCharacter)
-                    end
-                end)
-            else
-                for _, child in ipairs(workspace:GetChildren()) do
-                    if child:IsA("Part") and child.Name == "TrailPart" then
-                        child:Destroy()
-                    end
-                end
-            end
-        end
-
-        utility.trail_character(v)
-    end
-}):Colorpicker({
-    Name = "Color",
-    Default = getgenv().TrailColor,
-    Callback = function(a)
-        getgenv().TrailColor = a
-    end
-})
-
-local localPlayerEsp = {
-    ForcefieldBody = {
-        Enabled = false,
-        Color = Library.Accent,
-    },
-    ForcefieldTools = {
-        Enabled = false,
-        Color = Library.Accent,
-    },
-    ForcefieldHats = {
-        Enabled = false,
-        Color = Library.Accent,
-    }
-}
-
-function applyForcefieldToParts(parts, isEnabled, color)
-    for _, part in pairs(parts) do
-        if part:IsA("BasePart") then
-            if isEnabled then
-                part.Material = Enum.Material.ForceField
-                part.Color = color
-            else
-                part.Material = Enum.Material.Plastic
-            end
-        end
-    end
-end
-
-function applyForcefieldToBody()
-    local character = game.Players.LocalPlayer.Character
-    if character then
-        applyForcefieldToParts(character:GetChildren(), localPlayerEsp.ForcefieldBody.Enabled, localPlayerEsp.ForcefieldBody.Color)
-    end
-end
-
-function applyForcefieldToTools()
-    local backpack = game.Players.LocalPlayer.Backpack
-    for _, tool in pairs(backpack:GetChildren()) do
-        if tool:IsA("Tool") then
-            applyForcefieldToParts(tool:GetChildren(), localPlayerEsp.ForcefieldTools.Enabled, localPlayerEsp.ForcefieldTools.Color)
-        end
-    end
-end
-
-function applyForcefieldToHats()
-    local character = game.Players.LocalPlayer.Character
-    if character then
-        for _, accessory in pairs(character:GetChildren()) do
-            if accessory:IsA("Accessory") then
-                applyForcefieldToParts(accessory:GetChildren(), localPlayerEsp.ForcefieldHats.Enabled, localPlayerEsp.ForcefieldHats.Color)
-            end
-        end
-    end
-end
-
-function onCharacterAdded(character)
-    character:WaitForChild("HumanoidRootPart")
-    applyForcefieldToBody()
-    applyForcefieldToTools()
-    applyForcefieldToHats()
-end
-
-game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
-
-if game.Players.LocalPlayer.Character then
-    onCharacterAdded(game.Players.LocalPlayer.Character)
-end
-
-
-
-TargetVisual:Toggle({
-    Name = "Highlight",
-    Flag = "HighlightFlag",
-    Callback = function(a)
-        Highlight = a
-    end
-})
-
-TargetVisual:Toggle({
-    Name = "Animate Highlight",
-    Flag = "AnimateHighlightFlag",
-    Callback = function(a)
-        AChams = a
-    end
-})
-
-TargetVisual:Colorpicker({
-    Name = "Color",
-    Flag = "HighlightColor1Flag",
-    Default = TargetAimbot.HighlightColor1,
-    Callback = function(a)
-        TargetAimbot.HighlightColor1 = a
-    end
-})
-
-TargetVisual:Colorpicker({
-    Name = "Color2",
-    Flag = "HighlightColor2Flag",
-    Default = TargetAimbot.HighlightColor2,
-    Callback = function(a)
-        TargetAimbot.HighlightColor2 = a
-    end
-})
-
-Sig2:Toggle({
-    Name = "Self Cham",
-    Flag = "SelfChamFlag",
-    Default = localPlayerEsp.ForcefieldBody.Enabled,
-    Callback = function(a)
-        localPlayerEsp.ForcefieldBody.Enabled = a
-        applyForcefieldToBody()
-    end
-}):Colorpicker({
-    Name = "Color",
-    Flag = "SelfChamColorFlag",
-    Default = localPlayerEsp.ForcefieldBody.Color,
-    Callback = function(a)
-        localPlayerEsp.ForcefieldBody.Color = a
-        applyForcefieldToBody()
-    end
-})
-
-Sig2:Toggle({
-    Name = "Gun Chams",
-    Flag = "GunChamFlag",
-    Default = localPlayerEsp.ForcefieldTools.Enabled,
-    Callback = function(a)
-        localPlayerEsp.ForcefieldTools.Enabled = a
-        applyForcefieldToTools()
-    end
-}):Colorpicker({
-    Name = "Color gun",
-    Flag = "GunChamColorFlag",
-    Default = localPlayerEsp.ForcefieldTools.Color,
-    Callback = function(a)
-        localPlayerEsp.ForcefieldTools.Color = a
-        applyForcefieldToTools()
-    end
-})
-
-Sig2:Toggle({
-    Name = "Accessories Chams",
-    Flag = "AccessoriesChamFlag",
-    Default = localPlayerEsp.ForcefieldHats.Enabled,
-    Callback = function(a)
-        localPlayerEsp.ForcefieldHats.Enabled = a
-        applyForcefieldToHats()
-    end
-}):Colorpicker({
-    Name = "Color1",
-    Flag = "AccessoriesChamColorFlag",
-    Default = localPlayerEsp.ForcefieldHats.Color,
-    Callback = function(a)
-        localPlayerEsp.ForcefieldHats.Color = a
-        applyForcefieldToHats()
-    end
-})
-
-Sig3:Toggle({
-    Name = "Enable",
-    Flag = "World",
-    Default = Environment.Settings.Enabled,
-    Callback = function(a)
-        Environment.Settings.Enabled = a
-        UpdateWorld()
-    end
-})
-
-Sig3:Toggle({
-    Name = "Global Shadow",
-    Flag = "GlobalShadowFlag",
-    Default = Environment.Settings.GlobalShadows,
-    Callback = function(a)
-        Environment.Settings.GlobalShadows = a
-        UpdateWorld()
-    end
-})
-
-Sig3:Textbox({
-    Name = "Exposure",
-    Flag = "ExposureFlag",
-    Default = Environment.Settings.Exposure,
-    Callback = function(a)
-        Environment.Settings.Exposure = tonumber(a)
-        UpdateWorld()
-    end
-})
-
-Sig3:Colorpicker({
-    Name = "Color Shift",
-    Flag = "ColorShiftBottomFlag",
-    Default = Environment.Settings.ColorShift_Bottom,
-    Callback = function(a)
-        Environment.Settings.ColorShift_Bottom = a
-        UpdateWorld()
-    end
-}):Colorpicker({
-    Name = "Top",
-    Flag = "ColorShiftTopFlag",
-    Default = Environment.Settings.ColorShift_Top,
-    Callback = function(a)
-        Environment.Settings.ColorShift_Top = a
-        UpdateWorld()
-    end
-})
-
-Sig3:Textbox({
-    Name = "Clock Time",
-    Flag = "ClockTimeFlag",
-    Default = Environment.Settings.ClockTime,
-    Callback = function(a)
-        Environment.Settings.ClockTime = tonumber(a)
-        UpdateWorld()
-    end
-})
-
-Sig3:Colorpicker({
-    Name = "Ambient Color",
-    Flag = "AmbientColorFlag",
-    Default = Environment.Settings.Ambient,
-    Callback = function(a)
-        Environment.Settings.Ambient = a
-        UpdateWorld()
-    end
-})
-
-Sig3:Colorpicker({
-    Name = "OutdoorAmbient Color",
-    Flag = "OutdoorAmbientColorFlag",
-    Default = Environment.Settings.OutdoorAmbient,
-    Callback = function(a)
-        Environment.Settings.OutdoorAmbient = a
-        UpdateWorld()
-    end
-})
-
-Sig3:Textbox({
-    Name = "Brightness",
-    Flag = "WorldBrightnessFlag",
-    Default = Environment.Settings.Brightness,
-    Callback = function(a)
-        Environment.Settings.Brightness = tonumber(a)
-        UpdateWorld()
-    end
-})
-
-local fuv = SubPage2:Section({Name = "Gradient Silent for Everything", Side = "Right"})
-
-fuv:Toggle({
-    Name = "Enabled",
-Flag = "ShowSilent" ,
-    Callback = function(dang)
-        Frame.Visible = dang
-    end
-})
-
-
-fuv:Toggle({
-    Name = "Silent",
-Flag = "SilentEnabled",
-    Callback = function(dang)
-        Psalms.Tech.SilentMode = dang
-    end
-})
-
-fuv:List({
-    Name = "Mode",
-Flag = "FOV Gradient Position",
-    Options = {
-        "Mouse", "Center"
-    },
-    Default = "Center",
-    Callback = function(a)
-        mode = a
-    end
-})
-
-fuv:Colorpicker({
-    Name = "Color 1",
-Flag = "Silent Gradient Color",
-    Default = coluhhh,
-    Callback = function(a)
-        gradient.Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, a),
-            ColorSequenceKeypoint.new(1, coluhhh2)
-        }
-    end
-})
-
-
-
-
-fuv:Colorpicker({
-    Name = "Gradient2",
-Flag = "Silent Fov Gradient2",
-    Default = coluhhh2,
-    Callback = function(a)
-        gradient.Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, coluhhh),
-            ColorSequenceKeypoint.new(1, a)
-        }
-    end
-})
-
-
-fuv:Slider({
-    Name = "Size",
-Flag = "Silent fov sjze",
-    Min = 1,
-    Max = 200,
-    Default = 125,
-    Suffix = "%",
-    Decimals = 1,
-    Callback = function(a)
-        local fovRadius = a
-UpdateFrameSize(a)
-    end
-})
-
-local Dog11 = SubPage6:Section({Name = "CFrame Speed", Side = "Left"})
-
-
-
-Dog11:Button({
-    Name = "Load Invisible Button",
-    Callback = function()
-        if Hide11 then
-            Library:Notification("Already Loaded.", 3)
-            return
-        end
-
-        local HideEnabled = false
-        Hide11 = true
-        local LastCFrame
-
-        MakeButton("Invisible", Color3.fromRGB(255, 0, 0), function(state)
-            HideEnabled = state
-
-            if not HideEnabled then
-                if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
-                    LocalPlayer.Character.HumanoidRootPart.CFrame = LastCFrame
-                end
-            else
-                LastCFrame = nil
-            end
-        end)
-
-        RunService.RenderStepped:Connect(function()
-    if LocalPlayer.Character then
-        local HumanoidRootPart = LocalPlayer.Character.HumanoidRootPart
-        if HumanoidRootPart then
-            local Offset = HumanoidRootPart.CFrame * CFrame.new(9e9, 0, 9e9)
-
-            if HideEnabled then
-                LastCFrame = HumanoidRootPart.CFrame
-                HumanoidRootPart.CFrame = Offset
-                RunService.RenderStepped:Wait()
-                HumanoidRootPart.CFrame = LastCFrame
-            end
-        end
-    end
-end)
-
-        local HookMethod
-        HookMethod = hookmetamethod(game, "__index", newcclosure(function(self, key)
-            if not checkcaller() and key == "CFrame" and HideEnabled and 
-               LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and 
-               LocalPlayer.Character:FindFirstChild("Humanoid") and 
-               LocalPlayer.Character.Humanoid.Health > 0 then
-                if self == LocalPlayer.Character.HumanoidRootPart and LastCFrame then
-                    return LastCFrame
-                end
-            end
-            return HookMethod(self, key)
-        end))
-
-end
-})
-
-Dog11:Button({
-    Name = "Load Cframe Button",
-    Callback = function()
-        if MacroAlreadLoaded then
-            Library:Notification("Already Loaded.", 3)
-            return
-        end
+                    local right_components = library:create("Frame", {
+                        Parent = dropdown,
+                        Name = "right_components",
+                        Position = dim2(1, -1, 0, 1),
+                        BorderColor3 = rgb(0, 0, 0),
+                        Size = dim2(0, 0, 0, 12),
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = rgb(255, 255, 255)
+                    })
+                    cfg["right_holder"] = right_components
         
-        MacroAlreadLoaded = true
-        MakeButton("Speed", Color3.fromRGB(155, 0, 155), function(state)
-            Psalms.Tech.cframespeedtoggle = state
-        end)
-    end
-})
+                    local list = library:create("UIListLayout", {
+                        Parent = right_components,
+                        VerticalAlignment = Enum.VerticalAlignment.Center,
+                        FillDirection = Enum.FillDirection.Horizontal,
+                        HorizontalAlignment = Enum.HorizontalAlignment.Right,
+                        Padding = dim(0, 4),
+                        Name = "list",
+                        SortOrder = Enum.SortOrder.LayoutOrder
+                    })
 
-Dog11:Button({
-    Name = "Load Fly",
-    Callback = function()
-        if Macro2 then
-            Library:Notification("Already Loaded.", 3)
-            return
-        end
+                    self.previous_holder = left_components
+                    self.right_holder = right_components
+                end 
 
-        Macro2 = true
+                local bottom_components = library:create("Frame", {
+                    Parent = dropdown,
+                    Name = "bottom_components",
+                    Position = dim2(0, 0, 0, cfg.name and 15 or 0),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 26, 0, 0),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local dropdown = library:create("TextButton", {
+                    Parent = bottom_components,
+                    Name = "dropdown",
+                    Position = dim2(0, 0, 0, 2),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -27, 1, 18),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38),
+                    Text = "",
+                    AutoButtonColor = false, 
+                })library:apply_theme(dropdown, "outline", "BackgroundColor3") 
+                
+                local inline = library:create("Frame", {
+                    Parent = dropdown,
+                    Name = "inline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(inline, "inline", "BackgroundColor3") 
+                
+                local background = library:create("Frame", {
+                    Parent = inline,
+                    Name = "background",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = themes.preset.accent
+                })library:apply_theme(background, "accent", "BackgroundColor3") 
+                
+                local contrast = library:create("Frame", {
+                    Parent = background,
+                    Name = "contrast",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, 0),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
 
+                local plus = library:create("TextLabel", {
+                    Parent = contrast,
+                    TextWrapped = true,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "+",
+                    Name = "plus",
+                    Size = dim2(1, -4, 1, 0),
+                    Position = dim2(0, 0, 0, -1),
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Right,
+                    FontFace = library.font,
+                    TextTruncate = Enum.TextTruncate.AtEnd,
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                library:create("UIStroke", {
+                    Parent = plus,
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+                
+                local text = library:create("TextLabel", {
+                    Parent = contrast,
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "aa",
+                    Name = "text",
+                    Size = dim2(1, -4, 1, 0),
+                    Position = dim2(0, 4, 0, -1),
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    BorderSizePixel = 0,
+                    TextTruncate = Enum.TextTruncate.AtEnd,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                library:create("UIStroke", {
+                    Parent = text,
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = contrast,
+                    Rotation = 90,
+                    Color = rgbseq{
+                        rgbkey(0, rgb(41, 41, 55)),
+                        rgbkey(1, rgb(35, 35, 47))
+                    }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Rotation = 90,
+                    Color = rgbseq{
+                        rgbkey(0, rgb(255, 255, 255)),
+                        rgbkey(1, rgb(167, 167, 167))
+                    }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                library:create("UIListLayout", {
+                    Parent = bottom_components,
+                    Padding = dim(0, 10),
+                    Name = "_",
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })     
+            --
 
+            -- dropdown holder
+                local dropdown_holder = library:create("Frame", {
+                    Parent = sgui,
+                    BorderColor3 = rgb(0, 0, 0),
+                    Name = "dropdown_holder",
+                    BackgroundTransparency = 1,
+                    Position = dim2(0, dropdown.AbsolutePosition.X + 1, 0, dropdown.AbsolutePosition.Y + 22),
+                    Size = dim2(0, dropdown.AbsoluteSize.X, 0, cfg.scrolling and 180 or 0),
+                    BorderSizePixel = 0,
+                    AutomaticSize = cfg.scrolling and Enum.AutomaticSize.None or Enum.AutomaticSize.Y,
+                    BackgroundColor3 = rgb(32, 32, 38),
+                    Visible = false
+                })
+                
+                local inline = library:create("Frame", {
+                    Parent = dropdown_holder,
+                    Size = dim2(1, -2, 1, 2),
+                    Name = "inline",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    ZIndex = 2,
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(inline, "inline", "BackgroundColor3") 
+                
+                local background; 
+                if not cfg.scrolling then 
+                    background = library:create("Frame", {
+                        Parent = inline,
+                        BorderColor3 = rgb(0, 0, 0),
+                        Name = "background",
+                        BackgroundTransparency = 1,
+                        Position = dim2(0, 1, 0, 1),
+                        Size = dim2(1, -2, 1, 1),
+                        ZIndex = 2,
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = themes.preset.accent
+                    })
+                    library:apply_theme(background, "accent", "BackgroundColor3") 
+                else 
+                    background = library:create("ScrollingFrame", {
+                        Parent = inline,
+                        BorderColor3 = rgb(0, 0, 0),
+                        Name = "background",
+                        BackgroundTransparency = 1,
+                        Position = dim2(0, 1, 0, 1),
+                        Size = dim2(1, -2, 1, 1),
+                        ZIndex = 2,
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = themes.preset.accent,
+                        CanvasSize = dim2(0, 0, 0, 0),
+                        AutomaticCanvasSize = Enum.AutomaticSize.Y,
+                        ScrollBarThickness = 2,
+                        ScrollBarImageColor3 = themes.preset.accent
+                    })
+                    library:apply_theme(background, "accent", "BackgroundColor3") 
+                end 
+                
+                local contrast = library:create("Frame", {
+                    Parent = background,
+                    Name = "contrast",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, -3),
+                    BorderSizePixel = 0,
+                    ZIndex = 2, 
+                    BackgroundColor3 = rgb(255, 255, 255),
+                    AutomaticSize = cfg.scrolling and Enum.AutomaticSize.Y or Enum.AutomaticSize.None,
+                }); 
 
-
-speeds = Psalms.Tech.speedvalue
-
-local speaker = game:GetService("Players").LocalPlayer
-
-local chr = game.Players.LocalPlayer.Character
-local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-
-nowe = false
-
-
-
-
-
-
-MakeButton("Fly", Color3.fromRGB(255, 0, 155), function(state)
-niga2 = state
-
+                library:create("UIPadding", {
+                    Parent = contrast,
+                    PaddingTop = dim(0, 2),
+                    PaddingBottom = dim(0, 2),
+                    PaddingRight = dim(0, 0),
+                    PaddingLeft = dim(0, 4)
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = contrast,
+                    Rotation = 90,
+                    Color = rgbseq{
+                        rgbkey(0, rgb(41, 41, 55)),
+                        rgbkey(1, rgb(35, 35, 47))
+                    }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
             
+                library:create("UIListLayout", {
+                    Parent = contrast,
+                    Padding = dim(0, 5),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Rotation = 90,
+                    Color = rgbseq{
+                        rgbkey(0, rgb(255, 255, 255)),
+                        rgbkey(1, rgb(167, 167, 167))
+                    }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local stroke = library:create("UIStroke", {
+                    Parent = inline,
+                    Color = rgb(32, 32, 38),
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })library:apply_theme(stroke, "outline", "Color") 
+
+                dropdown:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+                    dropdown_holder.Size = dim2(0, dropdown.AbsoluteSize.X, 0, 0)
+                end)
+
+                dropdown:GetPropertyChangedSignal("AbsolutePosition"):Connect(function()
+                    dropdown_holder.Position = dim2(0, dropdown.AbsolutePosition.X + 1, 0, dropdown.AbsolutePosition.Y + 22)
+                end)
+            -- 
+            
+            function cfg.set_visible(bool) 
+                dropdown_holder.Visible = bool
+
+                plus.Text = bool and "-" or "+"
+                plus.TextSize = bool and 12 or 8
+
+                if bool then 
+                    if library.current_element_open and library.current_element_open ~= cfg then 
+                        library.current_element_open.set_visible(false)
+                        library.current_element_open.open = false 
+                    end
+
+                    library.current_element_open = cfg 
+                end
+            end
+
+            function cfg.set(value) 
+                local selected = {}
+
+                local is_table = type(value) == "table"
+
+                for _,v in next, cfg.option_instances do 
+                    if v.Text == value or (is_table and table.find(value, v.Text)) then 
+                        table.insert(selected, v.Text)
+                        cfg.multi_items = selected
+                        v.TextColor3 = themes.preset.accent
+                    else 
+                        v.TextColor3 = themes.preset.text
+                    end
+
+                end
+
+                text.Text = is_table and table.concat(selected, ", ") or selected[1] or "nun"
+                flags[cfg.flag] = is_table and selected or selected[1]
+                cfg.callback(flags[cfg.flag]) 
+            end
+
+            function cfg:refresh_options(refreshed_list) 
+                for _, v in next, cfg.option_instances do 
+                    v:Destroy() 
+                end
+
+                cfg.option_instances = {} 
+
+                for i,v in next, refreshed_list do 
+                    local TextButton = library:create("TextButton", {
+                        Parent = contrast,
+                        FontFace = library.font,
+                        TextColor3 = themes.preset.text,
+                        BorderColor3 = rgb(0, 0, 0),
+                        Size = dim2(1, 0, 0, 0),
+                        BackgroundTransparency = 1,
+                        BorderSizePixel = 0,
+                        TextWrapped = true,
+                        AutomaticSize = Enum.AutomaticSize.Y,
+                        TextSize = 12,
+                        TextXAlignment = Enum.TextXAlignment.Left,
+                        ZIndex = 2, 
+                        Text = v,
+                        BackgroundColor3 = rgb(255, 255, 255)
+                    })library:apply_theme(TextButton, "accent", "TextColor3") 
+                    
+                    library:create("UIStroke", {
+                        Parent = TextButton,
+                        LineJoinMode = Enum.LineJoinMode.Miter
+                    })
+
+                    table.insert(cfg.option_instances, TextButton)
+
+                    TextButton.MouseButton1Down:Connect(function()
+                        if cfg.multi then 
+                            local selected_index = table.find(cfg.multi_items, TextButton.Text)
+
+                            if selected_index then 
+                                table.remove(cfg.multi_items, selected_index)
+                            else
+                                table.insert(cfg.multi_items, TextButton.Text)
+                            end
+
+                            cfg.set(cfg.multi_items) 				
+                        else 
+                            cfg.set_visible(false)
+                            cfg.open = false 
+
+                            cfg.set(TextButton.Text)
+                        end
+                    end)
+                end
+            end
+
+            dropdown.MouseButton1Click:Connect(function()
+                cfg.open = not cfg.open 
+
+                cfg.set_visible(cfg.open)
+            end)
+
+            cfg:refresh_options(cfg.items) 
+
+            cfg.set(cfg.default)
+
+            library.config_flags[cfg.flag] = cfg.set
+
+            return self
+        end 
+
+        function library:list(options)
+            local cfg = {
+                callback = options and options.callback or function() end, 
+
+                scale = options.size or 100, 
+                items = options.items or {"1", "2", "3"}, 
+                -- order = options.order or 1, 
+                placeholdertext = options.placeholder or options.placeholdertext or "search here...",
+
+                option_instances = {}, 
+                current_instance = nil, 
+                flag = options.flag or "SET A FLAG U NIGGER", 
+
+                previous_holder = self
+            } 
+
+            local list_holder = library:create("TextLabel", {
+                Parent = self.holder,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "",
+                ZIndex = 2,
+                Size = dim2(1, -8, 0, 12),
+                BorderSizePixel = 0,
+                BackgroundTransparency = 1,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                AutomaticSize = Enum.AutomaticSize.Y,
+                TextYAlignment = Enum.TextYAlignment.Top,
+                TextSize = 11,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIPadding = library:create("UIPadding", {
+                Parent = list_holder,
+                Name = "",
+                PaddingLeft = dim(0, 1)
+            })
+            
+            local UIStroke = library:create("UIStroke", {
+                Parent = list_holder,
+                Name = ""
+            })
+            
+            local bottom_components = library:create("Frame", {
+                Parent = list_holder,
+                Name = "",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 26, 0, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            library:create("UIListLayout", {
+                Parent = bottom_components,
+                Name = "",
+                Padding = dim(0, 10),
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
+            
+            local list = library:create("Frame", {
+                Parent = bottom_components,
+                Name = "",
+                Position = dim2(0, 0, 0, 2),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -27, 1, 232),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38)
+            })library:apply_theme(main_holder, "outline", "BackgroundColor3") 
+            
+            local inline = library:create("Frame", {
+                Parent = list,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })library:apply_theme(inline, "inline", "BackgroundColor3") 
+            
+            local background = library:create("Frame", {
+                Parent = inline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })library:apply_theme(background, "accent", "BackgroundColor3") 
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = background,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(255, 255, 255)),
+                rgbkey(1, rgb(167, 167, 167))
+            }
+            })library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            local contrast = library:create("Frame", {
+                Parent = background,
+                Name = "",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = contrast,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(41, 41, 55)),
+                rgbkey(1, rgb(35, 35, 47))
+            }
+            })library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            local ScrollingFrame = library:create("ScrollingFrame", {
+                Parent = contrast,
+                Name = "",
+                ScrollBarImageColor3 = themes.preset.accent,
+                Active = true,
+                AutomaticCanvasSize = Enum.AutomaticSize.Y,
+                ScrollBarThickness = 3,
+                BackgroundTransparency = 1,
+                Size = dim2(1, 0, 1, 0),
+                BackgroundColor3 = rgb(255, 255, 255),
+                BorderColor3 = rgb(0, 0, 0),
+                BorderSizePixel = 0,
+                CanvasSize = dim2(0, 0, 0, 0)
+            })library:apply_theme(ScrollingFrame, "accent", "ScrollBarImageColor3") 
+            
+            local UIPadding = library:create("UIPadding", {
+                Parent = ScrollingFrame,
+                Name = "",
+                PaddingBottom = dim(0, 4),
+                PaddingTop = dim(0, 4)
+            })
+            
+            local UIListLayout = library:create("UIListLayout", {
+                Parent = ScrollingFrame,
+                Name = "",
+                Padding = dim(0, 4),
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
+
+            function cfg.render_option(text) 
+                local TextButton = library:create("TextButton", {
+                    Parent = ScrollingFrame,
+                    Name = "",
+                    Text = tostring(text),
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    BackgroundTransparency = 1,
+                    Size = dim2(1, 0, 0, 0),
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local UIStroke = library:create("UIStroke", {
+                    Parent = TextButton,
+                    Name = ""
+                })
+
+                return TextButton 
+            end 
+
+            function cfg.refresh_options(options) 
+                if type(options) == "function" then return end 
+                for _, v in next, cfg.option_instances do 
+                    v:Destroy() 
+                end 
+
+                for _, option in next, options do 
+                    local button = cfg.render_option(option) 
+
+                    table.insert(cfg.option_instances, button)
+
+                    button.MouseButton1Click:Connect(function()
+                        if cfg.current_instance and cfg.current_instance ~= button then 
+                            cfg.current_instance.TextColor3 = themes.preset.text 
+                        end 
+
+                        cfg.current_instance = button 
+                        button.TextColor3 = themes.preset.accent 
+
+                        flags[cfg.flag] = button.text
+                        
+                        cfg.callback(button.text)
+                    end)
+                end 
+            end     
+
+            function cfg.filter_options(text)
+                for _, v in next, cfg.option_instances do 
+                    if string.find(v.Text, text) then 
+                        v.Visible = true 
+                    else 
+                        v.Visible = false
+                    end
+                end
+            end 
+
+            cfg.refresh_options(cfg.items) 
+            
+            return self, cfg
+        end 
+
+        function library:textbox(options)
+            local cfg = {
+                placeholder = options.placeholder or options.placeholdertext or options.holder or options.holdertext or "type here...",
+                default = options.default,
+                flag = options.flag or "SET ME NIGGA",
+                callback = options.callback or function() end 
+            }
+
+            local textbox_holder = library:create("TextLabel", {
+                Parent = self.holder,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "",
+                ZIndex = 2,
+                Size = dim2(1, -8, 0, 12),
+                BorderSizePixel = 0,
+                BackgroundTransparency = 1,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                AutomaticSize = Enum.AutomaticSize.Y,
+                TextYAlignment = Enum.TextYAlignment.Top,
+                TextSize = 11,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            library:create("UIPadding", {
+                Parent = textbox_holder,
+                Name = "",
+                PaddingLeft = dim(0, 1)
+            })
+            
+            library:create("UIStroke", {
+                Parent = textbox_holder,
+                Name = ""
+            })
+            
+            local button = library:create("Frame", {
+                Parent = textbox_holder,
+                Name = "",
+                Position = dim2(0, 0, 0, 2),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -27, 0, 18),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38)
+            })
+            
+            library:apply_theme(button, "outline", "BackgroundColor3") 
+            
+            local inline = library:create("Frame", {
+                Parent = button,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })
+            
+            library:apply_theme(inline, "inline", "BackgroundColor3") 
+            
+            local background = library:create("Frame", {
+                Parent = inline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })
+            
+            library:apply_theme(background, "accent", "BackgroundColor3") 
+            
+            local TextBox = library:create("TextBox", {
+                Parent = background,
+                Name = "",
+                CursorPosition = -1,
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                ZIndex = 2,
+                Text = "", 
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                TextWrapped = true,
+                BackgroundTransparency = 1,
+                TextTruncate = Enum.TextTruncate.SplitWord,
+                PlaceholderText = "Type here...",
+                ClearTextOnFocus = false,
+                TextSize = 12,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            library:create("UIStroke", {
+                Parent = TextBox,
+                Name = ""
+            })
+            
+            local TextButton = library:create("TextButton", {
+                Parent = background,
+                Name = "",
+                FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+                TextColor3 = rgb(0, 0, 0),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "",
+                AutoButtonColor = false,
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                TextSize = 14,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = TextButton,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(41, 41, 55)),
+                rgbkey(1, rgb(35, 35, 47))
+            }
+            })
+            
+            library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            library:create("UIListLayout", {
+                Parent = textbox_holder,
+                Name = "",
+                FillDirection = Enum.FillDirection.Horizontal,
+                HorizontalFlex = Enum.UIFlexAlignment.Fill,
+                Padding = dim(0, 4),
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
+            
+            TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+                flags[cfg.flag] = TextBox.text
+                cfg.callback(TextBox.text)
+            end)
+
+            function cfg.set(text) 
+                flags[cfg.flag] = text
+                TextBox.Text = text
+                cfg.callback(text)
+            end 
+
+            if cfg.default then 
+                cfg.set(cfg.default) 
+            end 
+
+            library.config_flags[cfg.flag] = cfg.set
+
+            return self 
+        end 
+
+        function library:button_holder(options) 
+            local button_holder = library:create("TextLabel", {
+                Parent = self.holder,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "",
+                ZIndex = 2,
+                Size = dim2(1, -8, 0, 12),
+                BorderSizePixel = 0,
+                BackgroundTransparency = 1,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                AutomaticSize = Enum.AutomaticSize.Y,
+                TextYAlignment = Enum.TextYAlignment.Top,
+                TextSize = 11,
+                BackgroundColor3 = rgb(255, 255, 255), 
+            })
+
+            self.current_holder = button_holder
+            
+            library:create("UIStroke", {
+                Parent = button_holder,
+                Name = ""
+            })
+            
+            library:create("UIListLayout", {
+                Parent = button_holder,
+                Name = "",
+                FillDirection = Enum.FillDirection.Horizontal,
+                HorizontalFlex = Enum.UIFlexAlignment.Fill,
+                Padding = dim(0, 4),
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
         
+            return self
+        end 
 
+        function library:button(options)
+            local cfg = {
+                callback = options.callback or function() end, 
+                name = options.text or options.name or "Button",
+            }   
 
+            local button = library:create("TextButton", {
+                Parent = self.current_holder,
+                Name = "",
+                Position = dim2(0, 0, 0, 2),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -27, 0, 18),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(32, 32, 38),
+                Text = ""
+            })
+            
+            library:apply_theme(button, "outline", "BackgroundColor3") 
+            
+            local inline = library:create("Frame", {
+                Parent = button,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(60, 55, 75)
+            })
+            
+            library:apply_theme(inline, "inline", "BackgroundColor3") 
+            
+            local background = library:create("Frame", {
+                Parent = inline,
+                Name = "",
+                Position = dim2(0, 1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, -2, 1, -2),
+                BorderSizePixel = 0,
+                BackgroundColor3 = themes.preset.accent
+            })
+            
+            library:apply_theme(background, "accent", "BackgroundColor3") 
+            
+            local _UIGradient = library:create("UIGradient", {
+                Parent = background,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(255, 255, 255)),
+                rgbkey(1, rgb(167, 167, 167))
+            }
+            })
+            
+            library:apply_theme(_UIGradient, "contrast", "Color") 
+            
+            local contrast = library:create("Frame", {
+                Parent = background,
+                Name = "",
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(1, 0, 1, 0),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIGradient = library:create("UIGradient", {
+                Parent = contrast,
+                Name = "",
+                Rotation = 90,
+                Color = rgbseq{
+                rgbkey(0, rgb(41, 41, 55)),
+                rgbkey(1, rgb(35, 35, 47))
+            }
+            })
+            
+            library:apply_theme(UIGradient, "contrast", "Color") 
+            
+            local text = library:create("TextLabel", {
+                Parent = contrast,
+                Name = "",
+                TextWrapped = true,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = cfg.name,
+                Size = dim2(1, -4, 1, 0),
+                Position = dim2(0, 4, 0, -1),
+                BackgroundTransparency = 1,
+                TextTruncate = Enum.TextTruncate.AtEnd,
+                BorderSizePixel = 0,
+                FontFace = library.font,
+                TextSize = 12,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIStroke = library:create("UIStroke", {
+                Parent = text,
+                Name = "",
+                LineJoinMode = Enum.LineJoinMode.Miter
+            })
 
-	if nowe == true then
-		nowe = false
+            button.MouseButton1Click:Connect(function()
+                cfg.callback() 
+            end)
 
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,true)
-		speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
-	else 
-		nowe = true
+            return self
+        end 
 
+        function library:label(options)
+            local cfg = {name = options.text or options.name or "Label", previous_holder = self}
 
+            local dropdown = library:create("TextLabel", {
+                Parent = self.holder,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = "",
+                ZIndex = 2,
+                Size = dim2(1, -8, 0, 12),
+                BorderSizePixel = 0,
+                BackgroundTransparency = 1,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                AutomaticSize = Enum.AutomaticSize.Y,
+                TextYAlignment = Enum.TextYAlignment.Top,
+                TextSize = 11,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local UIStroke = library:create("UIStroke", {
+                Parent = dropdown,
+                Name = ""
+            })
+            
+            local left_components = library:create("Frame", {
+                Parent = dropdown,
+                Name = "",
+                BackgroundTransparency = 1,
+                Position = dim2(0, 2, 0, -1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(0, 0, 0, 14),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
+            
+            local TextLabel = library:create("TextLabel", {
+                Parent = left_components,
+                Name = "",
+                FontFace = library.font,
+                TextColor3 = rgb(180, 180, 180),
+                BorderColor3 = rgb(0, 0, 0),
+                Text = cfg.name,
+                BackgroundTransparency = 1,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                BorderSizePixel = 0,
+                AutomaticSize = Enum.AutomaticSize.Y,
+                TextSize = 12,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
 
-		for i = 1, speeds do
-			spawn(function()
+            local right_components = library:create("Frame", {
+                Parent = dropdown,
+                Name = "right_components",
+                Position = dim2(1, -1, 0, 1),
+                BorderColor3 = rgb(0, 0, 0),
+                Size = dim2(0, 0, 0, 12),
+                BorderSizePixel = 0,
+                BackgroundColor3 = rgb(255, 255, 255)
+            })
 
-				local hb = game:GetService("RunService").RenderStepped	
+            local list = library:create("UIListLayout", {
+                Parent = right_components,
+                VerticalAlignment = Enum.VerticalAlignment.Center,
+                FillDirection = Enum.FillDirection.Horizontal,
+                HorizontalAlignment = Enum.HorizontalAlignment.Right,
+                Padding = dim(0, 4),
+                Name = "list",
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
+            
+            local UIStroke = library:create("UIStroke", {
+                Parent = TextLabel,
+                Name = ""
+            })
 
+            function cfg.change_text(text) 
+                TextLabel.Text = text 
+            end 
 
-				tpwalking = true
-				local chr = game.Players.LocalPlayer.Character
-				local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-				while tpwalking and hb:Wait() and chr and hum and hum.Parent do
-					if hum.MoveDirection.Magnitude > 0 then
-						chr:TranslateBy(hum.MoveDirection)
-					end
-				end
+            self.previous_holder = left_components
+            self.right_holder = right_components
+            
+            return self, cfg       
+        end 
 
-			end)
-		end
-		game.Players.LocalPlayer.Character.Animate.Disabled = true
-		local Char = game.Players.LocalPlayer.Character
-		local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+        function library:playerlist(options) 
+            local cfg = {
+                players = {}, 
+                callback = options.callback or function() end, 
+                selected_player, 
 
-		for i,v in next, Hum:GetPlayingAnimationTracks() do
-			v:AdjustSpeed(0)
-		end
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,false)
-		speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
-	end
+                labels = {
+                    name,
+                    display, 
+                    uid, 
+                }
+            }
 
+            local patterns = {
+                ["Priority"] = Color3.fromRGB(255, 255, 0),
+                ["Enemy"] = Color3.fromRGB(255, 0, 0),
+                ["Neutral"] = themes.preset.text,
+                ["Friendly"] = Color3.fromRGB(0, 255, 255)
+            }
 
+            -- elements 
+                local playerlist_holder = library:create("TextLabel", {
+                    Parent = self.holder,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "",
+                    ZIndex = 2,
+                    Size = dim2(1, -8, 0, 12),
+                    BorderSizePixel = 0,
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextYAlignment = Enum.TextYAlignment.Top,
+                    TextSize = 11,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local UIPadding = library:create("UIPadding", {
+                    Parent = playerlist_holder,
+                    Name = "",
+                    PaddingBottom = dim(0, -2),
+                    PaddingLeft = dim(0, 1)
+                })
+                
+                local UIStroke = library:create("UIStroke", {
+                    Parent = playerlist_holder,
+                    Name = ""
+                })
+                
+                local bottom_components = library:create("Frame", {
+                    Parent = playerlist_holder,
+                    Name = "",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 26, 0, 0),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                library:create("UIListLayout", {
+                    Parent = bottom_components,
+                    Name = "",
+                    Padding = dim(0, 10),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
+                
+                local list = library:create("Frame", {
+                    Parent = bottom_components,
+                    Name = "",
+                    Position = dim2(0, 0, 0, 2),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -27, 1, 232),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(list, "outline", "BackgroundColor3") 
+                
+                local inline = library:create("Frame", {
+                    Parent = list,
+                    Name = "",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(60, 55, 75)
+                })library:apply_theme(inline, "inline", "BackgroundColor3") 
+                
+                local background = library:create("Frame", {
+                    Parent = inline,
+                    Name = "",
+                    Position = dim2(0, 1, 0, 1),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, -2, 1, -2),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = themes.preset.accent
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = background,
+                    Name = "",
+                    Rotation = 90,
+                    Color = rgbseq{
+                    rgbkey(0, rgb(255, 255, 255)),
+                    rgbkey(1, rgb(167, 167, 167))
+                }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local contrast = library:create("Frame", {
+                    Parent = background,
+                    Name = "",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 1, 0),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local UIGradient = library:create("UIGradient", {
+                    Parent = contrast,
+                    Name = "",
+                    Rotation = 90,
+                    Color = rgbseq{
+                    rgbkey(0, rgb(41, 41, 55)),
+                    rgbkey(1, rgb(35, 35, 47))
+                }
+                })library:apply_theme(UIGradient, "contrast", "Color") 
+                
+                local ScrollingFrame = library:create("ScrollingFrame", {
+                    Parent = contrast,
+                    Name = "",
+                    ScrollBarImageColor3 = themes.preset.accent,
+                    Active = true,
+                    AutomaticCanvasSize = Enum.AutomaticSize.Y,
+                    ScrollBarThickness = 3,
+                    BackgroundTransparency = 1,
+                    Size = dim2(1, 0, 1, 0),
+                    BackgroundColor3 = rgb(255, 255, 255),
+                    BorderColor3 = rgb(0, 0, 0),
+                    BorderSizePixel = 0,
+                    CanvasSize = dim2(0, 0, 0, 0)
+                })library:apply_theme(ScrollingFrame, "accent", "ScrollBarImageColor3") 
+                
+                local UIPadding = library:create("UIPadding", {
+                    Parent = ScrollingFrame,
+                    Name = "",
+                    PaddingTop = dim(0, 4),
+                    PaddingBottom = dim(0, 4),
+                    PaddingRight = dim(0, 4),
+                    PaddingLeft = dim(0, 4)
+                })
+                
+                local UIListLayout = library:create("UIListLayout", {
+                    Parent = ScrollingFrame,
+                    Name = "",
+                    Padding = dim(0, 4),
+                    SortOrder = Enum.SortOrder.LayoutOrder
+                })
+            -- 
 
+            function cfg.create_player(player) 
+                cfg.players[tostring(player)] = {}
+                local path = cfg.players[tostring(player)]
+                
+                local TextButton = library:create("TextButton", {
+                    Parent = ScrollingFrame,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "",
+                    BackgroundTransparency = 1,
+                    Size = dim2(1, 0, 0, 0),
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
 
-	if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+                path.instance = TextButton
 
+                local player_name = library:create("TextLabel", {
+                    Parent = TextButton,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = tostring(player),
+                    BorderSizePixel = 0,
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    TextTruncate = Enum.TextTruncate.AtEnd,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                library:apply_theme(player_name, "text", "TextColor3") 
+                library:apply_theme(player_name, "accent", "TextColor3") 
+                                
+                local TextLabel = library:create("TextLabel", {
+                    Parent = TextButton,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = tostring(players[tostring(player)].Team) or "None",
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                                
+                local Frame = library:create("Frame", {
+                    Parent = TextLabel,
+                    Name = "",
+                    Position = dim2(0, -10, 0, 0),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 1, 0, 12),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(main_holder, "outline", "BackgroundColor3") 
+                
+                local priority_text = library:create("TextLabel", {
+                    Parent = TextButton,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = rgb(180, 180, 180),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Text = "Neutral",
+                    BackgroundTransparency = 1,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    BorderSizePixel = 0,
+                    AutomaticSize = Enum.AutomaticSize.Y,
+                    TextSize = 12,
+                    BackgroundColor3 = rgb(255, 255, 255)
+                })
+                
+                local Frame = library:create("Frame", {
+                    Parent = priority_text,
+                    Name = "",
+                    Position = dim2(0, -10, 0, 0),
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(0, 1, 0, 12),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(main_holder, "outline", "BackgroundColor3") 
+                
+                local UIListLayout = library:create("UIListLayout", {
+                    Parent = TextButton,
+                    Name = "",
+                    FillDirection = Enum.FillDirection.Horizontal,
+                    HorizontalFlex = Enum.UIFlexAlignment.Fill,
+                    SortOrder = Enum.SortOrder.LayoutOrder,
+                    VerticalFlex = Enum.UIFlexAlignment.Fill
+                })
+                
+                local UIPadding = library:create("UIPadding", {
+                    Parent = TextButton,
+                    Name = "",
+                    PaddingRight = dim(0, 2),
+                    PaddingLeft = dim(0, 2)
+                })
 
+                local line = library:create("Frame", {
+                    Parent = ScrollingFrame,
+                    Name = "",
+                    BorderColor3 = rgb(0, 0, 0),
+                    Size = dim2(1, 0, 0, 1),
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = rgb(32, 32, 38)
+                })library:apply_theme(main_holder, "outline", "BackgroundColor3") 
 
-		local plr = game.Players.LocalPlayer
-		local torso = plr.Character.Torso
-		local flying = true
-		local deb = true
-		local ctrl = {f = 0, b = 0, l = 0, r = 0}
-		local lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		local maxspeed = 50
-		local speed = 0
+                path.line = line
 
+                function path.set_priority(text) 
+                    priority_text.Text = text
+                    priority_text.TextColor3 = patterns[text]
+                end 
 
-		local bg = Instance.new("BodyGyro", torso)
-		bg.P = 9e4
-		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-		bg.cframe = torso.CFrame
-		local bv = Instance.new("BodyVelocity", torso)
-		bv.velocity = Vector3.new(0,0.1,0)
-		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
-		if nowe == true then
-			plr.Character.Humanoid.PlatformStand = true
-		end
-		while nowe == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 do
-			game:GetService("RunService").RenderStepped:Wait()
+                TextButton.MouseButton1Click:Connect(function()
+                    if cfg.selected_player then 
+                        cfg.selected_player.TextColor3 = themes.preset.text 
+                    end     
 
-			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
-				speed = speed+.5+(speed/maxspeed)
-				if speed > maxspeed then
-					speed = maxspeed
-				end
-			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
-				speed = speed-1
-				if speed < 0 then
-					speed = 0
-				end
+                    cfg.selected_player = player_name 
+                    player_name.TextColor3 = themes.preset.accent 
+
+                    cfg.callback(players[tostring(player)]) 
+
+                    if cfg.labels.name then 
+                        cfg.labels.name.change_text("User: " .. tostring(player))
+                        cfg.labels.display.change_text("DisplayName: " .. players[tostring(player)].DisplayName)
+                        cfg.labels.uid.change_text("User Id: " .. players[tostring(player)].UserId)
+                    end     
+                end)
+
+                return path 
+            end 
+
+            function cfg.remove_player(player) 
+                cfg.players[tostring(player)].instance:Destroy() 
+                cfg.players[tostring(player)].line:Destroy() 
+                cfg.players[tostring(player)] = nil 
+            end 
+
+            players.PlayerAdded:Connect(cfg.create_player)
+            players.PlayerRemoving:Connect(cfg.remove_player)
+            
+            for _, player in next, players:GetPlayers() do 
+                local player_object = cfg.create_player(player.Name)
+                table.insert(cfg.players, player_object)
+            end 
+
+            _, cfg.labels.name = self:label({name = "Name: ??"})
+            _, cfg.labels.display = self:label({name = "Display Name: ??"})
+            _, cfg.labels.uid = self:label({name = "User Id: ??"})
+
+            return self
+        end 
+    -- 
+-- 
+
+-- functions
+    -- utility
+        -- utility / init
+            -- raycast parameters 
+            local raycast_parameters = RaycastParams.new()
+            raycast_parameters.FilterType = Enum.RaycastFilterType.Exclude
+            raycast_parameters.IgnoreWater = true
+        -- 
+
+        -- instances 
+            local snapline = library:new_drawing("Line", {
+                Thickness = 1,
+                Visible = false, 
+                Color = rgb(255, 0, 0),
+                ZIndex = 9999
+            })
+
+            -- local snapline_outline = library:new_drawing("Line", {
+            --     Thickness = 3, 
+            --     Visible = false,
+            --     Color = rgb(0, 0, 0)
+            -- })
+
+            local bounding_box = library:new_item("SelectionBox", {
+                LineThickness = 0.015,
+                Parent = coregui
+            })     
+            
+            local bounding_box_fill = library:new_item("Part", {
+                Name = "\0", 
+                Anchored = true, 
+                Position = vec3(9e9, 9e9, 9e9),
+                Parent = ws, 
+                Color = rgb(255, 255, 255), 
+                Transparency = 0,
+                CanCollide = false,
+                Material = Enum.Material.Neon
+            })
+
+            local hit_cham_parent = library:new_item("Model", {
+                Name = "\0", 
+                Parent = ws 
+            })  
+            
+            local hit_cham_humanoid = library:new_item("Humanoid", {
+                Name = "\0", 
+                Parent = hit_cham_parent
+            })  
+
+            local hit_cham_highlight = library:new_item("Highlight", {
+                Enabled = true,
+                Parent = coregui,
+                DepthMode = Enum.HighlightDepthMode.AlwaysOnTop,
+                FillColor = rgb(0,0,0),
+                OutlineColor = rgb(255, 255, 255),
+                OutlineTransparency = 0.5,
+                FillTransparency = 1,
+                Adornee = hit_cham_parent
+            })
+
+            local bloom_parent = lighting:FindFirstChildOfClass("BloomEffect")
+
+            local atmosphere_parent = library:new_item("Atmosphere", {
+                Parent = coregui
+            })
+
+            -- sound init 
+                local sounds = {
+                    "1nn.mp3",
+                    "AmongUs.mp3",
+                    "Bameware.mp3",
+                    "BatHit.mp3",
+                    "Beep.mp3",
+                    "Bonk.mp3",
+                    "Bow.mp3",
+                    "Bubble.mp3",
+                    "Bubble2.mp3",
+                    "CSGO.mp3",
+                    "Cod.mp3",
+                    "Fairy1.mp3",
+                    "Fairy2.mp3",
+                    "Fatality.mp3",
+                    "Fatality2.mp3",
+                    "Hentai1.mp3",
+                    "Hentai2.mp3",
+                    "Hentai3.mp3",
+                    "Lazer.mp3",
+                    "MarioCoins.mp3",
+                    "MinecraftXP.mp3",
+                    "Neverlose.mp3",
+                    "OSU.mp3",
+                    "PubgPan.mp3",
+                    "Rifk7.mp3",
+                    "RustHeadshot.mp3",
+                    "Skeet.mp3",
+                    "SpanishMoan.mp3",
+                    "StaryKrow.mp3",
+                    "Steve.mp3",
+                    "TF2Crit.mp3",
+                    "TF2Default.mp3",
+                    "Windows.mp3",
+                    "boolean.ogg",
+                    "disable.ogg",
+                    "enable.ogg",
+                    "keypress.ogg",
+                    "keyrelease.ogg",
+                    "lobby.mp3",
+                    "moan1.ogg",
+                    "moan2.ogg",
+                    "moan3.ogg",
+                    "moan4.ogg",
+                    "orthodox.ogg",
+                    "pmsound.ogg",
+                    "rifk.ogg",
+                    "scroll.ogg",
+                    "skeet.ogg",
+                    "swipein.ogg",
+                    "swipeout.ogg",
+                    "uwu.ogg"
+                }
+
+                local current_sounds = {}
+
+                local hit_sound_item = library:new_item("Sound", {
+                    Name = "\0",
+                    Parent = sound_service,
+                    Volume = 1,
+                })
+    
+                local hit_sound_pitch = library:new_item("PitchShiftSoundEffect", {
+                    Name = "\0",
+                    Parent = hit_sound_item,
+                    Octave = 1, 
+                })
+
+                local files = listfiles(library.directory .. "/sounds")
+                
+                if #files == 0 then 
+                    for _, sound in next, sounds do 
+                        writefile(library.directory .. "/sounds/" .. sound, game:HttpGet("https://github.com/f1nobe7650/Nebula/raw/refs/heads/main/Sounds/" .. sound))
+                        print("Downloaded index: ".. _ .. " name: " .. sound)
+                    end     
+                    
+                    repeat task.wait() until #files < 51; 
+                end     
+            -- 
+        -- 
+
+        local utility = {
+            seperators = {
+                Head = {"Head"},
+                Torso = {"UpperTorso", "LowerTorso"},
+                Legs = {"LeftUpperLeg", "LeftLowerLeg", "RightUpperLeg", "RightLowerLeg"},          
+                Feet = {"RightFoot", "LeftFoot"},
+                Arms = {"LeftUpperArm", "LeftLowerArm", "LeftHand", "RightUpperArm", "RightLowerArm", "RightHand"},
+                Hrp = {"HumanoidRootPart"}
+            },
+            textures = {
+                ["Web"] = "rbxassetid://301464986",
+                ["Swirl"] = "rbxassetid://8133639623",
+                ["Checkers"] = "rbxassetid://5790215150",
+                ["CandyCane"] = "rbxassetid://6853532738",
+                ["Dots"] = "rbxassetid://5830615971",
+                ["Scanning"] = "rbxassetid://5843010904",
+                ["Bubbles"] = "rbxassetid://1461576423",
+                ["Normal"] = "rbxassetid://4494641460",
+                ["Shield"] = "rbxassetid://361073795",
+                ["Water"] = "rbxasset://textures/water/normal_21.dds",
+                ["None"] = ""
+            },
+            radians = 0,
+            delta = nil
+        } 
+
+        utility.validate_client = LPH_NO_VIRTUALIZE(function(player) 
+            local _player = player or client
+
+            local object = _player.Character
+            local humanoid = (object and object:FindFirstChild("Humanoid"))
+            local rootpart = (humanoid and humanoid.RootPart)
+
+            return object, humanoid, rootpart
+        end)
+
+        utility.apply_properties = LPH_NO_VIRTUALIZE(function(instance, properties) 
+            for property, value in pairs(properties) do
+				instance[property] = value;
 			end
-			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
-			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-			else
-				bv.velocity = Vector3.new(0,0,0)
-			end
-			--	game.Players.LocalPlayer.Character.Animate.Disabled = true
-			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
-		end
-		ctrl = {f = 0, b = 0, l = 0, r = 0}
-		lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		speed = 0
-		bg:Destroy()
-		bv:Destroy()
-		plr.Character.Humanoid.PlatformStand = false
-		game.Players.LocalPlayer.Character.Animate.Disabled = false
-		tpwalking = false
+        end) 
 
+        utility.to_screen_point = LPH_NO_VIRTUALIZE(function(position) 
+            return camera:WorldToViewportPoint(position)
+        end) 	
 
+        utility.simplify_parts = LPH_NO_VIRTUALIZE(function(parts_table)
+            local parts = {}
+            
+            for _, name in next, parts_table do
+                local separator = utility.seperators[name]
 
+                for _, part in next, separator do
+                    table.insert(parts, part)
+                end
+            end
+            
+            return parts
+        end)
 
-	else
-		local plr = game.Players.LocalPlayer
-		local UpperTorso = plr.Character.UpperTorso
-		local flying = true
-		local deb = true
-		local ctrl = {f = 0, b = 0, l = 0, r = 0}
-		local lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		local maxspeed = 50
-		local speed = 0
+        utility.get_closest_part = LPH_NO_VIRTUALIZE(function(player, list) 
+            local distance = math.huge
+            local closest_part 
 
+            for index, body_part in next, player.Character:GetChildren() do
+                if body_part:IsA("BasePart") then 
+                    local screen_pos = utility.to_screen_point(body_part.Position)
+                    local magnitude = (vec2(screen_pos.X, screen_pos.Y) - vec2(mouse.X, mouse.Y + gui_offset)).magnitude
 
-		local bg = Instance.new("BodyGyro", UpperTorso)
-		bg.P = 9e4
-		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-		bg.cframe = UpperTorso.CFrame
-		local bv = Instance.new("BodyVelocity", UpperTorso)
-		bv.velocity = Vector3.new(0,0.1,0)
-		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
-		if nowe == true then
-			plr.Character.Humanoid.PlatformStand = true
-		end
-		while nowe == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 do
-			wait()
+                    if magnitude < distance and table.find(list, body_part.Name) then
+                        closest_part = body_part
+                        distance = magnitude
+                    end
+                end
+            end 
 
-			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
-				speed = speed+.5+(speed/maxspeed)
-				if speed > maxspeed then
-					speed = maxspeed
-				end
-			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
-				speed = speed-1
-				if speed < 0 then
-					speed = 0
-				end
-			end
-			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
-			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-			else
-				bv.velocity = Vector3.new(0,0,0)
-			end
+            return closest_part
+        end)
 
-			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
-		end
-		ctrl = {f = 0, b = 0, l = 0, r = 0}
-		lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		speed = 0
-		bg:Destroy()
-		bv:Destroy()
-		plr.Character.Humanoid.PlatformStand = false
-		game.Players.LocalPlayer.Character.Animate.Disabled = false
-		tpwalking = false
+        utility.recalculate_velocity = LPH_NO_VIRTUALIZE(function(before, after, time) 
+            return (after - before ) / time 	 
+        end) 
 
+        utility.get_tool_handle = LPH_NO_VIRTUALIZE(function() 
+            local tool = lp.Character:FindFirstChildWhichIsA("Tool") 
 
+            if tool and tool:FindFirstChild("Handle") then 
+                return tool.Handle 
+            end 
 
-	end
+            return nil 
+        end) 
 
+        utility.is_knocked = LPH_NO_VIRTUALIZE(function(player) 
+            return player.Character.BodyEffects["K.O"].Value
+        end) 
 
+        utility.is_friend = LPH_NO_VIRTUALIZE(function(player) 
+            return lp:IsFriendsWith(player.UserId)
+        end) 
 
+        utility.is_godded = LPH_NO_VIRTUALIZE(function(player)
+            return player.Character:FindFirstChild("ForceField")
+        end) 
 
+        utility.is_visible = LPH_NO_VIRTUALIZE(function(position)
+            local origin = utility.get_tool_handle() or lp.Character.HumanoidRootPart
 
-end)
+            raycast_parameters.FilterDescendantsInstances = {ws:FindFirstChild("Ignored"), ws:FindFirstChild("Players"), ws.CurrentCamera, lp.Character}
 
+            local direction = position - origin.Position
+            local distance = direction.Magnitude
+            direction = direction.Unit * distance
 
+            local _result = ws:Raycast(origin.Position, direction, raycast_parameters)
+            
+            return (not _result)
+        end) 
 
-game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
-	wait(0.7)
-	game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
-	game.Players.LocalPlayer.Character.Animate.Disabled = false
+        utility.properties_apply = LPH_NO_VIRTUALIZE(function(instance, properties)
+            for property, value in pairs(properties) do
+                instance[property] = value
+            end
+        end)
 
-end)
+        utility.clone_character = LPH_NO_VIRTUALIZE(function(player, parent, properties)
+            local character = player.Character
+            character.Archivable = true
 
+            local model = character:Clone()
+            table.insert(nebula.instances, model)
+            utility.properties_apply(model, {Parent = parent})
 
+            for _, part in next, model:GetDescendants() do
+                if (part.Name == "CUFF" or part.Name == "HumanoidRootPart") then 
+                    part.Parent = nil 
+                end
 
+                if (part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("Part") and part.Name ~= "HumanoidRootPart") then
+                    utility.properties_apply(part, {
+                        Color = properties and properties.Color or color(0.627451, 0.12549, 1),
+                        Transparency = properties and properties.Transparency or 0.7,
+                        CanCollide = false,
+                        Anchored = true,
+                        Material = properties and properties.Material or Enum.Material.Neon
+                    })
+                else
+                    part:Destroy()
+                end			 
+            end
+
+            local humanoid = library:new_item("Humanoid", {
+                Parent = model
+            })   
+
+            local highlight = library:new_item("Highlight", {
+                Enabled = true,
+                Parent = coregui,
+                DepthMode = Enum.HighlightDepthMode.AlwaysOnTop,
+                FillColor = rgb(0,0,0),
+                OutlineColor = rgb(255, 255, 255),
+                OutlineTransparency = 0.5 ,
+                FillTransparency = 0,
+                Adornee = model
+            }) 
+
+            model.Name = "      "
+
+            return model, highlight
+        end)
+
+        utility.lerp = LPH_NO_VIRTUALIZE(function(start, finish, t)
+            t = t or 1 / 8
+
+            return start * (1 - t) + finish * t
+        end)
+
+        utility.is_nan = LPH_NO_VIRTUALIZE(function(value)
+            return value ~= value 
+        end) 
+    -- 
+
+    -- legit 
+        -- target selector 
+        local target_selection = nebula.target_selection
+        local target = nebula.target_selection.player
+
+        target_selection.update_target = LPH_NO_VIRTUALIZE(function(distance)
+            local _distance = distance
         
-    end
-})
+            for index, player in next, players:GetPlayers() do
+                if player ~= lp then
+                    local object, humanoid, rootpart = utility.validate_client(player)
+        
+                    if object and humanoid and rootpart then 
+                        local screen_position, on_screen = utility.to_screen_point(rootpart.Position)
+                        local magnitude = (Vector2.new(screen_position.X, screen_position.Y) - Vector2.new(mouse.X, mouse.Y + gui_offset)).magnitude
+        
+                        if magnitude < _distance and on_screen then
+                            _distance = magnitude
+                            target = player
+                        end
+                    end
+                end
+            end
+        end)
+        
+        target_selection.update_checks = function() 
+            if #flags["target_selected_checks"] == 0 then 
+                target_selection.pass = true 
+            else 
+                local spawned_in = table.find(flags["target_selected_checks"], "forcefield") and utility.is_godded(target) or false 
+                local visible = table.find(flags["target_selected_checks"], "visible") and not utility.is_visible(target.Character.Humanoid.RootPart.Position) or false
+                local knocked = table.find(flags["target_selected_checks"], "knocked") and utility.is_knocked(target) or false
 
-Dog11:Slider({
-    Name = "Speed",
-Flag = "Fly CFrame Speed",
-    Min = 0,
-    Max = 10,
-    Default = 3,
-    Suffix = "%",
-    Decimals = 000.1,
-    Callback = function(a)
-        Psalms.Tech.speedvalue = a
-    end
-})
-local CSyncSection = SubPage6:Section({Name = "CSync", Side = "Right"})
-CSyncSection:Toggle({
-    Name = "Enabled",
-Flag = "Strafe",
-    Callback = function(a)
-        TargetAimbot.CSync.Enabled = a
-    end
-})
-CSyncSection:Toggle({
-    Name = "Spoof",
-Flag = "Strafe Spoof",
-    Callback = function(a)
-        TargetAimbot.CSync.Visualize = a
-    end
-})
-CSyncSection:List({
-    Name = "Type",
-Flag = "TypeStrafe",
-    Options = {"Orbit", "Random", "Spiral", "Spherical", "Attach"},
-    Default = TargetAimbot.CSync.Type,
-    Callback = function(a)
-        TargetAimbot.CSync.Type = a
-    end
-})
-CSyncSection:Slider({
-    Name = "Distance",
-Flag = "Strafe Distance",
-    Min = 0,
-    Max = 100,
-    Default = TargetAimbot.CSync.Distance,
-    Suffix = "",
-    Decimals = 1,
-    Callback = function(a)
-        TargetAimbot.CSync.Distance = a
-    end
-})
-CSyncSection:Slider({
-    Name = "Height",
-Flag = "Strafe Heigjt",
-    Min = 0,
-    Max = 100,
-    Default = TargetAimbot.CSync.Height,
-    Suffix = "",
-    Decimals = 1,
-    Callback = function(a)
-        TargetAimbot.CSync.Height = a
-    end
-})
-CSyncSection:Slider({
-    Name = "Speed",
-Flag = "Strafe Speed",
-    Min = 0,
-    Max = 100,
-    Default = TargetAimbot.CSync.Speed,
-    Suffix = "",
-    Decimals = 1,
-    Callback = function(a)
-        TargetAimbot.CSync.Speed = a
-    end
-})
-CSyncSection:Slider({
-    Name = "Random Amount",
-Flag = "Random Amount",
-    Min = 0,
-    Max = 100,
-    Default = TargetAimbot.CSync.RandomAmount,
-    Suffix = "",
-    Decimals = 1,
-    Callback = function(a)
-        TargetAimbot.CSync.RandomAmount = a
-    end
-})
+                if (knocked == true or visible == true or spawned_in == true) then 
+                    target_selection.pass = false 
+                else 
+                    target_selection.pass = true 
+                end
+            end
+        end
+    -- 
+
+    -- aim assist
+        local aim_assist = nebula.legit.aim_assist
+
+        aim_assist.lerp_camera = LPH_NO_VIRTUALIZE(function(position, smoothing) 
+            camera.CFrame = camera.CFrame:Lerp(cfr(camera.CFrame.p, position), (100 - smoothing) / 100)
+        end)
+        
+        aim_assist.lerp_mouse = LPH_NO_VIRTUALIZE(function(position, smoothing)
+            mousemoverel(vec2(position.X - mouse.X, position.Y - mouse.Y).X / (smoothing + 1), vec2(position.X - mouse.X, position.Y - mouse.Y).Y / (smoothing + 1))
+        end)
+
+        aim_assist.calculate_prediction = function() 
+            if flags["aim_assist_auto_prediction"] then 
+                local pingvalue = stats.Network.ServerStatsItem["Data Ping"]:GetValueString()
+                local split = string.split(pingvalue,'(')
+                local ping = tonumber(split[1])
+                aim_assist.prediction = ping / flags["aim_assist_ping_factor"]
+            else 
+                aim_assist.prediction = flags["aim_assist_prediction"] or 0 
+            end 
+        end	
+
+        aim_assist.calculate_velocity = LPH_NO_VIRTUALIZE(function(delta) 
+            if flags["aim_assist_velocity_type"] ==  "Velocity" then 
+                aim_assist.velocity = aim_assist.hitpart.AssemblyLinearVelocity
+            else 
+                if (aim_assist.previous_position == nil) then
+                    aim_assist.previous_position = target.Character.HumanoidRootPart.Position
+                end
+
+                if aim_assist.previous_position == nil then return end 
+
+                aim_assist.velocity = utility.recalculate_velocity(aim_assist.previous_position, target.Character.HumanoidRootPart.Position, delta) 
+
+                aim_assist.previous_position = target.Character.HumanoidRootPart.Position
+            end
+        end)
+
+        aim_assist.calculate_destination = LPH_NO_VIRTUALIZE(function() 
+            local humanoid = target.Character.Humanoid 
+            
+            aim_assist.state = humanoid:GetState() 
+
+            if aim_assist.state == Enum.HumanoidStateType.Freefall then 
+                aim_assist.offset = flags["adjust_for_jumping"]
+
+                local selected_parts = utility.simplify_parts(flags["aim_assist_air_bone"])
+                aim_assist.airpart = utility.get_closest_part(target, selected_parts)
+
+                aim_assist.destination = aim_assist.airpart.Position + vec3(0, aim_assist.offset, 0)
+            else 
+                aim_assist.offset = 0
+
+                local selected_parts = utility.simplify_parts(flags["aim_assist_bone"])
+                aim_assist.hitpart = utility.get_closest_part(target, selected_parts)
+
+                aim_assist.destination = aim_assist.hitpart.Position + vec3(0, aim_assist.offset, 0)
+            end  
+        end)
+    -- 
+
+    -- silent aim 
+        local silent_aim = nebula.legit.silent_aim
+
+        silent_aim.calculate_prediction = LPH_NO_VIRTUALIZE(function() 
+            if flags["silent_use_auto_prediction"] then 
+                local ping = stats.PerformanceStats.Ping:GetValue()
+                silent_aim.prediction = ping / flags["silent_ping_factor"]
+            else 
+                silent_aim.prediction = flags["silent_manual_prediction"] or 0
+            end 
+        end)	
+
+        silent_aim.calculate_velocity = LPH_NO_VIRTUALIZE(function(delta) 
+            if flags["silent_aim_velocity_type"] == "Velocity" then 
+                silent_aim.velocity = silent_aim.hitpart.AssemblyLinearVelocity
+            else 
+                if (silent_aim.previous_position == nil) then
+                    silent_aim.previous_position = target.Character.HumanoidRootPart.Position
+                end
+
+                if silent_aim.previous_position == nil then return end 
+
+                silent_aim.velocity = utility.recalculate_velocity(silent_aim.previous_position, target.Character.HumanoidRootPart.Position, delta) 
+
+                silent_aim.previous_position = target.Character.HumanoidRootPart.Position
+            end
+        end)
+
+        silent_aim.calculate_destination = LPH_NO_VIRTUALIZE(function() 
+            if silent_aim.state == Enum.HumanoidStateType.Freefall then 
+                silent_aim.offset = 0 --flags["silent_aim_offset"]
+                silent_aim.destination = silent_aim.airpart.Position + vec3(0, silent_aim.offset, 0)
+            else 
+                silent_aim.offset = 0
+                silent_aim.destination = silent_aim.hitpart.Position + vec3(0, silent_aim.offset, 0)
+            end  
+        end)
+
+        silent_aim.calculate_part = LPH_NO_VIRTUALIZE(function() 
+            local humanoid = target.Character and target.Character.Humanoid 
+            
+            if humanoid then 
+                silent_aim.state = humanoid:GetState() 
+
+                if silent_aim.state == Enum.HumanoidStateType.Freefall then 
+                    local selected_parts = utility.simplify_parts(flags["silent_aim_air_bone"])
+                    silent_aim.airpart = utility.get_closest_part(target, selected_parts)
+                else 
+                    local selected_parts = utility.simplify_parts(flags["silent_aim_bone"])
+                    silent_aim.hitpart = utility.get_closest_part(target, selected_parts)
+                end 
+            end 
+        end)
+
+        silent_aim.update_box_fill = LPH_NO_VIRTUALIZE(function(char) 
+            local orientation, boundary = char:GetBoundingBox()
+            
+            bounding_box_fill.Size = boundary 
+            bounding_box_fill.CFrame = orientation
+        end) 
+
+        target_selection.think = LPH_NO_VIRTUALIZE(function() 
+            if target == nil then 
+                local char = lp.Character 
+
+                snapline.Visible = false
+                bounding_box.Adornee = nil
+
+                if char then 
+                    if char.Humanoid.AutoRotate == false then 
+                        char.Humanoid.AutoRotate = true 
+                    end 
+                    
+                    if camera.CameraSubject ~= char.Humanoid then 
+                        camera.CameraSubject = char.Humanoid
+                    end 
+                end 
+
+                return 
+            end 
+
+            local character, humanoid, rootpart = utility.validate_client(target)
+
+            if flags["target_selected"] and flags["target_selected_bind"].active then 
+                if (os.clock() - target_selection.time >= flags["target_selector_refresh_time"]/1000) then 
+                    target_selection.time = os.clock()
+
+                    if flags["auto_select"] == true then 
+                        local distance = flags["target_selector_fov"] == 100 and math.huge or flags["target_selector_fov"]
+                        target_selection.update_target(distance)
+                    end
+                    
+                    if target and target.Character then 
+                        target_selection.update_checks()
+                    end 
+                end 
+            end
+
+            if target and target.Character and target_selection.pass then
+                -- aim assist
+                    if flags["aim_assist"] then	
+                        aim_assist.calculate_destination() -- calculates a destination, offset and a part to target
+                        
+                        aim_assist.calculate_prediction() -- calculates prediction to mutliply with velocity
+
+                        aim_assist.calculate_velocity(nebula.delta) -- velocity is calculated to be mutlplied by prediction and added to destination
+                        
+                        if aim_assist.destination then 
+                            aim_assist.screenpoint_position, aim_assist.on_screen = utility.to_screen_point(aim_assist.destination)
+
+                            local magnitude = (vec2(aim_assist.screenpoint_position.X, aim_assist.screenpoint_position.Y) - vec2(mouse.X, mouse.Y + gui_offset)).magnitude
+                            local distance = flags["target_selector_fov"] == 100 and math.huge or flags["target_selector_fov"]
+
+                            if (magnitude < distance) and aim_assist.velocity and aim_assist.prediction then 
+                                aim_assist.lerp_camera(aim_assist.destination + (aim_assist.velocity * aim_assist.prediction), flags["smoothing_factor"])
+                            end
+                        end
+                    end
+                -- 
+                
+                -- silent aim 
+                    if flags["silent_aim"] then 				
+                        silent_aim.calculate_part()
+                        silent_aim.calculate_prediction() -- calculates prediction to mutliply with velocity
+                    end 
+                -- 
+                    
+                -- other 
+                    if flags["look_at"] then 
+                        lp.Character.Humanoid.AutoRotate = false
+                        local local_root = lp.Character.HumanoidRootPart
+                        local root = target.Character.HumanoidRootPart
+                        local_root.CFrame = cfr(local_root.Position, vec3(root.Position.X, local_root.Position.Y, root.Position.Z)) 
+                    end 
+
+                    if flags["spectate"] then 
+                        camera.CameraSubject = target.Character.Humanoid 
+                    end
+
+                    if flags["target_bounding_box"] then 
+                        bounding_box.Adornee = target.Character
+
+                        if flags["target_bounding_box_fill"] then 
+                            silent_aim.update_box_fill(character) 
+                        end 
+                    end
+
+                    local on_screen_position, on_screen =  utility.to_screen_point(target.Character.HumanoidRootPart.Position)
+
+                    if flags["snap_line"] then 
+                        -- snapline_outline.Visible = on_screen and true or false 
+                        -- snapline_outline.From = snapline.From 
+                        -- snapline_outline.To = snapline.To 
+
+                        snapline.Visible = on_screen and true or false 
+                        snapline.From = vec2(mouse.X, mouse.Y + gui_offset)
+                        snapline.To = vec2(on_screen_position.X, on_screen_position.Y)
+                    else 
+                        snapline.Visible = false 
+                    end
+                -- 
+            end
+        end) 
+    -- 
+
+    -- rage
+        -- hrp spoofer 
+            local desync = nebula.rage.spoofer 
+            desync.clone, desync.cham = utility.clone_character(lp, ws, {}) 
+            
+            desync.is_enabled = LPH_NO_VIRTUALIZE(function() 
+                return desync.main_enabled 
+            end)
+
+            desync.is_dc = LPH_NO_VIRTUALIZE(function() 
+                return desync.dc_enabled 
+            end)
+
+            desync.calculate_position = function(origin, position, rotation) 
+                local time = time()
+
+                local x = flags["custom_x_enabled"] and flags["custom_x"] or 0
+                local y = flags["custom_y_enabled"] and flags["custom_y"] or 0
+                local z = flags["custom_z_enabled"] and flags["custom_z"] or 0
+
+                if x > 0 then 
+                    if flags["custom_x_type"] == "Random" then 
+                        x = random(-flags["custom_x"], flags["custom_x"])
+                    elseif flags["custom_x_type"] == "Lerp" then 
+                        x = noise(time * flags["custom_x_lerp_speed"], 0, 0) * flags["custom_x"]
+                    end
+                end
+
+                if y > 0 then 
+                    if flags["custom_y_type"] == "Random" then 
+                        y = random(-flags["custom_y"], flags["custom_y"])
+                    elseif flags["custom_y_type"] == "Lerp" then 
+                        y = noise(0, time * flags["custom_y_lerp_speed"], 0) * flags["custom_y"] 
+                    end
+                end 
+                
+                if z > 0 then 
+                    if flags["custom_z_type"] == "Random" then 
+                        z = random(-flags["custom_z"], flags["custom_z"])
+                    elseif flags["custom_z_type"] == "Lerp" then 
+                        z = noise(0, time * flags["custom_z_lerp_speed"], 0) * flags["custom_z"] 
+                    end
+                end 
+
+                local rotations = {
+                    ["None"] = angle(0, 0, 0),
+                    ["Back"] = angle(0, rad(180), 0),
+                    ["Right"] = angle(0, rad(-90), 0),
+                    ["Left"] = angle(0, rad(90), 0),
+                    ["Lay"] = angle(rad(90), 0, 0),
+                    ["Shinji"] = angle(rad(180), rad(180), 0),
+                    ["Jitter"] = angle(0, rad(random(1,2) == 2 and 30 or 90), 0),
+                    ["Spin"] = angle(0, rad(nebula.radians), 0),
+                    ["Random"] = angle(random(-180, 180), random(-180, 180), random(-180, 180))
+                }
+
+                local positions = {
+                    ["Target Strafe"] = origin * angle(0, rad(nebula.radians), 0) * cfr(z, y, x),
+                    ["None"] = origin * cfr(x, y, z)
+                }
+                
+                local custom_angle = flags["custom_rotation"] and angle(rad(flags["pitch"]), rad(flags["yaw"]), rad(flags["roll"])) or angle(0, 0, 0) 
+
+                desync.final_position = positions[position] * rotations[rotation] * custom_angle
+            end
+
+            desync.calculate_dc = function(origin) 
+                desync.frame_counter += 1
+
+                local random_value = random(4,9)
+
+                local destroy_cheaters = {
+                    ["Nan"] = origin * cfr(0/0, 0/0, 1),
+                    ["High Magnitude"] = origin * cfr(9e9, 9e9, 9e9), 
+                    ["Line Rendering Zone"] = origin * cfr(9e4, 9e4, 9e4),
+                    ["Randomize"] = origin * cfr(random(1,2) == 2 and pow(9, random_value) or 1/0, -1000, pow(9, random_value))
+                }
+
+                if desync.is_enabled() == false then 
+                    desync.final_position = origin
+                end 
+
+                if desync.frame_counter % flags["destroy_cheaters_interval"] == 0 and (lp.Character.Humanoid.Health <= flags["destroy_cheaters_min_health"]) then 
+                    desync.final_position = destroy_cheaters[flags["destroy_cheaters_type"]]
+                end 
+            end
+            
+            desync.init = LPH_NO_VIRTUALIZE(function(position, visualize) 
+                desync.old_position = lp.Character.HumanoidRootPart.CFrame
+
+                lp.Character.HumanoidRootPart.CFrame = position
+
+                run.RenderStepped:Wait()
+
+                if visualize then 
+                    for _, part in pairs(lp.Character:GetChildren()) do
+                        if (part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("Part")) and part.Name ~= "HumanoidRootPart" then
+                            local cloned_part = desync.clone:FindFirstChild(part.Name)
+
+                            if cloned_part then
+                                cloned_part.CFrame = part.CFrame
+                            end
+                        end
+                    end
+                end
+
+                lp.Character.HumanoidRootPart.CFrame = desync.old_position
+
+                desync.old_position = lp.Character.HumanoidRootPart.CFrame
+            end) 
+
+            desync.update_cham_properties = function() 
+                local Highlight = desync.cham
+                Highlight.Enabled = flags["desync_cham_highlight"]
+
+                if not flags["desync_material_texture"] then return end 
+
+                for _, part in pairs(desync.clone:GetChildren()) do
+                    if (part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("Part")) and part.Name ~= "HumanoidRootPart" then
+                        part.Color = flags["desync_part_color"].Color
+                        part.Transparency = 1 - flags["desync_part_color"].Transparency
+                        part.Material = Enum.Material[flags["desync_cham_material"]]
 
 
+                    end
+                end
+
+                if Highlight.Enabled then
+                    Highlight.DepthMode = Enum.HighlightDepthMode["AlwaysOnTop"] 
+                    Highlight.FillColor = flags["desync_visualizer_fill"].Color 
+                    Highlight.OutlineColor = flags["desync_visualizer_outline"].Color 
+                    Highlight.OutlineTransparency = 1 - flags["desync_visualizer_outline"].Transparency 
+                    Highlight.FillTransparency = 1 - flags["desync_visualizer_fill"].Transparency
+                end
+            end 
+
+            desync.state = LPH_NO_VIRTUALIZE(function() 
+                local magnitude = lp.Character.Humanoid.MoveDirection.magnitude 
+
+                if flags["desync_mode"] == "Standing Only" then 
+                    if magnitude > 0 then 
+                        return false 
+                    end
+                elseif flags["desync_mode"] == "Moving Only" then 
+                    if magnitude == 0 then 
+                        return false 
+                    end 
+                elseif flags["desync_mode"] == "Target Only" then 
+                    if not (target and target.Character) then 
+                        return false
+                    end 
+                end 
+
+                return true 
+            end)
+
+            desync.think = LPH_NO_VIRTUALIZE(function() 
+                local spoofer = desync.is_enabled()
+                local is_destroying = desync.is_dc()
+
+                local active = spoofer or is_destroying
+
+                if active then 
+                    local state = desync.state()
+
+                    if not state then 
+                        return 
+                    end 
+
+                    local hrp_cf = lp.Character.HumanoidRootPart.CFrame
+                    local origin = (flags["attach_to_target"] and target and target.Character and target.Character.HumanoidRootPart.CFrame) or hrp_cf
+
+                    if spoofer then 
+                        desync.calculate_position(origin, flags["desync_position_preset"], flags["desync_rotation_preset"]) 
+                    end 
+
+                    if is_destroying then 
+                        desync.calculate_dc(origin) 
+                    end 	
+
+                    desync.init(desync.final_position, flags["desync_visualize"])
+                end 
+            end)
+        -- 
+
+        -- network 
+            local networking = nebula.rage.network 
+
+            networking.think = function() 
+                if flags["network_desync"] and flags["network_desync_bind"].active then 
+                    if table.find(flags["network_desync_type"], "physics sender rate") then 
+                        setfflag("S2PhysicsSenderRate", tostring(flags["network_desync_fflag"]))
+                    end 
+                    
+                    if table.find(flags["network_desync_type"], "network sleeping") then 
+                        if (os.clock() - networking.last_slept >= flags["network_desync_interval"]/1000) then 
+                            networking.sleeping = not networking.sleeping 
+                            sethiddenproperty(lp.Character.HumanoidRootPart, "NetworkIsSleeping", networking.sleeping)
+                        end 
+                    end 
+                end 
+            end
+        -- 
+    -- 
+
+    -- esp 
+        local esp = {
+            players = {},
+            highlights = {}
+        }
+
+        if #listfiles(library.directory .. "/images") == 0 then 
+            local gun_path = "https://github.com/f1nobe7650/Nebula/blob/main/Images/"
+
+            local images_download = {
+                "ak.png",
+                "ar.png",
+                "aug.png",
+                "db.png",
+                "drumgun.png",
+                "flame.png",
+                "glock.png",
+                "lmg.png",
+                "p90.png",
+                "rev.png",
+                "smg.png",
+                "shotgun.png",
+                "ar.png",
+                "tac.png",
+                "knife.png",
+                "rifle.png"
+            }
+
+            for _, image in next, images_download do 
+                writefile(library.directory .. "/images/" .. image, game:HttpGet(gun_path .. image ..  "?raw=true"))
+            end  
+        end 
+        
+        local images = {
+            ["[AK47]"] = library.directory .. "/images/ak.png",
+            ["[AR]"] = library.directory.. "/images/ar.png",
+            ["[AUG]"] = library.directory.. "/images/aug.png",
+            ["[Double-Barrel SG]"] = library.directory.. "/images/db.png",
+            ["[DrumGun]"] = library.directory.. "/images/drumgun.png",
+            ["[Flamethrower]"] = library.directory.. "/images/flame.png",
+            ["[Glock]"] = library.directory.. "/images/glock.png",
+            ["[LMG]"] = library.directory.. "/images/lmg.png",
+            ["[P90]"]= library.directory.. "/images/p90.png",
+            ["[Revolver]"] = library.directory.. "/images/rev.png",
+            ["[SMG]"] = library.directory.. "/images/smg.png",
+            ["[Shotgun]"] = library.directory.. "/images/shotgun.png",
+            ["[SilencerAR]"] = library.directory.. "/images/ar.png",
+            ["[TacticalShotgun]"] = library.directory.. "/images/tac.png",
+            ["[Knife]"] = library.directory.. "/images/knife.png",
+            ["[Rifle]"] = library.directory.. "/images/rifle.png"
+        }
+
+        local esp_holder = library:create("ScreenGui", {
+            Parent = game.CoreGui,
+            Name = "",
+            IgnoreGuiInset = true, 
+            DisplayOrder = -1, 
+            ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        })
+
+        esp.calculate_box = LPH_NO_VIRTUALIZE(function(size)
+            local UpCalculation = cfr(size)
+            local VTop = size + (UpCalculation.UpVector * 1.8) + camera.CFrame.UpVector
+            local VBottom = size - (UpCalculation.UpVector * 2.5) - camera.CFrame.UpVector
+        
+            local Top, TopIsRendered = utility.to_screen_point(VTop)
+            local Bottom, BottomIsRendered = utility.to_screen_point(VBottom)
+            
+            local Width = max(floor(abs(Top.x - Bottom.x)), 3)
+            local Height = max(floor(max(abs(Bottom.y - Top.y), Width / 2)), 3)
+            local BoxSize = vec2(floor(max(Height / 1.5, Width)), Height)
+            local BoxPosition = vec2(floor(Top.x * 0.5 + Bottom.x * 0.5 - BoxSize.x * 0.5), floor(min(Top.y, Bottom.y)))
+        
+            return BoxSize, BoxPosition, BottomIsRendered, TopIsRendered
+        end)
+        
+        local __cham__ = library:new_item("Highlight", {
+            Enabled = false,
+            DepthMode = Enum.HighlightDepthMode.AlwaysOnTop, 
+            FillColor = rgb(255, 255, 255), 
+            OutlineColor =  rgb(255, 255, 255) ,
+            OutlineTransparency = 0.5,
+            FillTransparency = 1,
+            Parent = ws.Players,
+            Adornee = ws.Players,
+        })      
+        
+        function esp:create_player(player)
+            esp.players[player.Name] = {
+                tool = {}
+            }
+            
+            local player_path = esp.players[player.Name]
+        
+            -- instances
+                -- init
+                    local player_holder = library:create("Frame", {
+                        Parent = esp_holder,
+                        Name = "",
+                        Visible = false, 
+                        BackgroundTransparency = 1,
+                        Position = UDim2.new(0.492978572845459, 0, 0.3143274784088135, 0),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        Size = UDim2.new(0, 143, 0, 219),
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    player_path.instance = player_holder
+                -- 
+        
+                -- boxes
+                    local line_holder = library:create("Frame", {
+                        Parent = player_holder,
+                        Name = "",
+                        Size = UDim2.new(1, 0, 1, 0),
+                        ZIndex = 50,
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local box_outline = library:create("Frame", {
+                        Parent = line_holder,
+                        Name = "",
+                        Visible = false,
+                        BackgroundTransparency = 1,
+                        Position = UDim2.new(0, -1, 0, -1),
+                        ZIndex = 50,
+                        Size = UDim2.new(1, 2, 1, 2),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local BoxLine2 = library:create("UIStroke", {
+                        Parent = box_outline,
+                        Name = "",
+                        LineJoinMode = Enum.LineJoinMode.Miter
+                    })
+                    
+                    local box_color = library:create("UIStroke", {
+                        Parent = line_holder,
+                        Name = "",
+                        Enabled = false,
+                        LineJoinMode = Enum.LineJoinMode.Miter,
+                        Color = Color3.fromRGB(255, 255, 255)
+                    })
+        
+                    local box_inline = library:create("Frame", {
+                        Parent = line_holder,
+                        Name = "",
+                        Visible = false,
+                        BackgroundTransparency = 1,
+                        Position = UDim2.new(0, 1, 0, 1),
+                        ZIndex = 50,
+                        Size = UDim2.new(1, -2, 1, -2),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local BoxLine3 = library:create("UIStroke", {
+                        Parent = box_inline,
+                        Name = "",
+                        LineJoinMode = Enum.LineJoinMode.Miter
+                    })
+                    
+                    local box_gradient = library:create("UIGradient", {
+                        Parent = line_holder,
+                        Name = "",
+                        Rotation = -180,
+                        Transparency = numseq{
+                            numkey(0, 0.5),
+                            numkey(1, 0.5)
+                        },
+                        Color = ColorSequence.new{
+                            ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+                            ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+                        }
+                    })
+                -- 
+        
+                -- corner boxes
+                    local corner_box = library:create("Frame", {
+                        Parent = line_holder,
+                        Name = "",
+                        BackgroundTransparency = 1,
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        Size = UDim2.new(1, 0, 1, 0),
+                        BorderSizePixel = 0,
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local top_left = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0, 1, 0.30000001192092896, 0),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local top_right = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        AnchorPoint = Vector2.new(1, 0),
+                        Position = UDim2.new(1, -1, 0, 0),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0, 1, 0.30000001192092896, 0),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local bottom_left = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        AnchorPoint = Vector2.new(0, 1),
+                        Position = UDim2.new(0, 0, 1, 0),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0.4000000059604645, 0, 0, 1),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local bottom_right = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        AnchorPoint = Vector2.new(1, 1),
+                        Position = UDim2.new(1, -1, 1, 0),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0.4000000059604645, 0, 0, 1),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local bottom_left2 = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        AnchorPoint = Vector2.new(0, 1),
+                        Position = UDim2.new(0, 0, 1, 0),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0, 1, 0.30000001192092896, 0),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local bottom_right2 = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        AnchorPoint = Vector2.new(1, 1),
+                        Position = UDim2.new(1, 0, 1, 0),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0, 1, 0.30000001192092896, 0),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local top_left2 = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        AnchorPoint = Vector2.new(0, 1),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0.4000000059604645, 0, 0, 1),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    local top_right2 = library:create("Frame", {
+                        Parent = corner_box,
+                        Name = "",
+                        AnchorPoint = Vector2.new(1, 1),
+                        Position = UDim2.new(1, -1, 0, 0),
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        ZIndex = 50,
+                        Size = UDim2.new(0.4000000059604645, 0, 0, 1),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                -- 
+        
+                -- bottom holder
+                    local bottom_holder = library:create("Frame", {
+                        Parent = line_holder,
+                        Name = "",
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        BackgroundTransparency = 1,
+                        Position = UDim2.new(0, -2, 1, 3),
+                        Size = UDim2.new(1, 4, 0, 0),
+                        BorderSizePixel = 0,
+                        AutomaticSize = Enum.AutomaticSize.Y,
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    library:create("UIListLayout", {
+                        Parent = bottom_holder,
+                        Name = "",
+                        Padding = UDim.new(0, 2),
+                        SortOrder = Enum.SortOrder.LayoutOrder
+                    })
+                    
+                    library:create("UIPadding", {
+                        Parent = bottom_holder,
+                        Name = "",
+                        PaddingTop = UDim.new(0, 1)
+                    })
+        
+                    -- reload bar
+                        local bar_holder = library:create("Frame", {
+                            Parent = bottom_holder,
+                            Name = "",
+                            BackgroundTransparency = 1,
+                            Size = UDim2.new(1, 0, 0, 4),
+                            BorderColor3 = Color3.fromRGB(0, 0, 0),
+                            BorderSizePixel = 0,
+                            AutomaticSize = Enum.AutomaticSize.Y,
+                            BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        })
+                        
+                        local reload_bar = library:create("Frame", {
+                            Parent = bar_holder,
+                            Name = "",
+                            Size = UDim2.new(1, 0, 0, 4),
+                            ZIndex = 50,
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        })
+                        
+                        local reload_slider = library:create("Frame", {
+                            Parent = reload_bar,
+                            Name = "",
+                            Size = UDim2.new(1, -2, 0, 2),
+                            Position = UDim2.new(0, 1, 0, 1),
+                            ZIndex = 50,
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(28, 145, 255)
+                        })
+        
+                        local reload_bar_text = library:create("TextLabel", {
+                            Parent = reload_slider,
+                            Name = "",
+                            FontFace = library.font,
+                            TextColor3 = Color3.fromRGB(255, 255, 255),
+                            Text = "50",
+                            Visible = false, 
+                            TextStrokeTransparency = 0,
+                            AnchorPoint = Vector2.new(0.5, 0),
+                            BackgroundTransparency = 1,
+                            TextXAlignment = Enum.TextXAlignment.Right,
+                            Position = UDim2.new(1, 0, 0, 5),
+                            ZIndex = 50,
+                            TextSize = 12,
+                            AutomaticSize = Enum.AutomaticSize.XY
+                        })
+        
+                        library:create("UIStroke", {
+                            Parent = reload_bar_text,
+                            Name = "",
+                            LineJoinMode = Enum.LineJoinMode.Miter
+                        })
+                    -- 
+        
+                    -- distance text 
+                        -- local distance = library:create("TextLabel", {
+                        --     Parent = bottom_holder,
+                        --     Name = "",
+                        --     FontFace = library.font,
+                        --     TextColor3 = Color3.fromRGB(255, 255, 255),
+                        --     Text = "50st",
+                        --     TextStrokeTransparency = 0,
+                        --     AnchorPoint = Vector2.new(0.5, 0.5),
+                        --     BackgroundTransparency = 1,
+                        --     AutomaticSize = Enum.AutomaticSize.Y,
+                        --     ZIndex = 50,
+                        --     TextSize = 12,
+                        --     Size = UDim2.new(1, 0, 0, 4)
+                        -- })
+        
+                        -- library:create("UIStroke", {
+                        --     Parent = distance,
+                        --     Name = "",
+                        --     LineJoinMode = Enum.LineJoinMode.Miter
+                        -- })
+                    -- 
+        
+                    -- gun icons
+                        local image_holder = library:create("Frame", {
+                            Parent = bottom_holder,
+                            Name = "",
+                            BackgroundTransparency = 1,
+                            Size = UDim2.new(1, 0, 0, 0),
+                            BorderColor3 = Color3.fromRGB(0, 0, 0),
+                            BorderSizePixel = 0,
+                            AutomaticSize = Enum.AutomaticSize.Y,
+                            BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        })
+                        
+                        local gun_image = library:create("ImageLabel", {
+                            Parent = image_holder,
+                            Name = "",
+                            BorderColor3 = Color3.fromRGB(0, 0, 0),
+                            AnchorPoint = Vector2.new(0.5, 0),
+                            Image = "rbxassetid://130516018594923",
+                            BackgroundTransparency = 1,
+                            Position = UDim2.new(0.5, 0, 0, 0),
+                            Size = UDim2.new(0, 64/2, 0, 27/2),
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        })
+                    -- 
+        
+                    -- weapon text
+                        local weapon = library:create("TextLabel", {
+                            Parent = bottom_holder,
+                            Name = "",
+                            FontFace = library.font,
+                            TextColor3 = Color3.fromRGB(255, 255, 255),
+                            Text = "double barrel",
+                            TextStrokeTransparency = 0,
+                            AnchorPoint = Vector2.new(0.5, 0.5),
+                            BackgroundTransparency = 1,
+                            Position = UDim2.new(0.5, 0, 0.031031031161546707, 0),
+                            AutomaticSize = Enum.AutomaticSize.Y,
+                            ZIndex = 50,
+                            TextSize = 12,
+                            Size = UDim2.new(1, 0, 0, 4)
+                        })
+                        
+                        library:create("UIStroke", {
+                            Parent = weapon,
+                            Name = "",
+                            LineJoinMode = Enum.LineJoinMode.Miter
+                        })
+                    -- 
+        
+                    -- armor bar
+                        local armor = library:create("Frame", {
+                            Parent = line_holder,
+                            Name = "",
+                            Position = UDim2.new(0, -14, 0, -2),
+                            Size = UDim2.new(0, 4, 1, 4),
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        })
+                        
+                        local armor_slider = library:create("Frame", {
+                            Parent = armor,
+                            Name = "",
+                            Position = UDim2.new(0, 1, 0, 1),
+                            BorderColor3 = Color3.fromRGB(0, 0, 0),
+                            Size = UDim2.new(0.5, 0, 1, -2),
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(0, 13, 255)
+                        })
+                        
+                        local armor_text = library:create("TextLabel", {
+                            Parent = armor_slider,
+                            Name = "",
+                            ZIndex = 99,
+                            FontFace = library.font,
+                            TextColor3 = Color3.fromRGB(0, 13, 255),
+                            Text = "100",
+                            Position = UDim2.new(0, -2, 0, -2),
+                            TextStrokeTransparency = 0,
+                            BorderSizePixel = 0,
+                            BackgroundTransparency = 1,
+                            TextXAlignment = Enum.TextXAlignment.Right,
+                            Active = true,
+                            TextYAlignment = Enum.TextYAlignment.Top,
+                            TextSize = 12,
+                            BackgroundColor3 = Color3.fromRGB(26, 255, 0)
+                        })
+                        
+                        library:create("UIStroke", {
+                            Parent = armor_text,
+                            Name = "",
+                            LineJoinMode = Enum.LineJoinMode.Miter
+                        })
+                    -- 
+        
+                    -- healthbar
+                        local health = library:create("Frame", {
+                            Parent = line_holder,
+                            Name = "",
+                            Position = UDim2.new(0, -8, 0, -2),
+                            Size = UDim2.new(0, 4, 1, 4),
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        })
+                        
+                        local health_slider = library:create("Frame", {
+                            Parent = health,
+                            Name = "",
+                            Position = UDim2.new(0, 1, 0, 1),
+                            BorderColor3 = Color3.fromRGB(0, 0, 0),
+                            Size = UDim2.new(0.5, 0, 1, -2),
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(0, 255, 42)
+                        })
+                        
+                        local health_text = library:create("TextLabel", {
+                            Parent = health_slider,
+                            Name = "",
+                            Visible = false,
+                            FontFace = library.font,
+                            TextColor3 = Color3.fromRGB(0, 255, 0),
+                            Text = "100",
+                            ZIndex = 99,
+                            TextStrokeTransparency = 0,
+                            Position = UDim2.new(0, -4, 0, -2),
+                            BackgroundTransparency = 1,
+                            TextXAlignment = Enum.TextXAlignment.Right,
+                            Active = true,
+                            TextYAlignment = Enum.TextYAlignment.Top,
+                            TextSize = 12,
+                            BackgroundColor3 = Color3.fromRGB(26, 255, 0)
+                        })
+                        
+                        library:create("UIStroke", {
+                            Parent = health_text,
+                            Name = "",
+                            LineJoinMode = Enum.LineJoinMode.Miter
+                        })
+                    -- 
+                -- 
+        
+                -- top holder
+                    local top_holder = library:create("Frame", {
+                        Parent = line_holder,
+                        Name = "",
+                        BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        AnchorPoint = Vector2.new(0, 1),
+                        BackgroundTransparency = 1,
+                        Position = UDim2.new(0, -2, 0, -4),
+                        Size = UDim2.new(1, 4, 0, 0),
+                        BorderSizePixel = 0,
+                        AutomaticSize = Enum.AutomaticSize.Y,
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    })
+                    
+                    library:create("UIListLayout", {
+                        Parent = top_holder,
+                        Name = "",
+                        Padding = UDim.new(0, 4),
+                        SortOrder = Enum.SortOrder.LayoutOrder
+                    })
+                    
+                    library:create("UIPadding", {
+                        Parent = top_holder,
+                        Name = "",
+                        PaddingTop = UDim.new(0, 1)
+                    })
+                    
+                    -- target highlight 
+                        -- local target_text_holder = library:create("Frame", {
+                        --     Parent = top_holder,
+                        --     Name = "",
+                        --     BackgroundTransparency = 1,
+                        --     Size = UDim2.new(1, 0, 0, 22),
+                        --     BorderColor3 = Color3.fromRGB(0, 0, 0),
+                        --     BorderSizePixel = 0,
+                        --     AutomaticSize = Enum.AutomaticSize.Y,
+                        --     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        -- })
+                        
+                        -- local priority_text = library:create("TextLabel", {
+                        --     Parent = target_text_holder,
+                        --     Name = "",
+                        --     RichText = true,
+                        --     TextColor3 = Color3.fromRGB(255, 255, 255),
+                        --     Text = "$$$ | ledger.live | $$$",
+                        --     FontFace = library.font,
+                        --     AnchorPoint = Vector2.new(0, 0.5),
+                        --     AutomaticSize = Enum.AutomaticSize.Y,
+                        --     BackgroundTransparency = 1,
+                        --     Position = UDim2.new(0, 0, 0.5, -2),
+                        --     BorderSizePixel = 0,
+                        --     ZIndex = 50,
+                        --     TextSize = 12,
+                        --     Size = UDim2.new(1, 0, 0, 0)
+                        -- })
+                        
+                        -- local stroke_fix = library:create("TextLabel", {
+                        --     Parent = priority_text,
+                        --     Name = "",
+                        --     FontFace = library.font,
+                        --     TextColor3 = Color3.fromRGB(255, 255, 255),
+                        --     Text = "$$$ | ledger.live | $$$",
+                        --     BackgroundTransparency = 1,
+                        --     BorderSizePixel = 0,
+                        --     AutomaticSize = Enum.AutomaticSize.Y,
+                        --     ZIndex = 50,
+                        --     TextSize = 12,
+                        --     Size = UDim2.new(1, 0, 0, 0)
+                        -- })
+                        
+                        -- library:create("UIStroke", {
+                        --     Parent = stroke_fix,
+                        --     Name = "",
+                        --     LineJoinMode = Enum.LineJoinMode.Miter
+                        -- })
+                    -- 
+        
+                    -- player image
+                        local player_image_holder = library:create("Frame", {
+                            Parent = top_holder,
+                            Name = "",
+                            BackgroundTransparency = 1,
+                            Size = UDim2.new(1, 0, 0, 0),
+                            BorderColor3 = Color3.fromRGB(0, 0, 0),
+                            BorderSizePixel = 0,
+                            AutomaticSize = Enum.AutomaticSize.Y,
+                            BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        })
+                        
+                        local player_image = library:create("ImageLabel", {
+                            Parent = player_holder_image_holder,
+                            Name = "",
+                            BorderColor3 = Color3.fromRGB(0, 0, 0),
+                            AnchorPoint = Vector2.new(0.5, 0),
+                            Image = "rbxassetid://89657444485405",
+                            BackgroundTransparency = 1,
+                            Position = UDim2.new(0.5, 0, 0, 0),
+                            Size = UDim2.new(0, 35, 0, 35),
+                            BorderSizePixel = 0,
+                            BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        })
+                    -- 
+                        
+                    -- player name 
+                        local player_name = library:create("TextLabel", {
+                            Parent = top_holder,
+                            Name = "",
+                            FontFace = library.font,
+                            TextColor3 = Color3.fromRGB(255, 255, 255),
+                            Text = player.Name,
+                            AnchorPoint = Vector2.new(0, 1),
+                            BorderSizePixel = 0,
+                            BackgroundTransparency = 1,
+                            Position = UDim2.new(0, 0, 0, -2),
+                            TextSize = 12,
+                            ZIndex = 50,
+                            AutomaticSize = Enum.AutomaticSize.Y,
+                            Size = UDim2.new(1, 0, 0, 0)
+                        })
+                        
+                        library:create("UIStroke", {
+                            Parent = player_name,
+                            Name = "",
+                            LineJoinMode = Enum.LineJoinMode.Miter
+                        })
+                    -- 
+                -- 
+            -- 
+        
+            player_path.connection = library:connection(run.RenderStepped, LPH_NO_VIRTUALIZE(function()
+                if not flags["esp_enabled"] then return end 
+
+                local character = player.Character
+                local humanoid = character and character:FindFirstChild("Humanoid")
+                local hrp = humanoid and humanoid.RootPart 
+                
+                local info = character and character:FindFirstChild("BodyEffects")
+                local armor_value = info and info.Armor.Value
+        
+                if (character and humanoid and hrp and armor_value) then 
+                    local box_size, box_position, top_rendered, bottom_rendered = esp.calculate_box(character.UpperTorso.Position)
+                    
+                    if top_rendered and bottom_rendered then 
+                        player_holder.Visible = true 
+                        player_holder.Size = dim2(0, box_size.X, 0, box_size.Y)
+                        player_holder.Position = dim2(0, box_position.X, 0, box_position.Y)
+        
+                        -- boxes
+                            if flags["bounding_box"] then 
+                                if flags["bounding_box_type"] == "Corner" then 
+                                    corner_box.Visible = true 
+                                    box_inline.Visible = false 
+                                    box_outline.Visible = false 
+                                    box_color.Enabled = false 
+                                    for _, line in next, corner_box:GetChildren() do
+                                        line.BackgroundColor3 = flags["bounding_box_color1"].Color
+                                    end 
+                                else 
+                                    box_inline.Visible = true 
+                                    box_outline.Visible = true 
+                                    box_color.Enabled = true
+                                    corner_box.Visible = false  
+                                    box_color.Color = flags["bounding_box_color1"].Color
+                                end 
+                            else 
+                                box_inline.Visible = false 
+                                box_outline.Visible = false 
+                                box_color.Enabled = false
+                                corner_box.Visible = false  
+                            end 
+                        -- 
+
+                        -- filled box
+                            if flags["filled_box"] then 
+                                box_gradient.Enabled = true 
+                                box_gradient.Color = rgbseq{
+                                    rgbkey(0, flags["filled_box_color1"].Color),
+                                    rgbkey(1, flags["filled_box_color2"].Color)
+                                }
+                                box_gradient.Transparency = numseq{
+                                    numkey(0, 1 - flags["filled_box_color1"].Transparency),
+                                    numkey(1, 1 - flags["filled_box_color2"].Transparency)
+                                }
+                                line_holder.BackgroundTransparency = 0 
+                                if flags["filled_box_animation"] then 
+                                    box_gradient.Rotation = math.sin(tick() * 2) * 180
+                                else 
+                                    box_gradient.Rotation = flags["filled_box_rotation"]
+                                end 
+                                
+                            else 
+                                box_gradient.Enabled = false 
+                                line_holder.BackgroundTransparency = 1
+                            end 
+                        -- 
+                            
+                        -- names
+                            if flags["show_names"] then 
+                                player_name.Visible = true 
+                                player_name.TextColor3 = flags["show_names_color"].Color
+                            else 
+                                player_name.Visible = false
+                            end 
+                        -- 
+        
+                        -- healthbar 
+                            if flags["health_bar"] then 
+                                local multiplier = humanoid.Health / humanoid.MaxHealth
+                                local color = flags["health_bar_low"].Color:Lerp(flags["health_bar_high"].Color, multiplier)
+        
+                                health.Visible = true 
+                                health_slider.Size = dim2(.5, 0, multiplier, multiplier > 0 and -2 or 0)
+                                health_slider.Position = dim2(0, 1, 1 - multiplier, 1)
+                                health_slider.BackgroundColor3 = color
+                                
+                                if flags["health_number"] and humanoid.Health ~= humanoid.MaxHealth and not armor.Visible then 
+                                    health_text.Text = floor(humanoid.Health)
+                                    health_text.TextColor3 = color
+                                    health_text.Visible = true 
+                                else 
+                                    health_text.Visible = false 
+                                end 
+
+                                if flags["armor_bar"] and armor_value > 0 then 
+                                    local multiplier = armor_value / 200
+            
+                                    armor.Visible = true 
+                                    armor_slider.Size = dim2(.5, 0, multiplier, 1)
+                                    armor_slider.Position = dim2(0, 1, 1 - multiplier, -2)
+                                    armor_slider.BackgroundColor3 = flags["armor_bar_color"].Color
+
+                                    if flags["armor_bar_number"] then 
+                                        armor_text.Text = armor_value
+                                        armor_text.Visible = true 
+                                    else 
+                                        armor_text.Visible = false 
+                                    end 
+                                else 
+                                    armor.Visible = false 
+                                    armor_text.Visible = false 
+                                end 
+                            else 
+                                health.Visible = false  
+                                armor.Visible = false 
+                                health_text.Visible = false 
+                            end 
+                        --
+        
+                        -- reload bar, weapon text
+                            if player_path.tool[1] ~= "None" and player_path.tool[2] == true then 
+                                local tool = player_path.tool[1]
+                                if flags["reload_bar"] and player_path.tool[2] == true then 
+                                    bar_holder.Visible = true 
+                                    
+                                    local multiplier = tool.Ammo.Value / tool.MaxAmmo.Value
+        
+                                    reload_slider.Size = dim2(multiplier, multiplier > 0 and -2 or 0, 0, 2) 
+        
+                                    -- reload_bar_text.Text = tool.Ammo.Value
+
+                                    reload_slider.BackgroundColor3 = flags["reload_bar_color1"].Color
+                                else 
+                                    bar_holder.Visible = false 
+                                end 
+                                
+                                if flags["gun_text"] then 
+                                    weapon.Text = tool.Name
+                                    weapon.Visible = true 
+                                    weapon.TextColor3 = flags["show_weapon_color"].Color
+                                else 
+                                    weapon.Visible = false 
+                                end   
+
+                                if flags["gun_icons"] then 
+                                    gun_image.Visible = true 
+                                    gun_image.ImageColor3 = flags["gun_icons_color"].Color
+                                else 
+                                    gun_image.Visible = false 
+                                end 
+                            else 
+                                bar_holder.Visible = false 
+                                weapon.Visible = false 
+                                gun_image.Visible = false 
+                            end 
+                        -- 
+                    else 
+                        player_holder.Visible = false 
+                    end 
+                else 
+                    player_holder.Visible = false 
+                end 
+            end))
+             
+            player_path.death_connection = library:connection(player.CharacterAdded, function()
+                player_path.tool = {"None", false}
+        
+                library:connection(player.Character.ChildAdded, function(instance)
+                    if instance:IsA("Tool") then 
+                        player_path.tool = {instance, instance:FindFirstChild("GunScript") and true or false}
+                        if images[instance.Name] then 
+                            gun_image.Image = getcustomasset(images[instance.Name])
+                        end 
+                    end 
+                end) 
+        
+                library:connection(player.Character.ChildRemoved, function(instance)
+                    if instance:IsA("Tool") then 
+                        player_path.tool = {"None", false}
+                    end 
+                end)
+            end) 
+
+            local character = player.Character or player.CharacterAdded:Wait()
+        
+            library:connection(character.ChildAdded, function(instance)
+                if instance:IsA("Tool") then 
+                    player_path.tool = {instance, instance:FindFirstChild("GunScript") and true or false}
+                    if images[instance.Name] then 
+                        gun_image.Image = getcustomasset(images[instance.Name])
+                    end 
+                end 
+            end) 
+            
+            library:connection(character.ChildRemoved, function(instance)
+                if instance:IsA("Tool") then 
+                    player_path.tool = {"None", false}
+                end 
+            end)
+        end
+
+        esp.remove_player = LPH_NO_VIRTUALIZE(function(player) 
+            local path = esp.players[player.Name]
+
+            if path and path.connection then 
+                path.connection:Disconnect()
+                path.death_connection:Disconnect()
+                path.instance:Destroy() 
+            end 
+            
+            esp.players[player.Name] = nil 
+        end)
+        
+        for _, player in next, players:GetPlayers() do 
+            if player ~= lp then 
+                esp:create_player(player)
+            end 
+        end      
+    -- 
+
+    -- visuals 
+        local visuals = nebula.visuals 
+    
+        -- on_hit
+            local hit_detection = visuals.hit_detection 
+
+            hit_detection.update_data_table = (function()
+                for _, player in next, players:GetPlayers() do 
+                    if player and player.Character and player.Character:FindFirstChild("Humanoid") then 
+                        hit_detection.data[player.Name] = player.Character.Humanoid.Health 
+                    end 
+                end 
+            end)
+
+            hit_detection.detect_closest_health_change = function(origin, max_distance) 
+                local max_radius = max_distance
+                local player_hit = nil 
+                
+                for name, health in next, hit_detection.data do 
+                    local player = players:FindFirstChild(name) 
+                    
+                    if player and player.Character then 
+                        local magnitude = (origin - player.Character.HumanoidRootPart.Position).Magnitude 
+                        local current_health = player.Character.Humanoid.Health
+
+                        if (magnitude < max_radius) and (current_health < health) then
+                            max_radius = magnitude
+                            player_hit = player
+                            hit_detection.health_factor = health - current_health
+                        end
+                    end
+                end
+                
+                return player_hit 
+            end
+
+            hit_detection.render_hit_effect = function() 
+                local hit_effect = flags["hit_effect"]
+
+                if hit_effect == "None" then 
+                    return 
+                end 
+
+                local indicator = nebula.path["Hit Effects"][hit_effect]:Clone()
+                indicator.Parent = ws
+                debris:AddItem(indicator, 10)
+
+                local hrp = hit_detection.current_player.Character.HumanoidRootPart
+
+                if indicator:FindFirstChild("Attachment") then 
+                    v.Parent = hrp 
+                end 
+
+                for _, v in next, indicator:GetDescendants() do 
+                    if v:IsA("ParticleEmitter") then
+                        v.Parent = hrp 
+                        
+                        v.Color = ColorSequence.new({
+                            ColorSequenceKeypoint.new(0, flags["hit_effect_settings"].Color), -- Red at the start
+                            ColorSequenceKeypoint.new(1, flags["hit_effect_settings"].Color) -- Blue at the end
+                        })
+
+                        local EmitCount 
+                        
+                        if hit_effect == "Detailed Slash" or hit_effect == "Electric 2" then 
+                            EmitCount = 1 
+                        elseif hit_effect == "Slash" or hit_effect == "Electric" then
+                            EmitCount = 5
+                        else 
+                            EmitCount = 10
+                        end
+
+                        v:Emit(EmitCount)						
+                    end
+                end
+            end
+
+            hit_detection.play_sound = LPH_NO_VIRTUALIZE(function() 
+                if not flags["hit_sound"] then 
+                    return
+                end 
+
+                local sound = hit_sound_item:Clone()
+                sound.Parent = sound_service
+                sound:Play()
+
+                debris:AddItem(sound, 10)
+            end)
+
+            hit_detection.render_hit_cham = function() 
+                if not flags["hit_cham"] then 
+                    return 
+                end 
+
+                local character = hit_detection.current_player.Character;
+                character.Archivable = true;
+
+                local model = character:Clone() 
+                model.Parent = hit_cham_parent
+                
+                model:FindFirstChild("HumanoidRootPart"):Destroy()
+
+                for _, part in next, model:GetChildren() do
+                    if (part.Name == "CUFF" or part.Name == "HumanoidRootPart") then 
+                        part:Destroy() 
+                    end
+
+                    if (part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("Part") and part.Name ~= "HumanoidRootPart") then
+                        if part.Name == "HumanoidRootPart" or part.Name == "BOOMBOXHANDLE" then
+                            continue 
+                        end 
+
+                        utility.apply_properties(part, {
+                            Color = flags["hit_chams"].Color,
+                            Transparency = 1 - flags["hit_chams"].Transparency,
+                            CanCollide = false,
+                            Anchored = true,
+                            Material = Enum.Material[flags["hit_material"]],
+                            Size = part.Size + vec3(0.01,0.01,0.01),
+                            Reflectance = flags["hit_reflectance"],  
+                        }) 		
+                        
+
+                    else
+                        part:Destroy()
+                    end		
+                end 
+
+                debris:AddItem(model, flags["on_hit_lifetime"])
+            end
+
+            hit_detection.render_3d_hit_marker = function() 
+                if not flags["3d_hit_marker"] then 
+                    return 
+                end
+
+                local indicator = nebula.path["Gui"].HitMarker:Clone()
+                indicator.Parent = ws
+                indicator.Position = hit_detection.end_point
+                indicator.BillboardGui.Enabled = true 
+
+                for _,v in next, indicator.BillboardGui:GetChildren() do 
+                    v.BackgroundColor3 = flags["3d_hit_markers"].Color
+
+                    tween_service:Create(v, TweenInfo.new(flags["on_hit_lifetime"], Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1 , false, 0), {BackgroundTransparency = 1}):Play()
+                end
+
+                debris:AddItem(indicator, flags["on_hit_lifetime"])
+            end
+
+            hit_detection.render_health_hit_marker = function()
+                if not flags["health_indicator"] then 
+                    return 
+                end 
+
+                local indicator = nebula.path["Gui"]["Dmg"]:Clone()
+                indicator.Anchored = true 
+
+                debris:AddItem(indicator, flags["on_hit_lifetime"])
+
+                local text = indicator.BillboardGui.TextLabel
+                text.Text = "-" .. floor(hit_detection.health_factor) .. ""
+                text.FontFace = library.font 
+                text.TextColor3 = flags["health_indicator_color"].Color
+                text.TextStrokeTransparency = 0
+                text.TextSize = 12
+                
+                library:create("UIStroke", {
+                    Parent = text,
+                    Name = "",
+                    LineJoinMode = Enum.LineJoinMode.Miter
+                })
+
+                indicator.BillboardGui.Enabled = true
+                indicator.BillboardGui.AlwaysOnTop = true 
+                indicator.Position = hit_detection.end_point
+                indicator.Parent = ws
+                indicator.CanCollide = false 
+                indicator.Position = hit_detection.end_point 
+                --tween_service:Create(, TweenInfo.new(flags["on_hit_lifetime"], Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, -1 , true, 0), {}):Play()
+                tween_service:Create(text, TweenInfo.new(flags["on_hit_lifetime"], Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, -1 , true, 0), {TextTransparency = 1, TextStrokeTransparency = 1}):Play()
+            end	
+
+            hit_detection.init = function() 
+                hit_detection.render_hit_effect() 
+
+                hit_detection.render_3d_hit_marker()
+
+                hit_detection.render_health_hit_marker()
+
+                hit_detection.render_hit_cham() 
+
+                hit_detection.play_sound() 
+            end
+        -- 
+
+        -- beams 
+            local tracers_ids = {
+                ["Double Helix"] = "rbxassetid://1134824633", 
+                ["Electric"] = "rbxassetid://446111271",
+                ["Electric + Glow"] = "rbxassetid://5864341017", 
+                ["Fade"] = "rbxassetid://7136858729",
+                ["Pulsate"] = "rbxassetid://5889875399", 
+                ["Red Lazer"] = "rbxassetid://6333823534", 
+                ["Smoke"] = "rbxassetid://3517446796", 
+                ["Warp"] = "rbxassetid://7151778302", 
+                ["1"] = "rbxassetid://9150663556",
+                ["2"] = "rbxassetid://2950987173",
+                ["3"] = "rbxassetid://6511613786",
+            }
+
+            visuals.new_beam = LPH_NO_VIRTUALIZE(function(origin, end_point)
+                local beam_part = Instance.new("Part", ws)
+                beam_part.Name = "BeamPart"
+                beam_part.Transparency = 1
+
+                local part0 = Instance.new("Part", beam_part)
+                part0.Size = vec3(1, 1, 1)
+                part0.Transparency = 1
+                part0.CanCollide = false
+                part0.CFrame = typeof(origin) == "CFrame" and origin or cfr(origin)
+                part0.Anchored = true
+                
+                local attachment0 = Instance.new("Attachment", part0)
+
+                local part1 = Instance.new("Part", beam_part)
+                part1.Size = vec3(1, 1, 1)
+                part1.Transparency = 1
+                part1.CanCollide = false
+                part1.CFrame = typeof(end_point) == "CFrame" and end_point or cfr(end_point)
+                part1.Anchored = true
+                part1.Color = rgb(255, 255, 255)
+
+                local attachment1 = Instance.new("Attachment", part1)
+
+                local beam = Instance.new("Beam", part0)
+                beam.Attachment0 = attachment0
+                beam.Attachment1 = attachment1
+
+                -- properties 
+                beam.FaceCamera = flags["beam_face_camera"]
+
+                beam.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0.00, flags["beam_settings0"].Color),
+                    ColorSequenceKeypoint.new(1, flags["beam_settings1"].Color),
+                }
+                
+                beam.Transparency = numseq{
+                    numkey(0, 1 - flags["beam_settings0"].Transparency),
+                    numkey(1, 1 - flags["beam_settings1"].Transparency),
+                }
+
+                beam.LightEmission = flags["beam_brightness"]
+                beam.Segments = flags["beam_segments"] * 10
+                beam.LightInfluence = flags["beam_influence"]
+                beam.Width0 = flags["beam_width"]
+                beam.Width1 = flags["beam_width"]
+                beam.TextureLength = flags["beam_length"]
+                beam.TextureSpeed = flags["beam_speed"]
+                beam.Texture = tracers_ids[flags["beam_texture"]]
+                beam.CurveSize0 = flags["beam_curve0"]
+                beam.CurveSize1 = flags["beam_curve1"]
+                
+                debris:AddItem(beam_part, flags["beam_lifetime"])
+            end)  
+        -- 
+
+        -- world visuals 
+            local lighting_save = visuals.lighting_save 
+
+            visuals.update_world = function() 
+                if flags["ambient"] then 
+                    lighting.Ambient = flags["outdoor_ambience"].Color 
+                    lighting.OutdoorAmbient = flags["indoor_ambience"].Color 
+                else 
+                    lighting.Ambient = lighting_save["Ambient"]
+                    lighting.OutdoorAmbient = lighting_save["OutdoorAmbient"]
+                end 
+            
+                if flags["fog"] then 
+                    lighting.FogColor = flags["fog_color"].Color 
+                    lighting.FogEnd = flags["fog_end"] 
+                    lighting.FogStart = flags["fog_start"] 
+                else 
+                    lighting.FogColor = lighting_save["FogColor"]
+                    lighting.FogEnd = lighting_save["FogEnd"]
+                    lighting.FogStart = lighting_save["FogStart"]
+                end 
+            
+                local color_correction_effect = lighting:FindFirstChild("ColorCorrection")
+                color_correction_effect.Enabled = flags["color_correction"]; 
+                color_correction_effect.Saturation = flags["correction_saturation"]; 
+                color_correction_effect.Contrast = flags["correction_contrast"]; 
+                color_correction_effect.Brightness = flags["correction_brightness"];
+                
+                if flags["correction_tint"] then 
+                    color_correction_effect.TintColor = flags["correction_tint"].Color; 
+                end 
+            
+                if flags["atmosphere"] then 
+                    atmosphere_parent.Parent = lighting 
+                    atmosphere_parent.Color = flags["atmosphere_ambience"].Color
+                    atmosphere_parent.Decay = flags["atmosphere_decay"].Color
+                    atmosphere_parent.Density = flags["density"]
+                    atmosphere_parent.Haze = flags["haze"]
+                    atmosphere_parent.Glare = flags["glare"]
+                else 
+                    atmosphere_parent.Parent = coregui
+                end 
+            
+                if flags["bloom"] then 
+                    bloom_parent.Intensity = flags["bloom_intensity"]
+                    bloom_parent.Size = flags["bloom_size"]
+                    bloom_parent.Threshold = flags["bloom_threshold"]
+                else 
+                    bloom_parent.Intensity = .8
+                    bloom_parent.Size = 24
+                    bloom_parent.Threshold = 2 
+                end 
+            end   
+
+            visuals.update_threaded_lighting = LPH_NO_VIRTUALIZE(function() 
+
+            end) 
+        -- 
+
+        -- trails
+            local trails = nebula.visuals.trails
+
+            trails.refresh = LPH_NO_VIRTUALIZE(function() 
+                if trails.trail then 
+                    trails.trail:Destroy()
+                end 
+
+                for _, attachment in next, trails.attachments do 
+                    attachment:Destroy()
+                end 
+
+                trails.attachments = {}
+            end) 
+
+            trails.apply_trail = function(trail)  
+                trails.refresh() 
+
+                if trail == "None" then 
+                    return 
+                end
+
+                local AT2 = library:create("Attachment", {
+                    Parent = lp.Character.HumanoidRootPart,
+                    Name = "\0",
+                    CFrame = cfr(0, 0, 0.687942505, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+                })
+                table.insert(trails.attachments, AT2)
+                
+                local AT1 = library:create("Attachment", {
+                    Parent = lp.Character.HumanoidRootPart,
+                    Name = "\0",
+                    CFrame = cfr(0, 0, -0.677116394, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+                })
+                table.insert(trails.attachments, AT1)
+
+                if trail == "Bright" then   
+                    trails.trail = library:create("Trail", {
+                        Parent = lp.Character.HumanoidRootPart,
+                        Name = "\0",
+                        FaceCamera = true,
+                        WidthScale = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 1),
+                            NumberSequenceKeypoint.new(1, 0)
+                        },
+                        Transparency = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 0),
+                            NumberSequenceKeypoint.new(1, 0)
+                        },
+                        Attachment0 = AT1,
+                        Lifetime = 1,
+                        Brightness = 20,
+                        Texture = "rbxassetid://9234319472",
+                        Attachment1 = AT2
+                    })
+                elseif trail == "Dash" then
+                    trails.trail = library:create("Trail", {
+                        Parent = lp.Character.HumanoidRootPart,
+                        Name = "\0",
+                        FaceCamera = true,
+                        WidthScale = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 1),
+                            NumberSequenceKeypoint.new(1, 0)
+                        },
+                        Texture = "http://www.roblox.com/asset/?id=13703813488",
+                        Transparency = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 0),
+                            NumberSequenceKeypoint.new(1, 0)
+                        },
+                        Lifetime = 0.25,
+                        LightEmission = 1,
+                        Brightness = 20,
+                        Attachment0 = AT1,
+                        Attachment1 = AT2
+                    })
+                elseif trail == "Shadow" then
+                    trails.trail = library:create("Trail", {
+                        Parent = lp.Character.HumanoidRootPart,
+                        Name = "\0",
+                        FaceCamera = true,
+                        WidthScale = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 1),
+                            NumberSequenceKeypoint.new(1, 0)
+                        },
+                        Transparency = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 0),
+                            NumberSequenceKeypoint.new(1, 0)
+                        },
+                        Attachment0 = AT1,
+                        Lifetime = 1,
+                        Texture = "rbxassetid://9234319472",
+                        Attachment1 = AT2
+                    })
+                elseif trail == "Basic" then 
+                    trails.trail = library:create("Trail", {
+                        Parent = lp.Character.HumanoidRootPart,
+                        Name = "\0",
+                        FaceCamera = true,
+                        Color = ColorSequence.new{
+                            ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 168, 28)),
+                            ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 168, 28))
+                        },
+                        WidthScale = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 0.03999999910593033),
+                            NumberSequenceKeypoint.new(1, 0.03999999910593033)
+                        },
+                        MaxLength = 400,
+                        Transparency = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 0),
+                            NumberSequenceKeypoint.new(0.001, 0.5062500238418579),
+                            NumberSequenceKeypoint.new(1, 0.512499988079071)
+                        },
+                        Attachment0 = AT1,
+                        LightEmission = 1,
+                        MinLength = 0,
+                        TextureMode = Enum.TextureMode.Static,
+                        Attachment1 = AT2
+                    })
+                end 
+            end
+        -- 
+
+        -- localplayer 
+            visuals.local_player = {} 
+            local local_player = visuals.local_player 
+
+            local local_highlight = Instance.new("Highlight", coregui) do 
+                local_highlight.Enabled = false 
+                local_highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop 
+                local_highlight.FillColor = rgb(0,0,0) 
+                local_highlight.OutlineColor = rgb(255, 255, 255) 
+                local_highlight.OutlineTransparency = 0.5 
+                local_highlight.FillTransparency = 0
+                local_highlight.Adornee = lp.Character
+            end 
+
+            lp.CharacterAdded:Connect(function()
+                local_highlight.Adornee = lp.Character
+                
+                if flags["no_jump_cooldown"] then 
+                    lp.Character.Humanoid.UseJumpPower = false 
+                end 
+
+                task.wait(1)
+
+                local_player.update_hats()
+                local_player.update_visuals()
+
+                lp.Character.ChildAdded:Connect(function(child)
+                    if child:IsA("Tool") and child:FindFirstChild("Ammo") and child:FindFirstChild("GunScript") then 
+                        library:connection(child.Ammo:GetPropertyChangedSignal("Value"), function()
+                            nebula.misc.auto_reload()
+                        end)
+                    end 
+                    
+                    local_player.update_gun()
+                end)
+
+                if flags["local_trail"] ~= "None" then 
+                    trails.apply_trail(flags["local_trail"])
+                end 
+            end)
+
+            lp.Character.ChildAdded:Connect(function(child)
+                if child:IsA("Tool") and child:FindFirstChild("Ammo") and child:FindFirstChild("GunScript") then 
+                    library:connection(child.Ammo:GetPropertyChangedSignal("Value"), function()
+                        nebula.misc.auto_reload() 
+                    end)
+                end 
+
+                local_player.update_gun()
+            end)
+
+            local char_save = {}; 
+
+            --for _, v in next, lp.Character:GetChildren() do 
+            --    if v:IsA("BasePart") and v.Name ~= "Handle" and v.Name ~= "HumanoidRootPart" then 
+            --        char_save[v.Name] = {v.Color, v.TextureId}
+            --    elseif v:IsA("Accessory") then 
+            --        char_save[v.Name] = v.Handle.TextureId
+            --    end 
+            --end 
+
+            local_player.update_hats = LPH_NO_VIRTUALIZE(function() 
+
+            end) 
+
+            local_player.update_visuals = LPH_NO_VIRTUALIZE(function() 
+            
+                if flags["character_highlight"] and not flags["gun_highlight"] then
+                    local_highlight.Enabled = true 
+                    local_highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop 
+                    local_highlight.FillColor = flags["character_fill"].Color 
+                    local_highlight.OutlineColor = flags["character_outline"].Color 
+                    local_highlight.OutlineTransparency = 1 - flags["character_outline"].Transparency 
+                    local_highlight.FillTransparency = 1 - flags["character_fill"].Transparency
+                    local_highlight.Adornee = lp.Character 
+                else 
+                    local_highlight.Enabled = false 
+                end
+            end) 
+
+            local old_gun_textures = {}; 
+
+            local_player.update_gun = LPH_NO_VIRTUALIZE(function() 
+                local tool = lp.Character:FindFirstChildWhichIsA("Tool") 
+
+                if not flags["gun_chams"] then 
+                    for _, v in next, lp.Character:GetChildren() do 
+                        if v:IsA("Tool") and v.Default then 
+                            v.Default.Material = Enum.Material.Plastic
 
 
+                        end 
+                    end 
+
+                    for _, v in next, lp.Backpack:GetChildren() do 
+                        if v.Name ~= "[Wallet]" and v:IsA("Tool") and v:FindFirstChild("Default") then 
+                            v.Default.Material = Enum.Material.Plastic
 
 
+                        end 
+                    end 
+                        
+                    return 
+                end 
+
+                if tool and tool.Default then 
+                    tool.Default.Color = flags["gun_color"].Color
+                    tool.Default.Transparency = 1 - flags["gun_color"].Transparency
+                    tool.Default.Material = Enum.Material[flags["gun_material"]]
 
 
-local Avatar = Settings:Section({Name = "Character", Side = "Right",  Zindex = 2})
+                end 
 
+                if flags["gun_highlight"] then 
+                    local_highlight.Enabled = true 
+                    local_highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop 
+                    local_highlight.FillColor = flags["character_fill"].Color 
+                    local_highlight.OutlineColor = flags["character_outline"].Color 
+                    local_highlight.OutlineTransparency = 1 - flags["character_outline"].Transparency 
+                    local_highlight.FillTransparency = 1 - flags["character_fill"].Transparency
+                    local_highlight.Adornee = tool
+                elseif flags["gun_highlight"] == false and flags["character_highlight"] == false then 
+                    local_highlight.Enabled = false 
+                end 
+            end) 
+        -- 
+    -- 
 
-local OutfitList = Avatar:List({
-    Name = "Outfits",
-    Flag = "OutfitSelection",
-    Options = {}
-})
+    -- misc 
+        local misc = nebula.misc 
+        
+        misc.speed = LPH_NO_VIRTUALIZE(function() 
+            if flags["cframe_speed"] and flags["cframe_speed_bind"].active then 
+                local char = lp.Character 
+                local move_dir = char.Humanoid.MoveDirection
+                
+                char.HumanoidRootPart.CFrame += (move_dir * (flags["speed_increments"] / 20))
+            end 
+        end) 
 
-local CurrentOutfits = {}
+        misc.auto_armor = LPH_NO_VIRTUALIZE(function() 
+            if not flags["auto_armor"] then return end 
 
+            if lp.Character.BodyEffects.Armor.Value < 100 then
+                misc.buying_armor = lp.Character.HumanoidRootPart.CFrame
+                lp.Character.HumanoidRootPart.CFrame = ws.Ignored.Shop["[High-Medium Armor] - $2440"].Head.CFrame
+                fireclickdetector(ws.Ignored.Shop["[High-Medium Armor] - $2440"].ClickDetector)
+                run.RenderStepped:Wait()
+                lp.Character.HumanoidRootPart.CFrame = misc.buying_armor 
+            else 
+                misc.buying_armor = nil
+            end 
+        end) 
 
+        misc.no_slow = LPH_NO_VIRTUALIZE(function()
+            if not flags["no_slow"] then 
+                return 
+            end 
 
-local function UpdateOutfitList()
+            local body_effects = lp.Character.BodyEffects
+            
+            if body_effects then 
+                if body_effects.Reload.Value then
+                    body_effects.Reload.Value = false
+                end
 
-    local Outfits = {}
-    local userId = Players.LocalPlayer.UserId
-    local url = "https://avatar.roblox.com/v1/users/" .. userId .. "/outfits"
+                local slowdown_factor = body_effects.Movement:FindFirstChild('NoJumping') 
+                    or body_effects.Movement:FindFirstChild('NoWalkSpeed') 
+                    or body_effects.Movement:FindFirstChild('ReduceWalk')
 
-    local success, response = pcall(function()
-        return HttpService:JSONDecode(game:HttpGet(url))
+                if slowdown_factor then
+                    slowdown_factor:Destroy()
+                end
+            end 
+        end)    
+
+        misc.auto_shoot = LPH_NO_VIRTUALIZE(function() 
+            if flags["auto_shoot"] then 
+                local handle = utility.get_tool_handle()
+                local gun = handle and handle.Parent 
+
+                if os.clock() - misc.auto_shoot_clock > flags["auto_shoot_delay"] / 1000 and gun then 
+                    misc.auto_shoot_clock = os.clock() 
+                    gun:Activate()
+                end 
+            end 
+        end) 
+
+        misc.edit_aspect_ratio = LPH_NO_VIRTUALIZE(function()
+            if flags["aspect_ratio"] then 
+                local X, Y, Z, R00, R01, R02, R10, R11, R12, R20, R21, R22 = camera.CFrame:GetComponents()
+                camera.CFrame = CFrame.new(X, Y, Z, R00  * flags['horizontal_aspect_ratio'], R01 * flags["vertical_aspect_ratio"], R02, R10, R11 * flags["vertical_aspect_ratio"], R12, R20 * flags['horizontal_aspect_ratio'], R21 * flags["vertical_aspect_ratio"], R22)
+            end 
+        end) 
+
+        misc.auto_jump = LPH_NO_VIRTUALIZE(function()
+            if flags["auto_jump"] then 
+                local hum = lp.Character.Humanoid 
+                
+                if hum:GetState() ~= Enum.HumanoidStateType.Freefall then 
+                    hum:ChangeState(Enum.HumanoidStateType.Jumping) 
+                end 
+            end 
+        end) 
+
+        misc.auto_reload = function() 
+            if not flags["auto_reload"] then 
+                return 
+            end 
+
+            local handle = utility.get_tool_handle()
+            local gun = handle and handle.Parent 
+            local ammo = gun:FindFirstChild("Ammo").Value 
+
+            if ammo <= 0 then 
+                local args = {
+                    [1] = "Reload",
+                    [2] = gun
+                }
+                
+                main_event(unpack(args))             
+            end 
+        end
+
+        misc.is_safe_unit = LPH_NO_VIRTUALIZE(function(unit)
+            if unit.Magnitude > 1e-8 then
+                return unit
+            end
+
+            return Vector3.zero
+        end)
+
+        misc.fly = function(delta) 
+            if flags["fly"] and flags["fly_bind"].active then 
+                local char = lp.Character
+                char.HumanoidRootPart.Velocity = Vector3.zero 
+
+                local x = 0 
+                local y = 0 
+                local z = 0 
+
+                if not nebula.typing_check then 
+                    if uis:IsKeyDown(Enum.KeyCode.W) then
+                        z -= 1
+                    end
+
+                    if uis:IsKeyDown(Enum.KeyCode.S) then
+                        z += 1
+                    end
+
+                    if uis:IsKeyDown(Enum.KeyCode.D) then
+                        x += 1
+                    end
+
+                    if uis:IsKeyDown(Enum.KeyCode.A) then
+                        x -= 1
+                    end
+
+                    if uis:IsKeyDown(Enum.KeyCode.Space) then
+                        y += 1
+                    end
+
+                    if uis:IsKeyDown(Enum.KeyCode.LeftShift) then
+                        y -= 1
+                    end
+                end 
+
+                local direction = misc.is_safe_unit(camera.CFrame:VectorToWorldSpace(vec3(x, 0, z)).Unit)
+                char.HumanoidRootPart.CFrame += (direction + vec3(0, y, 0)) * (flags["fly_increments"] / 10) * (delta * 60)
+            end 
+        end
+    -- 
+-- 
+
+-- documentation 
+    local window = library:window({name = os.date('nebula.tech - Beta - %b %d %Y'), size = dim2(0, 614, 0, 639)})
+    local watermark = library:watermark({default = os.date('nebula.tech - Beta - %b %d %Y - %H:%M:%S')})  
+
+    local Aiming = window:tab({name = "Aiming"})
+    local Rage = window:tab({name = "Rage"})
+    local Misc = window:tab({name = "Misc"})
+    local Visuals = window:tab({name = "Visuals"})
+    --local Players = window:tab({name = "Players"})
+    local Settings = window:tab({name = "Settings"})
+
+    -- Aiming
+        local column =  Aiming:column() 
+            column:section({name = "Target Selection"})
+                :toggle({name = "Enabled", flag = "target_selected", callback = function(bool)
+                    lp.Character.Humanoid.AutoRotate = true
+                    camera.CameraSubject = lp.Character.Humanoid
+                    bounding_box_fill.CFrame = cfr(9e9, 9e9, 9e9)
+                end})
+                :keybind({name = "Aiming", flag = "target_selected_bind", callback = function(bool)
+                    bounding_box_fill.CFrame = cfr(9e9, 9e9, 9e9)
+
+                    if flags["target_selected"] and flags["target_selected_bind"].active then 
+                        local distance = flags["target_selector_fov"] == 100 and math.huge or flags["target_selector_fov"]
+                        target_selection.update_target(distance)
+                    else 
+                        target = nil
+                        lp.Character.Humanoid.AutoRotate = true
+                        camera.CameraSubject = lp.Character.Humanoid
+                    end
+                end})
+                :toggle({name = "Auto Select", flag = "auto_select"})
+                :slider({name = "Delay", min = 0, max = 1000, default = 40, interval = 1, suffix = "ms", flag = "target_selector_refresh_time"})
+                :slider({name = "Fov", min = 0, max = 100, default = 100, interval = 1, suffix = "Â°", flag = "target_selector_fov"})
+                :dropdown({name = "Checks", flag = "target_selected_checks", items = {"Knocked", "ForceField"}, multi = true})
+                :toggle({name = "Look At", flag = "look_at", callback = function()
+                    lp.Character.Humanoid.AutoRotate = false 
+                end})
+                :toggle({name = "Spectate", flag = "spectate"})
+                :toggle({name = "Auto Stomp", flag = "target_auto_stomp"})
+                :toggle({name = "Tracer", flag = "snap_line"})
+                :colorpicker({name = "Tracer Inline", flag = "snap_line_color", color = Color3.fromHex("#7D0DC3"), callback = function(color, alpha) 
+                    snapline.Color = color 
+                    snapline.Transparency = alpha
+                end})
+                -- :colorpicker({flag = "Tracer Outline", color = Color3.fromHex("#000000"), callback = function(color, alpha) 
+                --     snapline_outline.Color = color 
+                --     snapline_outline.Transparency = alpha
+                -- end})
+                :slider({name = "Thickness", min = 1, max = 5, default = 1, interval = 1, suffix = "Â°", flag = "target_snap_line_thickness", callback = function(int)
+                    snapline.Thickness = int
+                end})
+                :toggle({name = "Bounding Box", flag = "target_bounding_box"})
+                :colorpicker({name = "Bounding Box Color", flag = "target_bounding_box_settings", color = Color3.fromHex("#000000"), callback = function(color, alpha) 
+                    bounding_box.Color3 = color 
+                    bounding_box.Transparency = 1 - alpha
+                end})
+                :toggle({name = "Fill", flag = "target_bounding_box_fill", callback = function(color, alpha) 
+                    bounding_box_fill.CFrame = cfr(9e9, 9e9, 9e9)
+                end})
+                :colorpicker({name = "Bounding Box Fill", flag = "bounding_box_fill_settings", color = hex("#7D0DC3"), callback = function(color, alpha) 
+                    bounding_box_fill.Color = color 
+                    bounding_box_fill.Transparency = 1 - alpha
+                end})
+                :dropdown({name = "Material", flag = "target_bounding_box_material", items = {"ForceField", "Neon", "Plastic"}, multi = false, callback = function(option) 
+                    bounding_box_fill.Material = Enum.Material[option] 
+                end})                
+        local column = Aiming:column()
+            column:section({name = "Silent Aim"})  
+                :toggle({name = "Enabled", flag = "silent_aim"})
+                :dropdown({name = "Prediction Type", flag = "silent_aim_velocity_type", items = {"Recalculation", "Velocity"}, multi = false})
+                :toggle({name = "Auto Prediction", flag = "silent_use_auto_prediction"})
+                :slider({min = 0, max = 500, default = 500, interval = 1, suffix = "Â°", flag = "silent_ping_factor"})
+                :dropdown({name = "Aim Bone", flag = "silent_aim_bone", items = {"Feet", "Hrp", "Arms", "Legs", "Torso", "Head"}, default = {"Hrp"}, multi = true})
+                :dropdown({name = "Air Bone", flag = "silent_aim_air_bone", items = {"Feet", "Hrp", "Arms", "Legs", "Torso", "Head"}, default = {"Feet"}, multi = true})
+                :textbox({name = "Manual Prediction", flag = "silent_manual_prediction"})
+            column:section({name = "Aim Assist"})  
+                :toggle({name = "Aim Assist", flag = "aim_assist"})
+                :slider({name = "Smoothing", min = 0, max = 1, default = 0.01, interval = 0.01, suffix = "Â°", flag = "smoothing_factor"})
+                :toggle({name = "Adjust For Jumping", flag = "adjust_for_jumping"})
+                :dropdown({name = "Air Part", items = {"Feet", "Hrp", "Arms", "Legs", "Torso", "Head"}, flag = "aim_assist_air_bone", multi = true})
+                :dropdown({name = "Hit Part", flag = "aim_assist_bone", items = {"Feet", "Hrp", "Arms", "Legs", "Torso", "Head"}, default = {"Torso"}, multi = true})
+                :dropdown({name = "Prediction Type", flag = "aim_assist_velocity_type", items = {"Velocity", "Recalculation"}, multi = false})
+                :toggle({name = "Auto Prediction", flag = "aim_assist_auto_prediction"})
+                :slider({name = "Ping Factor", min = 0, max = 1500, default = 1500, interval = 1, flag = "aim_assist_ping_factor"})
+                :textbox({name = "Manual Prediction", flag = "aim_assist_prediction"})
+    -- 
+
+    -- Rage
+        local column =  Rage:column() 
+            column:section({name = "Desync"})
+                :toggle({name = "Enabled", flag = "hrp_spoof", callback = function(Bool)
+                    if flags["hrp_spoof"] and flags["hrp_spoof_bind"].active then 
+                        desync.main_enabled = true 
+                    else 
+                        desync.main_enabled = false 
+                    end 
+                end})
+                :keybind({name = "Spoofer", flag = "hrp_spoof_bind", callback = function(Bool)
+                    if flags["hrp_spoof"] and flags["hrp_spoof_bind"].active then 
+                        desync.main_enabled = true 
+                    else 
+                        desync.main_enabled = false 
+                    end 
+                end})
+                :dropdown({name = "Position Preset", items = {"None", "Target Strafe"}, default = "None", flag = "desync_position_preset"})
+                :dropdown({name = "Rotation Preset", items = {"None", "Back", "Lay", "Shinji", "Jitter", "Spin", "Random"},  default = "None", flag = "desync_rotation_preset"})
+                :dropdown({name = "Mode", items = {"Always", "Standing Only", "Moving Only", "Target Only"}, default = "Always", flag = "desync_mode"})
+                :toggle({name = "Attach To Target", flag = "attach_to_target"}) 
+                :toggle({name = "X", flag = "custom_x_enabled"})
+                :slider({min = -100, max = 100, default = 0, interval = 1, suffix = "st", flag = "custom_x"})
+                :dropdown({name = "Type", default = "Normal", items = {"Normal", "Lerp", "Random"}, flag = "custom_x_type"})
+                :slider({name = "Lerp Speed", min = 0, max = 5, default = 0, interval = 0.05, suffix = "m/s", flag = "custom_x_lerp_speed"})
+                :toggle({name = "Y", flag = "custom_y_enabled"})
+                :slider({name = "Magnitude", min = -100, max = 100, default = 0, interval = 1, suffix = "st", flag = "custom_y"}) 
+                :dropdown({name = "Type", items = {"Normal", "Lerp", "Random"}, default = "Normal", flag = "custom_y_type"})
+                :slider({name = "Lerp Speed", min = 0, max = 5, default = 0, interval = 0.05, flag = "custom_y_lerp_speed"})
+                :toggle({name = "Z", flag = "custom_z_enabled"})
+                :slider({name = "Magnitude", min = -100, max = 100, default = 0, interval = 1, suffix = "st", flag = "custom_z"})
+                :dropdown({name = "Type", items = {"Normal", "Lerp", "Random"}, default = "Normal", flag = "custom_z_type"})
+                :slider({name = "Lerp Speed", min = 0, max = 5, default = 0, interval = 0.05, suffix = "m/s", flag = "custom_z_lerp_speed"})
+                :toggle({name = "Custom Rotation", flag = "custom_rotation"})
+                :slider({name = "Pitch", min = -180, max = 180, default = 0, interval = 1, suffix = "Â°", flag = "pitch"})
+                :slider({name = "Yaw", min = -180, max = 180, default = 0, interval = 1, suffix = "Â°", flag = "yaw"})
+                :slider({name = "Roll", min = -180, max = 180, default = 0, interval = 1, suffix = "Â°", flag = "roll"})
+                :slider({name = "Spin & Strafe Speed", min = -100, max = 100, default = 0, interval = 1, suffix = "st", flag = "desync_strafe_speed"})
+        local column =  Rage:column() 
+                column:section({name = "Other"})
+                    :toggle({name = "Visualize Hrp Spoofer", flag = "desync_visualize", callback = desync.update_cham_properties, default = true, default = true})
+                    :colorpicker({name = "Visualizer Color", flag = "desync_part_color", color = rgb(255, 0, 0), callback = desync.update_cham_properties})
+                    :toggle({name = "Highlight", flag = "desync_cham_highlight", default = true, callback = desync.update_cham_properties})
+                    :colorpicker({name = "Fill Color", flag = "desync_visualizer_fill", color = rgb(0, 255, 255), alpha = 0.5, callback = desync.update_cham_properties})
+                    :colorpicker({name = "Outline Color", flag = "desync_visualizer_outline", color = rgb(0, 0, 0), callback = desync.update_cham_properties})
+                    :dropdown({name = "Material", flag = "desync_cham_material", items = {"ForceField", "Neon", "Plastic", "Glass"}, default = "ForceField", callback = desync.update_cham_properties})
+                    :slider({name = "Reflectance", flag = 'desync_cham_reflectance', min = 0, max = 1, Default = 0, interval = 0.01, Suffix = "", callback = desync.update_cham_properties})
+                    :dropdown({name = "Texture", flag = "desync_material_texture", items = {"Web", "Swirl", "Checkers", "CandyCane", "Dots", "Scanning", "Bubbles", "Normal", "Shield", "Water", "None"}, default = "None", callback = desync.update_cham_properties})
+                    :toggle({name = "Destroy Cheaters", flag = "destroy_cheaters", callback = function(Bool)
+                        if flags["destroy_cheaters"] and flags["destroy_cheaters_bind"].active then 
+                            desync.dc_enabled = true 
+                        else 
+                            desync.dc_enabled = false 
+                        end 
+                    end})
+                    :keybind({name = "Destroy Cheaters", flag = "destroy_cheaters_bind", callback = function(Bool)
+                        if flags["destroy_cheaters"] and flags["destroy_cheaters_bind"].active then 
+                            desync.dc_enabled = true 
+                        else 
+                            desync.dc_enabled = false 
+                        end 
+                    end})
+                    :slider({name = "Interval", min = 1, max = 200, default = 0, interval = 1, suffix = "ms", flag = "destroy_cheaters_interval"})
+                    :dropdown({name = "Type", items = {"Nan", "High Magnitude", "Line Rendering Zone", "Randomize"}, default = "Randomize", flag = "destroy_cheaters_type"})
+                    :slider({name = "Minimum Health", min = 0, max = 100, default = 0, interval = 1, flag = "destroy_cheaters_min_health"})
+    -- 
+
+    -- Misc
+        local column = Misc:column()
+            column:section({name = "Combat"})
+                :toggle({name = "Speed", flag = "cframe_speed"})
+                :keybind({name = "Speed", flag = "cframe_speed_bind", mode = "toggle"})
+                :slider({name = "Amount", flag = 'speed_increments', min = 0, max = 100, default = 10, interval = 1})
+                :toggle({name = "Auto Jump", flag = "auto_jump"})
+                :toggle({name = "Fly", flag = "fly"})
+                :keybind({name = "Fly", flag = "fly_bind", mode = "toggle"})
+                :slider({name = "Amount", flag = 'fly_increments', min = 0, max = 100, default = 20, interval = 1})
+                :toggle({name = "No Slow", flag = "no_slow"})
+                :toggle({name = "No Jump Cooldown", flag = "no_jump_cooldown", callback = function(bool)
+                    lp.Character.Humanoid.UseJumpPower = not bool
+                end})
+                :toggle({name = "Auto Reload", flag = "auto_reload"})
+                :toggle({name = "Auto Shoot", flag = "auto_shoot", callback = function(bool)
+                    if not bool then 
+                        local handle = utility.get_tool_handle()
+                        local gun = handle and handle.Parent 
+                        
+                        if gun then 
+                            gun:Deactivate()
+                        end 
+                    end 
+                end})
+                :slider({name = "Delay", flag = 'auto_shoot_delay', min = 0, max = 1000, default = 50, interval = 1, suffix = "ms"})
+                :toggle({name = "Auto Armor", flag = "auto_armor"})
+                :toggle({name = "Anti Void Kill", flag = "anti_void_kill", callback = function(bool)
+                    ws.FallenPartsDestroyHeight = bool and -50000 or -500
+                end})
+                -- :toggle({name = "Anti Stomp", flag = "anti_stomp"})
+                :toggle({name = "Infinite Zoom", flag = "infinite_zoom", callback = function(bool)
+                    lp.CameraMaxZoomDistance = bool and 9e9 or 30
+                end})
+                :toggle({name = "Show Chat", flag = "show_chat", callback = function(bool)
+                    lp.PlayerGui.Chat.Frame.ChatChannelParentFrame.Visible = bool 
+                end})
+        local column = Misc:column()    
+            column:section({name = "Other"})
+                :toggle({name = "Hit Detection", flag = "hit_detection"})
+                :toggle({name = "Hit Chams", flag = "hit_cham"})
+                :colorpicker({color = rgb(255, 255, 255), flag = "hit_chams"})
+                :toggle({name = "Highlight", flag = "hit_cham_highlight", callback = function(bool)
+                    hit_cham_highlight.Enabled = bool 
+                end})
+                :colorpicker({name = "fill", color = rgb(255, 255, 255), flag = "hit_chams_fill", callback = function(color, alpha)
+                    hit_cham_highlight.FillTransparency = 1 - alpha
+                    hit_cham_highlight.FillColor = color  
+                end})
+                :colorpicker({name = "outline", color = rgb(255, 255, 255), flag = "hit_chams_outline", callback = function(color, alpha)
+                    hit_cham_highlight.OutlineTransparency = alpha
+                    hit_cham_highlight.OutlineColor = color  
+                end})
+                :dropdown({name = "Material", flag = "hit_material", items = {"ForceField", "Neon", "Plastic"}, default = "ForceField"})
+                :slider({name = "Reflectance", flag = 'hit_reflectance', min = 0, max = 1, default = 0, interval = 0.01})
+                :dropdown({name = "Texture", flag = "hit_texture", items = {"Web", "Swirl", "Checkers", "CandyCane", "Dots", "Scanning", "Bubbles", "Normal", "Shield", "Water", "None"}, default = "None", })
+                :dropdown({name = "Hit Effect", flag = "hit_effect", items = {"None", "Detailed Slash", "Electric", "Electric 2", "Nova", "Slash", "Sparkle", "Splash"}, default = "None"})
+                :colorpicker({color = rgb(255, 255, 255), flag = "hit_effect_settings"})
+                -- :toggle({name = "Hit Logs", flag = "hit_logs"})
+                :colorpicker({color = rgb(255, 255, 255), flag = "hit_logs_color"})
+                --:toggle({name = "Hit Marker", flag = "hit_marker", })
+                --:colorpicker({color = rgb(255, 255, 255), flag = "hit_marker_color"})
+                :toggle({name = "3D Hit Marker", flag = "3d_hit_marker"})
+                :colorpicker({color = rgb(255, 255, 255), flag = "3d_hit_markers"})
+                :toggle({name = "Health Marker", flag = "health_indicator", })
+                :colorpicker({color = rgb(255, 255, 255), flag = "health_indicator_color"})
+                :slider({name = "Lifetime", flag = 'on_hit_lifetime', min = 0, max = 10, default = 2, interval = 0.05, suffix = "s"})
+                :toggle({name = "Hit Sound", flag = "hit_sound"})
+                :slider({name = "Volume", flag = 'hit_sound_volume', min = 0, max = 10, default = 1, interval = 0.05, callback = function(float)
+                    hit_sound_item.Volume = float 
+                end})
+                :slider({name = "Pitch", flag = 'hit_sound_pitch', min = 0, max = 10, default = 1, interval = 0.05, callback = function(float)
+                    hit_sound_pitch.Octave = float 
+                end})
+                :dropdown({name = "Hit Sound", flag = "Hit Sound", items = sounds, scrolling = true, default = "1nn.mp3", callback = function(option)
+                    pcall(function()
+                        hit_sound_item.SoundId = getcustomasset(library.directory .. "/sounds/" .. option)
+                    end)
+                end})
+                -- :toggle({name = "Shit Talk", flag = "shit_talk"})
+                -- :slider({name = "Delay", flag = 'shit_talk_delay', min = 0, max = 1, default = 0, interval = 0.01, suffix = "s"})
+                -- :label({name = "GOTO NEBULA DIRECTORY TO EDIT"})
+                :toggle({name = "Aspect Ratio", flag = "aspect_ratio"})
+                :slider({name = "Horizontal", flag = 'horizontal_aspect_ratio', min = 0, max = 1, default = 1, interval = 0.01})
+                :slider({name = "Vertical", flag = 'vertical_aspect_ratio', min = 0, max = 1, default = 1, interval = 0.01})  
+    --  
+
+    -- Visuals
+        local column =  Visuals:column() 
+            column:section({name = "Esp"})
+                :toggle({name = "Enabled", flag = "esp_enabled", callback = function(bool)
+                    esp_holder.Enabled = bool
+                end})
+                :toggle({name = "Names", flag = "show_names"})
+                :colorpicker({color = rgb(255, 255, 255), flag = "show_names_color"})
+                -- :toggle({name = "Distance", flag = "show_distance"})
+                :colorpicker({color = rgb(255, 255, 255), flag = "show_distance_color"})
+                :toggle({name = "Weapon", flag = "gun_text"})
+                :colorpicker({color = rgb(255, 255, 255), flag = "show_weapon_color"})
+                :toggle({name = "Bounding Boxes", flag = "bounding_box"})
+                :colorpicker({name = "Fill Color", color = rgb(255, 255, 255), flag = "bounding_box_color1"})
+                :toggle({name = "Box Fill", flag = "filled_box"})
+                :colorpicker({name = "High Contrast", color = rgb(0, 0, 0), flag = "filled_box_color1"})
+                :colorpicker({name = "Low Contrast", color = rgb(255, 255, 255), flag = "filled_box_color2"})
+                :toggle({name = "Animation", flag = "filled_box_animation"})
+                :slider({name = "Animation Speed", flag = 'filled_box_speed', min = -180, max = 180, default = 0, interval = 1, suffix = ""})
+                :slider({name = "Custom Rotation", flag = 'filled_box_rotation', min = -180, max = 180, default = 0, interval = 1, suffix = ""})
+                :dropdown({name = "Type", flag = "bounding_box_type", items = {"Corner", "Bounding"}, default = "Bounding"})
+                :toggle({name = "Healthbar", flag = "health_bar"})        
+                :colorpicker({color = rgb(0,255,0), flag = "health_bar_high"})
+                :colorpicker({color = rgb(255,0,0), flag = "health_bar_low"})
+                :toggle({name = "Health Number", flag = "health_number"})
+                :toggle({name = "Armor Bar", flag = "armor_bar"})    
+                :colorpicker({color = rgb(0,0,255), flag = "armor_bar_color"})
+                :toggle({name = "Number", flag = "armor_bar_number"})
+                :toggle({name = "Reload Bar", flag = "reload_bar"})    
+                :colorpicker({color = rgb(0,255,255), flag = "reload_bar_color1"})
+                :toggle({name = "Number", flag = "reload_bar_number"})
+                :toggle({name = "Icons", flag = "gun_icons"})
+                :colorpicker({name = "Gun Images Color", color = rgb(255,255,255), flag = "gun_icons_color"})
+                :toggle({name = "Chams", callback = function(bool)
+                    __cham__.Enabled = bool
+                end})
+                :colorpicker({name = "Chams Fill", color = rgb(102, 60, 153), alpha = 0.5, flag = "chams_fill", callback = function(color, alpha)
+                    __cham__.FillColor = color
+                    __cham__.FillTransparency = 1 - alpha
+                end})
+                :colorpicker({name = "Chams Outline", color = rgb(0, 0, 0), alpha = 1, flag = "chams_outline", callback = function(color, alpha)
+                    __cham__.OutlineColor = color
+                    __cham__.OutlineTransparency = 1 - alpha
+                end})
+            column:section({name = "Effects"})
+                :toggle({name = "Character Chams", flag = "character_chams", callback = local_player.update_visuals})
+                :colorpicker({color = rgb(255, 255, 255), flag = "character_chams_color",  callback = local_player.update_visuals})
+                :dropdown({name = "Texture", flag = "localplayer_texture", items = {"Web", "Swirl", "Checkers", "CandyCane", "Dots", "Scanning", "Bubbles", "Normal", "Shield", "Water", "None"}, default = "None",  callback = local_player.update_visuals})
+                :toggle({name = "Highlight", flag = "character_highlight"})
+                :colorpicker({color = rgb(102, 60, 153), alpha = 0.5, flag = "character_fill",  callback = local_player.update_visuals})
+                :colorpicker({color = rgb(0, 0, 0), alpha = 1, flag = "character_outline",  callback = local_player.update_visuals})
+                :toggle({name = "Accessory Chams", flag = "accessory_chams",  callback = local_player.update_hats})
+                :colorpicker({color = rgb(255, 255, 255), flag = "accessory_chams_color",  callback = local_player.update_hats})
+                :toggle({name = "Gun Chams", flag = "gun_chams", callback = local_player.update_gun})
+                :colorpicker({color = rgb(255, 255, 255), flag = "gun_color",  callback = local_player.update_gun})
+                :dropdown({name = "Material", flag = "gun_material", items = {"ForceField", "Neon", "Plastic"}, default = "ForceField",  callback = local_player.update_gun})
+                :slider({name = "Reflectance", flag = 'gun_reflectance', Min = 0, Max = 1, default = 0, interval = 0.01, suffix = "",  callback = local_player.update_gun})
+                :dropdown({name = "Texture", flag = "gun_texture", items = {"Web", "Swirl", "Checkers", "CandyCane", "Dots", "Scanning", "Bubbles", "Normal", "Shield", "Water", "None"}, flag = "gun_texture", default = "None",  callback = local_player.update_gun})
+                :toggle({name = "Only Highlight Gun", flag = "gun_highlight",  callback = local_player.update_gun})
+                :dropdown({name = "Trail", flag = "local_trail", items = {"None", "Basic", "Bright", "Shadow", "Dash"}, default = "None", callback = trails.apply_trail})
+
+        local column =  Visuals:column() 
+            column:section({name = "World"})
+                -- :label({name = "oops forgor :3 >_<"})
+                :toggle({name = "Ambience", flag = "ambient", callback = visuals.update_world})
+                :colorpicker({color = rgb(255, 255, 255), flag = "outdoor_ambience", callback = visuals.update_world})
+                :colorpicker({color = rgb(255, 255, 255), flag = "indoor_ambience", callback = visuals.update_world})
+                :toggle({name = "Force Time Of Day", flag = "force_day", callback = visuals.update_world})
+                :slider({flag = 'time_of_day', min = 0, max = 24, default = 12, interval = 1, suffix = "hr", callback = visuals.update_world})
+                :toggle({name = "Fog", flag = "fog", callback = visuals.update_world})
+                :colorpicker({color = rgb(255, 255, 255), flag = "fog_color", callback = visuals.update_world})
+                :slider({name = "Start", flag = 'fog_start', min = 0, max = 5000, default = 0, interval = 0.01, suffix = "st", callback = visuals.update_world})
+                :slider({name = "End", flag = 'fog_end', min = 0, max = 5000, default = 1500, interval = 0.01, suffix = "st", callback = visuals.update_world})
+                :toggle({name = "Color Correction", flag = "color_correction", callback = visuals.update_world})
+                :toggle({name = "Tint", flag = "tint", callback = visuals.update_world})
+                :colorpicker({color = rgb(255, 255, 255), flag = "correction_tint", callback = visuals.update_world})
+                :slider({name = "Saturation", flag = 'correction_saturation', min = -2, max = 2, default = 0, interval = 0.01, callback = visuals.update_world})
+                :slider({name = "Contrast", flag = 'correction_contrast', min = -1, max = 1, default = 0, interval = 0.01, callback = visuals.update_world})
+                :slider({name = "Brightness", flag = 'correction_brightness', min = 0, max = 1, default = 0, interval = 0.01, callback = visuals.update_world})
+                :toggle({name = "Atmosphere", flag = "atmosphere", callback = visuals.update_world})
+                :colorpicker({name = "Atmospheric Ambience", color = rgb(255, 255, 255), flag = "atmosphere_ambience", callback = visuals.update_world})
+                :colorpicker({name = "Atmospheric Decay", color = rgb(255, 255, 255), flag = "atmosphere_decay", callback = visuals.update_world})
+                :slider({name = "Atmosphere Glare", flag = 'glare', min = 0, max = 1, default = 0, interval = 0.01, callback = visuals.update_world})
+                :slider({name = "Atmosphere Haze", flag = 'haze', min = 0, max = 1, default = 0, interval = 0.01, callback = visuals.update_world})
+                :slider({name = "Atmosphere Density", flag = 'density', min = 0, max = 1, default = 0, interval = 0.01, callback = visuals.update_world})
+                :toggle({name = "Bloom", flag = "bloom", callback = visuals.update_world})
+                :slider({name = "Threshold", flag = 'bloom_threshold', min = 0, max = 1, default = 0.3, interval = 0.01, callback = visuals.update_world})
+                :slider({name = "Size", flag = 'bloom_size', min = 0, max = 1000, default = 1000, interval = 1, callback = visuals.update_world})
+                :slider({name = "Intensity", flag = 'bloom_intensity', min = 0, max = 1000, default = 1, interval = 1, callback = visuals.update_world})
+                :toggle({name = "Bullet Tracers", flag = "beam_enabled", callback = visuals.update_world})
+                :colorpicker({color = rgb(255, 255, 255), flag = "beam_settings0", callback = visuals.update_world})
+                :colorpicker({color = rgb(255, 255, 255), flag = "beam_settings1", callback = visuals.update_world})
+                :slider({name = "Lifetime", flag = "beam_lifetime", min = 0, max = 10, default = 5, interval = 0.01, suffix = "s"})
+                :slider({name = "Width", flag = "beam_width", min = 0, max = 10, default = 1, interval = 0.01, suffix = "studs"})
+                :slider({name = "Brightness", flag = "beam_brightness", min = 0, max = 10, default = 1, interval = 0.01})
+                :slider({name = "Light Emission", flag = "beam_emission", min = 0, max = 10, default = 1, interval = 0.01})
+                :slider({name = "Light Influence", flag = "beam_influence", min = 0, max = 10, default = 1, interval = 0.01})
+                :slider({name = "Texture Speed", flag = "beam_speed", min = 0, max = 10, default = 0.5, interval = 0.01})
+                :slider({name = "Texture Length", flag = "beam_length", min = 0, max = 10, default = 2, interval = 0.01})
+                :slider({name = "Start Curve", flag = "beam_curve0", min = 0, max = 10, default = 0.5, interval = 0.01})
+                :slider({name = "End Curve", flag = "beam_curve1", min = 0, max = 10, default = 0.5, interval = 0.01})
+                :slider({name = "Segments", flag = "beam_segments", min = 0, max = 100, default = 5, interval = 1})
+                :toggle({name = "Face Camera", flag = "beam_face_camera", default = true})
+                :dropdown({name = "Texture", flag = "beam_texture", items = {"Double Helix", "Electric", "Electric + Glow", "Fade", "Pulsate", "Red Lazer", "Smoke", "Warp", "1", "2", "3"}, default = "Double Helix"})
+    --
+
+    -- -- Players
+    --     local column = Players:column()
+    --         column:section({name = "Options"})
+    --             :playerlist({})
+    --             :toggle({name = "Auto Stomp"})
+    --             :toggle({name = "Auto Grab"})
+    --             :button_holder()
+    --             :button({name = "Set Priority"})
+    --             :button({name = "Set Friendly"})
+    --             :button_holder()
+    --             :button({name = "Set Friend"})
+    --             :button({name = "Set Enemy"})
+    -- -- 
+
+    -- Settings
+        local column = Settings:column()
+            local section = column:section({name = "Options"})
+                local old_config = library:get_config()
+                _, config_holder = section:list({flag = "config_name_list"})
+                section:textbox({flag = "config_name_text_box"})
+                section:button_holder({})
+                section:button({name = "Create", callback = function()
+                    writefile(library.directory .. "/configs/" .. flags["config_name_text_box"] .. ".cfg", library:get_config())
+                    library:config_list_update()
+                end})
+                section:button({name = "Delete", callback = function()
+                    delfile(library.directory .. "/configs/" .. flags["config_name_list"] .. ".cfg")
+                    library:config_list_update()
+                end})
+                section:button_holder({})
+                section:button({name = "Load", callback = function()
+                    library:load_config(readfile(library.directory .. "/configs/" .. flags["config_name_list"] .. ".cfg"))
+                end})
+                section:button({name = "Save", callback = function()
+                    writefile(library.directory .. "/configs/" .. flags["config_name_text_box"] .. ".cfg", library:get_config())
+                    library:config_list_update()
+                end})
+                section:button_holder({})
+                section:button({name = "Unload Config", callback = function()
+                    library:load_config(old_config)
+                end})
+                section:button({name = "Unload Menu", callback = function()
+                    for _, gui in next, library.guis do 
+                        gui:Destroy() 
+                    end 
+
+                    for _, connection in next, library.connections do 
+                        connection:Disconnect() 
+                    end     
+
+                    for _, instance in next, nebula.instances do 
+                        instance:Destroy() 
+                    end 
+
+                    for _, drawing in next, nebula.drawings do 
+                        drawing:Remove()
+                    end 
+                end})
+        local column = Settings:column()
+            column:section({name = "Theme"})
+                :label({name = "Accent"})
+                :colorpicker({name = "Accent", color = themes.preset.accent, flag = "accent", callback = function(color, alpha)
+                    library:update_theme("accent", color)
+                end})
+                :label({name = "Contrast"})
+                :colorpicker({name = "Low", color = themes.preset.low_contrast, flag = "low_contrast", callback = function(color)
+                    if (flags["high_contrast"] and flags["low_contrast"]) then 
+                        library:update_theme("contrast", rgbseq{
+                            rgbkey(0, flags["low_contrast"].Color),
+                            rgbkey(1, flags["high_contrast"].Color)
+                        })
+                    end 
+                end})
+                :colorpicker({name = "High", color = themes.preset.high_contrast, flag = "high_contrast", callback = function(color)
+                    library:update_theme("contrast", rgbseq{
+                        rgbkey(0, flags["low_contrast"].Color),
+                        rgbkey(1, flags["high_contrast"].Color)
+                    })
+                end})
+                :label({name = "Inline"})
+                :colorpicker({name = "Inline", color = themes.preset.inline, callback = function(color, alpha)
+                    library:update_theme("inline", color)
+                end})
+                :label({name = "Outline"})
+                :colorpicker({name = "Outline", color = themes.preset.outline, callback = function(color, alpha)
+                    library:update_theme("outline", color)
+                end})
+                :label({name = "Text Color"})
+                :colorpicker({name = "Main", color = themes.preset.text, callback = function(color, alpha)
+                    library:update_theme("text", color)
+                end})
+                :colorpicker({name = "Outline", color = themes.preset.text_outline, callback = function(color, alpha)
+                    library:update_theme("text_outline", color)
+                end})
+                :label({name = "Glow"})
+                :colorpicker({name = "Glow", color = themes.preset.glow, callback = function(color, alpha)
+                    library:update_theme("glow", color)
+                end})
+                :label({name = "UI Bind"})
+                :keybind({callback = function(bool)
+                    library.frame.Enabled = bool
+                end})
+                :toggle({name = "Keybind List", flag = "keybind_list", callback = function(bool)
+                    library.keybind_list_frame.Visible = bool
+                end})
+                
+    -- 
+
+    Aiming.open_tab() 
+
+    task.spawn(function()
+        while task.wait(1) do 
+            watermark.change_text(os.date('nebula.tech - Beta - %b %d %Y - %H:%M:%S'))
+        end 
+    end) 
+-- 
+
+-- looped code / hooks
+    library:connection(run.heartbeat, LPH_NO_VIRTUALIZE(function(delta)
+        nebula.delta = delta
+        nebula.radians += flags["desync_strafe_speed"]
+
+        -- aimbot frame work 
+            target_selection.think()
+        -- 
+
+        -- desync frame work 
+            desync.think()
+
+            networking.think() -- network
+        -- 
+    end))
+
+    library:connection(uis.InputBegan, LPH_NO_VIRTUALIZE(function(_, game_processed_event)
+        nebula.typing_check = game_processed_event
+    end))
+
+    library:connection(run.heartbeat, LPH_NO_VIRTUALIZE(function(delta)
+        misc.speed() 
+
+        misc.auto_jump()
+        
+        misc.fly(delta) 
+
+        misc.auto_shoot()
+
+        misc.auto_armor()
+
+        misc.no_slow() 
+    end))
+    
+    library:connection(ws.Ignored.Siren.Radius.ChildAdded, LPH_NO_VIRTUALIZE(function(instance)
+        if instance.Name == "explosion" then return end 
+                
+        local gun_beam = instance:WaitForChild("GunBeam") 
+        local owner = instance:GetAttribute("OwnerCharacter")
+
+        if owner == lp.Name then 
+            hit_detection.origin = gun_beam.Attachment0.WorldCFrame.p
+            hit_detection.end_point = gun_beam.Attachment1.WorldCFrame.p
+            
+            if flags["beam_enabled"] then 
+                gun_beam.Transparency = numseq{
+                    numkey(0, 1),
+                    numkey(1, 1)
+                }
+                visuals.new_beam(hit_detection.origin, hit_detection.end_point)
+            end 
+
+            if flags["hit_detection"] then 
+                local player = hit_detection.detect_closest_health_change(hit_detection.end_point, 20)
+
+                if player then 
+                    hit_detection.current_player = player 
+
+                    hit_detection.init()
+                end 
+            end 
+        end 
+    end))
+
+    library:connection(run.RenderStepped, function()
+        hit_detection.update_data_table() 
+
+        misc.edit_aspect_ratio() 
     end)
 
-    if success and response and response.data then
-        for _, outfit in ipairs(response.data) do
-            if outfit.isEditable then
-                table.insert(Outfits, outfit.name)
-                CurrentOutfits[outfit.name] = outfit.id
-            end
-        end
-
-        if #Outfits ~= #OutfitList.Options or table.concat(Outfits) ~= table.concat(OutfitList.Options) then
-            OutfitList.Options = Outfits
-            if OutfitList.Refresh then
-                OutfitList:Refresh(Outfits)
-            end
-        end
-    end
-end
-
-local function EquipOutfit(outfitName)
-    local outfitId = CurrentOutfits[outfitName]
-    if outfitId then
-        local description = Players:GetHumanoidDescriptionFromOutfitId(outfitId)
-        AvatarEditorService:PromptSaveAvatar(description, Enum.HumanoidRigType.R15)
-
-        local result = AvatarEditorService.PromptSaveAvatarCompleted:Wait()
-        if result == Enum.AvatarPromptResult.Success then
-            Players.LocalPlayer.Character.Humanoid.Health = 0
-        end
-    end
-end
-
-OutfitList.Callback = function(selectedOutfit)
-    EquipOutfit(selectedOutfit)
-end
-
-local Nword = Settings:Section({Name = "Camera", Side = "Right"})
-
-Nword:Slider({
-    Name = "Field Of View",
-Flag = "Field Of View",
-    Min = 5,
-    Max = 130,
-    Default = 80,
-    Suffix = "",
-    Decimals = 0.1,
-    Callback = function(a)
-        Camera.FieldOfView = a
-    end
-})
-
-Avatar:Button({
-        Name = "Refresh",
-        Callback = UpdateOutfitList
-    })
-
-local PoAnimate = Settings:Section({Name = "Dance", Side = "Right"})
-
-
-
-local Configurations = {
-    Misc = {
-        Animation = {
-            Enabled = false,
-            SelectedDance = "Floss",
-            Speed = 2
-        }
-    }
-}
-
-   
-local Dances = {
-    Floss = 10714340543,
-Spin = 2516930867,
-Sit = 807343012,
-ArmSpin = 900850443,
-Lay = 2695918332
-
-}
-
-local currentAnimation
-
-local function AnimPlay(ID, SPEED)
-    if currentAnimation then
-        currentAnimation:Stop()
-    end
-
-    local animation = Instance.new('Animation')
-    animation.AnimationId = 'rbxassetid://' .. ID
-
-    currentAnimation = LocalPlayer.Character.Humanoid:LoadAnimation(animation)
-    currentAnimation:Play()
-    currentAnimation:AdjustSpeed(tonumber(SPEED) or 1)
-
-    animation:Destroy()
-end
-
-PoAnimate:Slider({
-    Name = "Speed",
-Flag = "Dance Speed",
-    Min = 0,
-    Max = 1000, 
-    Default = Configurations.Misc.Animation.Speed,
-    Suffix = "",
-    Decimals = 0.001,
-    Callback = function(a)
-        Configurations.Misc.Animation.Speed = a
-    end
-})
-
-PoAnimate:List({
-    Name = "Dance",
-Flag = "Dance Type",
-    Options = {"Floss", "Spin", "Sit", "ArmSpin", "Lay"},
-    Default = "Floss",
-    Callback = function(a)
-        Configurations.Misc.Animation.SelectedDance = a
-    end
-})
-
-
-PoAnimate:Toggle({
-    Name = "Animate",
-    Flag = "Animate",
-    Callback = function(state)
-        Configurations.Misc.Animation.Enabled = state
-        if Configurations.Misc.Animation.Enabled then
-            local selectedDance = Dances[Configurations.Misc.Animation.SelectedDance or "Floss"]
-            if selectedDance then
-                AnimPlay(selectedDance, Configurations.Misc.Animation.Speed or 1)
-            end
-        else
-            if currentAnimation then
-                currentAnimation:Stop()
-                currentAnimation = nil
-            end
-        end
-    end
-})
-
-
-
-
-
-LocalPlayer.CharacterAdded:Connect(function(character)
-    character:WaitForChild("Humanoid")
-    if Configurations.Misc.Animation.Enabled then
-        local selectedDance = Dances[Configurations.Misc.Animation.SelectedDance or "Floss"]
-        if selectedDance then
-            AnimPlay(selectedDance, Configurations.Misc.Animation.Speed or 1)
-        end
-    end
-end)
-
-
+    library:connection(players.PlayerAdded, LPH_NO_VIRTUALIZE(function(player)
+        esp:create_player(player)
+    end))
+    
+    library:connection(players.PlayerRemoving, LPH_NO_VIRTUALIZE(function(player)
+        esp:remove_player(player)
+    end))
 --
-do
-    local CFG = Settings:Section({Name = "Config", Zindex = 2})
---
-if not isfolder("Psalms") then makefolder("Psalms") end
-if not isfolder("Psalms/Configs") then makefolder("Psalms/Configs") end
 
-local ConfigList = CFG:List({Name = "Config", Flag = "SettingConfigurationList", Options = {}})
-CFG:Textbox({Flag = "SettingsConfigurationName", Name = "Config Name"})
+-- hooks 
+    local old_namecall; 
+    old_namecall = hookmetamethod(game, "__namecall", newcclosure(LPH_NO_VIRTUALIZE(function(self, ...)
+        local method = getnamecallmethod() 
 
-local CurrentList = {}
+        if true then 
+            if self.Name == "MainEvent" and flags["silent_aim"] and target and target.Character and method == "FireServer" then 
+                local args = {...}
 
-local function UpdateConfigList()
-    local List = {}
-    for _, file in ipairs(listfiles("Psalms/Configs")) do
-        local FileName = file:match("Psalms/Configs/(.+)%.cfg")
-        if FileName then
-            table.insert(List, FileName)
-        end
-    end
+                silent_aim.calculate_destination()
 
+                silent_aim.calculate_velocity(nebula.delta) 
 
-    if #List ~= #CurrentList or table.concat(List) ~= table.concat(CurrentList) then
-        CurrentList = List
-        ConfigList:Refresh(CurrentList)
-    end
-end
+                if args[1] == "UpdateMousePosI2" then 
+                    if silent_aim.destination then 
+                        args[2] = silent_aim.destination + (silent_aim.velocity * silent_aim.prediction)
+                    end 
+                end
 
-CFG:Button({Name = "Create", Callback = function()
-    local ConfigName = Flags.SettingsConfigurationName
-    if ConfigName and ConfigName ~= "" and not isfile("Psalms/Configs/" .. ConfigName .. ".cfg") then
-        writefile("Psalms/Configs/" .. ConfigName .. ".cfg", "")
-        UpdateConfigList()
-    end
-end})
-
-CFG:Button({Name = "Save", Callback = function()
-    local SelectedConfig = Flags.SettingConfigurationList
-    if SelectedConfig then
-        writefile("Psalms/Configs/" .. SelectedConfig .. ".cfg", Library:GetConfig())
-    end
-end})
-
-CFG:Button({Name = "Load", Callback = function()
-    local SelectedConfig = Flags.SettingConfigurationList
-    if SelectedConfig then
-        local Content = readfile("Psalms/Configs/" .. SelectedConfig .. ".cfg")
-        Library:LoadConfig(Content)
-    end
-end})
-
-CFG:Button({Name = "Delete", Callback = function()
-    local SelectedConfig = Flags.SettingConfigurationList
-    if SelectedConfig and isfile("Psalms/Configs/" .. SelectedConfig .. ".cfg") then
-        delfile("Psalms/Configs/" .. SelectedConfig .. ".cfg")
-        UpdateConfigList()
-    end
-end})
-
-CFG:Button({Name = "Refresh", Callback = function()
-    pcall(UpdateConfigList)
-end})
-
-
-
-    CFG:Keybind({
-        Name = "Menu Key",
-        Flag = "MenuKey",
-        UseKey = true,
-        Default = Enum.KeyCode.End,
-        Callback = function(State)
-            Library.UIKey = State
-        end
-    })
-
-    CFG:Colorpicker({
-        Name = "Menu Accent",
-        Flag = "MenuAccent",
-        Default = Library.Accent,
-        Callback = function(State)
-            Library:ChangeAccent(State)
-        end
-    })
-
-    CFG:Toggle({
-        Name = "Show Watermark",
-        Flag = "Watermark",
-        Callback = function(State)
-            Watermark:SetVisible(State)
-        end
-    })
-local waterbitch = "Psalms.Tech"
-CFG:Toggle({
-    Name = "Update",
-    Flag = "CustomMark",
-    Callback = function(State)
-        stats.Update = State
-        if not stats.Update then
-            Watermark:UpdateText(waterbitch)
-        end
-    end
-})
-
-    CFG:Textbox({
-        Flag = "WatermarkText",
-        Name = "Watermark Text",
-        State = "$$ Psalms.Tech $$", 
-        Callback = function(State)
-            waterbitch = State
-      if not stats.Update then
-            Watermark:UpdateText(waterbitch)
-        end
-        end
-    })
-end
-
-Library:SetOpen(false)
-
-local Ui22 = Instance.new("ScreenGui")
-Ui22.Name = "Ui22"
-Ui22.Parent = game.CoreGui
-Ui22.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Ui22.ResetOnSpawn = false
-
-local Image3 = Instance.new("ImageButton")
-Image3.Name = "Image3"
-Image3.Parent = Ui22
-Image3.Active = true
-Image3.Draggable = true
-Image3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Image3.BackgroundTransparency = 1
-Image3.Size = UDim2.new(0, 90, 0, 90)
-Image3.Image = "rbxassetid://92324433288253"
-Image3.Position = UDim2.new(1, -95, 0, 5)
-
-
-
-
-
-
-
-
-
-
-
-local Ui2corner = Instance.new("UICorner")
-Ui2corner.CornerRadius = UDim.new(0.2, 0)
-Ui2corner.Parent = Image3
-
-Image3.MouseButton1Click:Connect(function()
-    Open = not Open
-    Library:SetOpen(Open)
-end)
-
-
-
-
-
-
-local loadingTime = os.clock() - startTime
-Library:Notification(string.format("Already Loaded. Load time: %.3f seconds", loadingTime), 3)
-
-toggleAimViewer()
-end
-end
-
-if game.PlaceId == 9825515356 then
-    local startTime = tick()
-    local spoof = {
-        pc = true,
-        ping = false
-    }
-
-    while true do
-        if game:GetService("Players").LocalPlayer:FindFirstChild("SPAWN_CHARACTER") then
-            local a = game:GetService("ReplicatedStorage"):WaitForChild("MainEvent")
-            local c
-
-            if a and a:IsA("RemoteEvent") then
-                c = hookmetamethod(game, "__namecall", function(self, ...)
-                    local method = getnamecallmethod()
-                    local args = {...}
-
-                    if method == "FireServer" and self == a then
-                        if table.find(args, "IS_MOBILE") and spoof.pc then
-                            return
-                        end
-
-                        if table.find(args, "GetPing") and spoof.ping then
-                            return
-                        end
-                    end
-
-                    return c(self, ...)
-                end)
+                return old_namecall(self, unpack(args))
             end
-            cooked(true)
-            return
-        end
-
-        if tick() - startTime >= 10 then
-            local a = game:GetService("ReplicatedStorage"):WaitForChild("MainEvent")
-            local c
-
-            if a and a:IsA("RemoteEvent") then
-                c = hookmetamethod(game, "__namecall", function(self, ...)
-                    local method = getnamecallmethod()
-                    local args = {...}
-
-                    if method == "FireServer" and self == a then
-                        if table.find(args, "IS_MOBILE") and spoof.pc then
-                            return
-                        end
-
-                        if table.find(args, "GetPing") and spoof.ping then
-                            return
-                        end
-                    end
-
-                    return c(self, ...)
-                end)
-            end
-            cooked(true)
-            return
-        end
+        end 
         
-        task.wait()
-    end
-end
+        return old_namecall(self, ...)
+    end)))
 
-cooked(true) 
-
-
-local function resolveVelocity(target)
-    local character = target.Character
-    if not character then return Vector3.new(0, 0, 0) end
-
-    local humanoid = character:FindFirstChild("Humanoid")
-    local rootPart = character:FindFirstChild("HumanoidRootPart")
-    if not rootPart then return Vector3.new(0, 0, 0) end
-
-    if Psalms.Tech.ResolverEnabled and humanoid then
-        -- Combine MoveDirection and Velocity for better accuracy
-        local moveDirectionVelocity = humanoid.MoveDirection * rootPart.Velocity.Magnitude
-        return (rootPart.Velocity + moveDirectionVelocity) / 2 -- Average both for stability
-    else
-        return rootPart.Velocity -- Default velocity if resolver is disabled
-    end
-end
-
-local function getPredictionTime()
-    local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() / 1000
-    return ping * 0.5 -- Scale prediction time based on ping
-end
-
-local function getAimPosition(target)
-    local character = target.Character
-    if not character then return nil end
-
-    local part = character:FindFirstChild(Psalms.Tech.SelectedPart) or character:FindFirstChild("HumanoidRootPart")
-    if not part then return nil end
-
-    local position = part.Position
-    local velocity = resolveVelocity(target)
-
-    local predictionTime = Psalms.Tech.AutoPrediction and getPredictionTime() or TargetAimbot.Prediction
-    local prediction = velocity * predictionTime
-
-    print("Prediction Time:", predictionTime, "Velocity:", velocity.Magnitude, "Offset:", prediction.Magnitude)
-    return position + prediction
-end
-
-RunService.RenderStepped:Connect(function()
-    if TargetAimbot.Enabled and TargetPlr then
-        local aimPos = getAimPosition(TargetPlr)
-        if aimPos then
-            TargResolvePos = aimPos
-            if Psalms.Tech.Camera then
-                Camera.CFrame = CFrame.new(Camera.CFrame.Position, TargResolvePos)
-            end
+    -- camera hook
+    local old 
+    old = hookmetamethod(game, "__index", LPH_NO_VIRTUALIZE(function(self, key)
+        if not checkcaller() then
+            if key == "CFrame" and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") and self == lp.Character.HumanoidRootPart and ((desync.is_enabled() or desync.is_dc()) and desync.state()) then 
+                return desync.old_position
+            end 
         end
-    end
-end) 
+        return old(self, key)
+    end))
+-- 
+
+library:config_list_update()
