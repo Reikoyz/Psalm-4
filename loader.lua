@@ -2659,23 +2659,39 @@ local function fogmaker()
     end
 end
 
- Recalculate = function(Character)
-    local Pos = Character.HumanoidRootPart.Position
-    local Tick = tick()
+ 
+local lastPos = {}
+local lastTick = {}
 
-    task.wait(0.1)
+Recalculate = function(Character)
+    if not Character or not Character:FindFirstChild("HumanoidRootPart") then
+        return Vector3.new(0, 0, 0) -- Return zero velocity if the character is invalid
+    end
 
-    local NewPos = Character.HumanoidRootPart.Position
-    local NewTick = tick()
+    local currentPos = Character.HumanoidRootPart.Position
+    local currentTick = tick()
 
-    local Delta = (NewTick - Tick)
-    local PositionDifference = (NewPos - Pos)
-    local Velocity = PositionDifference / Delta
+    -- Ensure we store values for each character separately
+    local charID = Character:GetDebugId()
+    
+    if lastPos[charID] and lastTick[charID] then
+        local delta = currentTick - lastTick[charID]
+        
+        if delta > 0 then
+            local velocity = (currentPos - lastPos[charID]) / delta
+            lastPos[charID] = currentPos
+            lastTick[charID] = currentTick
+            return velocity
+        end
+    end
 
-    Pos = NewPos
-    Tick = NewTick
-    return Velocity
+    -- Initialize values if first time running
+    lastPos[charID] = currentPos
+    lastTick[charID] = currentTick
+
+    return Vector3.new(0, 0, 0) -- Default return if no prior data exists
 end
+
 
 
 
