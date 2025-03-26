@@ -2665,13 +2665,13 @@ local lastTick = {}
 
 Recalculate = function(Character)
     if not Character or not Character:FindFirstChild("HumanoidRootPart") then
-        return Vector3.new(0, 0, 0) -- Return zero velocity if the character is invalid
+        return Vector3.new(0, 0, 0) -- Return zero velocity if character is invalid
     end
 
     local currentPos = Character.HumanoidRootPart.Position
     local currentTick = tick()
 
-    -- Ensure we store values for each character separately
+    -- Track each character separately
     local charID = Character:GetDebugId()
     
     if lastPos[charID] and lastTick[charID] then
@@ -2685,12 +2685,32 @@ Recalculate = function(Character)
         end
     end
 
-    -- Initialize values if first time running
+    -- Initialize values for first-time runs
     lastPos[charID] = currentPos
     lastTick[charID] = currentTick
 
     return Vector3.new(0, 0, 0) -- Default return if no prior data exists
 end
+
+local TargetFuturePosition = LPH_NO_VIRTUALIZE(function()
+    local selectedPart = Psalms.Tech.SelectedPart
+    local targetPart = TargetPlr.Character[selectedPart]
+
+    if targetPart then
+        local velocity = Psalms.Tech.ResolverEnabled and Recalculate(TargetPlr.Character) or targetPart.AssemblyLinearVelocity
+
+        local horizontalPrediction = Psalms.Tech.HorizontalPrediction
+        local verticalPrediction = Psalms.Tech.VerticalPrediction
+
+        return Vector3.new(
+            targetPart.Position.X + (velocity.X * horizontalPrediction),
+            targetPart.Position.Y + (velocity.Y * verticalPrediction),
+            targetPart.Position.Z + (velocity.Z * horizontalPrediction)
+        )
+    end
+
+    return nil
+end)
 
 
 
@@ -3232,7 +3252,7 @@ local Window = Library:Window({
 
 
 
-local Watermark = Library:Watermark({Name = string.format("🤑 Psalms.Tech 🤑")})
+local Watermark = Library:Watermark({Name = string.format("ðŸ¤‘ Psalms.Tech ðŸ¤‘")})
 
 
 
